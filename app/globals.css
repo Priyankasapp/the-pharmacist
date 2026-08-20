@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-dark: #052e2b;
-  --primary-accent: #0b4742;
+  --tp-green:#023D3A;
   --bg-cream: #faf7f0;
   --text-dark: #1f2937;
   --text-muted: #4b5563;
+  --gray:#727272;
   --nhs-blue: #005eb8;
   --gold: #d4af37;
   --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  --main-text:#0F0F0F;
+  --dark-gray:#282828;
 }
 
 * {
@@ -30,56 +32,7 @@ a {
 }
 
 .container {
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
-}
-
-.sectionHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 40px;
-}
-
-.sectionTitle {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-  line-height: 1.2;
-}
-
-.carouselControls {
-  display: flex;
-  gap: 12px;
-}
-
-.controlBtn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid #e5e7eb;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.controlBtn:hover {
-  background: var(--primary-dark);
-  color: white;
-  border-color: var(--primary-dark);
-}
-
-.search-icon {
-  width: 24px;
-  height: 24px;
-  color: #3b82f6; /* Set icon color */
-  transition: color 0.2s ease;
-}
-
-.search-icon:hover {
-  color: #1d4ed8;
+  padding: 0 2px;
 }
