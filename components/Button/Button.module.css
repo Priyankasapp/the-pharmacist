@@ -1,90 +1,77 @@
-.button {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-family: var(--font-body);
-  font-weight: bold;
-  border-radius: 100px;
-  border: 1px solid transparent;
-  opacity: 1;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.button:hover {
-  box-shadow: 0 8px 20px rgba(2, 61, 58, 0.25);
-  transform: translateY(-1px);
-}
-
-.button__content {
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
-}
-
-.button__arrow {
-  width: 0;
-  height: 16px;
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: width 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
   overflow: hidden;
 }
 
-.button:hover .button__arrow {
+.primary {
+  background-color: #052e2b;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background-color: #0b4742;
+  box-shadow: 0 4px 14px rgba(5, 46, 43, 0.25);
+}
+
+.secondary {
+  background-color: #ffffff;
+  color: #052e2b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.secondary:hover {
+  background-color: #f7f4ed;
+}
+
+.outline {
+  background-color: transparent;
+  border-color: #052e2b;
+  color: #052e2b;
+}
+
+.outline:hover {
+  background-color: #052e2b;
+  color: #ffffff;
+}
+
+.text {
+  background-color: transparent;
+  color: #052e2b;
+  padding: 8px 12px;
+}
+
+.text:hover {
+  color: #0b4742;
+}
+
+/* Hover Arrow Animation Logic */
+.arrowWrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover .arrowWrapper {
   width: 16px;
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(2px);
 }
 
-.button--sm {
-  padding: 8px 16px;
-  font-size: 0.875rem;
-}
-
-.button--md {
-  padding: 0.75rem 1.75rem;
-  font-size: 1rem;
-}
-
-.button--primary {
-  background: var(--TP---GREEN, #023d3a);
-  color: var(--color-white);
-}
-
-.button--primary:hover {
-  background-color: var(--color-teal-800);
-}
-
-/* Fixed-size variant matching a specific Figma instance (175x35).
-   Use only where the design calls for a fixed-width CTA — most primary
-   buttons should size to their text via .button--sm / .button--md instead. */
-.button--fixed {
-  width: 175px;
-  height: 35px;
-}
-
-.button--outline {
-  background-color: transparent;
-  border-color: var(--TP---GREEN);
-  color: var(--TP---GREEN);
-}
-
-.button--outline:hover {
-  background: var(--TP---GREEN, #023d3a);
-  border-color: var(--TP---GREEN, #023d3a);
-  color: var(--color-white);
-}
-
-.button--outline-light {
-  background-color: transparent;
-  border-color: var(--color-white);
-  color: var(--color-white);
-}
-
-.button--outline-light:hover {
-  background-color: var(--color-white);
-  color: var(--color-ink);
+.arrow {
+  flex-shrink: 0;
 }

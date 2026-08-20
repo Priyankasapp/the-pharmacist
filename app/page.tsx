@@ -1,25 +1,13 @@
-import { Button } from "@/components/Button/Button";
+
+import { Navbar } from '@/components/Navbar/Navbar'
+import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <button >
-        
-          <span>Silver Lane</span>
-        
-        </button>
-      <Button variant="primary" showArrow>
-        Book Appointment Now
-      </Button>
-     
-     <Button variant="primary" size="sm">Order Prescriptions</Button>
-     <Button variant="outline" size="sm">
-
-  Silver Lane
- 
-</Button>
+   <Navbar/>
     </div>
-  );
-};
+  )
+}
 
-export default page;
+export default page

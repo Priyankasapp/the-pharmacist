@@ -1,55 +1,55 @@
-import styles from "./Button.module.css";
+import React from 'react';
+import styles from './Button.module.css';
 
-export type ButtonVariant = "primary" | "outline" | "outline-light";
-export type ButtonSize = "sm" | "md";
-
-interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  showArrow?: boolean;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'text';
+  showArrow?: boolean;
 }
 
-export function Button({
-  variant = "primary",
-  size = "md",
-  showArrow = false,
+export const Button: React.FC<ButtonProps> = ({
   children,
-  className,
-  ...rest
-}: ButtonProps) {
-  const classNames = [
-    styles.button,
-    styles[`button--${variant}`],
-    styles[`button--${size}`],
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  variant = 'primary',
+  showArrow = true,
+  className = '',
+  ...props
+}) => {
+  const getVariantClass = () => {
+    switch (variant) {
+      case 'secondary':
+        return styles.secondary;
+      case 'outline':
+        return styles.outline;
+      case 'text':
+        return styles.text;
+      default:
+        return styles.primary;
+    }
+  };
 
   return (
-    <button className={classNames} {...rest}>
-      <span className={styles.button__content}>
-        {children}
-
-        {showArrow && (
+    <button className={`${styles.btn} ${getVariantClass()} ${className}`} {...props}>
+      <span className={styles.label}>{children}</span>
+      {showArrow && (
+        <span className={styles.arrowWrapper}>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            className={styles.arrow}
             width="16"
             height="16"
-            fill="currentColor"
             viewBox="0 0 16 16"
-            className={styles.button__arrow}
-            aria-hidden="true"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fillRule="evenodd"
-              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+              d="M1 8H15M15 8L8 1M15 8L8 15"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
-        )}
-      </span>
+        </span>
+      )}
     </button>
   );
-}
+};
