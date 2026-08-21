@@ -1,81 +1,128 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+'use client'
+
+import { useState} from 'react'
+import Link from "next/link";
+import styles from "./Navbar.module.css";
+import Image from "next/image";
+import { ChevronDown, ChevronUp, MapPin, Menu, Search, ShoppingBag, User, X } from "lucide-react";
+
+import { ServicesMenu } from '../ServicesMenu/ServicesMenu';
+import { SearchMenu } from '../SearchMenu/SearchMenu';
 import { Button } from '../Button/Button';
-import styles from './Navbar.module.css';
+import PharmacyCard from '../PharmacyCard/PharmacyCard';
 
-// Import icons directly from lucide-react
-import { 
-  Search, 
-  User, 
-  ShoppingBag, 
-  MapPin, 
-  ChevronDown 
-} from 'lucide-react';
+type ActiveMenuType = 'services'|'search' |'product'| null;
 
-export const Navbar = () => {
-  const [location] = useState('Silver Lane');
+const Navbar = () => {
+  
+  const [activeMenu, setActiveMenu] = useState<ActiveMenuType>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  //toggle menu
+  const toggleMenu = (menuName:ActiveMenuType) =>{
+    if(activeMenu === menuName){
+      setActiveMenu(null);
+    } else {
+      setActiveMenu(menuName)
+    }
+  };
 
   return (
-    <header className={styles.header}>
-      <div className={`${styles.navContainer} container`}>
-        {/* Logo */}
-        <Link href="/" className={styles.logo}>
-          <Image
-            src="/LOGO.svg"
-            alt="ThePharmacist logo"
-            width={180}
-            height={40}
-            className={styles.logoIcon}
-            priority
-          />
+    <header className={styles['navbar']}>
+      <div className={`${styles['nav-container']} container`}>
+        {/* left  */}
+        {/* Logo  */}
+        <Link href="/" className={styles['nav-logo']}>
+        <Image
+        src="/LOGO.svg"
+        alt="The Pharmacist logo"
+        width={180}
+        height={40}
+        className={styles['nav-logo-icon']}
+        />
         </Link>
 
-        {/* Navigation Links */}
-        <nav className={styles.navLinks}>
-          <Link href="/services" className={`${styles.navLink} ${styles.activeLink}`}>
-            Our Services
-            <ChevronDown size={14} className={styles.chevronIcon} />
+      {/* mobile menu button */}
+      <button 
+      className={styles['nav-mobile-menu']}
+      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+      >
+        {isMobileMenuOpen ? <X />: <Menu className={styles['nav-menu']}/>}
+       
+      </button>
+
+
+        {/* Navigation Link  */}
+       <div className={`${styles['nav-wrapper']} ${isMobileMenuOpen? styles['nav-wrapper-open']:''}`}  >
+        <nav className={styles['nav-links']}>
+          {/* Services  */}
+          <div 
+          className={styles['nav-hover-wrapper']}
+          onMouseEnter={()=> setActiveMenu('services')}
+          onMouseLeave={()=>setActiveMenu(null)}
+          >
+            <Link
+          href="#"
+          className={`${styles['nav-link']} `}
+          onClick={(e)=>{
+            e.preventDefault();
+            
+          }}>
+            Our Services {activeMenu === 'services' ? <ChevronUp />:<ChevronDown/>}
           </Link>
-          <Link href="/products" className={styles.navLink}>
-            Our Products
-          </Link>
-          <Link href="/about" className={styles.navLink}>
-            About Us
-          </Link>
-          <Link href="/contact" className={styles.navLink}>
-            Contact
-          </Link>
+          </div>
+          <Link href="#" className={styles['nav-link']}>Our Products</Link>
+          <Link href="#" className={styles['nav-link']}>About Us</Link>
+          <Link href="#" className={styles['nav-link']}>Contact</Link>
         </nav>
 
-        {/* Right side controls */}
-        <div className={styles.rightControls}>
-          <button aria-label="Search" className={styles.iconBtn}>
-            <Search size={20} className={styles.navIcon} />
-          </button>
+          {/* right side  */}
+          <div className={styles['nav-right-controls']}>
+              <button
+              aria-label='search' 
+              className={`${styles['nav-icon-btn']} `}
+              onClick={()=>toggleMenu('search')}
+              >
+                <Search  className={styles['nav-icon']}/>
+              </button>
 
-          <button aria-label="Profile" className={styles.iconBtn}>
-            <User size={20} className={styles.navIcon} />
-          </button>
+              <button 
+              className={styles['nav-icon-btn']}
+              aria-label='user'>
+                <User className={styles['nav-icon']}/>
+              </button>
 
-          <button aria-label="Cart" className={styles.iconBtn}>
-            <ShoppingBag size={20} className={styles.navIcon} />
-          </button>
+              <button
+              className={styles['nav-icon-btn']}
+              aria-label='shopping bag'
+              >
+                <ShoppingBag className={styles['nav-icon']}/>
+              </button>
 
-          {/* Location Selector Pill */}
-          <div className={styles.locationDropdown}>
-            <MapPin size={16} className={styles.locationIcon} />
-            <span>{location}</span>
-            <ChevronDown size={14} className={styles.chevronIcon} />
+              {/* buttons  */}
+              <div className={styles['nav-location-dropdown']}
+              onClick={(e)=>{
+            e.preventDefault();
+            toggleMenu('product');
+          }}>
+                <MapPin size={14} className={styles['nav-location-icon']}/>
+                <span>Silver Lane</span>
+                <ChevronDown size={14} className={styles['nav-chevron-icon']}/>  
+              </div>
+
+              <Button variant='primary' showArrow>
+                Order Prescription
+              </Button>
           </div>
-
-          {/* Header CTA Button */}
-          <Button variant="primary" showArrow>
-            Order Prescriptions
-          </Button>
-        </div>
+       
+       </div>
       </div>
+       <ServicesMenu isOpen={activeMenu === 'services'}/>
+        <PharmacyCard isOpen={activeMenu === 'product'}/>
+        <SearchMenu isOpen={activeMenu === 'search'}/>
     </header>
-  );
-};
+  )
+}
+
+export default Navbar
+

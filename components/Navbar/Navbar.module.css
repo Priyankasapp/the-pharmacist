@@ -1,43 +1,50 @@
-.header {
-  border-bottom: 1px solid #e5e7eb;
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+.navbar {
+  height: 68px;
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
   
 }
 
-.navContainer {
-  height: 82px;
+.nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  position: relative;
+  align-items: center;
+  padding: 1rem;
 }
 
 /* Logo */
-.logo {
-  display: flex;
-  align-items: center;
+.nav-logo {
+  flex: 1;
 }
 
-.logoIcon {
-  width: 270px;
-  height: auto;
+.nav-logo-icon {
+  width: 246.72px;
+  height: 40px;
   object-fit: contain;
 }
 
+.nav-wrapper{
+  display:contents;
+}
+
 /* Navigation Links */
-.navLinks {
+.nav-links {
   display: flex;
   gap: 25px;
   align-items: center;
+  justify-content: center;
+  flex: 2;
+ 
 }
 
+.nav-link{
+  align-items: center; 
+}
 
-.navLinks a {
+.nav-links a {
   font-weight: 500;
   font-size: 1.05rem;
   color: #1f2937;
@@ -48,20 +55,21 @@
   transition: color 0.2s ease;
 }
 
-.navLinks a:hover,
-.activeLink {
+.nav-links a:hover,
+.active-link {
   color: #023d3a !important;
 }
 
 /* Right Side Controls Group */
-.rightControls {
-  display: flex;
+.nav-right-controls {
+  display: flex;  
   align-items: center;
   gap: 15px;
+  
 }
 
 /* Header Icons (Search, User, Cart) */
-.iconBtn {
+.nav-icon-btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -71,19 +79,21 @@
   padding: 4px;
   color: #1f2937;
   transition: opacity 0.2s ease;
+  height: 41px;
+  width: 42px;
 }
 
-.iconBtn:hover {
-  opacity: 0.7;
+.nav-icon-btn:hover {
+  background:  #F3F1ED;
+  border-radius: 8px;
 }
-
 
 
 /* Silver Lane Location Pill */
-.locationDropdown {
+.nav-location-dropdown {
   background-color: transparent;
-  border: 1px solid #023d3a; 
-  padding: 6px 14px;
+  border: 1px solid var(--tp-green); 
+  padding: 8px 16px;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -95,16 +105,98 @@
   transition: background-color 0.2s ease;
 }
 
-.locationDropdown:hover {
-  background-color: rgba(2, 61, 58, 0.05);
+.nav-location-dropdown:hover {
+  background-color: #023d3a;
+  color: #fff;
 }
 
-.locationIcon {
-  width: 16px;
-  height: 16px;
-}
 
 .chevronIcon {
   width: 25px;
   height: 25px;
 }
+
+  .nav-mobile-menu{
+    display: none;
+    border: 1px solid var(--tp-green);
+    border-radius: 7px;
+    background: #fff;
+    width: 42px;
+    height: 41px;
+    align-items: center;
+  }
+
+  .nav-mobile-menu .nav-menu{
+    color: var(--tp-green);
+  }
+  
+.nav-mobile-menu {
+  display: none;
+  border: 1px solid var(--tp-green);
+  border-radius: 7px;
+  background: #fff;
+  width: 42px;
+  height: 41px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-mobile-menu .nav-menu {
+  color: var(--tp-green);
+}
+
+@media (max-width: 991px) {
+  .nav-mobile-menu {
+    display: flex;
+  }
+  .nav-wrapper{
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right:0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    z-index: 50;
+    display: none;
+  }
+
+  .nav-wrapper-open{
+    display: flex;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+  }
+  .nav-right-controls{
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap:12px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+
+  }
+  .nav-location-dropdown{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width:767px){
+  .nav-container{
+    padding: 0.75rem 1rem;
+  }
+  .nav-logo-icon{
+    width: 160px;
+    height: auto;
+  }
+}
+
+

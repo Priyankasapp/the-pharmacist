@@ -3,7 +3,13 @@ import { Button } from "../Button/Button";
 import styles from "./SearchMenu.module.css"
 import nhs from "@/public/imaegs/nhs.png"
 import Image from "next/image";
-export const SearchMenu = () =>{
+
+type SearchMenuProps = {
+    isOpen:boolean;
+}
+export const SearchMenu = ({isOpen}:SearchMenuProps) =>{
+    if(!isOpen) return null;
+    
     return(
         <div className={styles['menu-container']}>
             {/* Search Section  */}
