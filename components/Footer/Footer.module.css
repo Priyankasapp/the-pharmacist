@@ -152,12 +152,7 @@ display: flex;
   }
 }
 
-@media (max-width: 1200px) {
-  .footer-top {
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 3rem;
-  }
-}
+
 
 @media (max-width: 540px) {
   .footer-top {
