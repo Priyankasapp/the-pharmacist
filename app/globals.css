@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sk-Modernist:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sk-Modernist:wght@400;700&display=swap");
 
-:root { 
-  --tp-green:#023D3A;
-  --tp-green-light:rgba(2,61,58,0.2);
-  --tp-green-10: rgba(2,61,58,0.1);
-   --white: #FFFFFF;
+:root {
+  --tp-green: #023d3a;
+  --tp-green-light: rgba(2, 61, 58, 0.2);
+  --tp-green-10: rgba(2, 61, 58, 0.1);
+  --white: #ffffff;
   --black: #000000;
-  --main-text: #0F0F0F;
+  --main-text: #0f0f0f;
   --dark-gray: #282828;
   --gray: #727272;
-  --light-gray: #DFDFDF;
-  --tp-grey: #D6D5D4;
-  --tp-bg: #F3F1ED;
-  --bg-white: #F4F4F4;
+  --light-gray: #dfdfdf;
+  --tp-grey: #d6d5d4;
+  --tp-bg: #f3f1ed;
+  --bg-white: #f4f4f4;
   --green: #009805;
-  --red: #C50000;
-  --star: #FFCB45;
-  --star-dark: #DFB300;
-  --blue: #204F81;
-  --grey-95:#F2F2F2;
+  --red: #c50000;
+  --star: #ffcb45;
+  --star-dark: #dfb300;
+  --blue: #204f81;
+  --grey-95: #f2f2f2;
 
-  --font-primary: 'Plus Jakarta Sans', sans-serif;
-  --font-secondary: 'Sk-Modernist', sans-serif;
+  --font-primary: "Plus Jakarta Sans", sans-serif;
+  --font-secondary: "Sk-Modernist", sans-serif;
 
   --container: 1440px;
   --container-inner: 1320px;
-  --container-padding: 60px;   
+  --container-padding: 60px;
 }
 
 * {
@@ -43,8 +43,10 @@ body {
   background: var(--white);
   color: var(--main-text);
   overflow-x: hidden;
-  height: 100vh;
   line-height: 1.4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -57,9 +59,12 @@ a {
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary);
   font-weight: 600;
-
 }
-

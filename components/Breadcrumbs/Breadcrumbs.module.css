@@ -1,0 +1,35 @@
+.breadcrumbs{
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    font-family: sans-serif;
+    padding: 3%;
+    position: relative;
+
+}
+.breadcrumbs-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    
+}
+.breadcrumbs-item{
+    display: flex;
+    align-items: center;
+}
+.breadcrumbs-link{
+    color: #727272;
+    text-decoration:none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs-separator{
+    color: #9ca3af;
+    margin: 0 0.5rem;
+    user-select:none;
+}
+
+.breadcrumbs-activepage{
+    color: #0F0F0F;
+    font-weight: 600;
+}
+

@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
           <Link href="#" className={styles['nav-link']}>Our Products</Link>
           <Link href="#" className={styles['nav-link']}>About Us</Link>
-          <Link href="#" className={styles['nav-link']}>Contact</Link>
+          <Link href="/contact" className={styles['nav-link']}>Contact</Link>
         </nav>
 
           {/* right side  */}
