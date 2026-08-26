@@ -6,7 +6,7 @@ import registered_pharmacy from "@/public/imaegs/registered-pharmacy.png";
 import secure_ssl from "@/public/imaegs/secure-ssl.png";
 import ryft from "@/public/imaegs/ryft.png";
 import Hero from "@/public/imaegs/hero.png";
-
+import AboutHero from "@/public/imaegs/AboutHero.png";
 
 export {
     NHS,
@@ -17,6 +17,7 @@ export {
     secure_ssl,
     ryft,
     Hero,
+    AboutHero,
  };
 
  

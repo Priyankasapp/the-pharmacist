@@ -1,0 +1,60 @@
+.what-we-offer{
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
+.what-we-offer h2{
+    font-family: var(--font-plus-jakarta);
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    line-height: 100%;
+}
+
+.what-we-offer h2 span{
+    color: var(--tp-green);
+}
+
+.what-we-offer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    
+}
+.what-we-offer-container Button{
+    align-self: center;
+}
+.what-we-offer-cards{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.what-we-offer-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 16px;
+    border: 1px solid #1C4C4F33;
+    padding: 30px;
+    flex: 1;
+    
+}
+.what-we-offer-card h3{
+    margin:14px 0px;
+    color: var(--main-text);
+    line-height: 100%;
+    font-size: 32px;
+    font-weight: 500 !important;
+    font-style: normal;
+    vertical-align: middle;
+    font-family: var(--font-plus-jakarta), sans-serif;
+
+}
+.what-we-offer-card p{
+    margin:14px 0px;
+    color:var(--gray);
+    line-height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-sk-modernist);
+}
