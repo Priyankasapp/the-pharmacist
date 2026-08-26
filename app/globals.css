@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  font-family: var(--font-secondary);
+  
   background: var(--white);
   color: var(--main-text);
   overflow-x: hidden;
@@ -61,12 +61,3 @@ a {
   margin: 0 auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-primary);
-  font-weight: 600;
-}

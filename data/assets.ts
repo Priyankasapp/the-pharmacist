@@ -7,6 +7,10 @@ import secure_ssl from "@/public/imaegs/secure-ssl.png";
 import ryft from "@/public/imaegs/ryft.png";
 import Hero from "@/public/imaegs/hero.png";
 import AboutHero from "@/public/imaegs/AboutHero.png";
+import Timeline1954 from "@/public/imaegs/timeline-1954.png";
+import Timeline2026 from "@/public/imaegs/timeline-2026.png";
+import Timeline9191 from "@/public/imaegs/timeline-9191.png";
+import Timeline1975 from "@/public/imaegs/timeline1975.png";
 
 export {
     NHS,
@@ -18,6 +22,10 @@ export {
     ryft,
     Hero,
     AboutHero,
+    Timeline1954,
+    Timeline1975,
+    Timeline2026,
+    Timeline9191,
  };
 
  

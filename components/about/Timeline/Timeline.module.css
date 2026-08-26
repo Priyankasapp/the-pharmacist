@@ -1,0 +1,218 @@
+/* --- Base Desktop Layout --- */
+.timeline-section {
+  gap: 46px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline-heading {
+  margin-top: 7%;
+  color: var(--section-title);
+  text-align: center;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.timeline-spine-line {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #023d3a 0%,
+    rgba(2, 61, 58, 0.4) 75%,
+    #ffffff 100%
+  );
+  top: 0px;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.row-left-align {
+  flex-direction: row;
+}
+
+.row-right-align {
+  flex-direction: row-reverse;
+}
+
+.timeline-card-wrapper,
+.timeline-row-spacer {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.row-left-align .timeline-card-wrapper {
+  padding-right: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row-right-align .timeline-card-wrapper {
+  padding-left: 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.timeline-spine-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--tp-green);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* car section  */
+.timeline-card-module {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  gap: 24px;
+  height: 315px;
+  width: 618px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(28, 76, 79, 0.2) 100%
+  );
+  box-sizing: border-box;
+  background-blend-mode: normal;
+  box-shadow:
+    0px 4.32px 19.82px 0px rgba(0, 0, 0, 0.015),
+    0px 14.52px 66.56px 0px rgba(0, 0, 0, 0.025),
+    0px 65px 250px 0px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-card-left-section {
+  position: relative;
+  width: 277px;
+  height: 275px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.timeline-card-left-img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.timeline-card-right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.timeline-card-year {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--tp-green);
+  font-family: var(--font-plus-jakarta), sans-serif;
+  line-height: 100%;
+}
+
+.timeline-card-right-heading {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 110%;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.timeline-card-right-paragraph {
+  font-family: var(--font-sk-modernist);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 145%;
+  color: var(--dark-gray);
+}
+
+@media (max-width: 1200px) {
+  .timeline-spine-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-row {
+    flex-direction: row !important;
+  }
+
+  .timeline-card-wrapper {
+    width: 100%;
+    padding-left: 45px !important;
+    padding-right: 0 !important;
+    display: flex;
+    justify-content: flex-start !important;
+  }
+
+  .timeline-row-spacer {
+    display: none;
+  }
+
+  .timeline-spine-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-card-module {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .timeline-card-module {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .timeline-card-left-section {
+    width: 100%;
+    height: 200px;
+  }
+
+  .timeline-card-year {
+    font-size: 32px;
+  }
+  .timeline-card-right-heading {
+    font-size: 24px;
+  }
+  .timeline-card-right-paragraph {
+    font-size: 15px;
+  }
+}
