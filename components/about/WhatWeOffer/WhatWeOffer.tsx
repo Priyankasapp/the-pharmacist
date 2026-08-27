@@ -31,7 +31,7 @@ const WhatWeOffer = () => {
         <div className={styles['what-we-offer-cards']}>
         {cardData.map((card, index)=>(
           <div key={index} className={styles['what-we-offer-card']}>
-            <h3>{card.title}</h3>
+            <h3 className={styles['what-we-offer-title']}>{card.title}</h3>
             <p>{card.description}</p>
           </div>
         ))}

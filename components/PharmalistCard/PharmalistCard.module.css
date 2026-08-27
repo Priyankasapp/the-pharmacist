@@ -1,0 +1,44 @@
+
+.pharmalist-card {
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    box-shadow:
+    0px 4.32px 19.82px 0px #00000007,
+    0px 14.52px 66.56px 0px #0000000b,
+    0px 65px 250px 0px #00000012;
+}
+.pharmalist-card-container {
+  gap: 20px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  width: 100%;
+}
+.pharmalist-card-image-section {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pharmalist-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+.pharmalist-card-heading {
+  color: var(--main-text);
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0;
+}
+.pharmalist-card-description {
+  color: var(--dark-gray);
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-sk-modernist);
+  margin: 0;
+}

@@ -11,6 +11,9 @@ import Timeline1954 from "@/public/imaegs/timeline-1954.png";
 import Timeline2026 from "@/public/imaegs/timeline-2026.png";
 import Timeline9191 from "@/public/imaegs/timeline-9191.png";
 import Timeline1975 from "@/public/imaegs/timeline1975.png";
+import PharmacistImage from "@/public/imaegs/pharmacist.png";
+import PharmacistImage2 from "@/public/imaegs/pharmacist2.png";
+import PharmacistImage3 from "@/public/imaegs/pharmacist3.png";
 
 export {
     NHS,
@@ -26,6 +29,9 @@ export {
     Timeline1975,
     Timeline2026,
     Timeline9191,
+    PharmacistImage,
+    PharmacistImage2,
+    PharmacistImage3
  };
 
  

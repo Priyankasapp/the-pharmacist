@@ -1,6 +1,5 @@
 import { Timeline1954, Timeline1975, Timeline2026, Timeline9191 } from "@/data/assets";
 import styles from "./Timeline.module.css"
-import { Milestone } from "lucide-react";
 import TimeLineCard from "./TimeLineCard";
 
 const timelineDataSet = [

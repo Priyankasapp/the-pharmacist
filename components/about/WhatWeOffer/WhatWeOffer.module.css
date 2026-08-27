@@ -2,13 +2,16 @@
     display: flex;
     flex-direction: column;
     gap: 46px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
 .what-we-offer h2{
     font-family: var(--font-plus-jakarta);
     font-weight: 600;
     font-size: 40px;
     text-align: center;
-    line-height: 100%;
+    line-height: 120%;
 }
 
 .what-we-offer h2 span{
@@ -21,7 +24,8 @@
     gap: 32px;
     
 }
-.what-we-offer-container Button{
+.what-we-offer-container :global(button),
+.what-we-offer-container button {
     align-self: center;
 }
 .what-we-offer-cards{
@@ -35,16 +39,18 @@
     gap: 10px;
     border-radius: 16px;
     border: 1px solid #1C4C4F33;
-    padding: 30px;
+    padding: 15px;
     flex: 1;
-    
+    flex: 1 1 calc(20%-24px);
+    min-width: 260px;
+
 }
-.what-we-offer-card h3{
+.what-we-offer-title{
     margin:14px 0px;
     color: var(--main-text);
-    line-height: 100%;
+    line-height: 120%;
     font-size: 32px;
-    font-weight: 500 !important;
+    font-weight: 500;
     font-style: normal;
     vertical-align: middle;
     font-family: var(--font-plus-jakarta), sans-serif;
@@ -53,8 +59,34 @@
 .what-we-offer-card p{
     margin:14px 0px;
     color:var(--gray);
-    line-height: 100%;
+    line-height: 150%;
     font-size: 16px;
     font-weight: 400;
-    font-family: var(--font-sk-modernist);
+    font-family: var(--font-sk-modernist),sans-serif;
+}
+
+@media (max-width: 1024px){
+    .what-we-offer-card{
+        flex: 1 1 calc(50% - 24px);
+    }
+}
+
+@media (max-width:640px){
+    .what-we-offer{
+        gap: 32px;
+    }
+    .what-we-offer h2{
+        font-size: 32px;
+    }
+    .what-we-offer-card{
+        flex: 1 1 100%;
+        padding: 24px;
+    }
+    .what-we-offer-title{
+        font-size: 24px;
+        margin: 8px 0;
+    }
+    .what-we-offer-card p{
+        font-size: 15px;
+    }
 }

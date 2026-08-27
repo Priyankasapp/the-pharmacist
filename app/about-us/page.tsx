@@ -3,7 +3,7 @@ import Patients from "@/components/about/Patients/Patients";
 import Specialist from "@/components/about/Specialist/Specialist";
 import Timeline from "@/components/about/Timeline/Timeline";
 import WhatWeOffer from "@/components/about/WhatWeOffer/WhatWeOffer";
-import WhyChosePharmalist from "@/components/about/WhyChosePharmalist/WhyChosePharmalist";
+import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 
 
 const AboutUs = () => {
