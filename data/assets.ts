@@ -14,6 +14,10 @@ import Timeline1975 from "@/public/imaegs/timeline1975.png";
 import PharmacistImage from "@/public/imaegs/pharmacist.png";
 import PharmacistImage2 from "@/public/imaegs/pharmacist2.png";
 import PharmacistImage3 from "@/public/imaegs/pharmacist3.png";
+import DrAisaKhan from "@/public/imaegs/Dr.AisaKhan.png";
+import DrEmilyWaston from "@/public/imaegs/Dr.EmilyWatson.png";
+import DrJamesRobertson from "@/public/imaegs/Dr.JamesRobertson.png";
+import DrSharahChen from "@/public/imaegs/Dr.SharahChen.png";
 
 export {
     NHS,
@@ -31,7 +35,11 @@ export {
     Timeline9191,
     PharmacistImage,
     PharmacistImage2,
-    PharmacistImage3
+    PharmacistImage3,
+    DrAisaKhan,
+    DrJamesRobertson,
+    DrEmilyWaston,
+    DrSharahChen,
  };
 
  

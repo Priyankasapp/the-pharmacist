@@ -1,0 +1,123 @@
+.specialist-container{
+    gap:44px;
+    display: flex;
+    flex-direction: column;    
+}
+.specialist-heading{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: var(--font-plus-jakarta),sans-serif;
+    line-height: 100%;
+    text-align: center;
+}
+.specialist-cards{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* card Section  */
+.specialist-card-container{
+    width: 294px;
+    height: 575px;
+        /* border-radius: 16px;
+        border: 1px solid #E0E0E0; */
+    overflow: hidden;
+    position: relative;
+  
+
+}
+
+.specialist-card-image-container{
+    border-radius: 16px;
+    border: 1px solid #E0E0E0;
+    position: absolute;
+    inset: 0;
+    width: 294px;
+    height: 361px;
+    background-color: #D6D5D4;
+   
+    
+}
+.specialist-card-image{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    transform: scaleX(-1);
+}
+.specialist-card-desc-section{
+   
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    right: 10px;
+    padding: 20px;
+    gap: 16px;
+    background: #FFFFFF33;
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    border-radius:16px;
+    
+}
+.specialist-card-heading-section{
+    border-bottom: 1px solid var(--tp-green);
+    padding: 8px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.specialist-card-heading-section h3{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--main-text);
+    font-family: var(--font-sk-modernist);
+
+}
+
+.specialist-card-heading-section b{
+    font-weight: 400;
+    font-family: var(--font-sk-modernist);
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--gray);
+    vertical-align: middle;
+}
+.specialist-card-heading-section p{
+    color: #D6D5D4;
+    vertical-align: middle;
+    font-family: var(--font-sk-modernist);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+.specialist-card-description-section{
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+
+}
+.specialist-card-description-section p{
+    font-family: var(--font-sk-modernist);
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0%;
+}
+.specialist-card-link-section{
+    gap: 4px;
+    display: flex;
+}
+.specialist-card-link-section a{
+    font-family: var(--font-sk-modernist);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #1C1C1C;
+}
