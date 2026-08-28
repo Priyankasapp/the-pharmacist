@@ -1,17 +1,26 @@
-import { DrAisaKhan, DrSharahChen } from "@/data/assets";
+
 import styles from "./Specialist.module.css";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import {  ChevronRight } from "lucide-react";
 
-const SpecialistCard = () => {
+interface SpecialistCardProps {
+    imgSrc: string | StaticImageData;
+    name: string;
+    role:string;
+    registration:string;
+    description:string;
+    
+    
+}
+const SpecialistCard = ({name, imgSrc,role,registration,description}:SpecialistCardProps) => {
   return (
     <div className={styles['specialist-card-container']}>
        
 
             <div className={styles['specialist-card-image-container']}>
             <Image 
-            src={DrSharahChen}
-            alt="DrAlias"
+            src={imgSrc}
+            alt={name}
             className={styles['specialist-card-image']}
             priority
             />
@@ -20,16 +29,16 @@ const SpecialistCard = () => {
             {/* Description  */}
             <div className={styles['specialist-card-desc-section']}>
                 <div className={styles['specialist-card-heading-section']}>
-                    <h3>Dr.Aisha Khan</h3>
-                    <b>Mental Health Specialist</b> 
-                    <p>GMC Registration:7654321</p>
+                    <h3>{name}</h3>
+                    <b>{role}</b> 
+                    <p>{registration}</p>
 
                 </div>
                 <div className={styles['specialist-card-description-section']}>
-                    <p>Dr. Aisha Khan provides specialist oversight for mental health services, including anxiety and ADHD treatment.</p>
+                    <p>{description}</p>
 
                    <div className={styles['specialist-card-link-section']}>
-                     <a href="#">Meet Dr. Aisha Khan </a>
+                     <a href="#">Meet {name} </a>
                     <ChevronRight className={styles['link-icon']}/>
                    </div>
                 </div>

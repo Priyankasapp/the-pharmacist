@@ -1,0 +1,74 @@
+.patient-card-module{
+    background-color: white ;
+    width: 495px;
+    height: 263px;
+    border-radius: 30px;
+    margin: 20px;
+    padding: 54px 60px 33px 60px;
+    box-shadow: 0px 4.32px 19.82px 0px #00000007,
+    0px 14.52px 66.56px 0px #0000000B,
+    0px 65px 250px 0px #00000012;
+}
+.patient-card-description{
+    font-family: var(--font-sk-modernist);
+    font-weight: 400;
+    line-height: 100%;
+    font-size: 16px;
+    color: var(--gray);
+    width: 375px;
+    height: 57px;
+}
+.patients-card-middle-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.patients-card-line{
+    background-color: #204F81;
+    height: 2px;
+    width: 310px;
+}
+.patients-card-image-container{
+    background-color: #fff;
+    height: 65px;
+    width: 65px;
+    border-radius: 32px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 60px 0px #27477D2E;
+
+}
+.patients-card-image-wrapper{
+    height: 45px;
+    width: 45px;
+    border-radius: 22px;
+}
+.patients-card-image{
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 22px;
+    background-color: aqua;
+    object-fit: cover;
+    
+}
+.patient-card-bottom-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.patient-card-star-container{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.star-filled{
+    fill: #FFC107;
+    stroke: #FFC107;
+}
+.star-empty{
+    fill: #fff;
+    stroke: #FFC107;
+}

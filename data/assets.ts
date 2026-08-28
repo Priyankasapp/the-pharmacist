@@ -18,7 +18,7 @@ import DrAisaKhan from "@/public/imaegs/Dr.AisaKhan.png";
 import DrEmilyWaston from "@/public/imaegs/Dr.EmilyWatson.png";
 import DrJamesRobertson from "@/public/imaegs/Dr.JamesRobertson.png";
 import DrSharahChen from "@/public/imaegs/Dr.SharahChen.png";
-
+import DrEmily from "@/public/imaegs/DrEmily-removebg-preview.png"
 export {
     NHS,
     nhs_providing_service,
@@ -40,6 +40,7 @@ export {
     DrJamesRobertson,
     DrEmilyWaston,
     DrSharahChen,
+    DrEmily
  };
 
  
