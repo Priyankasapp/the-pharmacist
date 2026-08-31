@@ -1,0 +1,61 @@
+.treatement-card{
+    background-color: #F3F1ED;
+    height: 480px;
+    width: 423px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    /* padding: 24px; */
+    box-sizing: border-box ;
+    overflow: hidden;
+    position: relative;
+}
+.treatement-card-header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+.treatement-card h3{
+    color: var(--tp-green);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    margin: 0;
+}
+.treatment-crard-description{
+   font-weight: 400;
+   font-size: 16px;
+   font-family: var(--font-secondary);
+   margin-top: 12px;
+   margin-bottom: 0;
+   color: #333;
+   
+}
+.treatment-card-image-wrapper{
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    border-radius:8px;
+    
+}
+.treatment-card-Image{
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    object-fit: cover;
+}
+.treatment-card-button-wrapper{
+   position: absolute;
+   bottom: 30px;
+   z-index: 3;
+}
+.treatment-card-button{
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    background-color: var(--tp-green);
+    padding: 16px 24px;
+    border-radius: 100px;
+    border: none;
+}

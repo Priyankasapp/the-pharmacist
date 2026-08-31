@@ -32,3 +32,10 @@ export interface Patients{
     imgSrc:string|StaticImageData;
     rating:number;
 }
+export interface Treatments{
+   
+    name:string;
+    desc:string;
+    imgSrc:string|StaticImageData;
+
+}

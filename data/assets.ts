@@ -25,6 +25,16 @@ import patient2 from "@/public/imaegs/patient2.jpg";
 import patient3 from "@/public/imaegs/patient3.png";
 import mapImg from "@/public/imaegs/map.png";
 import locationIcon from "@/public/imaegs/locationIcon.png";
+import treatmentImg1 from "@/public/imaegs/treatmentImg1.png";
+import treatmentImg2 from "@/public/imaegs/treatmentimg2.png";
+import treatmentImg3 from "@/public/imaegs/treatmentimg3.png";
+import treatmentImg4 from "@/public/imaegs/treatment4.png";
+import treatmentImg5 from "@/public/imaegs/treatment5.png";
+import treatmentImg6 from "@/public/imaegs/treatment6.png";
+import treatmentImg7 from "@/public/imaegs/treatment7.png";
+import treatmentImg8 from "@/public/imaegs/treatment8.png";
+import treatmentImg9 from "@/public/imaegs/treatment9.png";
+import treatmentImg from "@/public/imaegs/treatmentImg.png"
 export {
     NHS,
     nhs_providing_service,
@@ -53,6 +63,16 @@ export {
     patient3,
     mapImg,
     locationIcon,
+    treatmentImg1,
+    treatmentImg2,
+    treatmentImg3,
+    treatmentImg4,
+    treatmentImg5,
+    treatmentImg6,
+    treatmentImg7,
+    treatmentImg8,
+    treatmentImg9,
+    treatmentImg,
  };
 
  

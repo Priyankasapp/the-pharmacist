@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 'use Client';
 import { AboutHero } from "@/data/assets";
 import styles from "./Hero.module.css";

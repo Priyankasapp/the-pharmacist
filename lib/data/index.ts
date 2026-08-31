@@ -1,5 +1,5 @@
-import { patient1, patient2, patient3 } from "@/data/assets";
-import { NavLink, Patients, Pharmacy } from "../types";
+import { patient1, patient2, patient3, treatmentImg1, treatmentImg2, treatmentImg3, treatmentImg4, treatmentImg5, treatmentImg6, treatmentImg7, treatmentImg8, treatmentImg9 } from "@/data/assets";
+import { NavLink, Patients, Pharmacy, Treatments } from "../types";
 
 // navigation data
 export const navLinks: NavLink[] = [
@@ -57,5 +57,57 @@ export const patients: Patients[] = [
   imgSrc:patient3,
   rating:5,
 },
+
+]
+
+
+// treatment data 
+export const treatments:Treatments[] = [
+  {
+    name:"sdsd",
+    desc:"Clinician-approved treatments to help clear your skin and reduce future breakouts.",
+    imgSrc:treatmentImg1
+  },
+  {
+    name:"Anaphylaxis",
+    desc:"Prescribed emergency treatments to help you stay prepared and safe at all times.",
+    imgSrc:treatmentImg2
+  },
+  {
+    name:"BPH",
+    desc:"Effective treatments to help relieve urinary symptoms caused by an enlarged prostate.",
+    imgSrc:treatmentImg3
+  },
+  {
+    name:"COPD",
+    desc:"Prescribed treatments to help you breathe easier and manage your symptoms day to day.",
+    imgSrc:treatmentImg4
+  },
+  {
+    name:"Cold Sores",
+    desc:"Fast-acting antiviral treatments to clear cold sores quickly and reduce how often they return.",
+    imgSrc:treatmentImg5
+  },
+  {
+    name:"Chlamydia",
+    desc:"Discreet, clinician-reviewed treatments for chlamydia, ordered simply and delivered to your door.",
+    imgSrc:treatmentImg6
+  },
+  {
+    name:"Diabetes",
+    desc:"Clinician-approved treatments to help you manage your diabetes safely and with confidence.",
+    imgSrc:treatmentImg7
+  },
+  {
+    name:"Erectile Dysfunction",
+    desc:"Prescribed treatments for erectile dysfunction, reviewed by a clinician and delivered privately.",
+    imgSrc:treatmentImg8
+  },
+  {
+    name:"Weight Loss",
+    desc:"Safe, clinician-approved treatments to help you manage your weight and improve your overall health.",
+    imgSrc:treatmentImg9
+  },
+  
 
 ]
