@@ -1,4 +1,5 @@
-import { Button } from "@/components/Button/Button"
+
+import Button from "@/components/Button/Button"
 import styles from "./WhatWeOffer.module.css"
 
 const cardData = [

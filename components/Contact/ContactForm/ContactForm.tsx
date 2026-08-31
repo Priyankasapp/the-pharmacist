@@ -1,6 +1,7 @@
 
+import Button from "@/components/Button/Button"
 import styles from "./ContactForm.module.css"
-import { Button } from "@/components/Button/Button"
+
 import {PhoneCall,MailOpen, MapPin} from 'lucide-react'
 const ContactForm = () => {
   return (

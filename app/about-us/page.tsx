@@ -8,8 +8,8 @@ import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmali
 
 const AboutUs = () => {
     return(
-         <div style={{padding:'0% 3%', }}>
-            <h1 >About Us</h1>
+         <div>
+            <h1 style={{margin:"0% 4%"}}>About Us</h1>
             <Hero/>
             <WhatWeOffer/>
             <Timeline/>

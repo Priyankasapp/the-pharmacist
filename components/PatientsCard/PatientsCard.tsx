@@ -1,16 +1,16 @@
-import { DrAisaKhan } from "@/data/assets";
+'use client'
 import styles from "./PatientsCard.module.css";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { Patients } from "@/lib/types";
 
-const PatientsCard = ({ rating = 5   }) => {
+const PatientsCard = ({ id, name, title, description,imgSrc,rating = 5   }:Patients) => {
   return (
     <div className={styles["patient-card-module"]}>
       {/* top  */}
-      <div>
+      <div className={styles["patient-card-top-section"]}>
         <p className={styles["patient-card-description"]}>
-          Uniquely strategize 2.0 portals after fully researched vortals.
-          Quickly repurpose front- end metrics through
+          {description}
         </p>
       </div>
       {/* middle  */}
@@ -21,8 +21,8 @@ const PatientsCard = ({ rating = 5   }) => {
         <div className={styles["patients-card-image-container"]}>
           <div className={styles["patients-card-image-wrapper"]}>
             <Image
-              src={DrAisaKhan}
-              alt="dfsd"
+              src={imgSrc}
+              alt={name}
               className={styles["patients-card-image"]}
             />
           </div>
@@ -32,8 +32,8 @@ const PatientsCard = ({ rating = 5   }) => {
       <div className={styles["patient-card-bottom-section"]}>
         {/* left   */}
         <div>
-          <h3>Moris Jonson</h3>
-          <p>CEO, Hook Int.Ltd.</p>
+          <h3>{name}</h3>
+          <p>{title}</p>
         </div>
 
         {/* images  */}

@@ -1,8 +1,9 @@
 'use client'
-import { Button } from "../Button/Button";
+
 import styles from "./SearchMenu.module.css"
 import nhs from "@/public/imaegs/nhs.png"
 import Image from "next/image";
+import Button from "../Button/Button";
 
 type SearchMenuProps = {
     isOpen:boolean;
@@ -20,9 +21,9 @@ export const SearchMenu = ({isOpen}:SearchMenuProps) =>{
             id="searchInput"
             className={styles.searchBar} />
             <Button 
-            variant="primary" 
+           
             showArrow={false}
-            id="searchSubmit">Search</Button>
+            >Search</Button>
         </div>
 
         {/* Menu List  */}

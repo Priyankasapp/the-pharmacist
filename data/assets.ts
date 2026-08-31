@@ -18,7 +18,12 @@ import DrAisaKhan from "@/public/imaegs/Dr.AisaKhan.png";
 import DrEmilyWaston from "@/public/imaegs/Dr.EmilyWatson.png";
 import DrJamesRobertson from "@/public/imaegs/Dr.JamesRobertson.png";
 import DrSharahChen from "@/public/imaegs/Dr.SharahChen.png";
-import DrEmily from "@/public/imaegs/DrEmily-removebg-preview.png"
+import DrEmily from "@/public/imaegs/DrEmily-removebg-preview.png";
+import logo from "@/public/LOGO.svg";
+import patient1 from "@/public/imaegs/patient1.jpg";
+import patient2 from "@/public/imaegs/patient2.jpg";
+import patient3 from "@/public/imaegs/patient3.png";
+
 export {
     NHS,
     nhs_providing_service,
@@ -40,7 +45,11 @@ export {
     DrJamesRobertson,
     DrEmilyWaston,
     DrSharahChen,
-    DrEmily
+    DrEmily,
+    logo,
+    patient1,
+    patient2,
+    patient3,
  };
 
  

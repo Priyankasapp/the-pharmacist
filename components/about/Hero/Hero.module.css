@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     gap: 60px;
-    margin: 40px 0px;
+    margin: 3% 4%;
     align-items: center;
+    
 }
 
 .about-hero-left{

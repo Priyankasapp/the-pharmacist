@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sk-Modernist:wght@400;700&display=swap");
-
+/* colors  */
 :root {
   --tp-green: #023d3a;
   --tp-green-light: rgba(2, 61, 58, 0.2);
@@ -19,15 +18,29 @@
   --star-dark: #dfb300;
   --blue: #204f81;
   --grey-95: #f2f2f2;
-  --section-title:#252525;
-  --tp-white:#F4F1ED;
+  --section-title: #252525;
+  --tp-white: #f4f1ed;
 
-  --font-primary: "Plus Jakarta Sans", sans-serif;
-  --font-secondary: "Sk-Modernist", sans-serif;
+  /* font  */
 
+  --font-primary: var(--font-plus-jakarta), "plus Jakarta Sans", sans-serif;
+  --font-secondary: var(--font-sk-modernist), "sk-Modernist", sans-serif;
+
+  /* container  */
   --container: 1440px;
   --container-inner: 1320px;
   --container-padding: 60px;
+
+  /* shadows */
+  --shadow-sm: 0px 4px 6px rgba(65, 65, 65, 0.08);
+  --shadow-md:
+    0px 65px 250px rgba(0, 0, 0, 0.07),
+    0px 14.5186px 66.5622px rgba(0, 0, 0, 0.0417275),
+    0px 4.32257px 19.8173px rgba(0, 0, 0, 0.0282725);
+  --shadow-lg:
+    0px 24px 105px rgba(0, 0, 0, 0.08),
+    0px 5.36071px 23.4531px rgba(0, 0, 0, 0.0596107),
+    0px 1.59602px 6.98261px rgba(0, 0, 0, 0.0403893);
 }
 
 * {
@@ -41,7 +54,7 @@ html {
 }
 
 body {
-  
+  font-family: var(--font-secondary);
   background: var(--white);
   color: var(--main-text);
   overflow-x: hidden;
@@ -49,6 +62,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-primary);
+  color: var(--main-text);
 }
 
 a {
@@ -60,4 +78,3 @@ a {
   padding: 0 1.4rem;
   margin: 0 auto;
 }
-

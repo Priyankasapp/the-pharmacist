@@ -1,22 +1,26 @@
 .patient-card-module{
-    background-color: white ;
+  
     width: 495px;
     height: 263px;
     border-radius: 30px;
     margin: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 54px 60px 33px 60px;
     box-shadow: 0px 4.32px 19.82px 0px #00000007,
     0px 14.52px 66.56px 0px #0000000B,
     0px 65px 250px 0px #00000012;
 }
+
 .patient-card-description{
     font-family: var(--font-sk-modernist);
     font-weight: 400;
-    line-height: 100%;
+    line-height: 1.5;
     font-size: 16px;
     color: var(--gray);
-    width: 375px;
-    height: 57px;
+    margin: 0;
 }
 .patients-card-middle-section{
     display: flex;

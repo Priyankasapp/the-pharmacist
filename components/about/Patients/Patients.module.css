@@ -3,9 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin:60px auto;
-    padding: 0 20px;
-    max-width: 1200px;
+ 
 
 }
 .patients-container h2{
@@ -14,20 +12,41 @@
     font-size: 40px;
     line-height: 100%;
     text-align: center;
-    color: #252525;
 }
-.patients-slider-viewport{
+/* .patients-slider-viewport{
     gap: 32px;
     width: 100%;
+    color: #252525;
     scroll-behavior: smooth;
-    padding-bottom: 20px;
-}
+    padding: 20px 0;
+    overflow: hidden;
+} */
+ .patient-slider-viewport{
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 32px;
+    display: flex;
+ }
 .patient-controls{
     display: flex;
     gap:16px;
     margin-top: 30px;
+    margin-bottom: 60px;
+    
+}
+.control-btn{
+    background-color: var(--white);
+    border: 1px solid #727272;
+    color: var(--dark-gray);
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+
 }
 .patients-cards-wrapper{
+    display: flex;
+    gap: 20px;
+  transform: translateX(calc(-8.333% - 5px));
 
 }
 .patients-cards-wrapper{
