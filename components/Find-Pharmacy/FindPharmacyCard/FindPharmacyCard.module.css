@@ -1,0 +1,91 @@
+.find-pharmacy-card{
+    padding: 20px 24px;
+    border-radius: 20px;
+    box-shadow: 0px 4.32px 19.82px 0px #00000007,
+    0px 14.52px 66.56px 0px #0000000B,
+    0px 65px 250px 0px #00000012;
+    height: 296px;
+    width: 426px;
+    
+
+}
+
+.find-pharmacy-card-container{
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+.find-pharmacy-header-details{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.find-pharamacy-header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.find-pharamacy-header-wrapper h3{
+    color: var(--tp-green);
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+}
+.find-pharamacy-header-wrapper span{
+    background-color: var(--green);
+    padding: 4px 8px;
+    gap: 10px;
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 400;
+}
+.find-pharmacy-header-details p{
+    font-family: var(--font-secondary);
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 100%;
+}
+.find-pharmacy-card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.find-pharmacy-card-button-wrapper{
+    display: flex;
+    gap: 16px;
+    width: 100%; 
+    background-color: var(--tp-green);
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.find-pharmacy-card-button-wrapper button{
+    background-color: transparent;  
+    padding: 12px 24px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 16px;
+    border: none;   
+}
+.find-pharamacy-card-info-item{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.find-pharamacy-card-info-item span{
+    color: #727272;
+    letter-spacing: -3%;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--font-secondary);
+
+}
+.find-pharamacy-card-info-icon{
+    height: 16px;
+    width: 16px;
+    color: #727272;
+}

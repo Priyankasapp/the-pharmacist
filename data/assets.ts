@@ -23,7 +23,8 @@ import logo from "@/public/LOGO.svg";
 import patient1 from "@/public/imaegs/patient1.jpg";
 import patient2 from "@/public/imaegs/patient2.jpg";
 import patient3 from "@/public/imaegs/patient3.png";
-
+import mapImg from "@/public/imaegs/map.png";
+import locationIcon from "@/public/imaegs/locationIcon.png";
 export {
     NHS,
     nhs_providing_service,
@@ -50,6 +51,8 @@ export {
     patient1,
     patient2,
     patient3,
+    mapImg,
+    locationIcon,
  };
 
  
