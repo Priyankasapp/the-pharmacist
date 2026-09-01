@@ -39,3 +39,16 @@ export interface Treatments{
     imgSrc:string|StaticImageData;
 
 }
+
+// what we offer card data 
+
+export interface WhatWeOfferedCardData{
+   title:string;
+   description:string
+}
+
+//product 
+export interface FilterOption{
+    id:string;
+    label:string;
+}

@@ -1,0 +1,144 @@
+.product-sidebar{
+    width:335px;
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+.product-sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #DFDFDF;
+    border-radius: 6px;
+   padding: 8px 16px;
+}
+.product-sidebar-title{
+   color:var(--main-text);
+    font-weight: 700;
+    font-size: 15px;
+    font-family: var(--font-secondary);
+}
+.product-sidebar-button{
+    color:#D30000;
+    font-weight:400;
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    background: transparent;
+    border: none;
+}
+.product-sidebar-price-range-container{
+    border: 1px solid #DFDFDF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+}
+.product-sidebar-price-range-title-wrapper{
+    padding: 8px 16px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.product-sidebar-price-range-title{
+    color:var(--main-text);
+    font-weight: 400;
+    font-size: 14px;
+    font-family: var(--font-secondary);
+}
+.product-sidebar-price-range-slider-wrapper{
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.product-sidebar-price-range-slider-value-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.product-sidebar-price-range-slider-value-input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.product-sidebar-price-range-slider-value-input{
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    height: 30px;
+    width: 120px;   
+    color: var(--main-text);
+    font-size:14px;
+    font-weight: 400;
+    padding: 4px 8px;
+}
+.product-sidebar-price-range-slider-wrapper{
+    width: 100%;
+}
+.product-sidebar-price-range-slider{
+    width: 100%;
+    accent-color: var(--tp-green);
+}
+
+.product-sidebar-filter-card{
+    border:1px solid #DFDFDF;
+    border-radius: 6px;
+   
+}
+.product-sidebar-filter-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #DFDFDF;
+    padding: 10px 13px;
+    
+}
+.product-sidebar-checkbox-list{
+    padding: 20px;
+    gap: 20px;
+}
+.product-sidebar-checkbox-showmore{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+.product-sidebar-checkbox-icon{
+    background-color: var(--tp-green);
+    color: var(--white);
+    height: 15px;
+    width: 15px;
+}
+.product-sidebar-checkbox-showmore span{
+    color: var(--tp-green);
+    font-weight: 500;
+    font-size: 14px;
+}
+.product-sidebar-filter-card-heading{
+    font-family: var(--font-secondary);
+    font-weight:400;
+    font-size: 14px;
+    color: var(--main-text);
+}
+.product-sidebar-fiter-card-button{
+    border: none;
+    background-color: transparent;
+}
+/* Filter Checkbox  */
+.filter-checkbox-container{
+    display:flex;
+    align-items: center;
+    gap: 12px;
+}
+.filter-checkbox-input{
+    width: 16px;
+    height: 16px;
+    accent-color: var(--tp-green);
+    border:1px solid var(--tp-green);
+    border-radius: 2px;
+    color: var(--white);
+}
+
+.filter-checkbox-label{
+    color: var(--dark-gray);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--font-secondary);
+
+}

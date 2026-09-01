@@ -1,11 +1,10 @@
-import Button from "@/components/Button/Button";
-import PharmacyCard from "@/components/Navbar/PharmacyCard/PharmacyCard";
+import Hero from "@/components/Hero/Hero";
+
 
 const Home = () => {
   return(
      <div>
-      This is our home
-      {/* <PharmacyCard/> */}
+      <Hero/>
      </div> 
   );
 }

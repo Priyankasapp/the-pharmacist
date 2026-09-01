@@ -6,10 +6,15 @@ import WhatWeOffer from "@/components/about/WhatWeOffer/WhatWeOffer";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 
 
+
 const AboutUs = () => {
     return(
          <div>
-            <h1 style={{margin:"0% 4%"}}>About Us</h1>
+            <h1 style={{
+                margin:"0% 4%", 
+                fontWeight:"600", 
+                fontSize:"40px",
+            }}>About Us</h1>
             <Hero/>
             <WhatWeOffer/>
             <Timeline/>

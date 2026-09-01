@@ -1,5 +1,5 @@
 import { patient1, patient2, patient3, treatmentImg1, treatmentImg2, treatmentImg3, treatmentImg4, treatmentImg5, treatmentImg6, treatmentImg7, treatmentImg8, treatmentImg9 } from "@/data/assets";
-import { NavLink, Patients, Pharmacy, Treatments } from "../types";
+import { FilterOption, NavLink, Patients, Pharmacy, Treatments, WhatWeOfferedCardData } from "../types";
 
 // navigation data
 export const navLinks: NavLink[] = [
@@ -109,5 +109,94 @@ export const treatments:Treatments[] = [
     imgSrc:treatmentImg9
   },
   
+]
 
+export const whatWeOffereCardData: WhatWeOfferedCardData[] = [
+ {
+    title:"Prescription dispensing",
+    description:"Fast and accurate dispensing of your prescriptions, every time.",
+  },
+  {
+    title:"Online consultations",
+    description:"Speak to our pharmacists or healthcare experts from anywhere.",
+  },
+  {
+    title:"Health services and advice",
+    description:"Expert guidance to help you manage your health effectively",
+  },
+  {
+    title:"Over-the-counter Meds",
+    description:"A wide range of trusted medicines and wellness products.",
+  }
+]
+
+
+
+// product filer sidebar data 
+// categories 
+export const categories:FilterOption[]=[
+  {
+    id:"health-pharmacy",
+    label:"Health & Pharmacy"
+  },
+  {
+    id:"toiletries",
+    label:"Toiletries"
+  },
+  {
+    id:"wellness",
+    label:"Wellness"
+  },
+  {
+    id:"beauty-skincare",
+    label:"Beauty & Skincare"
+  },
+  {
+    id:"beby-Child",
+    label:"Baby & Child"
+  },
+  {
+    id:"gift",
+    label:"Gift"
+  },
+  {
+    id:"men's",
+    label:"Men's"
+  },
+  {
+    id:"women's",
+    label:"Women's"
+  },
+  {
+    id:"homeware",
+    label:"Homeware"
+  },
+  {
+    id:"fragrances",
+    label:"Fragrances"
+  }
+
+]
+
+export const brands:FilterOption[]=[
+  {
+    id:"MediWell",
+    label:"MediWell",
+  },
+  {
+    id:"CarePlus",
+    label:"CarePlus",
+  },
+  {
+    id:"HealthPro",
+    label:"HealthPro", 
+  },
+  {
+    id:"PureHealth",
+    label:"PureHealth",
+  },
+  {
+    id:"VitaCure",
+    label:"VitaCure",
+  }
 ]

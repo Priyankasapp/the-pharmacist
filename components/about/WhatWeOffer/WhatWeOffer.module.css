@@ -64,6 +64,17 @@
     font-weight: 400;
     font-family: var(--font-sk-modernist),sans-serif;
 }
+.what-we-offer-button{
+    background-color:var(--tp-green);
+    color: var(--white);
+    padding: 10px 24px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 16px;
+    border:none
+}
 
 @media (max-width: 1024px){
     .what-we-offer-card{

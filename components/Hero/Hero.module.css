@@ -1,61 +1,71 @@
-    .hero{
-        background-image: linear-gradient(rgba(0,0,0,0.2)), url(../../public//imaegs//hero.png);
-        background-size: cover;
-        background-position: center 70%;
-        background-repeat: no-repeat;
-        object-fit: cover;
-        position: relative;
-        width: 100%;
-        min-height: 125vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 6rem;
-    }
+.hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2)), url(../../public//imaegs//hero.png);
+  background-position: center 70%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  min-height: 125vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6rem;
+}
 
-    .hero::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-       background: linear-gradient(
-    180deg, 
-    rgba(255, 255, 255, 1) 0%, 
-    rgba(255, 255, 255, 0.55) 15%, 
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.55) 15%,
     rgba(255, 255, 255, 0) 100%
   );
   z-index: 1;
-    }
-    
-    .hero-container{
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        text-align: center;
-       
-    }
+}
 
-    .hero-header{
-    font-family: Plus Jakarta Sans;
-        font-weight: 600;
-        font-style: SemiBold;
-        font-size: 90px;
-        line-height: 100%;
-        text-align: center;
-        height: 226px;
-    }
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
 
-    .hero-text{
-        font-size: 1.125rem;
+.hero-container button {
+  background-color: var(--tp-green);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  font-family: var(--font-secondary);
+  padding: 16px 24px;
+  gap: 10px;
+  border-radius: 100px;
+  border: none;
+}
+.hero-header {
+  font-family: Plus Jakarta Sans;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 90px;
+  line-height: 100%;
+  text-align: center;
+  height: 226px;
+}
+
+.hero-text {
+  font-size: 1.125rem;
   color: #333333;
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto 2.5rem auto;
   font-weight: 400;
-    }
+}
