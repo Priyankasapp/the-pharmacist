@@ -1,0 +1,140 @@
+.product-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid #E8E8E8;
+    box-shadow: 0px 4px 6px 0px #41414114;
+    padding: 20px;
+    height: 536px;
+    width: 315px;
+    box-sizing: border-box;
+    
+
+}
+.product-card-container{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    height: 100%;
+}
+.product-card-img-container{
+    background-color: #CFCFCF;
+    width: 273px;
+    height: 242px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+.product-card-image{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.product-card-badge-container{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    z-index: 1;
+}
+.product-card-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+}
+.product-card-button-container{
+    background-color: var(--tp-green);
+    border-radius: 100px;   
+    gap: 10px;
+    align-items: center;
+    justify-content: center ;
+    display: flex;
+    margin-top: auto;
+    width: 100%;
+    
+}
+.product-card-button-container button{
+    border: none;
+    color: var(--white);
+    background-color: transparent;
+    
+}
+.product-card-desc-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+.product-card-desc-wrapper h3{
+    color: var(--main-text);
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    
+}
+.product-card-desc-wrapper p{
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--font-secondary);
+}
+.product-card-price-section{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+.product-card-price-section p{
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--main-text);
+}
+.product-card-price-section p span{
+    font-size: 14px;
+    color: var(--gray);
+}
+.product-card-price-section span{
+    font-size: 14px;
+    color: var(--gray);
+}
+.product-card-badge{
+    background-color: #C50000;
+    color: var(--white);
+    padding: 4px 8px;
+    gap: 10px;
+    border-radius: 8px;
+}
+.product-card-pres-badge{
+    background-color: var(--gray);
+    color: var(--white);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+.product-card-badge-container{
+    gap: 5px;
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    
+}
+.product-card-star-wrapper{
+    display: flex;
+    gap: 8px;
+}
+.product-card-star-wrapper span{
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 400;
+    align-items: baseline;
+}
+.product-card-button-wrapper{
+    margin-top: auto;
+    width: 100%;
+}

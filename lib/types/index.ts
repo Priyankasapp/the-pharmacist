@@ -52,3 +52,18 @@ export interface FilterOption{
     id:string;
     label:string;
 }
+
+export interface ProductCardData{
+    id:string;
+    title:string;
+    subtitle:string;
+    image:string | StaticImageData;
+    isPrescriptionOnly?:boolean;
+    savingsText?:string;
+    reviewCount:number;
+    price:number;
+    originalPrice?:number;
+    weightText?:string;
+    unitPriceText?:string;
+    
+}

@@ -1,0 +1,40 @@
+.shop{
+    padding: 0% 4%;
+    
+}
+.shop h1{
+    margin-bottom: 20px;
+}
+.shop-container{
+    display: flex;
+    gap: 20px;
+}
+.shop-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.shop-search-container{
+   
+   border: 1px solid #DFDFDF;
+   display: flex;
+    justify-content: space-around;
+    padding:6px;
+    align-items: center;
+    border-radius: 6px;
+    
+}
+
+.product-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  width: 100%;
+}
+
+.grid-item{
+    
+
+}
+
+

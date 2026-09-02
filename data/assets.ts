@@ -34,7 +34,19 @@ import treatmentImg6 from "@/public/imaegs/treatment6.png";
 import treatmentImg7 from "@/public/imaegs/treatment7.png";
 import treatmentImg8 from "@/public/imaegs/treatment8.png";
 import treatmentImg9 from "@/public/imaegs/treatment9.png";
-import treatmentImg from "@/public/imaegs/treatmentImg.png"
+import treatmentImg from "@/public/imaegs/treatmentImg.png";
+import productImg1 from "@/public/imaegs/product1.png";
+import productImg2 from "@/public/imaegs/product2.png";
+import productImg3 from "@/public/imaegs/product3.png";
+import productImg4 from "@/public/imaegs/product4.png";
+import productImg5 from "@/public/imaegs/image copy 2.png";
+import productImg6 from "@/public/imaegs/product6.png";
+import productImg7 from "@/public/imaegs/image copy 3.png";
+import productImg8 from "@/public/imaegs/product8.png";
+import productImg9 from "@/public/imaegs/product9.png";
+import productImg10 from "@/public/imaegs/image copy.png"
+// icons 
+import stars from "@/public/icons/Stars.png";
 export {
     NHS,
     nhs_providing_service,
@@ -73,6 +85,20 @@ export {
     treatmentImg8,
     treatmentImg9,
     treatmentImg,
- };
+    productImg1,
+    productImg2,
+    productImg3,
+    productImg4,
+    productImg5,
+    productImg6,
+    productImg7,
+    productImg8,
+    productImg9,
+    productImg10,
+    
+    // icons 
+    stars
+
+};
 
  

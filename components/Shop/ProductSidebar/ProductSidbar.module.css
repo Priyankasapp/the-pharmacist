@@ -1,6 +1,5 @@
 .product-sidebar{
-    width:335px;
-    margin:10px;
+    width:335px;    
     display: flex;
     flex-direction: column;
     gap:16px;
