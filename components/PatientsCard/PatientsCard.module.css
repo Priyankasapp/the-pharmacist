@@ -1,8 +1,5 @@
 .patient-card-module{
-  
-    width: 495px;
-    height: 263px;
-    border-radius: 30px;
+   border-radius: 30px;
     margin: 20px;
     
     display: flex;
