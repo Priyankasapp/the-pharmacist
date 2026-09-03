@@ -47,6 +47,9 @@ import productImg9 from "@/public/imaegs/product9.png";
 import productImg10 from "@/public/imaegs/image copy.png"
 // icons 
 import stars from "@/public/icons/Stars.png";
+import vectorOne from "@/public/icons/Vector.png";
+import VectorTwo from "@/public/icons/Vector (1).png";
+
 export {
     NHS,
     nhs_providing_service,
@@ -97,7 +100,9 @@ export {
     productImg10,
     
     // icons 
-    stars
+    stars,
+    vectorOne,
+    VectorTwo,
 
 };
 

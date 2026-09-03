@@ -67,3 +67,12 @@ export interface ProductCardData{
     unitPriceText?:string;
     
 }
+
+// all condition 
+
+// process data 
+export interface ProcessData{
+    id:string;
+    heading:string;
+    desc:string;
+}

@@ -1,0 +1,30 @@
+.process-section{
+   background-color: var(--white);
+    gap: 10px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0px 4.32px 19.82px 0px #00000007,
+    0px 14.52px 66.56px 0px #0000000B;;
+}
+.process-section-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.process-section-container span{
+    font-family: var(--font-primary);
+    font-weight: 100;
+    font-size: 32px;
+    color: var(--gray);
+}
+.process-section-container h1{
+   color: var(--main-text);
+    font-size: 32px;
+    font-weight: 300;
+}
+.process-section-container p{
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
+}
+

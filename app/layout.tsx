@@ -11,14 +11,11 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-plus-jakarta',
-  style: ['normal'],
-  weight: ['600'] 
+
 });
 
 const skModernist = localFont({
   src: '../public/fonts/sk-modernist-regular-webfont.woff2', 
-  weight: '400',
-  style: 'normal',
   variable: '--font-sk-modernist',
 });
 

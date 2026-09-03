@@ -1,3 +1,130 @@
 .all-conditions-container{
     
 }
+.all-conditions-container h1{
+    margin-bottom: 20px;
+    margin: 0% 4%;
+}
+
+/* process step section  */
+.all-condition-process-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0% 4%;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.all-condition-process-wrapper > *{
+    flex: 1 1 calc(25% - 15px);
+    min-width: 0;
+}
+.all-condition-process-section{
+    background-color: var(--tp-bg);
+    height: auto;
+    min-height: 400px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin: 4% 0%;
+    overflow: hidden;
+    padding: 40px 0 ;
+
+}
+.all-condition-left-back-vector{
+  bottom: 0;
+  left: 0;
+  
+ 
+}
+.all-condition-right-back-vector{
+    top: 0;
+    right: 0;
+   
+    
+}
+.all-condition-bg-vector{
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    width: auto;
+    height: 80%;
+}
+
+/* all condition option section  */
+.all-condition-option-section{
+
+    display: flex;
+    flex-direction: column;
+    margin: 6% 1%;
+}
+.all-condition-option-header{
+    
+    
+}
+.all-condition-option-header h2{
+    color: var(--section-title);
+    font-size: 32px;
+    font-weight: 600;
+}
+.all-condition-option-header-searchbar-sec{
+    align-items: center;
+    margin: 20px 10px 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.all-condition-option-header-searchbar-sec span{
+    color: var(--dark-gray);
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 16px;
+}
+.all-condition-option-header-right-component{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.all-condition-option-header-dropdown-container{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--dark-gray) ;
+    border-radius: 4px;
+    padding: 8px 12px;
+    gap: 20px;
+    color: var(--gray);
+    
+}
+.all-condition-option-header-dropdown-container span{
+    color: var(--gray);
+}
+.all-condition-option-header-searchbar-contaienr{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border: 1px solid var(--gray);
+    border-radius: 100px;
+    width: 567px;
+}
+.all-condition-option-header-search-input{
+    border: none;
+    width: 100%;
+    padding:1%;
+}
+@media (max-width: 1024px){
+    .all-condition-process-wrapper > *{
+        flex:  1 1 calc(50% - 10px);
+    }
+}
+@media (max-width:  600px){
+    .all-condition-process-wrapper > *{
+        flex:  1 1 100%;
+    }
+    .all-condition-bg-vector{
+        height: 40%;
+        opacity: 0.6;
+    }
+}

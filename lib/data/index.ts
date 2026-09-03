@@ -27,6 +27,8 @@ import {
   Patients,
   Pharmacy,
  
+  ProcessData,
+ 
   ProductCardData,
   Treatments,
   WhatWeOfferedCardData,
@@ -351,3 +353,30 @@ export const productCardData: ProductCardData[] = [
   },
   
 ];
+
+
+// all condition 
+
+// process data 
+export const processData: ProcessData[]= [
+  {
+  id: "01",
+  heading: "Pick Your Condition",
+  desc: "Choose from a wide range of health conditions that match your needs.",
+},
+{
+  id:"02",
+  heading:"Answer a Few Questions",
+  desc:"Fill out a short online questionnaire so our doctors understand your health.",
+},
+{
+  id:"03",
+  heading:"Schedule Appointment",
+  desc:"Book a convenient time to consult with our healthcare experts.",
+},
+{
+  id:"04",
+  heading:"Receive Expert Care",
+  desc:"Get your treatment plan, prescription, and medicines delivered securely.",
+}
+]
