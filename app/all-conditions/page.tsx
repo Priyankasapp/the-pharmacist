@@ -1,24 +1,29 @@
-/* eslint-disable react/jsx-key */ // Note: Best practice is to use the key prop instead of disabling this lint rule
+/* eslint-disable react/jsx-key */
 "use client";
 import ProcessSection from "@/components/all-conditions/ProcessSection/ProcessSection";
 import styles from "./AllConditions.module.css";
-import { processData } from "@/lib/data";
+import { optionA, optionB, optionC, optionD, processData } from "@/lib/data";
 import Image from "next/image";
 import { vectorOne, VectorTwo } from "@/data/assets";
 import FAQ from "@/components/Contact/FAQ/FAQ";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Button from "@/components/Button/Button";
 import OptionSectionCard from "@/components/all-conditions/OptionSectionCard/OptionSectionCard";
 
 const AllCondition = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const allAlphabetGroups = [
+    { letter: "A", data: optionA },
+    { letter: "B", data: optionB },
+    { letter: "C", data: optionC },
+    { letter: "D", data: optionD },
+  ];
 
+  const alphabetList = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
   return (
     <div className={styles["all-conditions-container"]}>
       <h1>Discover Conditions and Find the Right Care</h1>
 
-      {/* process section  */}
+      {/* Process section */}
       <div className={styles["all-condition-process-section"]}>
         <Image
           src={vectorOne}
@@ -43,9 +48,8 @@ const AllCondition = () => {
         </div>
       </div>
 
-      {/* Option section  */}
+      {/* Option section */}
       <div className={styles["all-condition-option-section"]}>
-        {/* option card  */}
         <div className={styles["all-condition-option-header"]}>
           <h2>
             Choose an option or search what you&apos;re looking for below.
@@ -59,10 +63,10 @@ const AllCondition = () => {
             >
               <input
                 type="text"
-                placeholder="Search for health conditions (e.g.,stomach ache)"
+                placeholder="Search for health conditions (e.g., stomach ache)"
                 className={styles["all-condition-option-header-search-input"]}
               />
-              <Button showArrow >Search</Button>
+              <Button showArrow>Search</Button>
             </div>
             <div
               className={styles["all-condition-option-header-right-component"]}
@@ -79,16 +83,50 @@ const AllCondition = () => {
             </div>
           </div>
         </div>
-        {/* options  alphabets*/}
-        <div>
 
-            {/* component */}
-            <div className="option-section">
-                <OptionSectionCard/>
-            </div>
+        <div className={styles["deases-section"]}>
+          <div>
+            {allAlphabetGroups.map((group) => (
+              <div
+                key={group.letter}
+                id={`section-${group.letter}`}
+                className={styles["alphabet-row-wrapper"]}
+              >
+                <div className={styles["alphabet-heading-container"]}>
+                  <span className={styles["alphabet-letter-cricle"]}>
+                    {group.letter}
+                  </span>
+                </div>
+
+                <div className={styles["option-section"]}>
+                  {group.data.map((item) => (
+                    <OptionSectionCard
+                      // key={item.slug}
+                      slug={item.slug}
+                      name={item.name}
+                      desc={item.desc}
+                      isNHS={item.isNHS}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        
+        <nav className={styles["az-sidebar"]}>
+            {alphabetList.map((letter)=>(
+              <a 
+              key={letter}
+              href={`#section-${letter}`}
+              className={styles["az-sidebar-link"]}>
+                {letter}
+              </a>  
+            ))} 
+        </nav>
         </div>
       </div>
-      {/* FAQ Section  */}
+
+      {/* FAQ Section */}
       <div>
         <FAQ />
       </div>

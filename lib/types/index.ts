@@ -76,3 +76,15 @@ export interface ProcessData{
     heading:string;
     desc:string;
 }
+
+export interface HealthConditionData{
+    slug: string;
+    name:string;
+    desc:string;
+    isNHS?:boolean;
+}
+
+export interface AllAlphacetGroups{
+    latter:string,
+    data:string
+}

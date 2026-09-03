@@ -114,6 +114,77 @@
     width: 100%;
     padding:1%;
 }
+/* option card section  */
+.option-section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.alphabet-heading-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px; 
+    margin-top: 10px;
+}
+.alphabet-letter-cricle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px; 
+    color: var(--tp-green);
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50%; 
+    flex-shrink: 0; 
+    border: 1px solid var(--tp-green); 
+    
+}
+
+
+.alphabet-heading-container::after {
+    content: "";
+    flex: 1; 
+    height: 1px; 
+    background-color: var(--tp-green); 
+}
+
+.deases-section{
+    display: flex;
+}.az-sticky-sidebar {
+    position: sticky;
+    top: 100px; 
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    gap: 2px;
+}
+
+/* Individual list letters links formatting */
+.az-sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4B5563; 
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+
 @media (max-width: 1024px){
     .all-condition-process-wrapper > *{
         flex:  1 1 calc(50% - 10px);

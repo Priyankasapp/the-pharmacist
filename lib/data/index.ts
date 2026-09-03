@@ -22,7 +22,9 @@ import {
   treatmentImg9,
 } from "@/data/assets";
 import {
+  AllAlphacetGroups,
   FilterOption,
+  HealthConditionData,
   NavLink,
   Patients,
   Pharmacy,
@@ -380,3 +382,162 @@ export const processData: ProcessData[]= [
   desc:"Get your treatment plan, prescription, and medicines delivered securely.",
 }
 ]
+
+// Health Condition Data 
+export const optionA: HealthConditionData[] = [
+  {
+    slug:"Acid Reflux & Heartburn",
+    name:"Acid Reflux & Heartburn",
+    desc:"A burning sensation in the chest caused by stomach acid moving into the esophagus.",
+    isNHS:false
+  },
+  {
+    slug:"Acne",
+    name:"Acne",
+    desc:"Skin condition causing pimples and blackheads due to clogged pores.",
+    isNHS:true,
+  },
+  {
+    slug:"Altitude",
+    name:"Altitude",
+    desc:"The height above sea level, affecting oxygen levels and breathing.",
+    isNHS:true,
+  },
+  {
+    slug:"Angina",
+    name:"Angina",
+    desc:"Chest pain from reduced blood flow to the heart, often triggered by exertion or stress.",
+    isNHS:false,
+  },
+  {
+    slug:"Anxiety",
+    name:"Anxiety",
+    desc:"A feeling of worry, nervousness, or unease, often about an imminent event or uncertain outcome.",
+    isNHS:false,
+  },
+  {
+    slug:"Asthma",
+    name:"Asthma",
+    desc:"A condition that narrows airways causing difficulty breathing, often triggered by allergens.",
+    isNHS:true,
+  },
+  {
+    slug:"Athlete's Foot",
+    name:"Athlete's Floot",
+    desc:"A fungal infaction that causes itching, redness, and peeling on the feet, commonly between the toes.",
+    isNHS:false,
+  }, 
+]
+
+export const optionB: HealthConditionData[] = [
+  {
+    slug:"Bacterial Vaginose",
+    name:"Bacterial Vaginosis",
+    desc:"An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
+    isNHS:true,
+  },
+  {
+    slug:"Bruising",
+    name:"Bruising",
+    desc:"Discoloration of the skin caused by bleeding under the skin, often due to injury or trauma.",
+    isNHS:true,
+  }
+]
+
+export const optionC: HealthConditionData[] = [
+  {
+    slug:"Chesty Cough",
+    name:"Chesty Cough",
+    desc:"An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
+    isNHS:false,
+  },
+  {
+    slug:"Chlamydia",
+    name:"Chlamydia",
+    desc:"Discoloration of the skin caused by  bleeding under the skin, often due to injury or trama.",
+    isNHS:false,
+  },
+  {
+    slug:"Cold & Flu",
+    name:"Cold & Flu",
+    desc:"When it cause redness, swelling, warmth, and pus",
+    isNHS:true,
+  },
+  {
+    slug:"Cold Sores",
+    name:"Cold Sores",
+    desc:"A viral infection causing a painful rash, shingles is triggered by the reactivation of the chickenpox virus.",
+    isNHS:false,
+  },
+  {
+    slug:"Constipation",
+    name:"Constipation",
+    desc:"Sinus inflammation from infection or allergies, causing facial plain and congestion.",
+    isNHS:false,
+  },
+  {
+    slug:"Cystits (UTI)",
+    name:"Cystits (UTI)",
+    desc:"Urinary infection causing pain or burning during urination."
+  },
+  
+]
+
+export const optionD:HealthConditionData[] = [
+  {
+    slug:"Dental Care",
+    name:"Dental Care",
+    desc:"Sinus inflammation from infection or allergies, causing facial pain and congestion.",
+    isNHS:false,
+  },
+  {
+    slug:"Diabetes",
+    name:"Diabetes (Type 2)",
+    desc:"A common condition maked by pain, irritation, or scratchiness in the throat. ",
+    isNHS:false,
+  },
+  {
+    slug:"Diarrhoea",
+    name:"Diarrhoea",
+    desc:"urinary infection causing pain or burning durig urination.",
+    isNHS:false,
+  },
+   {
+    slug:"Diarrhoea",
+    name:"Diarrhoea",
+    desc:"urinary infection causing pain or burning durig urination.",
+    isNHS:false,
+  },
+  {
+    slug:"Dry Eye",
+    name:"Dry Eye",
+    desc:"Sinus inflammation from infection or allergies, causing facial pain and congestion.",
+    isNHS:false,
+  },
+  {
+    slug:"Dry Cough",
+    name:"Dry Cough",
+    desc:"A common condition marked by pain, irritation, or scratchiness in the throat.",
+    isNHS:true,
+  },
+  {
+    slug:"Dry Skin",
+    name:"Dry Skin",
+    desc:"Urinary infecion causing pain or burning during urination",
+    isNHS:false,
+  },
+  {
+    slug:"Diarrhoea",
+    name:"Diarrhoea",
+    desc:"Urinary infection causing pain or burning during urination.",
+    isNHS:false,
+  },
+]
+
+export const allAlpabetGroups:AllAlphacetGroups[] = [
+  { latter:"A", data:"optionA"},
+  { latter:"B", data:"optionB"},
+  { latter:"C", data:"optionC"},
+  { latter:"D", data:"optionD"},
+  
+];
