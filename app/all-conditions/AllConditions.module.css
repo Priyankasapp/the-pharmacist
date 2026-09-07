@@ -1,6 +1,4 @@
-.all-conditions-container{
-    
-}
+
 .all-conditions-container h1{
     margin-bottom: 20px;
     margin: 0% 4%;
@@ -61,10 +59,7 @@
     flex-direction: column;
     margin: 6% 1%;
 }
-.all-condition-option-header{
-    
-    
-}
+
 .all-condition-option-header h2{
     color: var(--section-title);
     font-size: 32px;

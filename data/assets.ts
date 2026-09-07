@@ -49,6 +49,9 @@ import productImg10 from "@/public/imaegs/image copy.png"
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
 import VectorTwo from "@/public/icons/Vector (1).png";
+import healthBroken from "@/public/icons/solar_health-broken.png";
+import VectorThree from "@/public/icons/Ellipse 46.png";
+import VectorFour from "@/public/icons/Ellipse 45.png";
 
 export {
     NHS,
@@ -103,6 +106,9 @@ export {
     stars,
     vectorOne,
     VectorTwo,
+    healthBroken,
+    VectorThree,
+    VectorFour,
 
 };
 

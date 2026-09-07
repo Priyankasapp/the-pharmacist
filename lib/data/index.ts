@@ -541,3 +541,7 @@ export const allAlpabetGroups:AllAlphacetGroups[] = [
   { latter:"D", data:"optionD"},
   
 ];
+
+
+// single product section 
+export const tabs = ["Description","Directions","Ingredients","Side effects","Warnings","Reviews", "FAQ'S"]

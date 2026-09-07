@@ -1,0 +1,269 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable react-hooks/rules-of-hooks */
+// "use client";
+
+// import React, { useState } from "react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+
+// import ProductCard from "@/components/Shop/ProductCard/ProductCard";
+// import { productCardData } from "@/lib/data";
+// import styles from "./Product.module.css";
+
+// const PRODUCTS_PER_SLIDE = 4;
+
+// const Page = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   const totalSlides = Math.ceil(
+//     productCardData.length / PRODUCTS_PER_SLIDE
+//   );
+
+//   const startIndex = currentSlide * PRODUCTS_PER_SLIDE;
+
+//   const visibleProducts = productCardData.slice(
+//     startIndex,
+//     startIndex + PRODUCTS_PER_SLIDE
+//   );
+
+//   const handlePrevious = () => {
+//     setCurrentSlide((prev) => Math.max(prev - 1, 0));
+//   };
+
+//   const handleNext = () => {
+//     setCurrentSlide((prev) =>
+//       Math.min(prev + 1, totalSlides - 1)
+//     );
+//   };
+
+//   return (
+//     <div>
+//       <div>First component</div>
+
+//       <div>Second Component</div>
+
+//       <section className={styles["similar-products"]}>
+//         <div className={styles["similar-products-header"]}>
+//           <h2>Similar Products</h2>
+
+//           <div className={styles["slider-buttons"]}>
+//             <button
+//               type="button"
+//               onClick={handlePrevious}
+//               disabled={currentSlide === 0}
+//               aria-label="Previous products"
+//             >
+//               <ChevronLeft size={20} />
+//             </button>
+
+//             <button
+//               type="button"
+//               onClick={handleNext}
+//               disabled={currentSlide === totalSlides - 1}
+//               aria-label="Next products"
+//             >
+//               <ChevronRight size={20} />
+//             </button>
+//           </div>
+//         </div>
+
+//         <div className={styles["product-grid-container"]}>
+//           {visibleProducts.map((product) => (
+//             <div
+//               key={product.id}
+//               className={styles["grid-item"]}
+//             >
+//               <ProductCard
+//                 image={product.image}
+//                 title={product.title}
+//                 subtitle={product.subtitle}
+//                 reviewCount={product.reviewCount}
+//                 weightText={product.weightText}
+//                 unitPriceText={product.unitPriceText}
+//                 originalPrice={product.originalPrice}
+//                 isPrescriptionOnly={product.isPrescriptionOnly}
+//                 savingsText={product.savingsText}
+//                 price={product.price}
+//                 id={product.id}
+//               />
+//             </div>
+//           ))}
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default Page;
+
+"use client";
+import { useState } from "react";
+import styles from "./Product.module.css";
+import { tabs } from "@/lib/data";
+import Image from "next/image";
+import { healthBroken, VectorFour, VectorThree } from "@/data/assets";
+const page = () => {
+  const [activeTab, setActiveTab] = useState("Description");
+
+  return (
+    <div className={styles["product-container"]}>
+      {/* display product  */}
+      {/* description  */}
+      <div className={styles["product-details"]}>
+        {/* background image  */}
+        <div className={styles["product-container-bg-wrapper"]}>
+          <Image
+            src={VectorFour}
+            alt="VectorIcon"
+            className={styles["product-container-bg-vector"]}
+          />
+
+          <Image
+            src={VectorThree}
+            alt="VectorIcon"
+            className={styles["product-container-bg-vector"]}
+          />
+        </div>
+
+        <div className={styles["product-details-container"]}>
+          {/* navigation  */}
+          <nav className={styles["prodcut-details-tab-container"]}>
+            {/* details  */}
+            <div className={styles["product-details-tab-wrapper"]}>
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  className={`${styles["product-details-tab-button"]} ${
+                    activeTab === tab ? styles["active"] : ""
+                  }`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </nav>
+
+          {/* main details  */}
+          <main className={styles["product-content"]}>
+            {activeTab === "Description" && (
+              <>
+                {/* first section  */}
+                <section className={styles["product-content-section"]}>
+                  <h2 className={styles["product-content-heading"]}>
+                    What is Pandol?
+                  </h2>
+                  <div className={styles["product-content-text-group"]}>
+                    <div className={styles["product-content-bullet-paragraph"]}>
+                      <Image
+                        src={healthBroken}
+                        alt="point"
+                        className={styles["product-content-bullet"]}
+                      />
+                      <p className={styles["product-content-paragraph"]}>
+                        Panadol is a pain relief and fever-reducing medicine
+                        that contains paracetamol (acetaminophen). It &apos;s
+                        avalable in several forms:
+                      </p>
+                    </div>
+                    <ul className={styles["product-content-list"]}>
+                      <li>Standard Tablets</li>
+                      <li>Caplets</li>
+                      <li>Soluble Tablets</li>
+                      <li>Quick-Dissolve Tablets</li>
+                      <li>Children&apos;s Suspension</li>
+                    </ul>
+
+                    <div className={styles["product-content-bullet-paragraph"]}>
+                      <Image
+                        src={healthBroken}
+                        alt="point"
+                        className={styles["product-content-bullet"]}
+                      />
+                      <p className={styles["product-content-paragraph"]}>
+                        All of these contain the same active ingredient,
+                        paracetamol, which works to relive pain and reduce
+                        fever.
+                      </p>
+                    </div>
+                    <div className={styles["product-content-bullet-paragraph"]}>
+                      <Image
+                        src={healthBroken}
+                        className={styles["product-content-bullet"]}
+                        alt="point"
+                      />
+                      <p className={styles["product-content-paragraph"]}>
+                        Pandol is commonly used for headaches, toothaches,
+                        musicle pain, back pain, back pain, period pain, and the
+                        aches and fever associated with colds or flu.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+                <section className={styles["product-content-section"]}>
+                  <h2 className={styles["product-content-heading"]}>
+                    How does Panadol work?
+                  </h2>
+                  <div className={styles["product-content-text-group"]}>
+                    <div className={styles["product-content-bullet-paragraph"]}>
+                      <Image
+                        src={healthBroken}
+                        className={styles["product-content-bullet"]}
+                        alt="point"
+                      />
+                      <p className={styles["product-content-paragraph"]}>
+                        Paracetamol, the active ingredient in Pandol, works in
+                        the body to relieve pain and reduce fever by:
+                      </p>
+                    </div>
+                    <ol className={styles["product-content-order-list"]}>
+                      <li>
+                        Reducting pain signals - its blocks certain chemicals in
+                        the brain that send pain messages, helping to reduce
+                        discomfort.
+                      </li>
+                      <li>
+                        Lowering fever - It acts on the part of the brain that
+                        regulates body temperature, helping bring a hign
+                        temperature down.
+                      </li>
+                      <li>
+                        Gentle on the stomach - Unlike some painkillers, Panadol
+                        doesn&apos;t usually irritate the stomach, making it
+                        suitable for most people.
+                      </li>
+                    </ol>
+                  </div>
+                </section>
+
+                <section className={styles["product-content-section"]}>
+                  <h2 className={styles["product-content-heading"]}>
+                    What is the recommended does of Panadol?
+                  </h2>
+                  <div className={styles["product-content-text-group"]}>
+                    <div className={styles["product-content-bullet-paragraph"]}>
+                      <Image
+                        src={healthBroken}
+                        alt="point"
+                        className={styles["product-content-bullet"]}
+                      />
+                      <p className={styles["product-content-paragraph"]}>
+                        The usual adult dose is 500mg–1000mg every 4–6 hours as
+                        needed, with a maximum of 4000mg in 24 hours. For
+                        children, dosing depends on weight and age, so check the
+                        packaging or ask your clinician. Always follow the
+                        instructions and do not exceed the recommended dose.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </>
+            )}
+          </main>
+        </div>
+      </div>
+      {/* another products  */}
+    </div>
+  );
+};
+
+export default page;
