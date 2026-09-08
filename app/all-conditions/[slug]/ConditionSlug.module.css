@@ -1,0 +1,38 @@
+.condition-page{
+    padding: 4%;
+}
+
+.condition-product-card{
+    width: 100%;
+}
+.condition-product-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.condition-product-header h2{
+    margin: 0;
+}
+.condition-slider-button{
+    display: flex;
+    gap: 10px;
+}
+.condition-slider-button button{
+    background: transparent;
+   color: var(--dark-gray);
+   border-radius: 50%;
+   border: 1px solid var(--gray);
+   height: 40px;
+   width: 40px;
+   align-items: center;
+   
+}
+.condition-product-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+.candition-product-card-item{
+    min-width: 0;
+}
