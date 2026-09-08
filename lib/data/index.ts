@@ -1,4 +1,8 @@
 import {
+  panadol1,
+  panadol2,
+  panadol3,
+  panadol4,
   patient1,
   patient2,
   patient3,
@@ -21,35 +25,26 @@ import {
   treatmentImg8,
   treatmentImg9,
 } from "@/data/assets";
+
 import {
   AllAlphacetGroups,
   FilterOption,
   HealthConditionData,
   NavLink,
   Patients,
-  Pharmacy,
- 
+  Pharmacy, 
   ProcessData,
- 
   ProductCardData,
+  ProductData,
   Treatments,
   WhatWeOfferedCardData,
 } from "../types";
 
 // navigation data
 export const navLinks: NavLink[] = [
-  {
-    label: "Our Services",
-    href: "/services",
-  },
-  {
-    label: "Our Products",
-    href: "/shop",
-  },
-  {
-    label: "About Us",
-    href: "/about-us",
-  },
+  {label: "Our Services",href: "/services",},
+  {label: "Our Products",href: "/shop",},
+  {label: "About Us",href: "/about-us",},
   {
     label: "Contact",
     href: "/contact",
@@ -166,8 +161,7 @@ export const whatWeOffereCardData: WhatWeOfferedCardData[] = [
   },
 ];
 
-// product filer sidebar data
-// categories
+
 export const categories: FilterOption[] = [
   {
     id: "health-pharmacy",
@@ -545,3 +539,26 @@ export const allAlpabetGroups:AllAlphacetGroups[] = [
 
 // single product section 
 export const tabs = ["Description","Directions","Ingredients","Side effects","Warnings","Reviews", "FAQ'S"]
+
+
+
+export const productData: ProductData = {
+  name: "Panadol",
+  title: "Pandol 50g",
+  price: "£5.55",
+  pricePerTablet: "£0.23 / per tablet",
+  reviews: 9403,
+  tabletCount: "24 Tablets",
+  inStock: true,
+  images: [
+    productImg2, panadol1, panadol2, panadol3, panadol4
+  ],
+  strengths: ["25 mg", "50 mg", "100 mg"],
+
+  packSizes: [{ id: "4-tablets", label: "4 tablets", price: "£15", saving: "£27 (Save £6)", pricePerTablet: "£2.79 / tablet", }, { id: "8-tablets", label: "8 tablets", price: "£21", saving: "£27 (Save £6)", pricePerTablet: "£2.79 / tablet", }, { id: "16-tablets", label: "16 tablets", price: "£26", saving: "£27 (Save £6)", pricePerTablet: "£2.79 / tablet", },],
+  delivery: {
+    title:"Delivery",
+   description: "Free standard shipping on orders over $35 before tax, plus free returns.",
+   options: [ { type: "Standard delivery", duration: "1-4 business days", price: "$4.50", }, { type: "Express delivery", duration: "1 business day", price: "$10.00", }, { type: "Pick up in store", duration: "1-3 business days", price: "Free", }, ],
+  }
+}

@@ -2,6 +2,12 @@
 
 import { StaticImageData } from "next/image";
 
+export interface DropDownItem{
+    label: string;
+    href: string;
+    description?: string;
+}
+
 export interface NavLink {
   label: string;
   href: string;
@@ -9,11 +15,6 @@ export interface NavLink {
   dropdown?: DropDownItem[];
 }
 
-export interface DropDownItem{
-    label: string;
-    href: string;
-    description?: string;
-}
 
 export interface Pharmacy{
     id: string;
@@ -33,21 +34,16 @@ export interface Patients{
     rating:number;
 }
 export interface Treatments{
-   
     name:string;
     desc:string;
     imgSrc:string|StaticImageData;
 
 }
-
-// what we offer card data 
-
 export interface WhatWeOfferedCardData{
    title:string;
-   description:string
+   description:string;
 }
 
-//product 
 export interface FilterOption{
     id:string;
     label:string;
@@ -68,9 +64,6 @@ export interface ProductCardData{
     
 }
 
-// all condition 
-
-// process data 
 export interface ProcessData{
     id:string;
     heading:string;
@@ -87,4 +80,43 @@ export interface HealthConditionData{
 export interface AllAlphacetGroups{
     latter:string,
     data:string
+}
+
+export interface ProductImage {
+    src: StaticImageData;
+    alt?: string;
+}
+
+export interface PackSize {
+    id: string;
+    label:string;
+    price:string;
+    saving:string;
+    pricePerTablet:string;
+}
+
+export interface DeliveryOption {
+    type: string;
+    duration:string;
+    price:string;
+}
+
+export interface DeliveryInfo {
+    title:string;
+    description: string;
+    options:DeliveryOption[];
+}
+
+export interface ProductData{
+    name:string;
+    title:string;
+    price:string;
+    pricePerTablet:string;
+    reviews:number;
+    tabletCount:string;
+    inStock:boolean;
+    images:StaticImageData[];
+    strengths:string[];
+    packSizes:PackSize[];
+    delivery:DeliveryInfo
 }

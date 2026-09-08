@@ -45,6 +45,11 @@ import productImg7 from "@/public/imaegs/image copy 3.png";
 import productImg8 from "@/public/imaegs/product8.png";
 import productImg9 from "@/public/imaegs/product9.png";
 import productImg10 from "@/public/imaegs/image copy.png"
+import panadol1 from "@/public/imaegs/panadol1.png";
+import panadol2 from "@/public/imaegs/panadol2.png";
+import panadol3 from "@/public/imaegs/panadol3.png";
+import panadol4 from "@/public/imaegs/panadol4.png";
+
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -101,6 +106,10 @@ export {
     productImg8,
     productImg9,
     productImg10,
+    panadol1,
+    panadol2,
+    panadol3,
+    panadol4,
     
     // icons 
     stars,
