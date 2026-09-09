@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/jsx-no-undef */
 
 'use client';
-import { productCardData } from "@/lib/data";
+import { productCardData, stepInfo } from "@/lib/data";
 import { useState } from "react";
 import styles from "./ConditionSlug.module.css";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
@@ -44,8 +45,13 @@ const ConditionSlug = () => {
        <NHSSupportCard/>
 
     </div>
-    <div>
-      
+    <div className={styles["condition-step-cards"]}>
+      {stepInfo.map((step)=>(
+        <StepSectionCard
+        id={step.id}
+        desc={step.desc}
+        name={step.name}/>
+      ))}
     </div>
 
       {/**/}

@@ -1,4 +1,8 @@
 import {
+  export1,
+  export2,
+  export3,
+  export4,
   panadol1,
   panadol2,
   panadol3,
@@ -28,6 +32,7 @@ import {
 
 import {
   AllAlphacetGroups,
+  ExportCardInfo,
   FilterOption,
   HealthConditionData,
   NavLink,
@@ -583,3 +588,34 @@ export const stepInfo: StepInfo[] =[
   desc:"Get your treatment plan, prescription, and medicines delivered securely.",
 }
 ] 
+
+export const exportCardInfo: ExportCardInfo[] = [
+  {
+    isnhs: true,
+    title: "Services",
+    desc: "Access essential healthcare services and consultations provided by the National Health Service.",
+    id: "Services",
+    img: export1,
+  },
+{
+  isnhs: false,
+    title: "Online Doctor",
+    desc: "Consult with a GP online and get prescriptions delivered quickly without leaving the comfort of your home.",
+    id: "Online Doctor",
+    img: export2, 
+},
+{
+  isnhs: false,
+    title: "Private Pharmacy",
+    desc: "Access essential healthcare services and consultations provided by the National Health Service.",
+    id: "Private Pharmacy",
+    img: export3, 
+},
+{
+  isnhs: false,
+    title: "Repeat Prescriptions",
+    desc: "Manage and order your regular repeat medications with ease through our clinical automation system.",
+    id: "Services",
+    img: export4, 
+}
+];

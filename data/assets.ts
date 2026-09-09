@@ -50,6 +50,10 @@ import panadol2 from "@/public/imaegs/panadol2.png";
 import panadol3 from "@/public/imaegs/panadol3.png";
 import panadol4 from "@/public/imaegs/panadol4.png";
 import Hero2 from "@/public/imaegs/bg2image.png";
+import export1 from "@/public/imaegs/export1.png";
+import export2 from "@/public/imaegs/export2.png";
+import export3 from "@/public/imaegs/export3.png";
+import export4 from "@/public/imaegs/export4.png";
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -113,6 +117,10 @@ export {
     panadol2,
     panadol3,
     panadol4,
+    export1,
+    export2,
+    export3,
+    export4,
     
     // icons 
     stars,

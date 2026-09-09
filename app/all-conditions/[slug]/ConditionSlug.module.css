@@ -17,8 +17,6 @@
 .condition-hero-section{
     background-image: url('../../../public//imaegs/imageCopy4.png');
     background-size: cover;
-    background-position: center;
-
     height: 599px;
     align-items: center;    
     display: flex;
@@ -66,4 +64,10 @@
 }
 .candition-product-card-item{
     min-width: 0;
+}
+
+.condition-step-cards{
+    display: flex;
+    justify-content: space-around;
+    
 }

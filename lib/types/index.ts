@@ -130,3 +130,12 @@ export interface StepInfo{
     desc: string
 
 }
+
+// main Home Page 
+export interface ExportCardInfo{
+    isnhs?:boolean;
+    title:string;
+    desc:string;
+    id:string;
+    img:string|StaticImageData
+}
