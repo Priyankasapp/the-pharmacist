@@ -120,3 +120,13 @@ export interface ProductData{
     packSizes:PackSize[];
     delivery:DeliveryInfo
 }
+
+
+// condition section 
+
+export interface StepInfo{
+    id: string;
+    name: string;
+    desc: string
+
+}

@@ -1,9 +1,40 @@
-.condition-page{
-    padding: 4%;
-}
 
+.condition-page{    
+}
+.condition-header{
+    display: flex;
+    padding: 0 3%;
+}
+.header-img{
+    height: 20px;
+    width: 48px;
+}
+.condition-header h2{
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--section-title);
+}
+.condition-hero-section{
+    background-image: url('../../../public//imaegs/imageCopy4.png');
+    background-size: cover;
+    background-position: center;
+
+    height: 599px;
+    align-items: center;    
+    display: flex;
+    justify-content:space-between;
+    padding: 0 5%;
+    
+}
+.condition-hero-section h1{
+    width: 453px;
+    color: var(--main-text);
+    font-weight: 600;
+    font-size: 40px;
+}
 .condition-product-card{
     width: 100%;
+    padding: 4%;
 }
 .condition-product-header{
     display: flex;

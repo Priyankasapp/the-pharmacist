@@ -1,0 +1,67 @@
+.nhs-support{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 392px;
+    width: 351px;
+    background-color: var(--white);
+    border-radius: 30px;
+    padding: 30px;
+    top: 40px;
+    left: 1008px;
+}
+.nhs-support h2{
+    font-weight: 600;
+    font-size: 24px;
+}
+.nhs-support span{
+    color: var(--tp-green);
+}
+.nhs-form-section{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.nhs-gender-con{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.nhs-gender-section{
+    display: flex;
+    gap: 16px;
+}
+.nhs-gender-wrapper{
+    display: flex;
+    gap: 5px;
+}
+.nhs-birthdate-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.nhs-birthdate-wrapper input{
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+
+    padding:20px 56px;
+    align-items: center;
+}
+.nhs-input-wrapper{
+    position: relative;
+    width: 100%;
+}
+.nhs-input-wrapper input{
+        width: 100%;
+        padding: 16px;
+        font-size: 15px;
+        border-radius: 6px;
+        outline: none;
+         transition: border-color 0.2s;
+}
+.nhs-label{
+    font-family: var(--font-secondary);
+    font-weight: 700;   
+    font-size: 16px;
+    color: #333;
+}

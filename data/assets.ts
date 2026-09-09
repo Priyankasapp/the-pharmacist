@@ -49,7 +49,7 @@ import panadol1 from "@/public/imaegs/panadol1.png";
 import panadol2 from "@/public/imaegs/panadol2.png";
 import panadol3 from "@/public/imaegs/panadol3.png";
 import panadol4 from "@/public/imaegs/panadol4.png";
-
+import Hero2 from "@/public/imaegs/bg2image.png";
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -57,7 +57,10 @@ import VectorTwo from "@/public/icons/Vector (1).png";
 import healthBroken from "@/public/icons/solar_health-broken.png";
 import VectorThree from "@/public/icons/Ellipse 46.png";
 import VectorFour from "@/public/icons/Ellipse 45.png";
-
+import CovidIcon from "@/public/icons/covid_symptoms-virus-headache-2.png";
+import groupIcon from "@/public/icons/Group.png";
+import VectorFive from "@/public/icons/Ellipse 10.png";
+import VectoruSix from "@/public/icons/Ellipse 11.png";
 export {
     NHS,
     nhs_providing_service,
@@ -118,6 +121,11 @@ export {
     healthBroken,
     VectorThree,
     VectorFour,
+    VectorFive,
+    VectoruSix,
+    groupIcon,
+    CovidIcon,
+    Hero2
 
 };
 

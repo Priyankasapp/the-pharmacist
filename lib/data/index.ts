@@ -36,6 +36,7 @@ import {
   ProcessData,
   ProductCardData,
   ProductData,
+  StepInfo,
   Treatments,
   WhatWeOfferedCardData,
 } from "../types";
@@ -562,3 +563,23 @@ export const productData: ProductData = {
    options: [ { type: "Standard delivery", duration: "1-4 business days", price: "$4.50", }, { type: "Express delivery", duration: "1 business day", price: "$10.00", }, { type: "Pick up in store", duration: "1-3 business days", price: "Free", }, ],
   }
 }
+
+// condition 
+
+export const stepInfo: StepInfo[] =[
+  {
+  id:"01",
+  name:"Answer a Few Questions",
+  desc:"Fill out a short online questionnaire so our doctors understand your health.",
+},
+{
+  id:"02",
+  name:"Schedule Appointment",
+  desc:"Book a convenient time to consult with our healthcare experts.",
+},
+{
+  id:"03",
+  name:"Receive Expert Care",
+  desc:"Get your treatment plan, prescription, and medicines delivered securely.",
+}
+] 
