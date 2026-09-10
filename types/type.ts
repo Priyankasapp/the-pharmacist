@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type ServiceLink = {
   label: string;
   href: string;
@@ -21,3 +23,11 @@ export type ServiceColumn = {
 export type ServicesMenuProps = {
   isOpen: boolean;
 };
+
+export type TreatmentDataProps = {
+  id:number;
+  title:string;
+  img:string | StaticImageData;
+  condition:string[];
+}
+

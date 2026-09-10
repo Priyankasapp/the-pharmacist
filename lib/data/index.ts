@@ -3,6 +3,7 @@ import {
   export2,
   export3,
   export4,
+  manImg,
   panadol1,
   panadol2,
   panadol3,
@@ -28,6 +29,8 @@ import {
   treatmentImg7,
   treatmentImg8,
   treatmentImg9,
+  WellImg,
+  womanImg,
 } from "@/data/assets";
 
 import {
@@ -37,7 +40,7 @@ import {
   HealthConditionData,
   NavLink,
   Patients,
-  Pharmacy, 
+  Pharmacy,
   ProcessData,
   ProductCardData,
   ProductData,
@@ -45,12 +48,13 @@ import {
   Treatments,
   WhatWeOfferedCardData,
 } from "../types";
+import { TreatmentDataProps } from "@/types/type";
 
 // navigation data
 export const navLinks: NavLink[] = [
-  {label: "Our Services",href: "/services",},
-  {label: "Our Products",href: "/shop",},
-  {label: "About Us",href: "/about-us",},
+  { label: "Our Services", href: "/services" },
+  { label: "Our Products", href: "/shop" },
+  { label: "About Us", href: "/about-us" },
   {
     label: "Contact",
     href: "/contact",
@@ -166,7 +170,6 @@ export const whatWeOffereCardData: WhatWeOfferedCardData[] = [
     description: "A wide range of trusted medicines and wellness products.",
   },
 ];
-
 
 export const categories: FilterOption[] = [
   {
@@ -353,200 +356,201 @@ export const productCardData: ProductCardData[] = [
     weightText: "112 tablets",
     unitPriceText: "£0.85 per tablet",
   },
-  
 ];
 
+// all condition
 
-// all condition 
-
-// process data 
-export const processData: ProcessData[]= [
+// process data
+export const processData: ProcessData[] = [
   {
-  id: "01",
-  heading: "Pick Your Condition",
-  desc: "Choose from a wide range of health conditions that match your needs.",
-},
-{
-  id:"02",
-  heading:"Answer a Few Questions",
-  desc:"Fill out a short online questionnaire so our doctors understand your health.",
-},
-{
-  id:"03",
-  heading:"Schedule Appointment",
-  desc:"Book a convenient time to consult with our healthcare experts.",
-},
-{
-  id:"04",
-  heading:"Receive Expert Care",
-  desc:"Get your treatment plan, prescription, and medicines delivered securely.",
-}
-]
+    id: "01",
+    heading: "Pick Your Condition",
+    desc: "Choose from a wide range of health conditions that match your needs.",
+  },
+  {
+    id: "02",
+    heading: "Answer a Few Questions",
+    desc: "Fill out a short online questionnaire so our doctors understand your health.",
+  },
+  {
+    id: "03",
+    heading: "Schedule Appointment",
+    desc: "Book a convenient time to consult with our healthcare experts.",
+  },
+  {
+    id: "04",
+    heading: "Receive Expert Care",
+    desc: "Get your treatment plan, prescription, and medicines delivered securely.",
+  },
+];
 
-// Health Condition Data 
+// Health Condition Data
 export const optionA: HealthConditionData[] = [
   {
-    slug:"Acid Reflux & Heartburn",
-    name:"Acid Reflux & Heartburn",
-    desc:"A burning sensation in the chest caused by stomach acid moving into the esophagus.",
-    isNHS:false
+    slug: "Acid Reflux & Heartburn",
+    name: "Acid Reflux & Heartburn",
+    desc: "A burning sensation in the chest caused by stomach acid moving into the esophagus.",
+    isNHS: false,
   },
   {
-    slug:"Acne",
-    name:"Acne",
-    desc:"Skin condition causing pimples and blackheads due to clogged pores.",
-    isNHS:true,
+    slug: "Acne",
+    name: "Acne",
+    desc: "Skin condition causing pimples and blackheads due to clogged pores.",
+    isNHS: true,
   },
   {
-    slug:"Altitude",
-    name:"Altitude",
-    desc:"The height above sea level, affecting oxygen levels and breathing.",
-    isNHS:true,
+    slug: "Altitude",
+    name: "Altitude",
+    desc: "The height above sea level, affecting oxygen levels and breathing.",
+    isNHS: true,
   },
   {
-    slug:"Angina",
-    name:"Angina",
-    desc:"Chest pain from reduced blood flow to the heart, often triggered by exertion or stress.",
-    isNHS:false,
+    slug: "Angina",
+    name: "Angina",
+    desc: "Chest pain from reduced blood flow to the heart, often triggered by exertion or stress.",
+    isNHS: false,
   },
   {
-    slug:"Anxiety",
-    name:"Anxiety",
-    desc:"A feeling of worry, nervousness, or unease, often about an imminent event or uncertain outcome.",
-    isNHS:false,
+    slug: "Anxiety",
+    name: "Anxiety",
+    desc: "A feeling of worry, nervousness, or unease, often about an imminent event or uncertain outcome.",
+    isNHS: false,
   },
   {
-    slug:"Asthma",
-    name:"Asthma",
-    desc:"A condition that narrows airways causing difficulty breathing, often triggered by allergens.",
-    isNHS:true,
+    slug: "Asthma",
+    name: "Asthma",
+    desc: "A condition that narrows airways causing difficulty breathing, often triggered by allergens.",
+    isNHS: true,
   },
   {
-    slug:"Athlete's Foot",
-    name:"Athlete's Floot",
-    desc:"A fungal infaction that causes itching, redness, and peeling on the feet, commonly between the toes.",
-    isNHS:false,
-  }, 
-]
+    slug: "Athlete's Foot",
+    name: "Athlete's Floot",
+    desc: "A fungal infaction that causes itching, redness, and peeling on the feet, commonly between the toes.",
+    isNHS: false,
+  },
+];
 
 export const optionB: HealthConditionData[] = [
   {
-    slug:"Bacterial Vaginose",
-    name:"Bacterial Vaginosis",
-    desc:"An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
-    isNHS:true,
+    slug: "Bacterial Vaginose",
+    name: "Bacterial Vaginosis",
+    desc: "An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
+    isNHS: true,
   },
   {
-    slug:"Bruising",
-    name:"Bruising",
-    desc:"Discoloration of the skin caused by bleeding under the skin, often due to injury or trauma.",
-    isNHS:true,
-  }
-]
+    slug: "Bruising",
+    name: "Bruising",
+    desc: "Discoloration of the skin caused by bleeding under the skin, often due to injury or trauma.",
+    isNHS: true,
+  },
+];
 
 export const optionC: HealthConditionData[] = [
   {
-    slug:"Chesty Cough",
-    name:"Chesty Cough",
-    desc:"An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
-    isNHS:false,
+    slug: "Chesty Cough",
+    name: "Chesty Cough",
+    desc: "An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
+    isNHS: false,
   },
   {
-    slug:"Chlamydia",
-    name:"Chlamydia",
-    desc:"Discoloration of the skin caused by  bleeding under the skin, often due to injury or trama.",
-    isNHS:false,
+    slug: "Chlamydia",
+    name: "Chlamydia",
+    desc: "Discoloration of the skin caused by  bleeding under the skin, often due to injury or trama.",
+    isNHS: false,
   },
   {
-    slug:"Cold & Flu",
-    name:"Cold & Flu",
-    desc:"When it cause redness, swelling, warmth, and pus",
-    isNHS:true,
+    slug: "Cold & Flu",
+    name: "Cold & Flu",
+    desc: "When it cause redness, swelling, warmth, and pus",
+    isNHS: true,
   },
   {
-    slug:"Cold Sores",
-    name:"Cold Sores",
-    desc:"A viral infection causing a painful rash, shingles is triggered by the reactivation of the chickenpox virus.",
-    isNHS:false,
+    slug: "Cold Sores",
+    name: "Cold Sores",
+    desc: "A viral infection causing a painful rash, shingles is triggered by the reactivation of the chickenpox virus.",
+    isNHS: false,
   },
   {
-    slug:"Constipation",
-    name:"Constipation",
-    desc:"Sinus inflammation from infection or allergies, causing facial plain and congestion.",
-    isNHS:false,
+    slug: "Constipation",
+    name: "Constipation",
+    desc: "Sinus inflammation from infection or allergies, causing facial plain and congestion.",
+    isNHS: false,
   },
   {
-    slug:"Cystits (UTI)",
-    name:"Cystits (UTI)",
-    desc:"Urinary infection causing pain or burning during urination."
+    slug: "Cystits (UTI)",
+    name: "Cystits (UTI)",
+    desc: "Urinary infection causing pain or burning during urination.",
   },
-  
-]
-
-export const optionD:HealthConditionData[] = [
-  {
-    slug:"Dental Care",
-    name:"Dental Care",
-    desc:"Sinus inflammation from infection or allergies, causing facial pain and congestion.",
-    isNHS:false,
-  },
-  {
-    slug:"Diabetes",
-    name:"Diabetes (Type 2)",
-    desc:"A common condition maked by pain, irritation, or scratchiness in the throat. ",
-    isNHS:false,
-  },
-  {
-    slug:"Diarrhoea",
-    name:"Diarrhoea",
-    desc:"urinary infection causing pain or burning durig urination.",
-    isNHS:false,
-  },
-   {
-    slug:"Diarrhoea",
-    name:"Diarrhoea",
-    desc:"urinary infection causing pain or burning durig urination.",
-    isNHS:false,
-  },
-  {
-    slug:"Dry Eye",
-    name:"Dry Eye",
-    desc:"Sinus inflammation from infection or allergies, causing facial pain and congestion.",
-    isNHS:false,
-  },
-  {
-    slug:"Dry Cough",
-    name:"Dry Cough",
-    desc:"A common condition marked by pain, irritation, or scratchiness in the throat.",
-    isNHS:true,
-  },
-  {
-    slug:"Dry Skin",
-    name:"Dry Skin",
-    desc:"Urinary infecion causing pain or burning during urination",
-    isNHS:false,
-  },
-  {
-    slug:"Diarrhoea",
-    name:"Diarrhoea",
-    desc:"Urinary infection causing pain or burning during urination.",
-    isNHS:false,
-  },
-]
-
-export const allAlpabetGroups:AllAlphacetGroups[] = [
-  { latter:"A", data:"optionA"},
-  { latter:"B", data:"optionB"},
-  { latter:"C", data:"optionC"},
-  { latter:"D", data:"optionD"},
-  
 ];
 
+export const optionD: HealthConditionData[] = [
+  {
+    slug: "Dental Care",
+    name: "Dental Care",
+    desc: "Sinus inflammation from infection or allergies, causing facial pain and congestion.",
+    isNHS: false,
+  },
+  {
+    slug: "Diabetes",
+    name: "Diabetes (Type 2)",
+    desc: "A common condition maked by pain, irritation, or scratchiness in the throat. ",
+    isNHS: false,
+  },
+  {
+    slug: "Diarrhoea",
+    name: "Diarrhoea",
+    desc: "urinary infection causing pain or burning durig urination.",
+    isNHS: false,
+  },
+  {
+    slug: "Diarrhoea",
+    name: "Diarrhoea",
+    desc: "urinary infection causing pain or burning durig urination.",
+    isNHS: false,
+  },
+  {
+    slug: "Dry Eye",
+    name: "Dry Eye",
+    desc: "Sinus inflammation from infection or allergies, causing facial pain and congestion.",
+    isNHS: false,
+  },
+  {
+    slug: "Dry Cough",
+    name: "Dry Cough",
+    desc: "A common condition marked by pain, irritation, or scratchiness in the throat.",
+    isNHS: true,
+  },
+  {
+    slug: "Dry Skin",
+    name: "Dry Skin",
+    desc: "Urinary infecion causing pain or burning during urination",
+    isNHS: false,
+  },
+  {
+    slug: "Diarrhoea",
+    name: "Diarrhoea",
+    desc: "Urinary infection causing pain or burning during urination.",
+    isNHS: false,
+  },
+];
 
-// single product section 
-export const tabs = ["Description","Directions","Ingredients","Side effects","Warnings","Reviews", "FAQ'S"]
+export const allAlpabetGroups: AllAlphacetGroups[] = [
+  { latter: "A", data: "optionA" },
+  { latter: "B", data: "optionB" },
+  { latter: "C", data: "optionC" },
+  { latter: "D", data: "optionD" },
+];
 
-
+// single product section
+export const tabs = [
+  "Description",
+  "Directions",
+  "Ingredients",
+  "Side effects",
+  "Warnings",
+  "Reviews",
+  "FAQ'S",
+];
 
 export const productData: ProductData = {
   name: "Panadol",
@@ -556,38 +560,71 @@ export const productData: ProductData = {
   reviews: 9403,
   tabletCount: "24 Tablets",
   inStock: true,
-  images: [
-    productImg2, panadol1, panadol2, panadol3, panadol4
-  ],
+  images: [productImg2, panadol1, panadol2, panadol3, panadol4],
   strengths: ["25 mg", "50 mg", "100 mg"],
 
-  packSizes: [{ id: "4-tablets", label: "4 tablets", price: "£15", saving: "£27 (Save £6)", pricePerTablet: "£2.79 / tablet", }, { id: "8-tablets", label: "8 tablets", price: "£21", saving: "£27 (Save £6)", pricePerTablet: "£2.79 / tablet", }, { id: "16-tablets", label: "16 tablets", price: "£26", saving: "£27 (Save £6)", pricePerTablet: "£2.79 / tablet", },],
+  packSizes: [
+    {
+      id: "4-tablets",
+      label: "4 tablets",
+      price: "£15",
+      saving: "£27 (Save £6)",
+      pricePerTablet: "£2.79 / tablet",
+    },
+    {
+      id: "8-tablets",
+      label: "8 tablets",
+      price: "£21",
+      saving: "£27 (Save £6)",
+      pricePerTablet: "£2.79 / tablet",
+    },
+    {
+      id: "16-tablets",
+      label: "16 tablets",
+      price: "£26",
+      saving: "£27 (Save £6)",
+      pricePerTablet: "£2.79 / tablet",
+    },
+  ],
   delivery: {
-    title:"Delivery",
-   description: "Free standard shipping on orders over $35 before tax, plus free returns.",
-   options: [ { type: "Standard delivery", duration: "1-4 business days", price: "$4.50", }, { type: "Express delivery", duration: "1 business day", price: "$10.00", }, { type: "Pick up in store", duration: "1-3 business days", price: "Free", }, ],
-  }
-}
+    title: "Delivery",
+    description:
+      "Free standard shipping on orders over $35 before tax, plus free returns.",
+    options: [
+      {
+        type: "Standard delivery",
+        duration: "1-4 business days",
+        price: "$4.50",
+      },
+      { type: "Express delivery", duration: "1 business day", price: "$10.00" },
+      {
+        type: "Pick up in store",
+        duration: "1-3 business days",
+        price: "Free",
+      },
+    ],
+  },
+};
 
-// condition 
+// condition
 
-export const stepInfo: StepInfo[] =[
+export const stepInfo: StepInfo[] = [
   {
-  id:"01",
-  name:"Answer a Few Questions",
-  desc:"Fill out a short online questionnaire so our doctors understand your health.",
-},
-{
-  id:"02",
-  name:"Schedule Appointment",
-  desc:"Book a convenient time to consult with our healthcare experts.",
-},
-{
-  id:"03",
-  name:"Receive Expert Care",
-  desc:"Get your treatment plan, prescription, and medicines delivered securely.",
-}
-] 
+    id: "01",
+    name: "Answer a Few Questions",
+    desc: "Fill out a short online questionnaire so our doctors understand your health.",
+  },
+  {
+    id: "02",
+    name: "Schedule Appointment",
+    desc: "Book a convenient time to consult with our healthcare experts.",
+  },
+  {
+    id: "03",
+    name: "Receive Expert Care",
+    desc: "Get your treatment plan, prescription, and medicines delivered securely.",
+  },
+];
 
 export const exportCardInfo: ExportCardInfo[] = [
   {
@@ -597,25 +634,46 @@ export const exportCardInfo: ExportCardInfo[] = [
     id: "Services",
     img: export1,
   },
-{
-  isnhs: false,
+  {
+    isnhs: false,
     title: "Online Doctor",
     desc: "Consult with a GP online and get prescriptions delivered quickly without leaving the comfort of your home.",
     id: "Online Doctor",
-    img: export2, 
-},
-{
-  isnhs: false,
+    img: export2,
+  },
+  {
+    isnhs: false,
     title: "Private Pharmacy",
     desc: "Access essential healthcare services and consultations provided by the National Health Service.",
     id: "Private Pharmacy",
-    img: export3, 
-},
-{
-  isnhs: false,
+    img: export3,
+  },
+  {
+    isnhs: false,
     title: "Repeat Prescriptions",
     desc: "Manage and order your regular repeat medications with ease through our clinical automation system.",
     id: "Services",
-    img: export4, 
-}
+    img: export4,
+  },
+];
+
+export const treatmentData: TreatmentDataProps[] = [
+  {
+    id: 1,
+    title: "Men's Health",
+    img: manImg,
+    condition: ["view all conditions", "Hair Loss", "view all conditions"],
+  },
+  {
+    id: 2,
+    title: "Women's Health",
+    img: womanImg,
+    condition: ["Morning After Pill", "view all conditions", "Cystits"],
+  },
+  {
+    id: 3,
+    title: "Well-being Services",
+    img: WellImg,
+    condition: ["view all conditions", "Migraine", "view all conditions"],
+  },
 ];

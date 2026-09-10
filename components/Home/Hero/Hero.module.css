@@ -1,6 +1,6 @@
 .hero {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.2)), url(../../public//imaegs//hero.png);
+    linear-gradient(rgba(0, 0, 0, 0.2)), url(../../public//imaegs//image.png);
   background-position: center 70%;
   background-size: cover;
   background-repeat: no-repeat;

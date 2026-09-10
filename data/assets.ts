@@ -54,6 +54,10 @@ import export1 from "@/public/imaegs/export1.png";
 import export2 from "@/public/imaegs/export2.png";
 import export3 from "@/public/imaegs/export3.png";
 import export4 from "@/public/imaegs/export4.png";
+import manImg from "@/public/imaegs/image copy 4.png";
+import womanImg from "@/public/imaegs/image copy 5.png";
+import WellImg from "@/public/imaegs/image copy 6.png";
+
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -65,7 +69,13 @@ import CovidIcon from "@/public/icons/covid_symptoms-virus-headache-2.png";
 import groupIcon from "@/public/icons/Group.png";
 import VectorFive from "@/public/icons/Ellipse 10.png";
 import VectoruSix from "@/public/icons/Ellipse 11.png";
+import VectorSeven from "@/public/icons/VectorIcon9.png";
+import nhs_logo_icon from "@/public/icons/nhs-logo-icon.png";
+import right_icon from "@/public/icons/image copy.png";
 export {
+    manImg,
+    womanImg,
+    WellImg,
     NHS,
     nhs_providing_service,
     online_doctor,
@@ -133,7 +143,10 @@ export {
     VectoruSix,
     groupIcon,
     CovidIcon,
-    Hero2
+    Hero2,
+    VectorSeven,
+    nhs_logo_icon,
+    right_icon
 
 };
 
