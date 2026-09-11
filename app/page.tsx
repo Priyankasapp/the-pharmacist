@@ -20,6 +20,7 @@ import ArticleSection from "@/components/Home/ArticleSetion/ArticleSection";
 import FAQ from "@/components/Contact/FAQ/FAQ";
 import PatientReview from "@/components/Home/PatientsReview/PatientReview";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
+import ProductSection from "@/components/ProductSection/ProductSection";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -186,6 +187,9 @@ const Home = () => {
       </div>
       </section>
       {/* populer treatments  */}
+      <ProductSection
+      headingText="Treatments"
+      highlightText="Popular"/>
       <WhyChosePharmalist/>
       <PatientReview/>
       <FAQ/>
