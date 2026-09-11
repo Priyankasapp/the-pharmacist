@@ -16,6 +16,8 @@ import {
 } from "@/data/assets";
 import TreatmentCard from "@/components/Home/TreatmentCard/TreatmentCard";
 import CTA from "@/components/Home/CTA/CTA";
+import ArticleSection from "@/components/Home/ArticleSetion/ArticleSection";
+import FAQ from "@/components/Contact/FAQ/FAQ";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -181,6 +183,9 @@ const Home = () => {
         ))}
       </div>
       </section>
+      
+      <FAQ/>
+      <ArticleSection/> 
       <CTA/>
     </div>
   );

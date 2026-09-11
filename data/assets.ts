@@ -58,6 +58,8 @@ import manImg from "@/public/imaegs/image copy 4.png";
 import womanImg from "@/public/imaegs/image copy 5.png";
 import WellImg from "@/public/imaegs/image copy 6.png";
 import ctaImage from "@/public/imaegs/image copy 7.png";
+import InfoImage from "@/public/imaegs/Infoimage1.png";
+import InforImageTwo from "@/public/imaegs/InfoImage2.png";
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -133,6 +135,8 @@ export {
     export3,
     export4,
     ctaImage,
+    InfoImage,
+    InforImageTwo,
     
     // icons 
     stars,

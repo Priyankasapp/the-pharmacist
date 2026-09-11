@@ -3,6 +3,8 @@ import {
   export2,
   export3,
   export4,
+  InfoImage,
+  InforImageTwo,
   manImg,
   panadol1,
   panadol2,
@@ -38,6 +40,7 @@ import {
   ExportCardInfo,
   FilterOption,
   HealthConditionData,
+  InformationDataProps,
   NavLink,
   Patients,
   Pharmacy,
@@ -677,3 +680,17 @@ export const treatmentData: TreatmentDataProps[] = [
     condition: ["view all conditions", "Migraine", "view all conditions"],
   },
 ];
+
+export const informationData:InformationDataProps[] = [
+  {
+    id:"01",
+    img:InfoImage,
+    desc:"When to See a Doctor About a Persistent Cough",
+  },
+  {
+    id:"02",
+    img:InforImageTwo,
+    desc:"Managing Seasonal Allergies: Simple Steps for Relief"
+  }
+
+]

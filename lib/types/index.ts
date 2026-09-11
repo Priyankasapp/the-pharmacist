@@ -139,3 +139,8 @@ export interface ExportCardInfo{
     id:string;
     img:string|StaticImageData
 }
+export type InformationDataProps = {
+  img:string | StaticImageData;
+  desc:string;
+  id:string;
+}
