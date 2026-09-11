@@ -57,7 +57,7 @@ import export4 from "@/public/imaegs/export4.png";
 import manImg from "@/public/imaegs/image copy 4.png";
 import womanImg from "@/public/imaegs/image copy 5.png";
 import WellImg from "@/public/imaegs/image copy 6.png";
-
+import ctaImage from "@/public/imaegs/image copy 7.png";
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -72,6 +72,7 @@ import VectoruSix from "@/public/icons/Ellipse 11.png";
 import VectorSeven from "@/public/icons/VectorIcon9.png";
 import nhs_logo_icon from "@/public/icons/nhs-logo-icon.png";
 import right_icon from "@/public/icons/image copy.png";
+import pharmalistLogo from "@/public/icons/image copy 2.png";
 export {
     manImg,
     womanImg,
@@ -131,6 +132,7 @@ export {
     export2,
     export3,
     export4,
+    ctaImage,
     
     // icons 
     stars,
@@ -146,7 +148,8 @@ export {
     Hero2,
     VectorSeven,
     nhs_logo_icon,
-    right_icon
+    right_icon,
+    pharmalistLogo
 
 };
 
