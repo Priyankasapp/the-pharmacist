@@ -1,7 +1,7 @@
 .patient-card-module{
    border-radius: 30px;
     margin: 20px;
-    
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

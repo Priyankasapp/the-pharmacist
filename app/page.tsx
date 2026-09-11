@@ -18,6 +18,8 @@ import TreatmentCard from "@/components/Home/TreatmentCard/TreatmentCard";
 import CTA from "@/components/Home/CTA/CTA";
 import ArticleSection from "@/components/Home/ArticleSetion/ArticleSection";
 import FAQ from "@/components/Contact/FAQ/FAQ";
+import PatientReview from "@/components/Home/PatientsReview/PatientReview";
+import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -183,7 +185,9 @@ const Home = () => {
         ))}
       </div>
       </section>
-      
+      {/* populer treatments  */}
+      <WhyChosePharmalist/>
+      <PatientReview/>
       <FAQ/>
       <ArticleSection/> 
       <CTA/>

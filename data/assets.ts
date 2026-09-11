@@ -75,6 +75,7 @@ import VectorSeven from "@/public/icons/VectorIcon9.png";
 import nhs_logo_icon from "@/public/icons/nhs-logo-icon.png";
 import right_icon from "@/public/icons/image copy.png";
 import pharmalistLogo from "@/public/icons/image copy 2.png";
+import VectorEight from "@/public/icons/image copy 3.png";
 export {
     manImg,
     womanImg,
@@ -153,8 +154,8 @@ export {
     VectorSeven,
     nhs_logo_icon,
     right_icon,
-    pharmalistLogo
-
+    pharmalistLogo,
+    VectorEight,
 };
 
  

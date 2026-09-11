@@ -1,0 +1,85 @@
+.patient-review-section{
+    width: 100%;
+    height: 374px;
+    background-color: var(--tp-bg);
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.patient-review-bg-img-wrapper{
+    position:absolute;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+    left: 216px;
+   top: 0;
+}
+.patient-review-bg-img{
+    object-fit: cover;
+    height: 100% !important;
+    width: auto !important;
+}
+.patient-review-info-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 35px;
+    padding: 0 40px;
+    z-index: 2;
+    gap: 0px;
+
+}
+.patient-review-left-section{
+    width: 326px;
+    flex-shrink: 0;
+   
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.patient-review-left-section h2{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;    
+    width: 244px;
+}
+.patient-review-left-section h2 span{
+    color: var(--tp-green);
+}
+.patient-review-left-section p{
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--dark-gray);
+}
+.patient-icon-wrapper{
+    display: flex;
+    gap: 20px;
+   
+}
+.patient-icon-wrapper button{
+    background-color: transparent;
+     border: 1px solid #727272;
+     border-radius: 50%;
+     height: 44px;
+     width: 44px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.patient-review-right-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.patient-review-cards{
+    display: flex;
+    flex-direction: row;
+
+}
