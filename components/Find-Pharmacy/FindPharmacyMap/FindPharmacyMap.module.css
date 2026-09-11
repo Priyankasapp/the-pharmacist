@@ -1,41 +1,26 @@
-/* .find-pharmacy-map-container {
-  width: 100%;
-  max-width: 600px; 
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.find-pharmacy-map-wrapper {
+.pharmacy-map{
   position: relative;
   width: 100%;
   display: flex;
 }
-
-.map-image {
+.pharmacy-map-con{
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+  aspect-ratio: 16 /9;
 }
-
-.location-pin-wrapper {
+.pharmacy-map-img-wrapper{
   position: absolute;
-
-  transform: translate(-50%, -100%); 
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  inset: 0;
 }
-
-.location-pin-wrapper:hover {
-
-  transform: translate(-50%, -105%) scale(1.1);
+.pharmacy-map-img{
+  object-fit: cover;
+  
 }
-
-.location-icon {
-  width: 48px; 
-  display: block;
+.pharmacy-location-pin-wrapper{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
-
- */
+.pharmacy-locaion-img{
+  
+}

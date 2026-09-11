@@ -1,8 +1,8 @@
 .FAQ {
     display: flex;
     justify-content: space-between;
-    padding: 5% 8%; 
-    gap: 40px;
+   margin: 4%;
+
 }
 
 .FAQ h2 {

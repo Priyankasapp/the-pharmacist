@@ -38,6 +38,7 @@ import {
 import {
   AllAlphacetGroups,
   ExportCardInfo,
+  FaqsDataProps,
   FilterOption,
   HealthConditionData,
   InformationDataProps,
@@ -693,4 +694,25 @@ export const informationData:InformationDataProps[] = [
     desc:"Managing Seasonal Allergies: Simple Steps for Relief"
   }
 
+]
+
+
+
+// faq data 
+export const faqsData: FaqsDataProps[] = [
+  {
+    id:"01",
+    question:"How can Pharmacy First save time?",
+    answer:"Pharmacy First will help you get seen by a healthcare professional quickly. Instead of waiting for a GP appointment, going to A&E or attending out-of-hours NHS services, you can walk into your nearest Well Pharmacy and have a private consultation with one of our pharmacists whenever you need to.",
+  },
+  {
+    id:"02",
+    question:"Do I need to create an account to use the service?",
+    
+  },
+  {
+    id:"03",
+     question: "What should I do if my medication is not available or out of stock?",
+    
+  }
 ]

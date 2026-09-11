@@ -144,3 +144,11 @@ export type InformationDataProps = {
   desc:string;
   id:string;
 }
+
+
+// faq section 
+export type FaqsDataProps = {
+    id:string;
+    question:string;
+    answer?:string;
+}
