@@ -2,6 +2,33 @@
 
 import { StaticImageData } from "next/image";
 
+// footer 
+export interface FooterLink{
+    label:string;
+    href:string;
+}
+
+export interface FooterInformation{
+    address:string;
+    number:string;
+    email:string;   
+}
+export interface FooterRegulatory{
+    gphc: string;
+    superintendent:string;
+    pharmacyOwner:string;
+}
+export interface FooterOpeningHour{
+    day: string;
+    time:string;
+}
+export interface FooterLinksData {
+  legal: FooterLink[];
+  information: FooterInformation;
+  regulatory: FooterRegulatory;
+  openingHours: FooterOpeningHour[];
+}
+
 export interface DropDownItem{
     label: string;
     href: string;

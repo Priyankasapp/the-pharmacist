@@ -76,6 +76,11 @@ import nhs_logo_icon from "@/public/icons/nhs-logo-icon.png";
 import right_icon from "@/public/icons/image copy.png";
 import pharmalistLogo from "@/public/icons/image copy 2.png";
 import VectorEight from "@/public/icons/image copy 3.png";
+import FaceBookIcon from "@/public/icons/FaceBook.png";
+import InstaIcon from "@/public/icons/Instagram.png";
+import LinkedIcon from "@/public/icons/linkedIn.png";
+import TwitterIcon from "@/public/icons/Twitter.png" ;
+
 export {
     manImg,
     womanImg,
@@ -156,6 +161,10 @@ export {
     right_icon,
     pharmalistLogo,
     VectorEight,
+    FaceBookIcon,
+    TwitterIcon,
+    InstaIcon,
+    LinkedIcon
 };
 
  

@@ -37,7 +37,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background: none;
+    border: none;
     user-select: none;
+    cursor: pointer;
 }
 
 .faq-header h3 {

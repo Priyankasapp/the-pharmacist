@@ -40,6 +40,7 @@ import {
   ExportCardInfo,
   FaqsDataProps,
   FilterOption,
+  FooterLinksData,
   HealthConditionData,
   InformationDataProps,
   NavLink,
@@ -54,6 +55,33 @@ import {
 } from "../types";
 import { TreatmentDataProps } from "@/types/type";
 
+
+// footer data
+export const FOOTER_LINKS: FooterLinksData = {
+  legal: [
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
+    { label: "Complaints Procedure", href: "/complaints-preocedure" },
+    { label: "Accessibility Statement", href: "/accessibility" },
+    { label: "About Us", href: "/about" },
+  ],
+  information: {
+    address: "10 High Street, London, UK",
+    number: "+44 1234 567 890",
+    email: "contact@yourpharmacy.co.uk", // fixed typo: "phoarmacy" -> "pharmacy"
+  },
+  regulatory: {
+    gphc: "Pharmacy: 1234567",
+    superintendent: "Dr. Sarah Johnson, GPhC Reg: 2345678", // use ", " not "\n" for JSX text
+    pharmacyOwner: "Digital Health Pharmacy Ltd, Company No: 12345678",
+  },
+  openingHours: [
+    { day: "Monday-Friday", time: "09:00AM to 06:00PM" },
+    { day: "Saturday", time: "11:00AM to 03:00PM" },
+    { day: "Sunday", time: "Emergency Only" },
+  ],
+};
 // navigation data
 export const navLinks: NavLink[] = [
   { label: "Our Services", href: "/services" },
