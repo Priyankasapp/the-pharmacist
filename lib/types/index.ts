@@ -102,6 +102,7 @@ export interface HealthConditionData{
     slug: string;
     name:string;
     desc:string;
+    id:string;
     isNHS?:boolean;
 }
 

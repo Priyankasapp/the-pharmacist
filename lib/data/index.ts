@@ -283,6 +283,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 10,
     weightText: "15g",
     unitPriceText: "£18 per 100 ",
+    slug: "Nurofen Ibuprofen 200mg Tablets, 16 Tablets"
   },
   {
     id: "Panadol 50g",
@@ -296,6 +297,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 13,
     weightText: "20g",
     unitPriceText: " £15 per 100g",
+    slug: "Panadol 50g"
   },
   {
     id: "IMODIUM® Dual Action Tablet",
@@ -309,6 +311,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 15,
     weightText: "8 Tablets",
     unitPriceText: "£21 per pack",
+    slug: "IMODIUM® Dual Action Tablet"
   },
   {
     id: "HydraBoost Rehydration Sachets",
@@ -322,6 +325,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 10,
     weightText: "10 Tablets",
     unitPriceText: "£14 per pack",
+    slug: "HydraBoost Rehydration Sachets"
   },
   {
     id: "Rehydra Oral Solution",
@@ -335,6 +339,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 14,
     weightText: "10 Lozenges",
     unitPriceText: "£12 per pack",
+    slug: "Rehydra Oral Solution"
   },
   {
     id: "Orlistat 120mg Capsules",
@@ -348,6 +353,7 @@ export const productCardData: ProductCardData[] = [
     // originalPrice: 10,
     weightText: "84 capsules",
     unitPriceText: "£0.36 per capsule",
+    slug: "Orlistat 120mg Capsules"
   },
   {
     id: "Electrolyte Plus Solution",
@@ -361,6 +367,7 @@ export const productCardData: ProductCardData[] = [
     // originalPrice: 10,
     weightText: "15g",
     unitPriceText: "£18 per 100g",
+    slug: "Electrolyte Plus Solution"
   },
   {
     id: "Anadin Extra 500mg",
@@ -374,6 +381,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 14,
     weightText: "10 Tablets",
     unitPriceText: "£14 per pack",
+    slug: "Anadin Extra 500mg"
   },
   {
     id: "Mysimba (Naltrexone / Bupropion) Tablets",
@@ -387,6 +395,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 15,
     weightText: "112 tablets",
     unitPriceText: "£0.85 per tablet",
+    slug: "Mysimba (Naltrexone / Bupropion) Tablets"
   },
 ];
 
@@ -423,42 +432,49 @@ export const optionA: HealthConditionData[] = [
     name: "Acid Reflux & Heartburn",
     desc: "A burning sensation in the chest caused by stomach acid moving into the esophagus.",
     isNHS: false,
+    id: "Acid Reflux & Heartburn"
   },
   {
     slug: "Acne",
     name: "Acne",
     desc: "Skin condition causing pimples and blackheads due to clogged pores.",
     isNHS: true,
+    id: "Acne"
   },
   {
     slug: "Altitude",
     name: "Altitude",
     desc: "The height above sea level, affecting oxygen levels and breathing.",
     isNHS: true,
+    id: ""
   },
   {
     slug: "Angina",
     name: "Angina",
     desc: "Chest pain from reduced blood flow to the heart, often triggered by exertion or stress.",
     isNHS: false,
+    id: "Angina",
   },
   {
     slug: "Anxiety",
     name: "Anxiety",
     desc: "A feeling of worry, nervousness, or unease, often about an imminent event or uncertain outcome.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Asthma",
     name: "Asthma",
     desc: "A condition that narrows airways causing difficulty breathing, often triggered by allergens.",
     isNHS: true,
+    id:  "Asthma"
   },
   {
     slug: "Athlete's Foot",
     name: "Athlete's Floot",
     desc: "A fungal infaction that causes itching, redness, and peeling on the feet, commonly between the toes.",
     isNHS: false,
+    id: "Athlete's Floot"
   },
 ];
 
@@ -468,12 +484,14 @@ export const optionB: HealthConditionData[] = [
     name: "Bacterial Vaginosis",
     desc: "An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
     isNHS: true,
+    id: ""
   },
   {
     slug: "Bruising",
     name: "Bruising",
     desc: "Discoloration of the skin caused by bleeding under the skin, often due to injury or trauma.",
     isNHS: true,
+    id: ""
   },
 ];
 
@@ -483,35 +501,41 @@ export const optionC: HealthConditionData[] = [
     name: "Chesty Cough",
     desc: "An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Chlamydia",
     name: "Chlamydia",
     desc: "Discoloration of the skin caused by  bleeding under the skin, often due to injury or trama.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Cold & Flu",
     name: "Cold & Flu",
     desc: "When it cause redness, swelling, warmth, and pus",
     isNHS: true,
+    id: ""
   },
   {
     slug: "Cold Sores",
     name: "Cold Sores",
     desc: "A viral infection causing a painful rash, shingles is triggered by the reactivation of the chickenpox virus.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Constipation",
     name: "Constipation",
     desc: "Sinus inflammation from infection or allergies, causing facial plain and congestion.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Cystits (UTI)",
     name: "Cystits (UTI)",
     desc: "Urinary infection causing pain or burning during urination.",
+    id: ""
   },
 ];
 
@@ -521,48 +545,56 @@ export const optionD: HealthConditionData[] = [
     name: "Dental Care",
     desc: "Sinus inflammation from infection or allergies, causing facial pain and congestion.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Diabetes",
     name: "Diabetes (Type 2)",
     desc: "A common condition maked by pain, irritation, or scratchiness in the throat. ",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Diarrhoea",
     name: "Diarrhoea",
     desc: "urinary infection causing pain or burning durig urination.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Diarrhoea",
     name: "Diarrhoea",
     desc: "urinary infection causing pain or burning durig urination.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Dry Eye",
     name: "Dry Eye",
     desc: "Sinus inflammation from infection or allergies, causing facial pain and congestion.",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Dry Cough",
     name: "Dry Cough",
     desc: "A common condition marked by pain, irritation, or scratchiness in the throat.",
     isNHS: true,
+    id: ""
   },
   {
     slug: "Dry Skin",
     name: "Dry Skin",
     desc: "Urinary infecion causing pain or burning during urination",
     isNHS: false,
+    id: ""
   },
   {
     slug: "Diarrhoea",
     name: "Diarrhoea",
     desc: "Urinary infection causing pain or burning during urination.",
     isNHS: false,
+    id: ""
   },
 ];
 

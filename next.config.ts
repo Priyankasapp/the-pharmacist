@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbo: {
+  turbopack: {
     rules: {
       "*.svg": {
         loaders: ["@svgr/webpack"],
@@ -9,6 +9,6 @@ const nextConfig: NextConfig = {
       },
     },
   },
-} as unknown as NextConfig;
+};
 
 export default nextConfig;

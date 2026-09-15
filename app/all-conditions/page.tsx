@@ -105,8 +105,7 @@ const AllCondition = () => {
                       slug={item.slug}
                       name={item.name}
                       desc={item.desc}
-                      isNHS={item.isNHS}
-                    />
+                      isNHS={item.isNHS} id={""}                    />
                   ))}
                 </div>
               </div>

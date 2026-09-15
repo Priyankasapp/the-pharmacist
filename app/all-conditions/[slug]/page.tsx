@@ -96,9 +96,8 @@ const ConditionSlug = () => {
                     originalPrice={product.originalPrice}
                     isPrescriptionOnly={product.isPrescriptionOnly}
                     savingsText={product.savingsText}
-                    price={product.price} 
-                    id={product.id}
-                  />
+                    price={product.price}
+                    id={product.id} slug={""}                  />
                 </div>
               )
             })}

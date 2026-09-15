@@ -183,7 +183,7 @@ const Navbar = () => {
 
       <ServicesMenu isOpen={activeMenu === "services"} />
       {activeMenu === "product" && <PharmacyCard />}
-      {activeMenu === "search" && <SearchBar onClose={() => setActiveMenu(null)} />}
+      {activeMenu === "search" && <SearchBar />}
     </header>
   );
 };

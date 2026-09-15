@@ -86,8 +86,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
                 isPrescriptionOnly={product.isPrescriptionOnly}
                 savingsText={product.savingsText}
                 price={product.price}
-                id={product.id}
-              />
+                id={product.id} slug={""}              />
             </div>
           );
         })}
