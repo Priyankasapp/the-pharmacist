@@ -155,7 +155,7 @@
     display: flex;
     flex-direction: column;
     width: 32px;
-    background-color: #ffffff;
+    background-color: var(--white);
     border: 1px solid #E5E7EB;
     border-radius: 20px;
     padding: 10px 0;
@@ -164,7 +164,6 @@
     gap: 2px;
 }
 
-/* Individual list letters links formatting */
 .az-sidebar-link {
     display: flex;
     align-items: center;

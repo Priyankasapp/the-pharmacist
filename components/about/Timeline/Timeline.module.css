@@ -1,4 +1,4 @@
-/* --- Base Desktop Layout --- */
+
 .timeline-section {
   gap: 46px;
   display: flex;
@@ -34,7 +34,7 @@
     180deg,
     #023d3a 0%,
     rgba(2, 61, 58, 0.4) 75%,
-    #ffffff 100%
+    var(--white) 100%
   );
   top: 0px;
   bottom: 35px;

@@ -22,6 +22,7 @@ import PatientReview from "@/components/Home/PatientsReview/PatientReview";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 import ProductSection from "@/components/ProductSection/ProductSection";
 
+
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const exportPerPage = 4;
@@ -44,8 +45,9 @@ const Home = () => {
 
   return (
     <div>
+     
       <Hero />
-      {/* Exports detail section  */}
+     
       <section className={styles["export-section"]}>
         <div className={styles["export-Header"]}>
           <h2 className={styles["section-title"]}>

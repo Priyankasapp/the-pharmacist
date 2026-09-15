@@ -1,31 +1,120 @@
-.search-bar{
-    margin: 2% 4%;
+
+.search-bar-dropdown {
+    position: absolute;
+    top: 75px;                  
+    left: 50%;                 
+    transform: translateX(-50%); 
+    width: 420px;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 1px 8px rgba(0, 0, 0, 0.02);
+    z-index: 200;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
 }
-.search-bar-container{
+
+
+.search-bar-wrapper {
     display: flex;
-    flex-direction: column;
-}
-.search-bar-wrapper{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    border: 1px solid #E4E4E4;
-    background-color:#F2F2F2;
-    border-radius: 4px;
-    padding: 10px;
-    color: var(--dark-gray);
+    justify-content: space-between;
+    border: 1px solid #023d3a;   
+    border-radius: 100px;        
+    padding: 4px 4px 4px 18px;   
+    background-color: var(--white);
 }
-.search-bar-wrapper input{
+
+.search-input {
     border: none;
     background: transparent;
     outline: none;
     width: 100%;
-    font-size: 16px;
-    line-height: 100%;
-    font-family: var(--font-secondary);
-    font-weight: 400;
-    color: var(--dark-gray);
+    font-size: 14px;
+    font-family: var(--font-secondary), sans-serif;
+    color: #1f2937;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.search-submit-btn {
+    background-color: #023d3a;   
+    color:var(--white);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+    background-color: #012422;
+}
+
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-secondary), sans-serif;
+    font-size: 14px;
+    color: #4b5563;             
+    padding: 14px 0;
+    border-bottom: 1px solid #f3f4f6;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;         
+}
+
+.suggestion-item:hover {
+    color: #023d3a;              
+}
+
+
+.nhs-badge {
+    background-color: #005eb8;   
+    color: var(--white);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+@media (max-width: 991px) {
+    .search-bar-dropdown {
+        
+        left: 0;
+        transform: none;
+        position: relative; 
+        top: 0; 
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px 0 0 0; 
+        border-top: 1px solid #e5e7eb; 
+        margin-top: 12px;
+    }
+
+  
+    .search-bar-wrapper {
+        padding: 4px 4px 4px 14px;
+    }
 }

@@ -1,87 +1,24 @@
-/* 
-.pharmacy-mini-card{
-    width: 100%;
-    max-width: 418px; 
-    height: auto;
-    border-radius: 12px;
-    background-color: var(--bg-white);
-    right: 13%;
+.pharmacy-wrapper {
     position: absolute;
-    top: 100%;
-    padding: 6px;
-    z-index: 50;
-     box-shadow: 
-        0px 0.8px 5.32px 0px rgba(74, 92, 109, 0.0485),
-        0px 2.68px 17.87px 0px rgba(74, 92, 109, 0.0715),
-        0px 12px 80px 0px rgba(74, 92, 109, 0.12);
-}
-.pharmacy-box{
-    
-    border-radius: 8px;
-    padding: 12px 16px;
-    gap: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-.pharmacy-details{
-    gap: 4px;
-    display: flex;
-    flex-direction: column;
-    
-}
-.pharmacy-details h3{
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--tp-green);
-    margin-bottom: 8px;
-}
-.pharmacy-details p{
-    font-weight: 400;
-    font-size: 14px;
-}
-.pharmacy-links{
-    gap: 4px;
-    margin-bottom: 4px;
-}
-.pharmacy-links a{
-    font-weight: 400;
-    font-size: 14px;
-    text-decoration: underline;
-    color: var(--tp-green);
-}
-
-.pharmacy-dot{
-    color: #000;
-    margin: 0 4px;
-    
-}
-
-.pharmacy-another-detail{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 8px;
-    padding: 12px 16px;
-    gap: 12px;
-}
-@media (max-width:991px){
-        
-} */
-
-.pharmacy-wrapper{
+    top: calc(100% + 8px); 
+    right: 0;                     
     background-color: var(--white);
     border-radius: 12px;
     padding: 6px;
+    display: flex;
+    flex-direction: column;
     gap: 6px;
-    box-shadow: 0px 0.8px 5.32px 0px #4A5C6D0C,
-    0px 2.68px 17.87px 0px #4A5C6D12,
-    0px 12px 80px 0px #4A5C6D1F;
-    height: 194px;
+    box-shadow:
+        0px 0.8px 5.32px 0px #4A5C6D0C,
+        0px 2.68px 17.87px 0px #4A5C6D12,
+        0px 12px 80px 0px #4A5C6D1F;
+    height: auto;
     width: 418px;
+    max-width: calc(100vw - 32px);
+    z-index: 200;
 }
-.pharmacy-current-pharmacy{
+
+.pharmacy-current-pharmacy {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -89,61 +26,84 @@
     padding: 12px 16px;
     border-radius: 8px;
 }
-.pharmacy-info{
+
+.pharmacy-info {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    flex: 1;
+    min-width: 0; 
 }
-.pharmacy-contact-details{
+
+.pharmacy-contact-details {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.pharmacy-info h3{
+
+.pharmacy-info h3 {
     color: var(--tp-green);
-    line-height: 100%;
+    line-height: 1.2;
     font-size: 16px;
     font-weight: 700;
     font-family: var(--font-secondary);
+    margin: 0;
 }
-.pharmacy-info p{
+
+.pharmacy-info p {
     font-weight: 400;
     font-family: var(--font-secondary);
     font-size: 14px;
-    line-height: 100%;
+    line-height: 1.3;
     color: var(--dark-gray);
+    margin: 0;
+    word-break: break-word;
 }
-.pharmacy-contact{
+
+.pharmacy-contact {
     display: flex;
     gap: 8px;
     align-items: center;
+    flex-wrap: wrap;
 }
-.pharmacy-contact a{
+
+.pharmacy-contact a {
     font-weight: 400;
     font-family: var(--font-secondary);
     font-size: 14px;
-    line-height: 100%;
+    line-height: 1.3;
     color: var(--tp-green);
-    
+    text-decoration: none;
+    word-break: break-word;
 }
-.pharmacy-hours{
+
+.pharmacy-contact a:hover {
+    text-decoration: underline;
+}
+
+.pharmacy-hours {
     display: flex;
     gap: 6px;
+    flex-wrap: wrap;
 }
-.pharmacy-hours span{
+
+.pharmacy-hours span {
     padding: 6px;
     gap: 10px;
     font-size: 14px;
-    line-height: 100%;
+    line-height: 1.3;
     font-weight: 400;
     font-family: var(--font-secondary);
 }
-.pharmacy-arrow{
+
+.pharmacy-arrow {
     width: 24px;
     height: 24px;
     color: var(--tp-green);
+    flex-shrink: 0;
 }
-.pharmacy-choose-button{
+
+.pharmacy-choose-button {
     justify-content: space-between;
     display: flex;
     padding: 10px 16px;
@@ -151,11 +111,101 @@
     background-color: var(--white);
     border: none;
     align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
 }
-.pharmacy-choose-button span{
-    font-family: (--font-secondary);
+
+.pharmacy-choose-button:hover {
+    background-color: #1C4C4F14;
+}
+
+.pharmacy-choose-button span {
+    font-family: var(--font-secondary);
     color: var(--dark-gray);
-    line-height: 100%;
+    line-height: 1.3;
     font-size: 16px;
     font-weight: 400;
+    text-align: left;
+}
+
+
+
+@media (max-width: 991px) {
+    .pharmacy-wrapper {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 16px 16px 0 0;
+        padding: 16px 16px 30px 16px; 
+        box-shadow:
+            0px -4px 24px 0px rgba(74, 92, 109, 0.12),
+            0px -1px 4px 0px rgba(74, 92, 109, 0.05);
+        z-index: 1001; 
+    }
+
+    .pharmacy-current-pharmacy {
+        padding: 14px 16px;
+    }
+
+    .pharmacy-info h3 {
+        font-size: 15px;
+    }
+
+    .pharmacy-info p,
+    .pharmacy-contact a,
+    .pharmacy-hours span {
+        font-size: 13px;
+    }
+
+    .pharmacy-choose-button {
+        padding: 12px 16px;
+    }
+
+    .pharmacy-choose-button span {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pharmacy-wrapper {
+        padding: 12px 12px 24px 12px;
+    }
+
+    .pharmacy-current-pharmacy {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .pharmacy-info {
+        gap: 8px;
+    }
+
+    .pharmacy-info h3 {
+        font-size: 14px;
+    }
+
+    .pharmacy-info p,
+    .pharmacy-contact a,
+    .pharmacy-hours span {
+        font-size: 12px;
+    }
+
+    .pharmacy-arrow {
+        width: 20px;
+        height: 20px;
+    }
+
+    .pharmacy-choose-button {
+        padding: 10px 12px;
+    }
+
+    .pharmacy-choose-button span {
+        font-size: 14px;
+    }
 }
