@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
@@ -25,6 +25,7 @@ type ActiveMenuType = "services" | "search" | "product" | null;
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState<ActiveMenuType>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
 
   const toggleMenu = (menuName: ActiveMenuType) => {
     setActiveMenu((prev) => (prev === menuName ? null : menuName));
@@ -35,8 +36,30 @@ const Navbar = () => {
     setActiveMenu(null);
   };
 
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) {
+        setActiveMenu(null);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
-    <header className={styles["navbar"]}>
+    <header ref={navRef} className={styles["navbar"]}>
       <div className={`${styles["nav-container"]} container`}>
         {/* Logo */}
         <Link
@@ -116,7 +139,14 @@ const Navbar = () => {
               <button
                 aria-label="search"
                 className={styles["nav-icon-btn"]}
-                onClick={() => toggleMenu("search")}
+                onClick={() => {
+                  if (activeMenu === "search") {
+                    setActiveMenu(null);
+                    return;
+                  }
+
+                  setActiveMenu("search");
+                }}
                 aria-expanded={activeMenu === "search"}
               >
                 <Search className={styles["nav-icon"]} />
@@ -153,7 +183,7 @@ const Navbar = () => {
 
       <ServicesMenu isOpen={activeMenu === "services"} />
       {activeMenu === "product" && <PharmacyCard />}
-      {activeMenu === "search" && <SearchBar />}
+      {activeMenu === "search" && <SearchBar onClose={() => setActiveMenu(null)} />}
     </header>
   );
 };

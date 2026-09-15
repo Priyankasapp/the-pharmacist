@@ -230,19 +230,18 @@ const page = () => {
             return(
               <div key={product.id} className={styles['product-card-item']}>
                   <ProductCard
-                    key={product.id}
-                    image={product.image}
-                    title={product.title}
-                    subtitle={product.subtitle}
-                    reviewCount={product.reviewCount}
-                    weightText={product.weightText}
-                    unitPriceText={product.unitPriceText}
-                    originalPrice={product.originalPrice}
-                    isPrescriptionOnly={product.isPrescriptionOnly}
-                    savingsText={product.savingsText}
-                    price={product.price} 
-                    id={product.id}
-                  />
+                  key={product.id}
+                  image={product.image}
+                  title={product.title}
+                  subtitle={product.subtitle}
+                  reviewCount={product.reviewCount}
+                  weightText={product.weightText}
+                  unitPriceText={product.unitPriceText}
+                  originalPrice={product.originalPrice}
+                  isPrescriptionOnly={product.isPrescriptionOnly}
+                  savingsText={product.savingsText}
+                  price={product.price}
+                  id={product.id} slug={""}                  />
               </div>
             )
           })}

@@ -96,10 +96,7 @@ const Footer = () => {
                 <span>09:00AM to 06:00PM</span>
               </div>
 
-              <div className={styles['footer-text-con']}>
-                <span>Monday-Friday</span>
-                <span>09:00AM to 06:00PM</span>
-              </div>
+            
 
               <div className={styles['footer-text-con']}>
                 <span>Saturday</span>

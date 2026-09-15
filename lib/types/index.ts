@@ -77,6 +77,7 @@ export interface FilterOption{
 }
 
 export interface ProductCardData{
+    slug: string;
     id:string;
     title:string;
     subtitle:string;

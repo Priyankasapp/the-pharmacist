@@ -8,7 +8,7 @@ import {
   ChevronDown,
   Search,
 } from "lucide-react";
-
+import Link from "next/link";
 
 const Shop = () => {
   return (
@@ -20,7 +20,7 @@ const Shop = () => {
         <ProductSidebar />
 
         <div className={styles["shop-content-container"]}>
-          {/* search /Filter products  */}
+          {/* search products  */}
           <div className={styles["shop-search-container"]}>
             <div className={styles["shop-search-view"]}>
               View: 9 <ChevronDown size={15} />
@@ -54,22 +54,23 @@ const Shop = () => {
           {/* product data  */}
           <div className={styles["product-grid-container"]}>
             {productCardData.map((product) => {
+                  const productSlug = product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
               return (
                 <div key={product.id} className={styles["grid-item"]}>
-                  <ProductCard
-                    key={product.id}
-                    image={product.image}
-                    title={product.title}
-                    subtitle={product.subtitle}
-                    reviewCount={product.reviewCount}
-                    weightText={product.weightText}
-                    unitPriceText={product.unitPriceText}
-                    originalPrice={product.originalPrice}
-                    isPrescriptionOnly={product.isPrescriptionOnly}
-                    savingsText={product.savingsText}
-                    price={product.price}
-                    id={product.id}
-                  />
+                 <Link href={`/product/${productSlug}`} style={{ textDecoration: 'none', width: '100%', display: 'flex' }}>
+          <ProductCard
+                      image={product.image}
+                      title={product.title}
+                      subtitle={product.subtitle}
+                      reviewCount={product.reviewCount}
+                      weightText={product.weightText}
+                      unitPriceText={product.unitPriceText}
+                      originalPrice={product.originalPrice}
+                      isPrescriptionOnly={product.isPrescriptionOnly}
+                      savingsText={product.savingsText}
+                      price={product.price}
+                      id={product.id} slug={""}          />
+        </Link>
                 </div>
               );
             })}

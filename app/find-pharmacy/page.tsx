@@ -2,36 +2,48 @@ import FindPharmacyCard from "@/components/Find-Pharmacy/FindPharmacyCard/FindPh
 import FindPharmacyMap from "@/components/Find-Pharmacy/FindPharmacyMap/FindPharmacyMap";
 import SearchBar from "@/components/Find-Pharmacy/SearchBar/SearchBar";
 
+const FindPharmacy = () => {
+    return (
+        <div style={{ padding: "0 4%", marginBottom: "8%" }}>
+            
+            {/* Title Section */}
+            <h1 style={{ fontSize: "2rem", fontWeight: "bold", margin: "24px 0" }}>
+                Find Your Nearest Pharmacy
+            </h1>
 
-const FindPharmacy = () =>{
-    return(
-         <div>
-            <h1 style={{padding:'0% 3% '}}>Find Your Nearest Pharmacy</h1>
-            {/* search Section  */}
-            <div>
-               <SearchBar/>
+            {/* Search Section */}
+            <div style={{ marginBottom: "24px" }}>
+                <SearchBar />
             </div>
-            <div style={{display:"flex", justifyContent:"space-between",
-                margin:"0% 4%",
-                marginBottom:"8%"
+
+            {/* Main Content Split Section */}
+            <div style={{ 
+                display: "flex", 
+                gap: "32px", 
+                alignItems: "flex-start" 
             }}>
-                {/* map section  */}
-                <div>
-                    <FindPharmacyMap/>
+                
+                {/* Map Section (Left side - expands to fill space) */}
+                <div style={{ flex: 1, minHeight: "500px" }}>
+                    <FindPharmacyMap />
                 </div>
-                {/* specialist section  */}
+
+                {/* Sidebar Section (Right side - fixed width matching design) */}
                 <div style={{
-                    display:"flex",
-                    flexDirection:"column",
-                    gap:"24px"
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "24px",
+                    width: "410px", // Fixed width to prevent card elements from breaking
+                    flexShrink: 0
                 }}>
-                        <FindPharmacyCard/>
-                        <FindPharmacyCard/>
-                        <FindPharmacyCard/>
+                    <FindPharmacyCard />
+                    <FindPharmacyCard />
+                    <FindPharmacyCard />
                 </div>
+
             </div>
-            {/* bottom section  */}
         </div>
-    )
-}
-export default FindPharmacy;    
+    );
+};
+
+export default FindPharmacy;
