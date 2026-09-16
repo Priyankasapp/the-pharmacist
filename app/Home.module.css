@@ -177,3 +177,12 @@
         padding: 25px 0 ;
     }
 }
+.treatment-con{
+    margin: 0% 4%;
+}
+.treatment-cards{
+   display: flex;
+    gap: 24px;
+    justify-content: center;
+
+}

@@ -21,6 +21,7 @@ import FAQ from "@/components/Contact/FAQ/FAQ";
 import PatientReview from "@/components/Home/PatientsReview/PatientReview";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 import ProductSection from "@/components/ProductSection/ProductSection";
+import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSection";
 
 
 const Home = () => {
@@ -173,21 +174,9 @@ const Home = () => {
         </div>
       </section>
 
+          <TreatmentSection/>
 
-
-      {/* treatment section  */}
-      <section className={styles['treatment-con']}>
-      <div></div>
-      <div style={{display:"flex",padding:"4%", justifyContent:"space-between"}}>
-        {treatmentData.map((con)=>(
-         <TreatmentCard
-         id={con.id}
-         img={con.img}
-         title={con.title}
-         condition={con.condition}/>
-        ))}
-      </div>
-      </section>
+     
       {/* populer treatments  */}
       <ProductSection
       headingText="Treatments"

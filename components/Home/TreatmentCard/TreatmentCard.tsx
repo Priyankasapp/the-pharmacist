@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-import { export1 } from "@/data/assets";
 import styles from "./TreatmentCard.module.css";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
@@ -8,7 +7,8 @@ import { TreatmentDataProps } from "@/types/type";
 const TreatmentCard = ({id, title, img, condition}:TreatmentDataProps) => {
   return (
     <div className={styles['treatment-card']} id={String(id)}>
-        <div className={styles['treatment-card-img-wrapper']} >
+        <div className={styles['treatment-card-container']}></div>
+            <div className={styles['treatment-card-img-wrapper']} >
             <Image
             src = {img}
             alt ={title}
@@ -32,7 +32,8 @@ const TreatmentCard = ({id, title, img, condition}:TreatmentDataProps) => {
                 </div>
             
         </div>
-    </div>
+
+           </div>
   )
 }
 

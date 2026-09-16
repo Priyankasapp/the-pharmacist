@@ -740,6 +740,7 @@ export const treatmentData: TreatmentDataProps[] = [
     img: WellImg,
     condition: ["view all conditions", "Migraine", "view all conditions"],
   },
+ 
 ];
 
 export const informationData:InformationDataProps[] = [
