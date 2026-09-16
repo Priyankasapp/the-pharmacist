@@ -21,7 +21,7 @@ const getProductPerPage = () => {
 const ProductSection = ({ headingText, highlightText }: productProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Initialize with 3 to match the server render and prevent hydration mismatch
+  
   const [productPerPage, setPrductPerPage] = useState(3);
   const [isMounted, setIsMounted] = useState(false);
 

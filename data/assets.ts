@@ -60,6 +60,10 @@ import WellImg from "@/public/imaegs/image copy 6.png";
 import ctaImage from "@/public/imaegs/image copy 7.png";
 import InfoImage from "@/public/imaegs/Infoimage1.png";
 import InforImageTwo from "@/public/imaegs/InfoImage2.png";
+import privatePharmacy from "@/public/imaegs/image copy 10.png";
+import nhs from "@/public/imaegs/nhs.png";
+import onlineDoctor from "@/public/imaegs/image copy 11.png";
+
 // icons 
 import stars from "@/public/icons/Stars.png";
 import vectorOne from "@/public/icons/Vector.png";
@@ -143,7 +147,9 @@ export {
     ctaImage,
     InfoImage,
     InforImageTwo,
-    
+    privatePharmacy,
+    onlineDoctor,
+    nhs,
     // icons 
     stars,
     vectorOne,

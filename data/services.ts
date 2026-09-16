@@ -1,12 +1,11 @@
 import { ServiceColumn } from "@/types/type";
-import nhs from "../public/imaegs/nhs.png"
-import privatePharmacy from "../public/imaegs/private-pharmacy.svg"
-import onlineDoctor from "../public/imaegs/online-doctor.svg"
+import { nhs, onlineDoctor, privatePharmacy } from "./assets";
+
 export const SERVICES_MENU: ServiceColumn[] = [
   {
     id: "nhs",
     label: "NHS SERVICES",
-    logo: nhs, 
+    logo: nhs.src,
     groups: [
       {
         title: "NHS Pharmacy First",
@@ -23,7 +22,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
   {
     id: "private",
     label: "PRIVATE PHARMACY SERVICES",
-    logo: privatePharmacy,
+    logo: privatePharmacy.src,
     groups: [
       {
         title: "Skin & Scalp Conditions",
@@ -58,7 +57,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
   {
     id: "online-doctor",
     label: "ONLINE DOCTOR",
-    logo:onlineDoctor,
+    logo:onlineDoctor.src,
     groups: [
       {
         title: "Acne",

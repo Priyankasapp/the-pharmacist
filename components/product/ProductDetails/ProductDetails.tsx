@@ -25,7 +25,7 @@ const ProductDetails = () => {
     );
   };
 
-  // Find currently selected pack object to dynamically display its pricing details
+
   const selectedPackDetails = productData.packSizes.find(p => p.id === activePack);
 
   return (

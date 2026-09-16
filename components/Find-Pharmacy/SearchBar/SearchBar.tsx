@@ -27,7 +27,7 @@ const SearchBar = () => {
         {suggestions.map((item, index) => (
           <li key={index} className={styles['suggestion-item']}>
             {item}
-           \
+           {" "}
             {item === "Sore Throat" && (
               <span className={styles['nhs-badge']}>NHS</span>
             )}
