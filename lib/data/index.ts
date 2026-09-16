@@ -1,4 +1,8 @@
 import {
+  DrAisaKhan,
+  DrEmily,
+  DrJamesRobertson,
+  DrSharahChen,
   export1,
   export2,
   export3,
@@ -49,6 +53,7 @@ import {
   ProcessData,
   ProductCardData,
   ProductData,
+  SpecialistDataProps,
   StepInfo,
   Treatments,
   WhatWeOfferedCardData,
@@ -775,5 +780,38 @@ export const faqsData: FaqsDataProps[] = [
     id:"03",
      question: "What should I do if my medication is not available or out of stock?",
     
+  }
+]
+
+
+
+export const specalistDataSet: SpecialistDataProps[] = [
+  {
+    imgSrc:DrSharahChen,
+    name:"Dr. Sarah Chen",
+    role:"Lead Clinician & GP",
+    registration:"GMC Registration: 9876543",
+    description:"Dr. Sarah Chen is a practising NHS GP who brings extensive primary care expertise to our clinical team. "
+  },
+  {
+    imgSrc:DrAisaKhan,
+    name:"Dr. Aisha Khan",
+    role:"Mental Health Specialist ",
+    registration:"GPhC Registration: 7654321",
+    description:"Dr. Aisha Khan provides specialist oversight for mental health services, including anxiety and ADHD treatment."
+  },
+  {
+    imgSrc:DrEmily, 
+    name:"Mrs. Emily Watson",
+    role:"Clinical Pharmacist & Advisor",
+    registration:"GMC Registration: 9876543",
+    description:"Ms. Emily Watson specialises in women's health and contraception, focusing on patient education and support."
+  },
+  {
+    imgSrc:DrJamesRobertson,
+    name:"Mr. James Robertson",
+    role:"Lead Clinician & GP",
+    registration:"GMC Registration: 9876543",
+    description:"James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness."
   }
 ]

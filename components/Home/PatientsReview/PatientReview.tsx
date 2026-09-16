@@ -6,8 +6,21 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { patients } from "@/lib/data";
 import PatientsCard from "@/components/PatientsCard/PatientsCard";
+import { useState } from "react";
 
 const PatientReview = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
+    const handlePrevious = () =>{
+        setCurrentIndex((prevIndex)=>
+        prevIndex === 0 ? patients.length-1 : prevIndex - 1)
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex)=>
+        prevIndex === patients.length - 1 ? 0 : prevIndex + 1);
+    };
+
   return (
     <section className={styles['patient-review-section']}>
         {/* background img  */}
@@ -27,13 +40,16 @@ const PatientReview = () => {
                     Discover patient experiences that highlight our commitment to trusted care and professional guidance.
                 </p>
                 <div className={styles['patient-icon-wrapper']}>
-                   <button> <ChevronLeft/></button>
-                   <button><ChevronRight/></button>
+                   <button type="button" onClick={handlePrevious} aria-label="previous"> <ChevronLeft/></button>
+                   <button type="button" onClick={handleNext} aria-label="next"><ChevronRight/></button>
                 </div>
             </div>
             {/* right section  */}
             <div className={styles['patient-review-right-section']}>
-                <div className={styles['patient-review-cards']}>
+                <div className={styles['patient-review-cards']}
+                style={{
+                    transform:`translateX(-${currentIndex} * 100%)`
+                }}>
                     {patients.map((patient)=>(
                        <PatientsCard
                 id={patient.id}

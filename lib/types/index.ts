@@ -181,3 +181,12 @@ export type FaqsDataProps = {
     question:string;
     answer?:string;
 }
+
+//  specialist data 
+export type SpecialistDataProps = {
+    imgSrc: string | StaticImageData;
+    name: string;
+    role: string;
+    registration:string;
+    description:string;
+}
