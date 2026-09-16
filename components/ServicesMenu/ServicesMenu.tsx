@@ -17,7 +17,7 @@ export function ServicesMenu({ isOpen }: ServicesMenuProps) {
       <div className={`container ${styles.inner}`}>
         {SERVICES_MENU.map((column, columnIndex) => (
           <div
-            key={column.id}
+             key={`${column.id}-${columnIndex}`}
             className={`${styles.column} ${
               columnIndex < SERVICES_MENU.length - 1 ? styles.columnDivider : ""
             }`}
@@ -43,8 +43,8 @@ export function ServicesMenu({ isOpen }: ServicesMenuProps) {
                 column.groups.length > 1 ? styles.groupsGrid : ""
               }`}
             >
-              {column.groups.map((group) => (
-                <div key={group.title} className={styles.group}>
+              {column.groups.map((group, groupIndex) => (
+                <div key={`${group.title}-${groupIndex}`} className={styles.group}>
                   {group.href ? (
                     <Link href={group.href} className={styles.groupTitle}>
                       {group.title}

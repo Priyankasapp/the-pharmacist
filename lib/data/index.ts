@@ -695,7 +695,7 @@ export const exportCardInfo: ExportCardInfo[] = [
     isnhs: true,
     title: "Services",
     desc: "Access essential healthcare services and consultations provided by the National Health Service.",
-    id: "Services",
+    id: "Services1",
     img: export1,
   },
   {
@@ -716,7 +716,7 @@ export const exportCardInfo: ExportCardInfo[] = [
     isnhs: false,
     title: "Repeat Prescriptions",
     desc: "Manage and order your regular repeat medications with ease through our clinical automation system.",
-    id: "Services",
+    id: "Repeat Prescriptions",
     img: export4,
   },
 ];

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { ChevronLeft, ChevronRight, Indent } from "lucide-react";
 import styles from "./ProductSection.module.css";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ interface productProps {
   headingText: string;
   highlightText?: string;
 }
+
 const getProductPerPage = () => {
   if (typeof window === "undefined") return 3;
   if (window.innerWidth <= 600) return 1;
@@ -18,9 +20,15 @@ const getProductPerPage = () => {
 
 const ProductSection = ({ headingText, highlightText }: productProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [productPerPage, setPrductPerPage] = useState(getProductPerPage());
+  
+  // Initialize with 3 to match the server render and prevent hydration mismatch
+  const [productPerPage, setPrductPerPage] = useState(3);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+    setPrductPerPage(getProductPerPage());
+
     const handleResize = () => setPrductPerPage(getProductPerPage());
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -30,11 +38,13 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
     currentIndex,
     currentIndex + productPerPage,
   );
+
   const handleNext = () => {
     if (currentIndex + productPerPage < productCardData.length) {
       setCurrentIndex((prev) => prev + productPerPage);
     }
   };
+
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - productPerPage);
@@ -75,7 +85,6 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
           return (
             <div key={product.id} className={styles["product-card-item"]}>
               <ProductCard
-                key={product.id}
                 image={product.image}
                 title={product.title}
                 subtitle={product.subtitle}
@@ -86,11 +95,14 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
                 isPrescriptionOnly={product.isPrescriptionOnly}
                 savingsText={product.savingsText}
                 price={product.price}
-                id={product.id} slug={""}              />
+                id={product.id}
+                slug={""}
+              />
             </div>
           );
         })}
       </div>
+
       <div className={styles["product-pagination"]}>
         {Array.from({ length: totalPages }).map((_, index) => (
           <button
@@ -98,12 +110,13 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
             className={`${styles["pagination-dot"]} ${
               index === currentPage ? styles["pagination-dot-active"] : ""
             }`}
-            onClick={()=>setCurrentIndex(index * productPerPage)}
+            onClick={() => setCurrentIndex(index * productPerPage)}
             aria-label={`Go to page ${index + 1}`}
           />
         ))}
       </div>
-      <div className={styles['product-button-wrapper']}>
+
+      <div className={styles["product-button-wrapper"]}>
         <Button showArrow>Shop Pharmacy Essentials</Button>
       </div>
     </section>

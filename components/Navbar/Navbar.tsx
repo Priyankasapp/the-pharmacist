@@ -72,6 +72,7 @@ const Navbar = () => {
             alt="The Pharmacist logo"
             width={180}
             height={40}
+            style={{height:'auto'}}
             className={styles["nav-logo-icon"]}
           />
         </Link>
