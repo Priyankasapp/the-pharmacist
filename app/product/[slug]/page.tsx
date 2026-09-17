@@ -1,51 +1,61 @@
- /* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react-hooks/rules-of-hooks */
 
 "use client";
 
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import styles from "./Product.module.css";
 
-import {  productCardData, tabs } from "@/lib/data";
-import {healthBroken,
-
-  VectorFour,
-  VectorThree,
-} from "@/data/assets";
+import { productCardData, tabs } from "@/lib/data";
+import { healthBroken, VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const getProductPerPage = () =>{
+  if(typeof window === "undefined") return 4;
+  if(window.innerWidth <= 670) return 1;
+  if(window.innerWidth <= 960) return 2;
+  if(window.innerWidth <= 1280) return 3;
+  return 4
+};
+
 const page = () => {
-    const [activeTab, setActiveTab] = useState("Description");
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState("Description");
+  const [currentIndex, setCurrentIndex] = useState(0);
+const [productPerPage, setProductPerPage] = useState(4);
+const [isMounted, setIsMouted] = useState(false);
 
-    const productsPerPage = 4;
-    
-    const visibleProducts = productCardData.slice(
-      currentIndex,
-      currentIndex + productsPerPage
-    );
-    const handleNext = () => {
-      if(currentIndex  + productsPerPage < productCardData.length){
-        setCurrentIndex((prev)=>prev + productsPerPage)
-      }
-    };
+useEffect(()=>{
+  setIsMouted(true);
+  setProductPerPage(getProductPerPage());
+  const handleResize = () => setProductPerPage(getProductPerPage());
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
-    const handlePrevious = () => {
-      if (currentIndex > 0){
-        setCurrentIndex((prev)=>prev - productsPerPage );
-      }
-    };
+  const visibleProducts = productCardData.slice(
+    currentIndex,
+    currentIndex + productPerPage,
+  );
+  const handleNext = () => {
+    if (currentIndex + productPerPage < productCardData.length) {
+      setCurrentIndex((prev) => prev + productPerPage);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - productPerPage);
+    }
+  };
 
   return (
     <div className={styles["product-page"]}>
       <div className={styles["product-gallary-container"]}>
-
         {/* left section */}
-      <ProductDetails/>
+        <ProductDetails />
       </div>
 
       {/* description */}
@@ -204,32 +214,36 @@ const page = () => {
       </div>
 
       {/* another products */}
-      <div className={styles['similar-product-card']}>
-        <div className={styles['similar-product-header']}>
+      <div className={styles["similar-product-card"]}>
+        <div className={styles["similar-product-header"]}>
           <h2>Similar Products</h2>
           <div className={styles["slider-button"]}>
             <button
-            type="button"
-            onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            aria-label="Previous products">
-              <ChevronLeft/>
+              type="button"
+              onClick={handlePrevious}
+              disabled={currentIndex === 0}
+              aria-label="Previous products"
+            >
+              <ChevronLeft />
             </button>
             <button
-            type="button"
-            onClick={handleNext}
-            disabled={currentIndex + productsPerPage >= productCardData.length}
-            aria-label="Next products">
-              <ChevronRight/>
+              type="button"
+              onClick={handleNext}
+              disabled={
+                currentIndex + productPerPage >= productCardData.length
+              }
+              aria-label="Next products"
+            >
+              <ChevronRight />
             </button>
           </div>
         </div>
 
-        <div className={styles['product-cards-container']}>
-          {visibleProducts.map((product)=>{
-            return(
-              <div key={product.id} className={styles['product-card-item']}>
-                  <ProductCard
+        <div className={styles["product-cards-container"]}>
+          {visibleProducts.map((product) => {
+            return (
+              <div key={product.id} className={styles["product-card-item"]}>
+                <ProductCard
                   key={product.id}
                   image={product.image}
                   title={product.title}
@@ -241,9 +255,11 @@ const page = () => {
                   isPrescriptionOnly={product.isPrescriptionOnly}
                   savingsText={product.savingsText}
                   price={product.price}
-                  id={product.id} slug={""}                  />
+                  id={product.id}
+                  slug={""}
+                />
               </div>
-            )
+            );
           })}
         </div>
       </div>
@@ -252,4 +268,3 @@ const page = () => {
 };
 
 export default page;
-

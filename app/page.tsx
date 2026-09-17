@@ -1,20 +1,20 @@
-/* eslint-disable react/jsx-key */
+/* eslint-disable react-hooks/set-state-in-effect */
+
 "use client";
 
 import Button from "@/components/Button/Button";
 import ExportCard from "@/components/ExportCard/ExportCard";
 import Hero from "@/components/Home/Hero/Hero";
-import { exportCardInfo, treatmentData } from "@/lib/data";
+import { exportCardInfo } from "@/lib/data";
 import styles from "./Home.module.css";
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import {  ChevronLeft, ChevronRight,  } from "lucide-react";
 import Image from "next/image";
 import {
   nhs_logo_icon,
   right_icon,
   VectorSeven,
-} from "@/data/assets";
-import TreatmentCard from "@/components/Home/TreatmentCard/TreatmentCard";
+} from "@/data/assets";;
 import CTA from "@/components/Home/CTA/CTA";
 import ArticleSection from "@/components/Home/ArticleSetion/ArticleSection";
 import FAQ from "@/components/Contact/FAQ/FAQ";
@@ -23,10 +23,26 @@ import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmali
 import ProductSection from "@/components/ProductSection/ProductSection";
 import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSection";
 
+const getExpertsPerPage = () => {
+  if(typeof window === "undefined") return 4;
+  if(window.innerWidth  <= 665) return 1;
+  if(window.innerWidth <= 960) return 2;
+  if(window.innerWidth <= 1280) return 3;
+  return 4
 
+}
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const exportPerPage = 4;
+  const [exportPerPage, setExportPage] = useState(4);
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(()=>{
+    setIsMounted(true);
+    const handleResize = () => setExportPage(getExpertsPerPage());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);  
+  }, []);
+
   const visibleExports = exportCardInfo.slice(
     currentIndex,
     currentIndex + exportPerPage,
@@ -116,7 +132,7 @@ const Home = () => {
           <div className={styles["prescription-left-section"]}>
             <div className={styles["prescription-order-info-con"]}>
               <h2>Order Your Prepeat Prescriptions Online, Anytime</h2>
-              <p>
+              <p> 
                 Managing your repeat medication has never been easier. Our
                 secure online service lets you request, track and manage your
                 prescriptions from any device, without the need to visit your GP
