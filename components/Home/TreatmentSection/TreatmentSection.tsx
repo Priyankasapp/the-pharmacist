@@ -78,7 +78,7 @@ const TreatmentSection = () => {
       <div className={styles["treatment-card-container"]}>
         {visibleTreatmentCards.map((treatment) => {
           return (
-            <div className={styles["treatment-card-item"]}>
+            <div className={styles["treatment-card-item"]} id={String(treatment.id)}>
               <TreatmentCard
                 id={treatment.id}
                 img={treatment.img}
