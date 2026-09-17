@@ -18,7 +18,9 @@ const AllCondition = () => {
     { letter: "D", data: optionD },
   ];
 
-  const alphabetList = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+  const alphabetList = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode(65 + i),
+  );
   return (
     <div className={styles["all-conditions-container"]}>
       <h1>Discover Conditions and Find the Right Care</h1>
@@ -85,7 +87,7 @@ const AllCondition = () => {
         </div>
 
         <div className={styles["deases-section"]}>
-          <div>
+          <div className={styles["dieases-content-scroll"]}>
             {allAlphabetGroups.map((group) => (
               <div
                 key={group.letter}
@@ -100,28 +102,32 @@ const AllCondition = () => {
 
                 <div className={styles["option-section"]}>
                   {group.data.map((item) => (
-                    <OptionSectionCard
-                      // key={item.slug}
-                      slug={item.slug}
-                      name={item.name}
-                      desc={item.desc}
-                      isNHS={item.isNHS} id={""}                    />
+                    <div className={styles["option-card-wrapper"]} id={item.id}>
+                      <OptionSectionCard
+                        slug={item.slug}
+                        name={item.name}
+                        desc={item.desc}
+                        isNHS={item.isNHS}
+                        id={""}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-        
-        <nav className={styles["az-sidebar"]}>
-            {alphabetList.map((letter)=>(
-              <a 
-              key={letter}
-              href={`#section-${letter}`}
-              className={styles["az-sidebar-link"]}>
+
+          <nav className={styles["az-sidebar"]}>
+            {alphabetList.map((letter) => (
+              <a
+                key={letter}
+                href={`#section-${letter}`}
+                className={styles["az-sidebar-link"]}
+              >
                 {letter}
-              </a>  
-            ))} 
-        </nav>
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
 
