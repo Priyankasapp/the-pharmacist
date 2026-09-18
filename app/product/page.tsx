@@ -54,7 +54,7 @@ const Shop = () => {
           {/* product data  */}
           <div className={styles["product-grid-container"]}>
             {productCardData.map((product) => {
-                  const productSlug = product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                  const productSlug = product.slug || product.title
               return (
                 <div key={product.id} className={styles["grid-item"]}>
                  <Link href={`/product/${productSlug}`} style={{ textDecoration: 'none', width: '100%', display: 'flex' }}>

@@ -27,13 +27,13 @@ import mapImg from "@/public/imaegs/map.png";
 import locationIcon from "@/public/imaegs/locationIcon.png";
 import treatmentImg1 from "@/public/imaegs/treatmentImg1.png";
 import treatmentImg2 from "@/public/imaegs/treatmentimg2.png";
-import treatmentImg3 from "@/public/imaegs/treatmentimg3.png";
-import treatmentImg4 from "@/public/imaegs/treatment4.png";
+import treatmentImg3 from "@/public/imaegs/image copy 12.png";
+import treatmentImg4 from "@/public/imaegs/image copy 13.png";
 import treatmentImg5 from "@/public/imaegs/treatment5.png";
-import treatmentImg6 from "@/public/imaegs/treatment6.png";
+import treatmentImg6 from "@/public/imaegs/image copy 14.png";
 import treatmentImg7 from "@/public/imaegs/treatment7.png";
-import treatmentImg8 from "@/public/imaegs/treatment8.png";
-import treatmentImg9 from "@/public/imaegs/treatment9.png";
+import treatmentImg8 from "@/public/imaegs/image copy 17.png";
+import treatmentImg9 from "@/public/imaegs/image copy 18.png";
 import treatmentImg from "@/public/imaegs/treatmentImg.png";
 import productImg1 from "@/public/imaegs/product1.png";
 import productImg2 from "@/public/imaegs/product2.png";
@@ -149,7 +149,7 @@ export {
     InforImageTwo,
     privatePharmacy,
     onlineDoctor,
-    nhs,
+    nhs,    
     // icons 
     stars,
     vectorOne,
@@ -170,7 +170,7 @@ export {
     FaceBookIcon,
     TwitterIcon,
     InstaIcon,
-    LinkedIcon
+    LinkedIcon,
 };
 
  

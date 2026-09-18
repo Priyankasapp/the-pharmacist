@@ -22,8 +22,8 @@ const getProductPerPage = () =>{
 };
 
 const page = () => {
-  const [activeTab, setActiveTab] = useState("Description");
-  const [currentIndex, setCurrentIndex] = useState(0);
+const [activeTab, setActiveTab] = useState("Description");
+const [currentIndex, setCurrentIndex] = useState(0);
 const [productPerPage, setProductPerPage] = useState(4);
 const [isMounted, setIsMouted] = useState(false);
 

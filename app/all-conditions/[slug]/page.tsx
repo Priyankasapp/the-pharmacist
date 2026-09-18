@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/jsx-no-undef */
 
-'use client';
+"use client";
 import { productCardData, stepInfo } from "@/lib/data";
 import { useState } from "react";
 import styles from "./ConditionSlug.module.css";
@@ -13,103 +13,61 @@ import StepSectionCard from "@/components/all-conditions/StepSectionCard/StepSec
 import NHSSupportCard from "@/components/NHSSupportCard/NHSSupportCard";
 import Image from "next/image";
 import { NHS } from "@/data/assets";
+import ProductSection from "@/components/ProductSection/ProductSection";
 const ConditionSlug = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const productPerPage = 3 ;
+  const productPerPage = 3;
   const visibleProducts = productCardData.slice(
     currentIndex,
-    currentIndex  + productPerPage 
+    currentIndex + productPerPage,
   );
-  const handleNext = () =>{
-    if(currentIndex + productPerPage < productCardData.length){
-      setCurrentIndex((prev)=>prev + productPerPage)
+  const handleNext = () => {
+    if (currentIndex + productPerPage < productCardData.length) {
+      setCurrentIndex((prev) => prev + productPerPage);
     }
   };
   const handlePrevious = () => {
-    if(currentIndex > 0){
+    if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - productPerPage);
     }
   };
 
   return (
     <div className={styles["condition-page"]}>
-    <div className={styles["condition-header"]}> <h2>Sore Throat </h2>
-      <Image
-      src={NHS}
-      alt="NHS"
-      className={styles['header-img']}/></div>
+      <div className={styles["condition-header"]}>
+        {" "}
+        <h2>Sore Throat </h2>
+        <Image src={NHS} alt="NHS" className={styles["header-img"]} />
+      </div>
 
-    {/* hero section  */}
-    <div className={styles["condition-hero-section"]}>
-      <h1>A sore throat is irritation or pain in the throat, often caused by infection or dryness.</h1>
-       <NHSSupportCard/>
-
-    </div>
-    <div className={styles["condition-step-cards"]}>
-      {stepInfo.map((step)=>(
-        <StepSectionCard
-        id={step.id}
-        desc={step.desc}
-        name={step.name}/>
-      ))}
-    </div>
+      {/* hero section  */}
+      <div className={styles["condition-hero-section"]}>
+        <h1>
+          A sore throat is irritation or pain in the throat, often caused by
+          infection or dryness.
+        </h1>
+        <NHSSupportCard />
+      </div>
+      <div className={styles["condition-step-cards"]}>
+        {stepInfo.map((step) => (
+          <StepSectionCard id={step.id} desc={step.desc} name={step.name} />
+        ))}
+      </div>
 
       {/**/}
       {/* <StepSectionCard
       /> */}
-      <Symptoms/>
+      <Symptoms />
 
-      <div className={styles['condition-product-card']}>
-        
-        <div className={styles['condition-product-header']}>
-          <h2>Sore Throat Relif Products</h2>
-          <div className={styles["condition-slider-button"]}>
-            <button
-            type="button"
-            onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            aria-label="Previous products">
-              <ChevronLeft/>
-            </button>
-            <button
-            type="button"
-            onClick={handleNext}
-            disabled={currentIndex + productPerPage >= productCardData.length}
-            aria-label="Next products">
-              <ChevronRight/>
-            </button>
-          </div>
-        </div>  
-
-          <div className={styles['condition-product-card-container']}>  
-            {visibleProducts.map((product)=>{
-              return(
-                <div key={product.id} className={styles['condition-product-card-item']}>
-                 <ProductCard
-                    key={product.id}
-                    image={product.image}
-                    title={product.title}
-                    subtitle={product.subtitle}
-                    reviewCount={product.reviewCount}
-                    weightText={product.weightText}
-                    unitPriceText={product.unitPriceText}
-                    originalPrice={product.originalPrice}
-                    isPrescriptionOnly={product.isPrescriptionOnly}
-                    savingsText={product.savingsText}
-                    price={product.price}
-                    id={product.id} slug={""}                  />
-                </div>
-              )
-            })}
-          </div>
+      {/* product section  */}
+      <div className={styles["condition-product-card"]}>
+        <ProductSection headingText="Sore Throat Relif Products" />
       </div>
-
       <div>
-        <FAQ/>
+        <FAQ />
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 export default ConditionSlug;

@@ -141,7 +141,7 @@ export const patients: Patients[] = [
 // treatment data
 export const treatments: Treatments[] = [
   {
-    name: "sdsd",
+    name: "Acne",
     desc: "Clinician-approved treatments to help clear your skin and reduce future breakouts.",
     imgSrc: treatmentImg1,
   },
