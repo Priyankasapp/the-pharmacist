@@ -1,26 +1,55 @@
-.pharmacy-map{
-  position: relative;
+.pharmacy-map {
   width: 100%;
+  height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.pharmacy-map-con{
+
+.pharmacy-map-con {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 /9;
+  aspect-ratio: 620 / 550; 
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-.pharmacy-map-img-wrapper{
+
+.pharmacy-map-img-wrapper {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-.pharmacy-map-img{
+
+.pharmacy-map-img {
   object-fit: cover;
-  
+  object-position: center;
 }
-.pharmacy-location-pin-wrapper{
+
+.pharmacy-location-pin-wrapper {
   position: absolute;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 10;
+  transform: translate(-50%, -50%); 
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
-.pharmacy-locaion-img{
-  
+
+.pharmacy-location-pin-wrapper:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.pharmacy-location-img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .pharmacy-location-img {
+    width: 32px;
+    height: 32px;
+  }
 }
