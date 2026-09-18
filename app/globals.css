@@ -32,17 +32,7 @@
   --container-inner: 1320px;
   --container-padding: 60px;
 
-  /* shadows */
-  --shadow-sm: 0px 4px 6px rgba(65, 65, 65, 0.08);
-  --shadow-md:
-    0px 65px 250px rgba(0, 0, 0, 0.07),
-    0px 14.5186px 66.5622px rgba(0, 0, 0, 0.0417275),
-    0px 4.32257px 19.8173px rgba(0, 0, 0, 0.0282725);
-  --shadow-lg:
-    0px 24px 105px rgba(0, 0, 0, 0.08),
-    0px 5.36071px 23.4531px rgba(0, 0, 0, 0.0596107),
-    0px 1.59602px 6.98261px rgba(0, 0, 0, 0.0403893);
-}
+  }
 
 * {
   box-sizing: border-box;
