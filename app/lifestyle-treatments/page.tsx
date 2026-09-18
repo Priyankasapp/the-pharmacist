@@ -1,46 +1,43 @@
-'use client'
+"use client";
 
 import FAQ from "@/components/Contact/FAQ/FAQ";
 import TreatmentCard from "@/components/Lifestyle-treatmemts/TreatmentsCard/TreatmentCard";
 import { treatments } from "@/lib/data";
+import styles from "./LifestyleTreatments.module.css";
+import Button from "@/components/Button/Button";
 
 const LifestyleTreatments = () => {
-    return (
-        <div>
-            <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "0% 4%"
-            }}>
-                <h1>Lifestyle Treatments</h1>
-                <div>Search bar</div>
-            </div>
+  return (
+    <div className={styles['lifestyle-treatment']}>
+      <div className={styles['lifestyle-header']}>
+        <h1>Lifestyle Treatments</h1>
+        <div className={styles['lifestyle-searchbar-wrapper']}>
+            <input 
+            type="text"
+            placeholder="What condition are you looking for?"
             
-            <div style={{
-                padding: "2% 4%",
-                display: "grid",
-                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                gap: "24px"
-            }}>
-               {treatments.map((treatment, index) => (
-                    <div 
-                        key={`${treatment.name || 'treatment'}-${index}`} 
-                        style={{ display: "flex", justifyContent: "center", gap: "24px" }}
-                    >
-                        <TreatmentCard
-                            name={treatment.name}
-                            desc={treatment.desc}
-                            imgSrc={treatment.imgSrc}
-                        />
-                    </div>
-                ))}
-            </div>
-            <div>
-                <FAQ />
-            </div>
+            />
+            <Button showArrow>Search</Button>
         </div>
-    );
+      </div>
+
+      <div className={styles['lifestyle-cards-container']}>
+        {treatments.map((treatment, index) => (
+          <div key={`${treatment.name || "treatment"}-${index}`}
+          className={styles['lifestyle-card-wrapper']}>
+            <TreatmentCard
+              name={treatment.name}
+              desc={treatment.desc}
+              imgSrc={treatment.imgSrc}
+            />
+          </div>
+        ))}
+      </div>
+      <div className={styles['faq-wrapper']}>
+        <FAQ />
+      </div>
+    </div>
+  );
 };
 
 export default LifestyleTreatments;

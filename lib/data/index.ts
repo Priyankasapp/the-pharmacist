@@ -60,7 +60,6 @@ import {
 } from "../types";
 import { TreatmentDataProps } from "@/types/type";
 
-
 // footer data
 export const FOOTER_LINKS: FooterLinksData = {
   legal: [
@@ -288,7 +287,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 10,
     weightText: "15g",
     unitPriceText: "£18 per 100 ",
-    slug: "Nurofen Ibuprofen 200mg Tablets, 16 Tablets"
+    slug: "Nurofen Ibuprofen 200mg Tablets, 16 Tablets",
   },
   {
     id: "Panadol 50g",
@@ -302,7 +301,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 13,
     weightText: "20g",
     unitPriceText: " £15 per 100g",
-    slug: "Panadol 50g"
+    slug: "Panadol 50g",
   },
   {
     id: "IMODIUM® Dual Action Tablet",
@@ -316,7 +315,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 15,
     weightText: "8 Tablets",
     unitPriceText: "£21 per pack",
-    slug: "IMODIUM® Dual Action Tablet"
+    slug: "IMODIUM® Dual Action Tablet",
   },
   {
     id: "HydraBoost Rehydration Sachets",
@@ -330,7 +329,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 10,
     weightText: "10 Tablets",
     unitPriceText: "£14 per pack",
-    slug: "HydraBoost Rehydration Sachets"
+    slug: "HydraBoost Rehydration Sachets",
   },
   {
     id: "Rehydra Oral Solution",
@@ -344,7 +343,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 14,
     weightText: "10 Lozenges",
     unitPriceText: "£12 per pack",
-    slug: "Rehydra Oral Solution"
+    slug: "Rehydra Oral Solution",
   },
   {
     id: "Orlistat 120mg Capsules",
@@ -358,7 +357,7 @@ export const productCardData: ProductCardData[] = [
     // originalPrice: 10,
     weightText: "84 capsules",
     unitPriceText: "£0.36 per capsule",
-    slug: "Orlistat 120mg Capsules"
+    slug: "Orlistat 120mg Capsules",
   },
   {
     id: "Electrolyte Plus Solution",
@@ -372,7 +371,7 @@ export const productCardData: ProductCardData[] = [
     // originalPrice: 10,
     weightText: "15g",
     unitPriceText: "£18 per 100g",
-    slug: "Electrolyte Plus Solution"
+    slug: "Electrolyte Plus Solution",
   },
   {
     id: "Anadin Extra 500mg",
@@ -386,7 +385,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 14,
     weightText: "10 Tablets",
     unitPriceText: "£14 per pack",
-    slug: "Anadin Extra 500mg"
+    slug: "Anadin Extra 500mg",
   },
   {
     id: "Mysimba (Naltrexone / Bupropion) Tablets",
@@ -400,7 +399,7 @@ export const productCardData: ProductCardData[] = [
     originalPrice: 15,
     weightText: "112 tablets",
     unitPriceText: "£0.85 per tablet",
-    slug: "Mysimba (Naltrexone / Bupropion) Tablets"
+    slug: "Mysimba (Naltrexone / Bupropion) Tablets",
   },
 ];
 
@@ -437,21 +436,21 @@ export const optionA: HealthConditionData[] = [
     name: "Acid Reflux & Heartburn",
     desc: "A burning sensation in the chest caused by stomach acid moving into the esophagus.",
     isNHS: false,
-    id: "Acid Reflux & Heartburn"
+    id: "Acid Reflux & Heartburn",
   },
   {
     slug: "Acne",
     name: "Acne",
     desc: "Skin condition causing pimples and blackheads due to clogged pores.",
     isNHS: true,
-    id: "Acne"
+    id: "Acne",
   },
   {
     slug: "Altitude",
     name: "Altitude",
     desc: "The height above sea level, affecting oxygen levels and breathing.",
     isNHS: true,
-    id: ""
+    id: "",
   },
   {
     slug: "Angina",
@@ -465,21 +464,21 @@ export const optionA: HealthConditionData[] = [
     name: "Anxiety",
     desc: "A feeling of worry, nervousness, or unease, often about an imminent event or uncertain outcome.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Asthma",
     name: "Asthma",
     desc: "A condition that narrows airways causing difficulty breathing, often triggered by allergens.",
     isNHS: true,
-    id:  "Asthma"
+    id: "Asthma",
   },
   {
     slug: "Athlete's Foot",
     name: "Athlete's Floot",
     desc: "A fungal infaction that causes itching, redness, and peeling on the feet, commonly between the toes.",
     isNHS: false,
-    id: "Athlete's Floot"
+    id: "Athlete's Floot",
   },
 ];
 
@@ -489,14 +488,14 @@ export const optionB: HealthConditionData[] = [
     name: "Bacterial Vaginosis",
     desc: "An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
     isNHS: true,
-    id: ""
+    id: "",
   },
   {
     slug: "Bruising",
     name: "Bruising",
     desc: "Discoloration of the skin caused by bleeding under the skin, often due to injury or trauma.",
     isNHS: true,
-    id: ""
+    id: "",
   },
 ];
 
@@ -506,41 +505,41 @@ export const optionC: HealthConditionData[] = [
     name: "Chesty Cough",
     desc: "An imbalance of natural bacteria in the vagina, causing unusual discharge, odor, and irritation.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Chlamydia",
     name: "Chlamydia",
     desc: "Discoloration of the skin caused by  bleeding under the skin, often due to injury or trama.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Cold & Flu",
     name: "Cold & Flu",
     desc: "When it cause redness, swelling, warmth, and pus",
     isNHS: true,
-    id: ""
+    id: "",
   },
   {
     slug: "Cold Sores",
     name: "Cold Sores",
     desc: "A viral infection causing a painful rash, shingles is triggered by the reactivation of the chickenpox virus.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Constipation",
     name: "Constipation",
     desc: "Sinus inflammation from infection or allergies, causing facial plain and congestion.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Cystits (UTI)",
     name: "Cystits (UTI)",
     desc: "Urinary infection causing pain or burning during urination.",
-    id: ""
+    id: "",
   },
 ];
 
@@ -550,56 +549,56 @@ export const optionD: HealthConditionData[] = [
     name: "Dental Care",
     desc: "Sinus inflammation from infection or allergies, causing facial pain and congestion.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Diabetes",
     name: "Diabetes (Type 2)",
     desc: "A common condition maked by pain, irritation, or scratchiness in the throat. ",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Diarrhoea",
     name: "Diarrhoea",
     desc: "urinary infection causing pain or burning durig urination.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Diarrhoea",
     name: "Diarrhoea",
     desc: "urinary infection causing pain or burning durig urination.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Dry Eye",
     name: "Dry Eye",
     desc: "Sinus inflammation from infection or allergies, causing facial pain and congestion.",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Dry Cough",
     name: "Dry Cough",
     desc: "A common condition marked by pain, irritation, or scratchiness in the throat.",
     isNHS: true,
-    id: ""
+    id: "",
   },
   {
     slug: "Dry Skin",
     name: "Dry Skin",
     desc: "Urinary infecion causing pain or burning during urination",
     isNHS: false,
-    id: ""
+    id: "",
   },
   {
     slug: "Diarrhoea",
     name: "Diarrhoea",
     desc: "Urinary infection causing pain or burning during urination.",
     isNHS: false,
-    id: ""
+    id: "",
   },
 ];
 
@@ -745,73 +744,71 @@ export const treatmentData: TreatmentDataProps[] = [
     img: WellImg,
     condition: ["view all conditions", "Migraine", "view all conditions"],
   },
- 
 ];
 
-export const informationData:InformationDataProps[] = [
+export const informationData: InformationDataProps[] = [
   {
-    id:"01",
-    img:InfoImage,
-    desc:"When to See a Doctor About a Persistent Cough",
+    id: "01",
+    img: InfoImage,
+    desc: "When to See a Doctor About a Persistent Cough",
   },
   {
-    id:"02",
-    img:InforImageTwo,
-    desc:"Managing Seasonal Allergies: Simple Steps for Relief"
-  }
+    id: "02",
+    img: InforImageTwo,
+    desc: "Managing Seasonal Allergies: Simple Steps for Relief",
+  },
+];
 
-]
-
-
-
-// faq data 
+// faq data
 export const faqsData: FaqsDataProps[] = [
   {
-    id:"01",
-    question:"How can Pharmacy First save time?",
-    answer:"Pharmacy First will help you get seen by a healthcare professional quickly. Instead of waiting for a GP appointment, going to A&E or attending out-of-hours NHS services, you can walk into your nearest Well Pharmacy and have a private consultation with one of our pharmacists whenever you need to.",
+    id: "01",
+    question: "How can Pharmacy First save time?",
+    answer:
+      "Pharmacy First will help you get seen by a healthcare professional quickly. Instead of waiting for a GP appointment, going to A&E or attending out-of-hours NHS services, you can walk into your nearest Well Pharmacy and have a private consultation with one of our pharmacists whenever you need to.",
   },
   {
-    id:"02",
-    question:"Do I need to create an account to use the service?",
-    
+    id: "02",
+    question: "Do I need to create an account to use the service?",
   },
   {
-    id:"03",
-     question: "What should I do if my medication is not available or out of stock?",
-    
-  }
-]
-
-
+    id: "03",
+    question:
+      "What should I do if my medication is not available or out of stock?",
+  },
+];
 
 export const specalistDataSet: SpecialistDataProps[] = [
   {
-    imgSrc:DrSharahChen,
-    name:"Dr. Sarah Chen",
-    role:"Lead Clinician & GP",
-    registration:"GMC Registration: 9876543",
-    description:"Dr. Sarah Chen is a practising NHS GP who brings extensive primary care expertise to our clinical team. "
+    imgSrc: DrSharahChen,
+    name: "Dr. Sarah Chen",
+    role: "Lead Clinician & GP",
+    registration: "GMC Registration: 9876543",
+    description:
+      "Dr. Sarah Chen is a practising NHS GP who brings extensive primary care expertise to our clinical team. ",
   },
   {
-    imgSrc:DrAisaKhan,
-    name:"Dr. Aisha Khan",
-    role:"Mental Health Specialist ",
-    registration:"GPhC Registration: 7654321",
-    description:"Dr. Aisha Khan provides specialist oversight for mental health services, including anxiety and ADHD treatment."
+    imgSrc: DrAisaKhan,
+    name: "Dr. Aisha Khan",
+    role: "Mental Health Specialist ",
+    registration: "GPhC Registration: 7654321",
+    description:
+      "Dr. Aisha Khan provides specialist oversight for mental health services, including anxiety and ADHD treatment.",
   },
   {
-    imgSrc:DrEmily, 
-    name:"Mrs. Emily Watson",
-    role:"Clinical Pharmacist & Advisor",
-    registration:"GMC Registration: 9876543",
-    description:"Ms. Emily Watson specialises in women's health and contraception, focusing on patient education and support."
+    imgSrc: DrEmily,
+    name: "Mrs. Emily Watson",
+    role: "Clinical Pharmacist & Advisor",
+    registration: "GMC Registration: 9876543",
+    description:
+      "Ms. Emily Watson specialises in women's health and contraception, focusing on patient education and support.",
   },
   {
-    imgSrc:DrJamesRobertson,
-    name:"Mr. James Robertson",
-    role:"Lead Clinician & GP",
-    registration:"GMC Registration: 9876543",
-    description:"James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness."
-  }
-]
+    imgSrc: DrJamesRobertson,
+    name: "Mr. James Robertson",
+    role: "Lead Clinician & GP",
+    registration: "GMC Registration: 9876543",
+    description:
+      "James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness.",
+  },
+];
