@@ -54,13 +54,13 @@ useEffect(()=>{
   return (
     <div className={styles["product-page"]}>
       <div className={styles["product-gallary-container"]}>
-        {/* left section */}
+      
         <ProductDetails />
       </div>
 
-      {/* description */}
+    
       <div className={styles["product-details"]}>
-        {/* background image */}
+        
         <div className={styles["product-container-bg-wrapper"]}>
           <Image
             src={VectorFour}
@@ -76,9 +76,9 @@ useEffect(()=>{
         </div>
 
         <div className={styles["product-details-container"]}>
-          {/* navigation */}
+       
           <nav className={styles["prodcut-details-tab-container"]}>
-            {/* details */}
+           
             <div className={styles["product-details-tab-wrapper"]}>
               {tabs.map((tab) => (
                 <button
@@ -94,11 +94,11 @@ useEffect(()=>{
             </div>
           </nav>
 
-          {/* main details */}
+        
           <main className={styles["product-content"]}>
             {activeTab === "Description" && (
               <>
-                {/* first section */}
+              
                 <section className={styles["product-content-section"]}>
                   <h2 className={styles["product-content-heading"]}>
                     What is Pandol?
@@ -213,7 +213,7 @@ useEffect(()=>{
         </div>
       </div>
 
-      {/* another products */}
+    
       <div className={styles["similar-product-card"]}>
         <div className={styles["similar-product-header"]}>
           <h2>Similar Products</h2>
