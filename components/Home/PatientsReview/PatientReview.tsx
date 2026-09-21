@@ -52,6 +52,7 @@ const PatientReview = () => {
                 }}>
                     {patients.map((patient)=>(
                        <PatientsCard
+                       key={patient.id}
                 id={patient.id}
                 title={patient.title}
                 name={patient.name}

@@ -103,7 +103,12 @@
     font-weight: 400;
     font-size: 14px;
 }
-
+.article-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
 @media (max-width:900px){
   
     .article-info-wrapper{

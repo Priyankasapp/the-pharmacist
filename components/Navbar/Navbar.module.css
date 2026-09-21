@@ -1,11 +1,15 @@
 .navbar {
   height: 68px;
-  position: relative;
+
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
+
   width: 100%;
   background-color: transparent;
-  
+
+  z-index: 1000;
 }
 
 .nav-container {

@@ -81,7 +81,7 @@ const Shop = () => {
             <div>
               <a
                 href="#"
-                className={styles["shop-pagination-number-wrapper"]}
+                className={styles["shop-pagination-nav1"]}
                 style={{ display: "flex", gap: "10px" }}
               >
                 <ArrowLeft />
@@ -114,7 +114,7 @@ const Shop = () => {
             <div>
               <a
                 href="#"
-                className={styles["shop-pagination-number-wrapper"]}
+                className={styles["shop-pagination-nav"]}
                 style={{ display: "flex", gap: "10px" }}
               >
                 <span>Next</span>

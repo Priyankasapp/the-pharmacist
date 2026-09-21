@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 "use client";
-import {  stepInfo } from "@/lib/data";
+import { stepInfo } from "@/lib/data";
 import styles from "./ConditionSlug.module.css";
 import FAQ from "@/components/Contact/FAQ/FAQ";
 import Symptoms from "@/components/all-conditions/Symptoms/Symptoms";
@@ -15,12 +15,8 @@ const ConditionSlug = () => {
     <div className={styles["condition-page"]}>
       <div className={styles["condition-header"]}>
         <h2>Sore Throat </h2>
-        <div className={styles['header-img-wrapper']}>
-        <Image 
-        src={NHS} 
-        alt="NHS" 
-        fill
-        priority />
+        <div className={styles["header-img-wrapper"]}>
+          <Image src={NHS} alt="NHS" fill priority />
         </div>
       </div>
 
@@ -30,21 +26,21 @@ const ConditionSlug = () => {
           A sore throat is irritation or pain in the throat, often caused by
           infection or dryness.
         </h1>
-        <div className={styles['nhs-card-wrapper']}>
+        <div className={styles["nhs-card-wrapper"]}>
           <NHSSupportCard />
         </div>
-        
       </div>
       <div className={styles["condition-step-cards"]}>
         {stepInfo.map((step) => (
           <div className={styles["condition-step-card-item"]}>
-            <StepSectionCard id={step.id} desc={step.desc} name={step.name} />
+            <StepSectionCard 
+            key={step.id}
+            id={step.id} 
+            desc={step.desc} name={step.name} />
           </div>
-          
         ))}
       </div>
 
-  
       <Symptoms />
 
       {/* product section  */}

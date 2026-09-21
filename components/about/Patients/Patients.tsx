@@ -16,6 +16,7 @@ const Patients = () => {
             return(
               <div key={patient.id} className={styles['patients-card-item']}>
                 <PatientsCard
+                key={patient.id}
                 id={patient.id}
                 title={patient.title}
                 name={patient.name}

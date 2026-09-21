@@ -5,6 +5,7 @@ import styles from "./ArticleSection.module.css";
 import Image from "next/image";
 import { informationData } from "@/lib/data";
 import { useEffect, useState } from "react";
+import Button from "@/components/Button/Button";
 
 const getArticleCardPerPage = () => {
   if (typeof window === "undefined") return 2;
@@ -108,6 +109,10 @@ const ArticleSection = () => {
             <ChevronRight />
           </button>
         </div>
+      </div>
+
+      <div className={styles["article-button"]}>
+        <Button showArrow>View All Blogs</Button>
       </div>
     </section>
   );
