@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState } from "react";
 import styles from "./TreatmentSection.module.css";
@@ -10,7 +10,7 @@ const getTreatmentCardsPerPage = () => {
   if (typeof window === "undefined") return 3;
   if (window.innerWidth <= 550) return 1;
   if (window.innerWidth <= 700) return 2;
-  if(window.innerWidth <= 1000) return 3;
+  if (window.innerWidth <= 1000) return 3;
 
   return 3;
 };
@@ -18,10 +18,10 @@ const getTreatmentCardsPerPage = () => {
 const TreatmentSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [treatmentCardPerPage, setTreatmentCardPerPage] = useState(3);
-  const [isMounted, setMounted] = useState(false);
+  
 
   useEffect(() => {
-    setMounted(true);
+  
     setTreatmentCardPerPage(getTreatmentCardsPerPage);
 
     const handleResize = () =>
@@ -78,10 +78,11 @@ const TreatmentSection = () => {
       <div className={styles["treatment-card-container"]}>
         {visibleTreatmentCards.map((treatment) => {
           return (
-            <div 
-             key={treatment.id}
-            className={styles["treatment-card-item"]} 
-            id={String(treatment.id)}>
+            <div
+              key={treatment.id}
+              className={styles["treatment-card-item"]}
+              id={String(treatment.id)}
+            >
               <TreatmentCard
                 id={treatment.id}
                 img={treatment.img}

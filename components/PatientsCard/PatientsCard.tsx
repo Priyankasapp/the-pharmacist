@@ -31,7 +31,7 @@ const PatientsCard = ({ id, name, title, description,imgSrc,rating = 5   }:Patie
       {/* bottom */}
       <div className={styles["patient-card-bottom-section"]}>
         {/* left   */}
-        <div>
+        <div className={styles["patient-card-bottom-desc"]}>
           <h3>{name}</h3>
           <p>{title}</p>
         </div>

@@ -22,10 +22,12 @@
     overflow: hidden;
 } */
  .patient-slider-viewport{
-    overflow: hidden;
+    overflow-x: auto;
     scroll-behavior: smooth;
     gap: 32px;
     display: flex;
+    width: 300px;
+
  }
 .patient-controls{
     display: flex;
