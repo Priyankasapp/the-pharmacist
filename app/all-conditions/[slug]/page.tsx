@@ -32,7 +32,8 @@ const ConditionSlug = () => {
       </div>
       <div className={styles["condition-step-cards"]}>
         {stepInfo.map((step) => (
-          <div className={styles["condition-step-card-item"]}>
+          <div className={styles["condition-step-card-item"]}
+          key={step.id}>
             <StepSectionCard 
             key={step.id}
             id={step.id} 

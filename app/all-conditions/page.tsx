@@ -102,8 +102,12 @@ const AllCondition = () => {
 
                 <div className={styles["option-section"]}>
                   {group.data.map((item) => (
-                    <div className={styles["option-card-wrapper"]} id={item.id}>
+                    <div 
+                    className={styles["option-card-wrapper"]} 
+                    id={item.id}
+                    >
                       <OptionSectionCard
+                      key={item.id}
                         slug={item.slug}
                         name={item.name}
                         desc={item.desc}

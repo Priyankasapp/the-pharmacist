@@ -39,12 +39,12 @@ import productImg1 from "@/public/imaegs/product1.png";
 import productImg2 from "@/public/imaegs/product2.png";
 import productImg3 from "@/public/imaegs/product3.png";
 import productImg4 from "@/public/imaegs/product4.png";
-import productImg5 from "@/public/imaegs/image copy 2.png";
+import productImg5 from "@/public/imaegs/image copy 19.png";
 import productImg6 from "@/public/imaegs/product6.png";
 import productImg7 from "@/public/imaegs/image copy 3.png";
 import productImg8 from "@/public/imaegs/product8.png";
 import productImg9 from "@/public/imaegs/product9.png";
-import productImg10 from "@/public/imaegs/image copy.png"
+import productImg10 from "@/public/imaegs/image copy 20.png"
 import panadol1 from "@/public/imaegs/panadol1.png";
 import panadol2 from "@/public/imaegs/panadol2.png";
 import panadol3 from "@/public/imaegs/panadol3.png";

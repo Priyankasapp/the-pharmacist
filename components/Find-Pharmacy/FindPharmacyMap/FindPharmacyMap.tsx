@@ -5,9 +5,9 @@ import { locationIcon, mapImg } from '@/data/assets';
 
 const FindPharmacyMap = () => { 
   const locations = [
-    { id: 1, top: "33%", left: "21%" },
-    { id: 2, top: "22%", left: "51%" }, 
-    { id: 3, top: "58%", left: "44%" }, 
+    { id: 1, top: "19%", left: "78%" },
+    { id: 2, top: "34%", left: "27%" }, 
+    { id: 3, top: "72%", left: "68%" }, 
   ];
 
   return (
