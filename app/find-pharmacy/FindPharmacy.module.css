@@ -31,7 +31,7 @@
 
 .find-pharmacy-searchbar-wrapper {
   height: 60px;
-  background-color: #F2F2F2;
+  background-color: var(--grey-95);
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
