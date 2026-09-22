@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-/* Arrow hidden by default */
+
 .button-arrow-wrapper {
   width: 0;
   height: 20px;
@@ -31,13 +31,15 @@
     transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Arrow appears on hover */
 .button:hover .button-arrow-wrapper {
   width: 20px;
   opacity: 1;
   transform: translateX(2px);
 }
 
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .button-arrow {
   width: 20px;
   height: 20px;

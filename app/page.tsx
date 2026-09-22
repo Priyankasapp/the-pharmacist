@@ -34,10 +34,10 @@ const getExpertsPerPage = () => {
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [exportPerPage, setExportPage] = useState(4);
-  const [isMounted, setIsMounted] = useState(false);
+
   
   useEffect(()=>{
-    setIsMounted(true);
+  
     const handleResize = () => setExportPage(getExpertsPerPage());
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);  
@@ -66,7 +66,7 @@ const Home = () => {
       <Hero />
      
       <section className={styles["export-section"]}>
-        <div className={styles["export-Header"]}>
+        <div className={styles["export-header"]}>
           <h2 className={styles["section-title"]}>
             Your Health Supported by Our <span>Export Pharmacy</span> Team
           </h2>
@@ -82,7 +82,6 @@ const Home = () => {
               <button
                 type="button"
                 onClick={handlePrevious}
-                disabled={currentIndex === 0}
                 aria-label="Previouse exports"
               >
                 <ChevronLeft />
@@ -90,7 +89,6 @@ const Home = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                disabled={currentIndex + exportPerPage >= exportCardInfo.length}
                 aria-label="Next export"
               >
                 <ChevronRight />

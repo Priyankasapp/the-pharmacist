@@ -166,7 +166,8 @@ const Navbar = () => {
             </button>
 
             {/* Location dropdown */}
-            <button
+            <div className={styles['nav-location-wrapper']}>
+              <button
               className={styles["nav-location-dropdown"]}
               onClick={() => toggleMenu("product")}
               aria-expanded={activeMenu === "product"}
@@ -176,6 +177,8 @@ const Navbar = () => {
               <span>Silver Lane</span>
               <ChevronDown size={14} className={styles["nav-chevron-icon"]} />
             </button>
+ {activeMenu === "product" && <PharmacyCard />}
+            </div>
 
             <Button showArrow>Order Prescription</Button>
           </div>
@@ -183,7 +186,7 @@ const Navbar = () => {
       </div>
 
       <ServicesMenu isOpen={activeMenu === "services"} />
-      {activeMenu === "product" && <PharmacyCard />}
+     
       {activeMenu === "search" && <SearchBar />}
     </header>
   );
