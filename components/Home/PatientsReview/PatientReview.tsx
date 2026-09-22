@@ -1,4 +1,4 @@
-    /* eslint-disable react/jsx-key */
+    
     'use client';
     import { VectorEight } from "@/data/assets";
     import styles from "./PatientReview.module.css";
@@ -67,4 +67,4 @@
     )
     }
 
-    export default PatientReview
+    export default PatientReview;

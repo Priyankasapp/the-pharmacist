@@ -233,4 +233,7 @@
   .shop-search-sortby-wrapper {
     justify-content: space-between;
   }
+  .pagination-number{
+    display: none;
+  }
 }

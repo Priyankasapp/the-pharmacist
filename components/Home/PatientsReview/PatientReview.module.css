@@ -38,7 +38,6 @@
 .patient-review-left-section{
     width: 326px;
     flex-shrink: 0;
-   
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -81,5 +80,39 @@
 .patient-review-cards{
     display: flex;
     flex-direction: row;
+
+}
+
+@media (max-width: 960px) {
+    .patient-review-section {
+        min-height: 600px;              
+        background-color: var(--tp-bg);
+    }
+
+    .patient-review-info-con {
+        flex-direction: column;        
+        align-items: flex-start;
+        gap: 32px;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .patient-review-left-section {
+        width: 100%;
+    }
+
+    .patient-review-left-section h2 {
+        width: auto;
+    }
+
+    .patient-review-right-section {
+        flex: none;                    
+        width: 100%;
+    }
+
+    .patient-review-slide {
+        flex: 0 0 100%;                
+    }
+
 
 }

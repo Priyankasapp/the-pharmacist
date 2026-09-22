@@ -95,17 +95,20 @@ const Shop = () => {
             >
               1
             </a>
-            <a href="#" className={styles["shop-pagination-number-wrapper"]}>
+            <a 
+            href="#" 
+            className={`${styles["shop-pagination-number-wrapper"]}, ${styles['pagination-number']}`}
+            >
               2
             </a>
-            <a href="#" className={styles["shop-pagination-number-wrapper"]}>
+            <a href="#" className={`${styles["shop-pagination-number-wrapper"]}, ${styles['pagination-number']}`}>
               3
             </a>
             <span className={styles["shop-pagination-number-wrapper"]}>
               {" "}
               ...
             </span>
-            <a href="#" className={styles["shop-pagination-number-wrapper"]}>
+            <a href="#" className={`${styles["shop-pagination-number-wrapper"]}, ${styles['pagination-number']}`}>
               10
             </a>
             <a href="#" className={styles["shop-pagination-number-wrapper"]}>
