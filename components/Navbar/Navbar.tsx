@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
 import {
+  ArrowRight,
   ChevronDown,
   ChevronUp,
   MapPin,
@@ -180,7 +181,12 @@ const Navbar = () => {
  {activeMenu === "product" && <PharmacyCard />}
             </div>
 
-            <Button showArrow>Order Prescription</Button>
+            {/* <Button showArrow >Order Prescription</Button> */}
+            <button className={styles['nav-button']}>Order Prescription
+              <span className={styles['nav-button-arrow-wrapper']}>
+                <ArrowRight className={styles['nav-arrow']}/>
+              </span>
+            </button>
           </div>
         </div>
       </div>

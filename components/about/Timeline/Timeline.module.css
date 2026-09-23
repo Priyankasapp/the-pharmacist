@@ -3,9 +3,11 @@
   gap: 46px;
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .timeline-heading {
@@ -89,77 +91,69 @@
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* car section  */
-.timeline-card-module {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  gap: 24px;
-  height: 315px;
+.timeline-card-module{
+
   width: 618px;
-  background: linear-gradient(
+  height: 315px;
+  padding: 20px;
+  border-radius: 20px;
+ box-sizing: border-box;
+ border-radius: 20px;
+ background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.2) 0%,
     rgba(28, 76, 79, 0.2) 100%
   );
-  box-sizing: border-box;
   background-blend-mode: normal;
-  box-shadow:
-    0px 4.32px 19.82px 0px rgba(0, 0, 0, 0.015),
-    0px 14.52px 66.56px 0px rgba(0, 0, 0, 0.025),
-    0px 65px 250px 0px rgba(0, 0, 0, 0.04);
-}
 
-.timeline-card-left-section {
+}
+.timeline-card-container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 24px;
+}
+.timeline-card-left-section{
   position: relative;
-  width: 277px;
+  width: 265px;
   height: 275px;
-  border-radius: 12px;
-  overflow: hidden;
   flex-shrink: 0;
 }
-
-.timeline-card-left-img {
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 12px;
+.timeline-card-left-img{
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
+  border-radius: 12px;
 }
-
-.timeline-card-right-section {
+.timeline-card-right-section{
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  flex: 1;
+  gap: 10px;
+  flex-grow: 1;
+  min-width: 0;
 }
-
-.timeline-card-year {
-  font-size: 40px;
-  font-weight: 500;
+.timeline-card-year{
   color: var(--tp-green);
-  font-family: var(--font-plus-jakarta), sans-serif;
-  line-height: 100%;
+  font-family: var(--font-primary);
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 500;
 }
-
-.timeline-card-right-heading {
-  font-family: var(--font-plus-jakarta), sans-serif;
+.timeline-card-right-heading{
   font-weight: 600;
   font-size: 32px;
-  line-height: 110%;
+  line-height: 1.2;
   color: var(--black);
-  margin-bottom: 4px;
+  margin: 0;
 }
-
-.timeline-card-right-paragraph {
-  font-family: var(--font-sk-modernist);
+.timeline-card-right-paragraph{
+  font-family: var(--font-secondary);
   font-weight: 400;
   font-size: 16px;
-  line-height: 145%;
-  color: var(--dark-gray);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 @media (max-width: 1200px) {
   .timeline-spine-line {
     left: 20px;

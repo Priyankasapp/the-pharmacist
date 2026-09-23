@@ -1,10 +1,10 @@
 .about-hero{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 60px;
     margin: 3% 4%;
     align-items: center;
-   color: black
+    color: black
    
 }
 

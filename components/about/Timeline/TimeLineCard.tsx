@@ -10,7 +10,8 @@ interface TimeLineCardProps {
 const TimeLineCard = ({year,title,description,imgSrc}:TimeLineCardProps) => {
   return (
     <div className={styles['timeline-card-module']}>
-        <div className={styles['timeline-card-left-section']}>
+       <div className={styles['timeline-card-container']}>
+         <div className={styles['timeline-card-left-section']}>
             <Image 
               src={imgSrc}
               alt={title}
@@ -28,6 +29,7 @@ const TimeLineCard = ({year,title,description,imgSrc}:TimeLineCardProps) => {
             <h3 className={styles['timeline-card-right-heading']}>{title}</h3>
             <p className={styles['timeline-card-right-paragraph']}>{description}</p>
         </div>
+       </div>
     </div>
   )
 }

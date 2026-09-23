@@ -57,7 +57,7 @@ const Specialist = () => {
       <div className={styles['specialist-viewport']}>
         <div className={styles['specialist-cards']}
         >
-        {visibleSpecialists.map((specialist)=>{
+                  {visibleSpecialists.map((specialist)=>{
           return(
             <div 
             key={specialist.name} 

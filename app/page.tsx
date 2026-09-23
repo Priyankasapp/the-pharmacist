@@ -98,7 +98,8 @@ const Home = () => {
         </div>
 
         <div className={styles["export-cards"]}>
-          {visibleExports.map((info) => (
+          <div className={styles["export-cards-wrapper"]}>
+            {visibleExports.map((info) => (
             <div key={info.id} className={styles["export-card-wrapper"]}>
               <ExportCard
                 img={info.img}
@@ -108,7 +109,8 @@ const Home = () => {
                 isnhs={info.isnhs}
               />
             </div>
-          ))}
+          ))}</div> 
+          
         </div>
 
         <div className={styles["services-button"]}>
