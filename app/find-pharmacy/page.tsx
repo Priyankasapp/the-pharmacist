@@ -6,7 +6,8 @@ import { Search } from 'lucide-react';
 const FindPharmacy = () => {
   return (
     <div className={styles['find-pharmacy']}>
-      <h1 className={styles['find-pharmacy-title']}>Find your Nearest Pharmacy</h1>
+     <div className={styles['find-pharmacy-container-box']}>
+       <h1 className={styles['find-pharmacy-title']}>Find your Nearest Pharmacy</h1>
 
       <div className={styles['find-pharmacy-searchbar-container']}>
         <span>Search</span>
@@ -29,6 +30,7 @@ const FindPharmacy = () => {
           <FindPharmacyCard />
         </div>
       </div>
+     </div>
     </div>
   );
 };

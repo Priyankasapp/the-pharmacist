@@ -81,7 +81,7 @@ const Specialist = () => {
         <button 
         type='button' 
         onClick={handlePrevious}
-        disabled={currentIndex === 0}
+        
         aria-label='Previous specialist'>
           <ChevronLeft className={styles['specialist-icon']}/>
         </button>
@@ -89,7 +89,7 @@ const Specialist = () => {
         <button 
         type='button'
         onClick={handleNext}
-        disabled={currentIndex + specialisrPerPage >= specalistDataSet.length}
+        
         aria-label='Next Specialist'>
           <ChevronRight 
           className={styles['specialist-icon']}/>
@@ -100,4 +100,4 @@ const Specialist = () => {
   )
 }
 
-export default Specialist
+export default Specialist;

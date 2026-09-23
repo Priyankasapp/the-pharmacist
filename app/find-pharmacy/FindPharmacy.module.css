@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+
+ 
+}
+.find-pharmacy-container-box  {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .find-pharmacy-title {

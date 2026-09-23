@@ -2,7 +2,7 @@
 import { pharmacy } from "@/lib/data";
 import styles from "./PharmacyCard.module.css";
 import { ChevronRight } from "lucide-react";
-
+import Link from "next/link";
 const PharmacyCard = () => {
   return (
     <div className={styles["pharmacy-wrapper"]}>
@@ -28,10 +28,13 @@ const PharmacyCard = () => {
         <ChevronRight className={styles["pharmacy-arrow"]} />
       </div>
       
-      <button className={styles["pharmacy-choose-button"]}>
+     <Link href={"./find-pharmacy"}>
+      <button className={styles["pharmacy-choose-button"]}
+      >
         <span>Choose another pharmacy</span>
         <ChevronRight className={styles["pharmacy-arrow"]} />
       </button>
+     </Link>
     </div>
   );
 };

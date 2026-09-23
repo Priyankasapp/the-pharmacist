@@ -182,11 +182,14 @@ const Navbar = () => {
             </div>
 
             {/* <Button showArrow >Order Prescription</Button> */}
-            <button className={styles['nav-button']}>Order Prescription
+           <Link
+           href={"./product"}>
+             <button className={styles['nav-button']}>Order Prescription
               <span className={styles['nav-button-arrow-wrapper']}>
                 <ArrowRight className={styles['nav-arrow']}/>
               </span>
             </button>
+           </Link>
           </div>
         </div>
       </div>
