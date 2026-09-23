@@ -40,6 +40,9 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
 }
+.product-button{
+    padding: 16px 24px;
+}
 
 .prduct-card-item{
     min-width: 0;

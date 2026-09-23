@@ -4,18 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
-import {
-  ArrowRight,
-  ChevronDown,
-  ChevronUp,
-  MapPin,
-  Menu,
-  Search,
-  ShoppingBag,
-  User,
-  X,
-} from "lucide-react";
-
+import {ChevronDown,ChevronUp,MapPin,Menu,Search,ShoppingBag,User,X,} from "lucide-react";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
@@ -181,14 +170,13 @@ const Navbar = () => {
  {activeMenu === "product" && <PharmacyCard />}
             </div>
 
-            {/* <Button showArrow >Order Prescription</Button> */}
+            
            <Link
            href={"./product"}>
-             <button className={styles['nav-button']}>Order Prescription
-              <span className={styles['nav-button-arrow-wrapper']}>
-                <ArrowRight className={styles['nav-arrow']}/>
-              </span>
-            </button>
+
+            <Button showArrow className={styles['nav-button']}>
+                Order Prescription
+            </Button>
            </Link>
           </div>
         </div>

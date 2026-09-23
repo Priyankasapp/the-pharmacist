@@ -7,9 +7,9 @@
    padding: 10px;
    border-radius: 30px;
    margin: 5%;
-
-
-
+}
+.contact-button{
+    padding: 16px 24px;
 }
 .contact-container{
     display: flex;

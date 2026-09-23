@@ -1,7 +1,7 @@
-
 import styles from "./TreatmentCard.module.css";
 import Image from "next/image";
 import { Treatments } from "@/lib/types";
+import Button from "@/components/Button/Button";
 const TreatmentCard = ({ name, desc, imgSrc}:Treatments) => {
   return (
     <div className={styles["treatement-card"]}>
@@ -20,7 +20,7 @@ const TreatmentCard = ({ name, desc, imgSrc}:Treatments) => {
       </div>
 
       <div className={styles['treatment-card-button-wrapper']}>
-        <button className={styles['treatment-card-button']}>View Treatments</button>
+        <Button className={styles['treatment-card-wrapper-button']} showArrow>View Treatments</Button>
       </div>
     </div>
   );

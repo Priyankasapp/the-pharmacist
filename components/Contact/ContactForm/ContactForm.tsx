@@ -67,7 +67,7 @@ const ContactForm = () => {
                 <input type="checkbox" name="privacy" id="privacy" />
                 <label htmlFor="privacy">You agree to our friendly <a href="#">privacy policy.</a></label>
               </div>
-              <Button>Send Message</Button>
+              <Button showArrow className={styles['contact-button']}>Send Message</Button>
             </form>
           </div>
         </div>

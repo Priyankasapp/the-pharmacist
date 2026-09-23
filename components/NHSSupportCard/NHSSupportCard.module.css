@@ -14,13 +14,14 @@
     font-weight: 600;
     font-size: 24px;
 }
-.nhs-support span{
-    color: var(--tp-green);
-}
+
 .nhs-form-section{
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+.nhs-button{
+    padding: 16px 24px;
 }
 .nhs-gender-con{
     display: flex;

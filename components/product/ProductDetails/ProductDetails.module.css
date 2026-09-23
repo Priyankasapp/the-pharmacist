@@ -33,6 +33,9 @@
   justify-content: space-between;
   margin-bottom: 8px;
 }
+.product-right-button{
+  padding: 16px 24px;
+}
 .brand {
   margin: 0;
   font-size: 28px;

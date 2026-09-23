@@ -1,4 +1,5 @@
 
+import Button from "@/components/Button/Button";
 import styles from "./WhatWeOffer.module.css";
 import { whatWeOffereCardData } from "@/lib/data";
 
@@ -20,7 +21,8 @@ const WhatWeOffer = () => {
           ))}
         </div>
 
-        <button className={styles['what-we-offer-button']}>Explore Our Treatments</button>
+        {/* <button className={styles['what-we-offer-button']}>Explore Our Treatments</button> */}
+        <Button className={styles['what-we-offer-button']} showArrow>Explore Our Treatments</Button>
       </div>
     </div>
   );

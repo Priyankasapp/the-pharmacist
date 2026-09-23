@@ -68,7 +68,7 @@ const AllCondition = () => {
                 placeholder="Search for health conditions (e.g., stomach ache)"
                 className={styles["all-condition-option-header-search-input"]}
               />
-              <Button showArrow>Search</Button>
+              <Button showArrow className={styles['all-condition-button']}>Search</Button>
             </div>
             <div
               className={styles["all-condition-option-header-right-component"]}

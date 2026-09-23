@@ -38,6 +38,7 @@
     border-radius:8px;
     
 }
+
 .treatment-card-Image{
     width: 100% !important;
     height: 100% !important;
@@ -48,6 +49,9 @@
    position: absolute;
    bottom: 30px;
    z-index: 3;
+}
+.treatment-card-wrapper-button{
+    padding: 16px 24px;
 }
 .treatment-card-button{
     color: var(--white);

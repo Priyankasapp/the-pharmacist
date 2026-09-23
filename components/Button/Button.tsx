@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 'use client';
 
@@ -7,11 +8,13 @@ import styles from "./Button.module.css";
 interface ButtonProps {
   children: React.ReactNode;
   showArrow?: boolean;
+  className?:string;
 }
 
-const Button = ({ children, showArrow = false }: ButtonProps) => {
+const Button = ({ children,className = "", showArrow = false }: ButtonProps) => {
   return (
-    <button className={styles.button}>
+    // className={styles.button}
+    <button  className={`${styles.button} ${className}`}>
       {children}
 
       {showArrow && (

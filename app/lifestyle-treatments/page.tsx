@@ -17,7 +17,7 @@ const LifestyleTreatments = () => {
             placeholder="What condition are you looking for?"
             
             />
-            <Button showArrow>Search</Button>
+            <Button showArrow className={styles['lifestyle-button']}>Search</Button>
         </div>
       </div>
 

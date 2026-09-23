@@ -168,7 +168,7 @@ const ProductDetails = () => {
         </div>
 
         <div className={styles['btn-container']}>
-          <Button>Add to Bag</Button>
+          <Button showArrow className={styles['product-right-button']}>Add to Bag</Button>
         </div>
 
         {/* Delivery Details table */}

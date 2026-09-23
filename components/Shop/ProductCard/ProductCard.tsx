@@ -65,8 +65,12 @@ const ProductCard = ({
           </div>
 
           <div className={styles["product-card-button-container"]}>
-            <Button showArrow>Add to Bag</Button>
+            <Button showArrow className={'product-card-button'}>Add to Bag</Button>
           </div>
+          
+       
+            
+          
         </div>
       </div>
     </div>

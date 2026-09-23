@@ -117,7 +117,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
       </div>
 
       <div className={styles["product-button-wrapper"]}>
-        <Button showArrow>Shop Pharmacy Essentials</Button>
+        <Button showArrow className={styles["product-button"]}>Shop Pharmacy Essentials</Button>
       </div>
     </section>
   );

@@ -25,10 +25,8 @@ const page = () => {
 const [activeTab, setActiveTab] = useState("Description");
 const [currentIndex, setCurrentIndex] = useState(0);
 const [productPerPage, setProductPerPage] = useState(4);
-const [isMounted, setIsMouted] = useState(false);
 
 useEffect(()=>{
-  setIsMouted(true);
   setProductPerPage(getProductPerPage());
   const handleResize = () => setProductPerPage(getProductPerPage());
   window.addEventListener("resize", handleResize);

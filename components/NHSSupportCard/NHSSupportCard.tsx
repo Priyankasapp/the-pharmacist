@@ -29,7 +29,7 @@ const NHSSupportCard = () => {
             <input type="date" id="dob" placeholder="MM/DD/YYYY"/>
         </div>
        </div>
-       <Button showArrow>Check Eligibility</Button>
+       <Button showArrow className={styles['nhs-button']}>Check Eligibility</Button>
       </div>
     </div>
   );
