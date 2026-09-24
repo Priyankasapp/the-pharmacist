@@ -1,5 +1,10 @@
+.export-section{
+  margin: 6% 3%;
+  display: flex;
+  gap: 46px;
+  flex-direction: column;
 
-
+}
 .section-title {
   margin: 0;
   font-weight: 600;
@@ -28,19 +33,33 @@
 .export-cards {
   
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content:space-between;
+ 
+}
+.export-info{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 .export-cards-wrapper{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
+.export-card-button{
+  padding: 16px 24px;
+}
 .services-button {
   padding: 30px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.export-card-button-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 .export-slider-button {
   display: flex;
@@ -100,7 +119,8 @@
   display: flex;
   flex-direction: column;
   gap: 36px;
-  width: 100%;
+  width: 645px;
+
 }
 .prescription-order-info-con {
   display: flex;
@@ -111,6 +131,14 @@
   font-weight: 600;
   font-size: 40px;
   margin: 0;
+}
+.prescription-order-info-con h2  span{
+  color: var(--tp-green);
+}
+.prescription-button{
+  padding: 17px 26px;
+  display: flex;
+  gap: 11.16px;
 }
 .prescription-order-info-con p {
   font-family: var(--font-secondary);

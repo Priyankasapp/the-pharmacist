@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState } from "react";
 import styles from "./TreatmentSection.module.css";
 import { treatmentData } from "@/lib/data";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import TreatmentCard from "../TreatmentCard/TreatmentCard";
+import Button from "@/components/Button/Button";
 
 const getTreatmentCardsPerPage = () => {
   if (typeof window === "undefined") return 3;
@@ -18,10 +18,8 @@ const getTreatmentCardsPerPage = () => {
 const TreatmentSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [treatmentCardPerPage, setTreatmentCardPerPage] = useState(3);
-  
 
   useEffect(() => {
-  
     setTreatmentCardPerPage(getTreatmentCardsPerPage);
 
     const handleResize = () =>
@@ -75,7 +73,8 @@ const TreatmentSection = () => {
           </button>
         </div>
       </div>
-      <div className={styles["treatment-card-container"]}>
+      <div className={styles['treatment-cards']}>
+         <div className={styles["treatment-card-container"]}>
         {visibleTreatmentCards.map((treatment) => {
           return (
             <div
@@ -93,6 +92,11 @@ const TreatmentSection = () => {
           );
         })}
       </div>
+        <div className={styles['treatment-card-wrapper']}>
+          <Button showArrow className={styles['treatment-card-button']}>View All Treatments</Button>
+        </div>
+      </div>
+     
     </section>
   );
 };

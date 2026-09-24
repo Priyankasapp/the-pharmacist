@@ -1,5 +1,5 @@
 'use client';
-import {  export1, NHS } from "@/data/assets";
+import {   NHS } from "@/data/assets";
 import styles from "./ExportCard.module.css";
 import Image from "next/image";
 import { ExportCardInfo } from "@/lib/types";

@@ -1,5 +1,9 @@
 
-
+.treatment-cards{
+display: flex;
+flex-direction: column;
+gap: 32px;
+}
 .treatment-section{
   padding: 4%;
   display: flex;
@@ -10,6 +14,14 @@
 .treatment-header{
   display: flex;
   justify-content: space-between;
+}
+.treatment-card-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.treatment-card-button{
+  padding: 16px 24px;
 }
 .treatment-heading{
   font-weight: 600;

@@ -4,7 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
-import {ChevronDown,ChevronUp,MapPin,Menu,Search,ShoppingBag,User,X,} from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  MapPin,
+  Menu,
+  Search,
+  ShoppingBag,
+  User,
+  X,
+} from "lucide-react";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
@@ -62,7 +71,7 @@ const Navbar = () => {
             alt="The Pharmacist logo"
             width={180}
             height={40}
-            style={{height:'auto'}}
+            style={{ height: "auto" }}
             className={styles["nav-logo-icon"]}
           />
         </Link>
@@ -86,19 +95,18 @@ const Navbar = () => {
             <div
               className={styles["nav-hover-wrapper"]}
               onMouseEnter={() => setActiveMenu("services")}
-              onMouseLeave={() => setActiveMenu(null)}
+              onMouseLeave={()=>setActiveMenu(null)}
             >
               <Link
-                href="#"
-                className={styles["nav-link"]}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleMenu("services");
-                }}
-              >
-                Our Services{" "}
-                {activeMenu === "services" ? <ChevronUp /> : <ChevronDown />}
-              </Link>
+    href="#"
+    className={styles["nav-link"]}
+    onClick={(e) => e.preventDefault()}
+  >
+    Our Services{" "}
+    {activeMenu === "services" ? <ChevronUp /> : <ChevronDown />}
+  </Link>
+
+  <ServicesMenu isOpen={activeMenu === "services"} />
             </div>
 
             <Link
@@ -156,34 +164,31 @@ const Navbar = () => {
             </button>
 
             {/* Location dropdown */}
-            <div className={styles['nav-location-wrapper']}>
+            <div className={styles["nav-location-wrapper"]}>
               <button
-              className={styles["nav-location-dropdown"]}
-              onClick={() => toggleMenu("product")}
-              aria-expanded={activeMenu === "product"}
-              aria-label="Select pharmacy location"
-            >
-              <MapPin size={14} className={styles["nav-location-icon"]} />
-              <span>Silver Lane</span>
-              <ChevronDown size={14} className={styles["nav-chevron-icon"]} />
-            </button>
- {activeMenu === "product" && <PharmacyCard />}
+                className={styles["nav-location-dropdown"]}
+                onClick={() => toggleMenu("product")}
+                aria-expanded={activeMenu === "product"}
+                aria-label="Select pharmacy location"
+              >
+                <MapPin size={14} className={styles["nav-location-icon"]} />
+                <span>Silver Lane</span>
+                <ChevronDown size={14} className={styles["nav-chevron-icon"]} />
+              </button>
+              {activeMenu === "product" && <PharmacyCard />}
             </div>
 
-            
-           <Link
-           href={"./product"}>
-
-            <Button showArrow className={styles['nav-button']}>
+            <Link href={"./product"}>
+              <Button showArrow className={styles["nav-button"]}>
                 Order Prescription
-            </Button>
-           </Link>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
 
       <ServicesMenu isOpen={activeMenu === "services"} />
-     
+
       {activeMenu === "search" && <SearchBar />}
     </header>
   );

@@ -98,7 +98,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={styles["export-cards"]}>
+       
+        <div className={styles['export-info']}>
           <div className={styles["export-cards-wrapper"]}>
             {visibleExports.map((info) => (
             <div key={info.id} className={styles["export-card-wrapper"]}>
@@ -112,10 +113,9 @@ const Home = () => {
             </div>
           ))}</div> 
           
-        </div>
-
-        <div className={styles["services-button"]}>
-          <Button showArrow>View All Services</Button>
+          <div className={styles['export-card-button-wrapper']}>
+            <Button showArrow className={styles['export-card-button']}>View All Services</Button>
+          </div>
         </div>
       </section>
 
@@ -132,7 +132,7 @@ const Home = () => {
           {/* left section  */}
           <div className={styles["prescription-left-section"]}>
             <div className={styles["prescription-order-info-con"]}>
-              <h2>Order Your Prepeat Prescriptions Online, Anytime</h2>
+              <h2>Order Your <span>Repeat Prescriptions </span>Online, Anytime</h2>
               <p> 
                 Managing your repeat medication has never been easier. Our
                 secure online service lets you request, track and manage your
@@ -176,7 +176,7 @@ const Home = () => {
               </ul>
             </div>
             <div className={styles["prescription-wrapper"]}>
-              <Button showArrow>Order Prescriptions</Button>
+              <Button showArrow className={styles['prescription-button']}>Order Prescriptions</Button>
             </div>
           </div>
           {/* right section  */}
