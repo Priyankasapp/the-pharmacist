@@ -3,7 +3,7 @@ import FAQ from "@/components/Contact/FAQ/FAQ";
 
 const  Contact = () => {
     return (
-        <div >
+        <div style={{padding:"0 1.4rem"}}>
             <div className="container">
             <ContactForm/>
             <FAQ/>  

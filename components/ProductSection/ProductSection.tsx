@@ -84,7 +84,8 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
         {visibleProducts.map((product) => {
           return (
             <div key={product.id} className={styles["product-card-item"]}>
-              <ProductCard
+             <ProductCard
+                id={product.id}
                 image={product.image}
                 title={product.title}
                 subtitle={product.subtitle}
@@ -95,9 +96,9 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
                 isPrescriptionOnly={product.isPrescriptionOnly}
                 savingsText={product.savingsText}
                 price={product.price}
-                id={product.id}
-                slug={""}
-              />
+                // Conditional controls:
+                showAppointmentButton={false} slug={""}/>
+
             </div>
           );
         })}

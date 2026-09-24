@@ -89,6 +89,11 @@ export interface ProductCardData{
     originalPrice?:number;
     weightText?:string;
     unitPriceText?:string;
+    buttonText?:string;
+    showTreatmentsButton?: boolean;
+  showAppointmentButton?: boolean;
+  treatmentsButtonText?: string;
+  appointmentButtonText?: string;
     
 }
 

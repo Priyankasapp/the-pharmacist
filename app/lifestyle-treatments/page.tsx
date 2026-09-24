@@ -9,6 +9,8 @@ import Button from "@/components/Button/Button";
 const LifestyleTreatments = () => {
   return (
     <div className="container">
+      <div className={styles['lifestyle-treatment']}>
+        
       <div className={styles['lifestyle-header']}>
         <h1>Lifestyle Treatments</h1>
         <div className={styles['lifestyle-searchbar-wrapper']}>
@@ -36,7 +38,7 @@ const LifestyleTreatments = () => {
       <div className={styles['faq-wrapper']}>
         <FAQ />
       </div>
-    </div>
+</div>    </div>
   );
 };
 
