@@ -70,6 +70,9 @@
     font-size: 16px;
     border: none;   
 }
+.find-pharmacy-card-button-wrapper:hover{
+    background-color: #215791;
+}
 .find-pharamacy-card-info-item{
     display: flex;
     gap: 8px;

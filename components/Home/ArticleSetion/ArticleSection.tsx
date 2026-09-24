@@ -112,7 +112,7 @@ const ArticleSection = () => {
       </div>
 
       <div className={styles["article-button"]}>
-        <Button showArrow>View All Blogs</Button>
+        <Button showArrow className={styles['article-btn']}>View All Blogs</Button>
       </div>
     </section>
   );

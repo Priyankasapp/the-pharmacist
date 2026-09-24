@@ -1,4 +1,4 @@
-/* card section  */
+
 .product-card{
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
     flex-direction: column;
     height: 100%;
 }
-/* image section  */
+
 .product-card-img-container{
     background-color:var(--light-gray);
     width: 100%;
@@ -37,8 +37,10 @@
 
 .product-card-button{
     padding: 16px 30px;
+    width: 100%;
 }
-/* badge section  */
+
+
 .product-card-badge-container{
     position: absolute; 
     top: 8px;
@@ -146,4 +148,7 @@
 .product-card-button-wrapper{
     margin-top: auto;
     width: 100%;
+    
 }
+
+    

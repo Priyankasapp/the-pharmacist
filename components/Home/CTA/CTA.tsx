@@ -23,7 +23,7 @@ const CTA = () => {
             <div className={styles['cta-left-section']}>
                 <h2>From prescriptions to expert advice, we make healthcare simple and personal.</h2>
                 <div>
-                    <Button showArrow>Explore Our Services</Button>
+                    <Button showArrow className={styles['cta-button']}>Explore Our Services</Button>
                 </div>
             </div>
             {/* right section  */}

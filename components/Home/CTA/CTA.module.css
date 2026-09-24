@@ -47,6 +47,9 @@
   font-weight: 600;
   font-size: 40px;
 }
+.cta-button{
+  padding: 16px 24px;
+}
 
 @media (max-width: 1050px) {
   .cta-img-wrapper {

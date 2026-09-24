@@ -25,6 +25,9 @@
     width: 100%;
 
 }
+.article-btn{
+    padding: 16px 24px;
+}
 .article-icon-wrapper{
     border: 1px solid #727272;
     height: 44px;
