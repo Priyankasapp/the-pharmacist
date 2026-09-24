@@ -12,7 +12,8 @@ const Breadcrumbs = () => {
 
   return (
     <nav aria-label="breadcrumb" className={styles["breadcrumbs"]}>
-      <ol className={styles["breadcrumbs-list"]}>
+      <div className="container">
+        <ol className={styles["breadcrumbs-list"]}>
         <li className={styles["breadcrumbs-item"]}>
           <Link href="/" className={styles["breadcrumbs-link"]}>
             Home
@@ -44,6 +45,8 @@ const Breadcrumbs = () => {
           );
         })}
       </ol>
+      </div>
+      
     </nav>
   );
 };

@@ -75,6 +75,7 @@
 .patient-review-right-section{
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .patient-review-cards{

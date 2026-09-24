@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <Breadcrumbs />
         
-        <main className="flex-1 w-full">
+        <main className="">
           {children}
         </main>
         

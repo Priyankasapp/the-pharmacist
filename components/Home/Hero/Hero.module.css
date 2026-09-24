@@ -1,44 +1,66 @@
 
 .hero {
-  background-color: antiquewhite;
-  min-height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15)), url(../../../public/imaegs/image.png);
-  background-position: center 70%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 8rem 2rem 6rem;
-  flex-direction: column;
+  min-height: 804px;
   position: relative;
+  overflow: hidden;
+  justify-content: center;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.15)), url(../../../public/imaegs/image.png); */
+  display: flex;
+  background-color: #fff;
+  /* background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  padding:0;
 
 }
 .hero::before {
   content: "";
+
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+
   background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.55) 12%,
-    rgba(255, 255, 255, 0) 100%
+    to bottom,
+    #fff 0%,
+    rgba(255, 255, 255, 0.9) 25%,
+    rgba(255, 255, 255, 0) 60%
   );
-  z-index: 1;
+
+  z-index: 2;
 }
 
 .hero-container {
+  /* display: flex;
+  position: relative;
+
+  flex-direction: column;
+  top:128px;
+  gap: 44px;
+  z-index: 3; */
+   position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding-top: 140px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
- gap: 44px;
-  z-index: 2;
-  width: 100%;
+
+  gap: 44px;
+}
+.hero {
+  background-image: url("../../../public/imaegs/image.png");
+  background-repeat: no-repeat;
+
+  background-size: 1440px 584px;
+
+  background-position: center 220px;
 }
 .hero-text-wrapper {
   display: flex;
@@ -66,6 +88,16 @@
   text-align: center;
   max-width: 719px;
   margin: 0;
+}
+.hero-button-wrapper{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.hero-button{
+  padding: 16px 24px;
+  display: flex;
+  gap: 10px;
 }
 
 @media (max-width:1200px){

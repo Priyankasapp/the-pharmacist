@@ -6,8 +6,10 @@ import Image from "next/image";
 import { FaceBookIcon, InstaIcon, LinkedIcon, nhs_providing_service, registered_pharmacy, ryft, secure_ssl, TwitterIcon } from "@/data/assets";
 const Footer = () => {  
   return (
-    <footer className={styles['footer']}>
+    <footer className='container' >
+      
       <div className={styles['footer-container']}>
+       
         {/* top section  */}
         <div className={styles['footer-top-section']}>
           <div className={styles['footer-left-col-section']}>

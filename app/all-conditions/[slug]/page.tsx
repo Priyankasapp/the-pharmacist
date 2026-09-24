@@ -13,7 +13,8 @@ import ProductSection from "@/components/ProductSection/ProductSection";
 const ConditionSlug = () => {
   return (
     <div className={styles["condition-page"]}>
-      <div className={styles["condition-header"]}>
+      <div className="container">
+        <div className={styles["condition-header"]}>
         <h2>Sore Throat </h2>
         <div className={styles["header-img-wrapper"]}>
           <Image src={NHS} alt="NHS" fill priority />
@@ -51,7 +52,9 @@ const ConditionSlug = () => {
       <div className={styles["faq-section-wrapper"]}>
         <FAQ />
       </div>
-    </div>
+
+      </div>
+          </div>
   );
 };
 

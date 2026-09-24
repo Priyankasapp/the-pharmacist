@@ -61,11 +61,12 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="container">
      
       <Hero />
      
       <section className={styles["export-section"]}>
+         
         <div className={styles["export-header"]}>
           <h2 className={styles["section-title"]}>
             Your Health Supported by Our <span>Export Pharmacy</span> Team

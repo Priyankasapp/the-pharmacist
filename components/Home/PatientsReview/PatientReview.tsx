@@ -20,7 +20,8 @@
             setCurrentIndex((prevIndex)=>
             prevIndex === patients.length - 1 ? 0 : prevIndex + 1);
         };
-
+    const CARD_WIDTH = 400;
+    const GAP = 20;
     return (
         <section className={styles['patient-review-section']}>
             {/* background img  */}
@@ -48,7 +49,8 @@
                 <div className={styles['patient-review-right-section']}>
                     <div className={styles['patient-review-cards']}
                     style={{
-                        transform:`translateX(-${currentIndex} * 100%)`
+                        transform: `translateX(-${currentIndex * (CARD_WIDTH + GAP)}px)`,
+                        transition: `transform 0.4s ease-in-out`,
                     }}>
                         {patients.map((patient)=>(
                         <PatientsCard

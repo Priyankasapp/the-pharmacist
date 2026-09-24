@@ -117,6 +117,7 @@ export const patients: Patients[] = [
     imgSrc: patient1,
     rating: 4,
   },
+  
   {
     id: "Moris Jonson",
     name: "Moris Jonson",

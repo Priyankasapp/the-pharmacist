@@ -8,7 +8,8 @@ import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmali
 const page = () => {
   return (
     <div>
-      <h1
+      <div className="container">
+         <h1
         style={{
           margin: "0% 4%",
           fontWeight: "600",
@@ -32,6 +33,8 @@ const page = () => {
         <Specialist />
         <Patients />
       </div>
+      </div>
+     
     </div>
   );
 };

@@ -8,7 +8,7 @@ import Button from "@/components/Button/Button";
 
 const LifestyleTreatments = () => {
   return (
-    <div className={styles['lifestyle-treatment']}>
+    <div className="container">
       <div className={styles['lifestyle-header']}>
         <h1>Lifestyle Treatments</h1>
         <div className={styles['lifestyle-searchbar-wrapper']}>

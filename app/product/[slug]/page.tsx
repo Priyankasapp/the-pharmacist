@@ -51,7 +51,8 @@ useEffect(()=>{
 
   return (
     <div className={styles["product-page"]}>
-      <div className={styles["product-gallary-container"]}>
+      <div className="container">
+        <div className={styles["product-gallary-container"]}>
       
         <ProductDetails />
       </div>
@@ -261,7 +262,9 @@ useEffect(()=>{
           })}
         </div>
       </div>
-    </div>
+
+      </div>
+          </div>
   );
 };
 

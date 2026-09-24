@@ -23,7 +23,8 @@ const AllCondition = () => {
   );
   return (
     <div className={styles["all-conditions-container"]}>
-      <h1>Discover Conditions and Find the Right Care</h1>
+      <div className="container">
+         <h1>Discover Conditions and Find the Right Care</h1>
 
       {/* Process section */}
       <div className={styles["all-condition-process-section"]}>
@@ -140,7 +141,9 @@ const AllCondition = () => {
       <div>
         <FAQ />
       </div>
-    </div>
+
+      </div>
+         </div>
   );
 };
 

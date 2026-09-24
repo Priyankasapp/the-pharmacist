@@ -13,7 +13,8 @@ import Link from "next/link";
 const Shop = () => {
   return (
     <div className={styles["shop"]}>
-      <h1>Shop</h1>
+      <div className="container">
+        <h1>Shop</h1>
 
       {/* content  */}
       <div className={styles["shop-container"]}>
@@ -127,7 +128,9 @@ const Shop = () => {
           </div>
         </div>
       </div>
-    </div>
+
+      </div>
+          </div>
   );
 };
 
