@@ -48,7 +48,7 @@ const ArticleSection = () => {
   if (!isMounted) return null;
 
   return (
-    <section className={styles["article-section"]}>
+    <section className="container">
       <div className={styles["article-container"]}>
         <h2 className={styles["article-header"]}>
           Latest from <span>The Pharmacist</span>

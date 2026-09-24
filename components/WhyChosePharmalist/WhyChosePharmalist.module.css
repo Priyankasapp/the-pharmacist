@@ -1,7 +1,7 @@
 .pharmalist-container{
-   padding: 60px 20px;
-   max-width: 1200px;
-   margin: 0 auto;
+   padding: 4%;
+   margin: auto;
+   width: 100%;
 }
 .pharmalist-heading{
     font-weight: 600;
@@ -11,6 +11,9 @@
     font-family: var(--font-plus-jakarta);
 }   
 
+.pharmalist-heading span{
+  color: var(--tp-green);
+}
 .pharmalist-card-box{
     display: grid;
     grid-template-columns: repeat(3, 1fr);

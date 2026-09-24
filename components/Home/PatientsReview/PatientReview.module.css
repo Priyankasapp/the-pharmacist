@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     padding: 40px 0;
+    margin: 3% 0;
 }
 
 .patient-review-bg-img-wrapper{
@@ -75,7 +76,8 @@
 .patient-review-right-section{
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    /* overflow: hidden; */
+   
 }
 
 .patient-review-cards{

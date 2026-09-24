@@ -46,12 +46,9 @@
                     </div>
                 </div>
                 {/* right section  */}
+
                 <div className={styles['patient-review-right-section']}>
-                    <div className={styles['patient-review-cards']}
-                    style={{
-                        transform: `translateX(-${currentIndex * (CARD_WIDTH + GAP)}px)`,
-                        transition: `transform 0.4s ease-in-out`,
-                    }}>
+                    <div className={styles['patient-review-cards']}>
                         {patients.map((patient)=>(
                         <PatientsCard
                         key={patient.id}
@@ -61,8 +58,9 @@
                     rating={patient.rating}
                     imgSrc={patient.imgSrc}
                     description={patient.description}/>
-                        ))}
+                        ))} 
                     </div>
+                   
                 </div>
             </div>
         </section>

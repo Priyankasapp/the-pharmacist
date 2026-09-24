@@ -7,7 +7,8 @@ import Button from "@/components/Button/Button";
 const CTA = () => {
   return (
     <section className={styles['cta-container']}>
-        {/* image background  */}
+        <div className="container">
+            {/* image background  */}
         <div className={styles['cta-bg-img-wrapper']}>
             <Image
             src={pharmalistLogo}
@@ -37,6 +38,8 @@ const CTA = () => {
 
             </div>
         </div>
+        </div>
+        
     </section>
   )
 }
