@@ -1,7 +1,6 @@
 import { CovidIcon, groupIcon, VectorFive, VectoruSix } from "@/data/assets";
 import styles from "./Symptoms.module.css";
 import Image from "next/image";
-import { GroupIcon } from "lucide-react";
 
 const Symptoms = () => {
   return (

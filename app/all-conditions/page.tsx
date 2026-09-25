@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 "use client";
 import ProcessSection from "@/components/all-conditions/ProcessSection/ProcessSection";
 import styles from "./AllConditions.module.css";

@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 "use client";
 import { stepInfo } from "@/lib/data";
 import styles from "./ConditionSlug.module.css";

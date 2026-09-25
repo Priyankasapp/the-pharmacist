@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
 import Image from "next/image";
+import styles from "./Navbar.module.css";
 import {
   ChevronDown,
   ChevronUp,
@@ -35,6 +35,7 @@ const Navbar = () => {
     setActiveMenu(null);
   };
 
+  // Close menus when clicking outside or pressing Escape
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent) => {
       if (!navRef.current?.contains(event.target as Node)) {
@@ -45,6 +46,7 @@ const Navbar = () => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setActiveMenu(null);
+        setIsMobileMenuOpen(false);
       }
     };
 
@@ -59,54 +61,58 @@ const Navbar = () => {
 
   return (
     <header ref={navRef} className={styles["navbar"]}>
-      <div className={`${styles["nav-container"]} container`}>
-        {/* Logo */}
-        <Link
-          href="/"
-          className={styles["  nav-logo"]}
-          onClick={closeMobileMenu}
-        >
+      <div className={styles["nav-container"]}>
+        {/* 1. Logo (Fixed typo: removed leading spaces) */}
+        <Link href="/" className={styles["nav-logo"]} onClick={closeMobileMenu}>
           <Image
             src="/LOGO.svg"
             alt="The Pharmacist logo"
             width={180}
             height={40}
-            style={{ height: "auto" }}
+            priority
             className={styles["nav-logo-icon"]}
           />
         </Link>
 
-        {/* Mobile menu button */}
+        {/* 2. Mobile Menu Toggle Button */}
         <button
           className={styles["nav-mobile-menu"]}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X /> : <Menu className={styles["nav-menu"]} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} className={styles["nav-menu"]} />}
         </button>
 
-        {/* Navigation Links */}
+        {/* 3. Navigation Wrapper (Desktop & Mobile Drawer) */}
         <div
-          className={`${styles["nav-wrapper"]} ${isMobileMenuOpen ? styles["nav-wrapper-open"] : ""}`}
+          className={`${styles["nav-wrapper"]} ${
+            isMobileMenuOpen ? styles["nav-wrapper-open"] : ""
+          }`}
         >
           <nav className={styles["nav-links"]}>
-            {/* Services */}
+            {/* Services Dropdown (Supports both Click and Hover) */}
             <div
               className={styles["nav-hover-wrapper"]}
-              onMouseEnter={() => setActiveMenu("services")}
-              onMouseLeave={()=>setActiveMenu(null)}
+              onMouseEnter={() => {
+                if (window.innerWidth > 991) setActiveMenu("services");
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 991) setActiveMenu(null);
+              }}
             >
-              <Link
-    href="#"
-    className={styles["nav-link"]}
-    onClick={(e) => e.preventDefault()}
-  >
-    Our Services{" "}
-    {activeMenu === "services" ? <ChevronUp /> : <ChevronDown />}
-  </Link>
+              <button
+                type="button"
+                className={styles["nav-link-btn"]}
+                onClick={() => toggleMenu("services")}
+                aria-expanded={activeMenu === "services"}
+              >
+                <span>Our Services</span>
+                {activeMenu === "services" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              </button>
 
-  <ServicesMenu isOpen={activeMenu === "services"} />
+              {/* Render dropdown menu only here */}
+              <ServicesMenu isOpen={activeMenu === "services"} />
             </div>
 
             <Link
@@ -132,53 +138,44 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* Right side controls */}
+          {/* 4. Right Side Controls */}
           <div className={styles["nav-right-controls"]}>
-            <div className={styles["nav-search-wrapper"]}>
+            <div className={styles["nav-icon-group"]}>
               <button
                 aria-label="search"
                 className={styles["nav-icon-btn"]}
-                onClick={() => {
-                  if (activeMenu === "search") {
-                    setActiveMenu(null);
-                    return;
-                  }
-
-                  setActiveMenu("search");
-                }}
+                onClick={() => toggleMenu("search")}
                 aria-expanded={activeMenu === "search"}
               >
-                <Search className={styles["nav-icon"]} />
+                <Search size={20} className={styles["nav-icon"]} />
+              </button>
+
+              <button className={styles["nav-icon-btn"]} aria-label="user profile">
+                <User size={20} className={styles["nav-icon"]} />
+              </button>
+
+              <button className={styles["nav-icon-btn"]} aria-label="shopping bag">
+                <ShoppingBag size={20} className={styles["nav-icon"]} />
               </button>
             </div>
-
-            <button className={styles["nav-icon-btn"]} aria-label="user">
-              <User className={styles["nav-icon"]} />
-            </button>
-
-            <button
-              className={styles["nav-icon-btn"]}
-              aria-label="shopping bag"
-            >
-              <ShoppingBag className={styles["nav-icon"]} />
-            </button>
 
             {/* Location dropdown */}
             <div className={styles["nav-location-wrapper"]}>
               <button
+                type="button"
                 className={styles["nav-location-dropdown"]}
                 onClick={() => toggleMenu("product")}
                 aria-expanded={activeMenu === "product"}
                 aria-label="Select pharmacy location"
               >
-                <MapPin size={14} className={styles["nav-location-icon"]} />
+                <MapPin size={16} className={styles["nav-location-icon"]} />
                 <span>Silver Lane</span>
                 <ChevronDown size={14} className={styles["nav-chevron-icon"]} />
               </button>
               {activeMenu === "product" && <PharmacyCard />}
             </div>
 
-            <Link href={"./product"}>
+            <Link href="/product" onClick={closeMobileMenu} className={styles["nav-cta-link"]}>
               <Button showArrow className={styles["nav-button"]}>
                 Order Prescription
               </Button>
@@ -187,8 +184,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <ServicesMenu isOpen={activeMenu === "services"} />
-
+      {/* Search Bar Dropdown Overlay */}
       {activeMenu === "search" && <SearchBar />}
     </header>
   );
