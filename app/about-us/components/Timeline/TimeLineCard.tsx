@@ -16,6 +16,7 @@ const TimeLineCard = ({year,title,description,imgSrc}:TimeLineCardProps) => {
               src={imgSrc}
               alt={title}
               fill 
+  sizes="(max-width: 680px) 100vw, 265px"
               className={styles['timeline-card-left-img']}
             />
         </div>

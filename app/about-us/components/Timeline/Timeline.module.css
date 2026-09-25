@@ -113,6 +113,7 @@
   height: 100%;
   display: flex;
   gap: 24px;
+   min-width: 0;
 }
 .timeline-card-left-section{
   position: relative;
@@ -157,6 +158,12 @@
   font-weight: 400;
   line-height: 1.5;
 }
+
+.timeline-card-right-heading,
+.timeline-card-right-paragraph {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 @media (max-width: 1200px) {
   .timeline-spine-line {
     left: 20px;
@@ -189,26 +196,32 @@
     height: auto;
   }
 }
-
 @media (max-width: 680px) {
-  .timeline-card-module {
+  .timeline-card-container {
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
     gap: 16px;
   }
 
   .timeline-card-left-section {
     width: 100%;
     height: 200px;
+    flex-shrink: 0;
+  }
+
+  .timeline-card-module {
+    padding: 16px;
+    min-height: auto;
   }
 
   .timeline-card-year {
     font-size: 32px;
   }
+
   .timeline-card-right-heading {
     font-size: 24px;
   }
+
   .timeline-card-right-paragraph {
     font-size: 15px;
   }
