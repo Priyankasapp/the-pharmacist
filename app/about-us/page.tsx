@@ -3,6 +3,8 @@ import styles from "./AboutUs.module.css";
 import Hero from '@/app/about-us/components/Hero/Hero';
 import Timeline from "./components/Timeline/Timeline";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
+import Specialist from "@/app/about-us/components/Specialist/Specialist";
+import Patients from "@/components/about/Patients/Patients";
 
 const page = () => {
   return (
@@ -16,15 +18,13 @@ const page = () => {
           <WhatWeOffer/>
           <Timeline/>
           <WhyChosePharmalist/>
-              {/* <WhatWeOffer />
-          <Timeline />
-          <WhyChosePharmalist />
-          <Specialist />
-          <Patients /> */}
+          <Specialist/>
+          <Patients/>
+            
         </div>
       </div>
     </main>
   )
-}
+} 
 
 export default page
