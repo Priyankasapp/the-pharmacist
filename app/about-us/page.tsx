@@ -2,6 +2,7 @@ import WhatWeOffer from "@/app/about-us/components/WhatWeOffer/WhatWeOffer";
 import styles from "./AboutUs.module.css";
 import Hero from '@/app/about-us/components/Hero/Hero';
 import Timeline from "./components/Timeline/Timeline";
+import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
           <Hero/>
           <WhatWeOffer/>
           <Timeline/>
+          <WhyChosePharmalist/>
               {/* <WhatWeOffer />
           <Timeline />
           <WhyChosePharmalist />

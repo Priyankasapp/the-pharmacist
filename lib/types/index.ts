@@ -206,3 +206,10 @@ export type TimelineDataProps = {
     imgSrc:string | StaticImageData;
     id:string
 }
+
+// pharmalist data 
+export type PharmalistDataProps = {
+    title:string;
+    description:string;
+    imgSrc:string | StaticImageData;
+}

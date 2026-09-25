@@ -17,6 +17,9 @@ import {
   patient1,
   patient2,
   patient3,
+  PharmacistImage,
+  PharmacistImage2,
+  PharmacistImage3,
   productImg1,
   productImg10,
   productImg2,
@@ -54,6 +57,7 @@ import {
   NavLink,
   Patients,
   Pharmacy,
+  PharmalistDataProps,
   ProcessData,
   ProductCardData,
   ProductData,
@@ -849,5 +853,26 @@ export const timelineData: TimelineDataProps[] = [
     description:"Today we combine our trusted pharmacy heritage with modern digital services, making NHS and private care more accessible than ever.",
     imgSrc:Timeline2026,
     id:"2026"
+  },
+]
+
+
+
+// pharmalist data 
+export const pharmalistDataSet: PharmalistDataProps[] = [
+   {
+    title:"Pharmacy and Health Clinic",
+    description:"Our qualified pharmacists and clinicians deliver expert care that meets strict NHS clinical standards, keeping your health in safe hands.",
+    imgSrc:PharmacistImage,
+  },
+   {
+    title:"Local and Online Services",
+    description:"Order prescriptions, book consultations and manage your medications online, anytime, from any device. We are here in person too.",
+    imgSrc:PharmacistImage2,
+  },
+   {
+    title:"Three generation family owned and run business",
+    description:"Whether you need NHS prescription support or private healthcare, we bring both together in one place. Trusted care, built around you.",
+    imgSrc:PharmacistImage3
   },
 ]
