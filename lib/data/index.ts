@@ -26,6 +26,10 @@ import {
   productImg7,
   productImg8,
   productImg9,
+  Timeline1954,
+  Timeline1975,
+  Timeline2026,
+  Timeline9191,
   treatmentImg1,
   treatmentImg2,
   treatmentImg3,
@@ -55,6 +59,7 @@ import {
   ProductData,
   SpecialistDataProps,
   StepInfo,
+  TimelineDataProps,
   Treatments,
   WhatWeOfferedCardData,
 } from "../types";
@@ -813,3 +818,36 @@ export const specalistDataSet: SpecialistDataProps[] = [
       "James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness.",
   },
 ];
+
+
+// about us 
+export const timelineData: TimelineDataProps[] = [
+  {
+    year:"1954",
+    title:"Where It All Started",
+    description:"Barry Lestner qualified as a pharmacist and began serving the Leeds community seven days a week, laying the foundation of patient-first care that still defines us today.",
+    imgSrc:Timeline1954,
+    id:"1954"
+  },
+  {
+    year:"1975",
+    title:"Taking Ownership",
+    description:"Barry took ownership of his pharmacy and went on to acquire two more local pharmacies, growing a trusted presence at the heart of the community.",
+    imgSrc:Timeline1975,
+    id:"1095"
+  },
+  {
+    year:"1991",
+    title:"Building Medical Centres",
+    description:"David Lestner took ownership and pioneered a new approach, co-locating pharmacies within GP medical centres to bring healthcare closer to patients.",
+    imgSrc:Timeline9191,
+    id:"1991"
+  },
+  {
+    year:"2026",
+    title:"Continuing to Care",
+    description:"Today we combine our trusted pharmacy heritage with modern digital services, making NHS and private care more accessible than ever.",
+    imgSrc:Timeline2026,
+    id:"2026"
+  },
+]

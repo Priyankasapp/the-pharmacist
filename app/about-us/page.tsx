@@ -1,6 +1,7 @@
 import WhatWeOffer from "@/app/about-us/components/WhatWeOffer/WhatWeOffer";
 import styles from "./AboutUs.module.css";
 import Hero from '@/app/about-us/components/Hero/Hero';
+import Timeline from "./components/Timeline/Timeline";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
         <div className={styles['about-content']}>
           <Hero/>
           <WhatWeOffer/>
+          <Timeline/>
               {/* <WhatWeOffer />
           <Timeline />
           <WhyChosePharmalist />

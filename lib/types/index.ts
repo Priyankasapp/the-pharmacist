@@ -195,3 +195,14 @@ export type SpecialistDataProps = {
     registration:string;
     description:string;
 }
+
+
+//about us
+//time line section data 
+export type TimelineDataProps = {
+    year:string;
+    title:string;
+    description:string;
+    imgSrc:string | StaticImageData;
+    id:string
+}
