@@ -21,7 +21,6 @@ const WhatWeOffer = () => {
           ))}
         </div>
 
-        {/* <button className={styles['what-we-offer-button']}>Explore Our Treatments</button> */}
         <Button className={styles['what-we-offer-button']} showArrow>Explore Our Treatments</Button>
       </div>
     </div>

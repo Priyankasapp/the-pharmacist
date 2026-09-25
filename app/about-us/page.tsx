@@ -1,3 +1,4 @@
+import WhatWeOffer from "@/app/about-us/components/WhatWeOffer/WhatWeOffer";
 import styles from "./AboutUs.module.css";
 import Hero from '@/app/about-us/components/Hero/Hero';
 
@@ -10,7 +11,12 @@ const page = () => {
 
         <div className={styles['about-content']}>
           <Hero/>
-          
+          <WhatWeOffer/>
+              {/* <WhatWeOffer />
+          <Timeline />
+          <WhyChosePharmalist />
+          <Specialist />
+          <Patients /> */}
         </div>
       </div>
     </main>

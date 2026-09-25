@@ -6,9 +6,7 @@
     align-items: center;
     gap: 60px;
     padding: 3% 4%;
-    color: black
-    
-   
+    color: var(--section-title);
 }
 
 .about-hero-left{
