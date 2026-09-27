@@ -20,10 +20,18 @@ const ArticleSection = () => {
 
   useEffect(() => {
     setMounted(true);
-
     setArticlePerPage(getArticleCardPerPage());
 
-    const handleResize = () => setArticlePerPage(getArticleCardPerPage());
+    const handleResize = () => {
+      const next = getArticleCardPerPage();
+      setArticlePerPage(next);
+      // keep the current index in range when the page size changes
+      setCurrentIndex((prev) => {
+        const maxIndex = Math.max(0, informationData.length - next);
+        return Math.min(prev, maxIndex);
+      });
+    };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -48,7 +56,7 @@ const ArticleSection = () => {
   if (!isMounted) return null;
 
   return (
-    <section className="container">
+    <section className={`container ${styles["article-section"]}`}>
       <div className={styles["article-container"]}>
         <h2 className={styles["article-header"]}>
           Latest from <span>The Pharmacist</span>
@@ -65,20 +73,22 @@ const ArticleSection = () => {
             <ChevronLeft />
           </button>
 
-          <div className={styles["article-info-wrapper"]}>
+          <div
+            className={styles["article-info-wrapper"]}
+            style={{ "--articlePerPage": articlePerPage } as React.CSSProperties}
+          >
             {visibleArticles.map((info, index) => (
               <div
                 className={styles["article-info-card"]}
                 key={info.id || `art-${index}`}
                 id={String(info.id)}
               >
-                {/* Image Section */}
                 <div className={styles["article-img-wrapper"]}>
                   <Image
                     src={info.img}
                     alt={info.desc || "Article entry image"}
                     fill
-                    sizes="(max-width: 768px) 100vw, 500px"
+                    sizes="(max-width: 800px) 100vw, 500px"
                     className={styles["article-img"]}
                   />
                 </div>
@@ -87,7 +97,7 @@ const ArticleSection = () => {
                   <div className={styles["article-desc-wrapper"]}>
                     <div className={styles["info-title-wrapper"]}>
                       <Folder size={16} />
-                      <span>Lifestyle & Wellness</span>
+                      <span>Lifestyle &amp; Wellness</span>
                     </div>
                     <h3>{info.desc}</h3>
                   </div>
@@ -112,7 +122,9 @@ const ArticleSection = () => {
       </div>
 
       <div className={styles["article-button"]}>
-        <Button showArrow className={styles['article-btn']}>View All Blogs</Button>
+        <Button showArrow className={styles["article-btn"]}>
+          View All Blogs
+        </Button>
       </div>
     </section>
   );
