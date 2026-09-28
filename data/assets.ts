@@ -84,6 +84,9 @@ import FaceBookIcon from "@/public/icons/FaceBook.png";
 import InstaIcon from "@/public/icons/Instagram.png";
 import LinkedIcon from "@/public/icons/linkedIn.png";
 import TwitterIcon from "@/public/icons/Twitter.png" ;
+import SearchIcon from "@/public/icons/searchIcon.png";
+import BagIcon from "@/public/icons/BagIcon.png";
+import ActorIcon from "@/public/icons/ActorIcon.png";
 
 export {
     manImg,
@@ -171,6 +174,9 @@ export {
     TwitterIcon,
     InstaIcon,
     LinkedIcon,
+    BagIcon,
+    ActorIcon,
+    SearchIcon,
 };
 
  

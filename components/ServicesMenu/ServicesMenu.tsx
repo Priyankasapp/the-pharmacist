@@ -13,7 +13,7 @@ export function ServicesMenu({ isOpen }: ServicesMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.megaMenu} role="menu" aria-label="Our Services">
+    <div className={styles.megaMenu}role="menu" aria-label="Our Services">
       <div className={`container ${styles.inner}`}>
         {SERVICES_MENU.map((column, columnIndex) => (
           <div

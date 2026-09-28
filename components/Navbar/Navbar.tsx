@@ -9,15 +9,14 @@ import {
   ChevronUp,
   MapPin,
   Menu,
-  Search,
-  ShoppingBag,
-  User,
   X,
 } from "lucide-react";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
 import SearchBar from "../Find-Pharmacy/SearchBar/SearchBar";
+import { ActorIcon, BagIcon, SearchIcon } from "@/data/assets";
+
 
 type ActiveMenuType = "services" | "search" | "product" | null;
 
@@ -35,7 +34,7 @@ const Navbar = () => {
     setActiveMenu(null);
   };
 
-  // Close menus when clicking outside or pressing Escape
+
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent) => {
       if (!navRef.current?.contains(event.target as Node)) {
@@ -62,7 +61,7 @@ const Navbar = () => {
   return (
     <header ref={navRef} className={styles["navbar"]}>
       <div className={styles["nav-container"]}>
-        {/* 1. Logo (Fixed typo: removed leading spaces) */}
+       
         <Link href="/" className={styles["nav-logo"]} onClick={closeMobileMenu}>
           <Image
             src="/LOGO.svg"
@@ -74,7 +73,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* 2. Mobile Menu Toggle Button */}
+       
         <button
           className={styles["nav-mobile-menu"]}
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -84,14 +83,14 @@ const Navbar = () => {
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} className={styles["nav-menu"]} />}
         </button>
 
-        {/* 3. Navigation Wrapper (Desktop & Mobile Drawer) */}
+
         <div
           className={`${styles["nav-wrapper"]} ${
             isMobileMenuOpen ? styles["nav-wrapper-open"] : ""
           }`}
         >
           <nav className={styles["nav-links"]}>
-            {/* Services Dropdown (Supports both Click and Hover) */}
+           
             <div
               className={styles["nav-hover-wrapper"]}
               onMouseEnter={() => {
@@ -110,9 +109,6 @@ const Navbar = () => {
                 <span>Our Services</span>
                 {activeMenu === "services" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
               </button>
-
-              {/* Render dropdown menu only here */}
-              <ServicesMenu isOpen={activeMenu === "services"} />
             </div>
 
             <Link
@@ -138,7 +134,7 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* 4. Right Side Controls */}
+         
           <div className={styles["nav-right-controls"]}>
             <div className={styles["nav-icon-group"]}>
               <button
@@ -147,19 +143,22 @@ const Navbar = () => {
                 onClick={() => toggleMenu("search")}
                 aria-expanded={activeMenu === "search"}
               >
-                <Search size={20} className={styles["nav-icon"]} />
+               
+                <Image src={SearchIcon} alt="search-icon" className={styles['nav-icon']}/>
               </button>
 
               <button className={styles["nav-icon-btn"]} aria-label="user profile">
-                <User size={20} className={styles["nav-icon"]} />
+               
+                <Image src={ActorIcon} alt="user-icon" className={styles['nav-icon']}/>
               </button>
 
               <button className={styles["nav-icon-btn"]} aria-label="shopping bag">
-                <ShoppingBag size={20} className={styles["nav-icon"]} />
+               
+                <Image src={BagIcon} alt={'shopping-bag'} className={styles['nav-icon']}/>
               </button>
             </div>
 
-            {/* Location dropdown */}
+           
             <div className={styles["nav-location-wrapper"]}>
               <button
                 type="button"
@@ -183,8 +182,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <ServicesMenu isOpen={activeMenu === "services"} />
 
-      {/* Search Bar Dropdown Overlay */}
       {activeMenu === "search" && <SearchBar />}
     </header>
   );

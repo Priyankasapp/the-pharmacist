@@ -4,7 +4,7 @@
     left:0;
     top: 100%;
     width: 100%;
-    background: #fff;
+    background: var(--white);
     border-top: 1px solid rgba(5, 46, 43, 0.08);
     z-index: 999;
      padding: 2rem 5%; 
@@ -104,8 +104,8 @@
   gap: 12px;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+
+@media (max-width: 1360px) {
   .megaMenu{
     top: 120px;
   }

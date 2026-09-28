@@ -100,12 +100,12 @@
     border-radius: 2px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1360px) {
     .search-bar-dropdown {
         left: 0;
         transform: none;
-        position: relative; 
-        top: 240; 
+        position: absolute; 
+        top: 370; 
         width: 100%;
         max-width: 100%;
         border-radius: 0;
