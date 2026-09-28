@@ -44,6 +44,7 @@ const FAQ = () => {
               </h3>
 
               <div
+              
                 id={`faq-answer-${index}`}
                 role="region"
                 aria-labelledby={`faq-question-${index}`}
