@@ -16,7 +16,7 @@ const LifestyleTreatments = () => {
         <div className={styles['lifestyle-searchbar-wrapper']}>
             <input 
             type="text"
-            placeholder="What condition are you looking for?"
+            placeholder="Search for health conditions (e.g., Hair Loss)"
             
             />
             <Button showArrow className={styles['lifestyle-button']}>Search</Button>
@@ -38,7 +38,7 @@ const LifestyleTreatments = () => {
       <div className={styles['faq-wrapper']}>
         <FAQ />
       </div>
-</div>    </div>
+</div>    </div>  
   );
 };
 

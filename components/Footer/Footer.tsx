@@ -232,7 +232,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
         {/* Powered By */}
         <div className={styles["footer-powered-text"]}>
           <span>Powered by healthya | ConX</span>
