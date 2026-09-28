@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
 import { stars } from "@/data/assets";
@@ -31,7 +30,7 @@ const ProductCard = ({
             src={image}
             alt={title}
             className={styles["product-card-image"]}
-            width={400} // Added missing layout widths for Next.js Image optimization
+            width={400} 
             height={400}
           />
 

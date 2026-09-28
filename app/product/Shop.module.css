@@ -1,11 +1,12 @@
 .shop{
-  margin: 40px 3%;
+  margin: 0 3% 0 3%;
 }
 .shop h1{
   font-weight: 600;
   font-size: 40px;
   line-height: 1.2;
   color: var(--main-text);
+  margin-bottom:3% ;
 }
 .shop-container{
   display: flex;
@@ -24,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid #DFDFDF;
+  border: 1px solid var(--light-gray);
   border-radius: 3px;
   padding: 10px;
 }
@@ -71,7 +72,7 @@
 
 .product-grid-container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
   gap: 10px;
   box-sizing: border-box;
 

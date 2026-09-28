@@ -256,6 +256,9 @@ useEffect(()=>{
                   price={product.price}
                   id={product.id}
                   slug={""}
+                    showAppointmentButton={true}
+                        showTreatmentsButton={false}
+                        appointmentButtonText="Get Treatment"
                 />
               </div>
             );

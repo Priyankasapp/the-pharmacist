@@ -68,6 +68,7 @@ const Shop = () => {
                         slug={""}
                         showAppointmentButton={true}
                         showTreatmentsButton={false}
+                        appointmentButtonText="Add to Bag"
                       />
                     </Link>
                   </div>
