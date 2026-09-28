@@ -30,7 +30,8 @@ const FAQ = () => {
               <h3 className={styles['faq-question-heading']}>
                 <button
                   type="button"
-                  className={styles['faq-header']}
+                 
+                  className={`${styles['faq-header']} ${isOpen ? styles['active'] : ''}`}
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
@@ -44,7 +45,6 @@ const FAQ = () => {
               </h3>
 
               <div
-              
                 id={`faq-answer-${index}`}
                 role="region"
                 aria-labelledby={`faq-question-${index}`}

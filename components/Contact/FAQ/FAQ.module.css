@@ -41,6 +41,15 @@
     border: none;
     user-select: none;
     cursor: pointer;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--main-text);
+}
+
+.faq-header.active {
+    font-weight: 700;
+    
 }
 
 .faq-header h3 {
