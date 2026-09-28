@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import PatientsCard from '@/components/PatientsCard/PatientsCard';
 import styles from "./Patients.module.css"
 import { ChevronLeft, ChevronRight } from 'lucide-react';

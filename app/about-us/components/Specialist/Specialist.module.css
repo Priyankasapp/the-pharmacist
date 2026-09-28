@@ -22,12 +22,12 @@
   
 }
 
-.specialist-icon {
+/* .specialist-icon {
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: 1px solid black;
-}
+} */
 /* card Section  */
 .specialist-card-container {
   width: 294px;
@@ -43,6 +43,7 @@
   justify-content: center;
   gap: 10px;
 }
+
 .specialist-card-image-container {
   border-radius: 16px;
   border: 1px solid #e0e0e0;
@@ -144,6 +145,13 @@
 .specialist-icon-con button{
     background-color: transparent;
     border: none;
+    height: 44px;
+    width: 44px;
+    border: 1px solid var(--gray);
+    border-radius: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width: 1280px) {
   .specialist-cards {
