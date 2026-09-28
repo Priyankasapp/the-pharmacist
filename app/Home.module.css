@@ -1,9 +1,9 @@
 .export-section{
-  margin: 6% 3%;
+ padding: 3%;
   display: flex;
   gap: 46px;
   flex-direction: column;
-  
+
 }
 .section-title {
   margin: 0;

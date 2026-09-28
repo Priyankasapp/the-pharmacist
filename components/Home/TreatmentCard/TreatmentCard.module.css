@@ -24,7 +24,7 @@
 .treatment-card-info {
  
   border-radius: 10px;
-  gap: 10px;
+  gap: 20px;
   padding: 20px;
   background-color: var(--white);
   left: 20px;
@@ -38,6 +38,12 @@
   flex-direction: column;
   z-index: 2;
 }
+.treatment-card-info h3{
+  color:var(--main-text);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2;
+}
 .treatment-card-info-con {
   display: flex;
   flex-direction: column;
@@ -47,8 +53,9 @@
 .treatment-desc-wrapper{
   display: flex;
   justify-content: space-between;
-  width: 165px;
+  width: 190px;
   align-items: center;
+
 }
 
 
@@ -72,7 +79,7 @@
   display: block;
 
 }
-.treatment-arrow-icon{
+.treatment-desc-wrapper svg{
   color:var(--tp-green);
   height: 24px;
   width: 24px;

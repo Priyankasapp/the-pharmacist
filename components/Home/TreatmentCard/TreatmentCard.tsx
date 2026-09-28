@@ -3,7 +3,7 @@ import styles from "./TreatmentCard.module.css";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { TreatmentDataProps } from "@/types/type";
-import { Fleur_De_Leah } from "next/font/google";
+
 
 const TreatmentCard = ({ id, title, img, condition }: TreatmentDataProps) => {
   return (
@@ -32,12 +32,7 @@ const TreatmentCard = ({ id, title, img, condition }: TreatmentDataProps) => {
             </div>
 
           ))}
-          <div style={{
-            // display:"flex",
-            // gap:"10px"
-          }}>
-          
-          </div>
+         
         </div>
       </div>
     </div>

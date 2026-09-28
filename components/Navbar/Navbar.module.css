@@ -120,7 +120,7 @@
   background-color: var(--tp-bg);
 }
 
-@media (max-width:1370px){
+@media (max-width:1260px){
   .nav-mobile-menu{
     display: flex;
   }

@@ -67,9 +67,12 @@ const ProductCard = ({
               <p>
                 £{price}/pack {originalPrice && <span>was £{originalPrice}</span>}
               </p>
-              <span>
+              {(weightText || unitPriceText)&&(
+<span>
                 {weightText} | {unitPriceText}
               </span>
+              )}
+              
             </div>
           </div>
 

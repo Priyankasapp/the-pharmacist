@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/set-state-in-effect */
-import { ChevronLeft, ChevronRight, Indent } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ProductSection.module.css";
 import { useEffect, useState } from "react";
 import { productCardData } from "@/lib/data";
@@ -23,10 +23,10 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
   
   
   const [productPerPage, setPrductPerPage] = useState(3);
-  const [isMounted, setIsMounted] = useState(false);
+
 
   useEffect(() => {
-    setIsMounted(true);
+
     setPrductPerPage(getProductPerPage());
 
     const handleResize = () => setPrductPerPage(getProductPerPage());
@@ -90,12 +90,12 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
                 title={product.title}
                 subtitle={product.subtitle}
                 reviewCount={product.reviewCount}
-                weightText={product.weightText}
-                unitPriceText={product.unitPriceText}
+                // weightText={product.weightText}
+                // unitPriceText={product.unitPriceText}
                 originalPrice={product.originalPrice}
                 isPrescriptionOnly={product.isPrescriptionOnly}
                 savingsText={product.savingsText}
-                price={product.price}
+                price={product.price} 
                 // Conditional controls:
                 showAppointmentButton={false} slug={""}/>
 

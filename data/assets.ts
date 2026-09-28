@@ -87,6 +87,7 @@ import TwitterIcon from "@/public/icons/Twitter.png" ;
 import SearchIcon from "@/public/icons/searchIcon.png";
 import BagIcon from "@/public/icons/BagIcon.png";
 import ActorIcon from "@/public/icons/ActorIcon.png";
+import LeftArrow from "@/public/icons/leftArrow.png";
 
 export {
     manImg,
@@ -177,6 +178,7 @@ export {
     BagIcon,
     ActorIcon,
     SearchIcon,
+    LeftArrow,
 };
 
  
