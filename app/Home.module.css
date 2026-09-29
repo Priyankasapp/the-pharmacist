@@ -40,6 +40,8 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  
+
 }
 .export-cards-wrapper{
   display: grid;

@@ -3,7 +3,7 @@
   justify-content: space-around;
   margin: 0 auto;
   padding: 0% 4%;
-  color: #1c1c1c;
+  color: var(--off-black);
   box-sizing: border-box;
    gap: 40px; 
   font-family: var(--font-secondary), sans-serif;
@@ -17,7 +17,7 @@
 }
 .gallary-card {
   background: var(--white);
-  border: 1px solid #ececec;
+  border: 1px solid var(--gray-93);
   border-radius: 18px;
   padding: 18px 18px 24px;
   box-shadow: 0px 0px 4px 4px #0000001F;
@@ -49,14 +49,14 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: #52525b;
+  color: var(--medium-gray);
   display: grid;
   place-items: center;
   cursor: pointer;
 }
 .shareBtn:hover {
-  background: #f4f4f5;
-  color: #18181b;
+  background: var(--tp-white);
+  color: var(--section-title);
 }
 .main-row {
   display: grid;
@@ -71,15 +71,15 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: #71717a;
+  color: var(--gray);
   display: grid;
   place-items: center;
   cursor: pointer;
   transition: 0.15s ease;
 }
 .arrowBtn:hover {
-  background: #f4f4f5;
-  color: #18181b;
+  background: var(--bg-white);
+  color: var(--main-text);
 }
 .main-image-wrap {
   position: relative;
@@ -111,7 +111,7 @@
   transition: 0.15s ease;
 }
 .active-thumb {
-  border-color: #1c1c1c;
+  border-color: var(--off-black);
 }
 .thumb-img {
   width: 100% !important;
@@ -291,7 +291,7 @@
   .product-content {
     grid-template-columns: 1fr;
     gap: 24px;
-    background-color: pink;
+  
   }
   .brand {
     font-size: 22px;

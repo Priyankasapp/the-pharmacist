@@ -5,6 +5,7 @@
   --tp-green-10: rgba(2, 61, 58, 0.1);
   --white: #ffffff;
   --black: #000000;
+  --off-black:#1C1C1C;
   --main-text: #0f0f0f;
   --dark-gray: #282828;
   --gray: #727272;
@@ -16,7 +17,10 @@
   --red: #c50000;
   --star: #ffc107;
   --blue: #204f81;
+  --gray-91:#E8E8E8;
+  --gray-93:#ECECEC;
   --grey-95: #f2f2f2;
+  --medium-gray:#52525b;
   --section-title: #252525;
   --tp-white: #f4f1ed;
   --box-shadow: rgba(65, 65, 65, 0.08);

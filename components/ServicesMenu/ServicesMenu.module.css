@@ -100,7 +100,7 @@
 }
 
 .viewAll:hover {
-  color: #023d3a;
+  color: var(--tp-green);
   gap: 12px;
 }
 

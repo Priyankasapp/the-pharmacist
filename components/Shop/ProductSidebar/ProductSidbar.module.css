@@ -21,7 +21,7 @@
     font-family: var(--font-secondary);
 }
 .product-sidebar-button{
-    color:#D30000;
+    color:var(--red);
     font-weight:400;
     font-family: var(--font-secondary);
     font-size: 15px;
@@ -29,14 +29,14 @@
     border: none;
 }
 .product-sidebar-price-range-container{
-    border: 1px solid #DFDFDF;
+    border: 1px solid var(--light-gray);
     display: flex;
     flex-direction: column;
     border-radius: 6px;
 }
 .product-sidebar-price-range-title-wrapper{
     padding: 8px 16px;
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid var(--light-gray);
 }
 .product-sidebar-price-range-title{
     color:var(--main-text);
@@ -78,7 +78,7 @@
 }
 
 .product-sidebar-filter-card{
-    border:1px solid #DFDFDF;
+    border:1px solid var(--light-gray);
     border-radius: 6px;
    
 }
@@ -86,7 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid var(--light-gray);
     padding: 10px 13px;
     
 }
