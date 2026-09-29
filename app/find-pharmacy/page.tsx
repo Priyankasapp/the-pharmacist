@@ -6,6 +6,7 @@ import { Search } from 'lucide-react';
 const FindPharmacy = () => {
   return (
     <div className="container">
+      
      <div className={styles['find-pharmacy-container-box']}>
      {/* <div className='container'> */}
        <h1 className={styles['find-pharmacy-title']}>Find your Nearest Pharmacy</h1>

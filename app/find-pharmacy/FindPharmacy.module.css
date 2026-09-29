@@ -1,25 +1,17 @@
-.find-pharmacy {
-  width: 100%;
-  padding:  4%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  
-}
+
 .find-pharmacy-container-box  {
   display: flex;
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  
+  padding: 0% 3% 3% 3%;
 }
 
 .find-pharmacy-title {
   font-weight: 600;
-  font-size: 40px;
-  
+  font-size: 40px;  
   line-height: 1.2;
-  color: var(--section-title, #0D1B2A);
+  color: var(--section-title);
   margin-bottom: 20px;
 }
 
@@ -31,7 +23,7 @@
 }
 
 .find-pharmacy-searchbar-container span {
-  color: #0D1B2A;
+  color: var(--section-title);
   font-family: var(--font-secondary, sans-serif);
   font-weight: 400;
   font-size: 18px;
@@ -53,7 +45,7 @@
   background-color: transparent;
   outline: none;
   font-size: 16px;
-  color: #0D1B2A;
+  color: var(--section-title);
 }
 
 .find-pharmacy-searchbar-wrapper input::placeholder {
@@ -64,26 +56,20 @@
   color: #6b7280;
   cursor: pointer;
 }
-
-
 .find-pharmacy-container {
   display: flex;
   justify-content: space-between;
   gap: 32px;
   align-items: flex-start;
 }
-
-
 .find-pharmacy-map-wrapper {
   flex: 1;
-  min-height: 1050px;
   height:100%;
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
-
+ 
 }
-
 .find-pharmacy-card-list{
     display: flex;
     gap: 24px;
@@ -110,7 +96,6 @@
   }
 }
 
-
 @media (max-width: 640px) {
   .find-pharmacy {
     padding: 24px 16px;
@@ -124,4 +109,4 @@
     height: 350px;
     min-height: 350px;
   }
-}
+} 
