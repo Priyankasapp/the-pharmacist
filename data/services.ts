@@ -52,7 +52,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
         ],
       },
     ],
-    viewAllHref: "/services/private",
+    viewAllHref: "/all-conditions",
   },
   {
     id: "online-doctor",

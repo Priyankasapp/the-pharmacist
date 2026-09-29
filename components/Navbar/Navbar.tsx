@@ -17,7 +17,6 @@ import PharmacyCard from "./PharmacyCard/PharmacyCard";
 import SearchBar from "../Find-Pharmacy/SearchBar/SearchBar";
 import { ActorIcon, BagIcon, SearchIcon } from "@/data/assets";
 
-
 type ActiveMenuType = "services" | "search" | "product" | null;
 
 const Navbar = () => {
@@ -33,7 +32,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
     setActiveMenu(null);
   };
-
 
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent) => {
@@ -72,7 +70,6 @@ const Navbar = () => {
             className={styles["nav-logo-icon"]}
           />
         </Link>
-
        
         <button
           className={styles["nav-mobile-menu"]}
@@ -83,7 +80,6 @@ const Navbar = () => {
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} className={styles["nav-menu"]} />}
         </button>
 
-
         <div
           className={`${styles["nav-wrapper"]} ${
             isMobileMenuOpen ? styles["nav-wrapper-open"] : ""
@@ -91,13 +87,13 @@ const Navbar = () => {
         >
           <nav className={styles["nav-links"]}>
            
+            {/* REMOVED onMouseLeave to prevent auto-closing */}
             <div
               className={styles["nav-hover-wrapper"]}
               onMouseEnter={() => {
-                if (window.innerWidth > 991) setActiveMenu("services");
-              }}
-              onMouseLeave={() => {
-                if (window.innerWidth > 991) setActiveMenu(null);
+                if (window.innerWidth > 991 && activeMenu === null) {
+                  setActiveMenu("services");
+                }
               }}
             >
               <button
@@ -111,29 +107,16 @@ const Navbar = () => {
               </button>
             </div>
 
-            <Link
-              href="/product"
-              className={styles["nav-link"]}
-              onClick={closeMobileMenu}
-            >
+            <Link href="/product" className={styles["nav-link"]} onClick={closeMobileMenu}>
               Our Products
             </Link>
-            <Link
-              href="/about-us"
-              className={styles["nav-link"]}
-              onClick={closeMobileMenu}
-            >
+            <Link href="/about-us" className={styles["nav-link"]} onClick={closeMobileMenu}>
               About Us
             </Link>
-            <Link
-              href="/contact"
-              className={styles["nav-link"]}
-              onClick={closeMobileMenu}
-            >
+            <Link href="/contact" className={styles["nav-link"]} onClick={closeMobileMenu}>
               Contact
             </Link>
           </nav>
-
          
           <div className={styles["nav-right-controls"]}>
             <div className={styles["nav-icon-group"]}>
@@ -143,21 +126,17 @@ const Navbar = () => {
                 onClick={() => toggleMenu("search")}
                 aria-expanded={activeMenu === "search"}
               >
-               
                 <Image src={SearchIcon} alt="search-icon" className={styles['nav-icon']}/>
               </button>
 
               <button className={styles["nav-icon-btn"]} aria-label="user profile">
-               
                 <Image src={ActorIcon} alt="user-icon" className={styles['nav-icon']}/>
               </button>
 
               <button className={styles["nav-icon-btn"]} aria-label="shopping bag">
-               
                 <Image src={BagIcon} alt={'shopping-bag'} className={styles['nav-icon']}/>
               </button>
             </div>
-
            
             <div className={styles["nav-location-wrapper"]}>
               <button
@@ -182,8 +161,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <ServicesMenu isOpen={activeMenu === "services"} />
 
+      <ServicesMenu isOpen={activeMenu === "services"} />
       {activeMenu === "search" && <SearchBar />}
     </header>
   );
