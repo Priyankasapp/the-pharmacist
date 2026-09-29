@@ -14,6 +14,9 @@ gap: 32px;
 .treatment-header{
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+
 }
 .treatment-card-wrapper{
   display: flex;
@@ -26,10 +29,10 @@ gap: 32px;
 .treatment-heading{
   font-weight: 600;
   font-size: 40px;
-  line-height: 100%;
+  line-height: 1.2;
   color: var(--section-title);  
   max-width: 1047px;
-}
+} 
 .treatment-heading span{
   color: var(--tp-green);
 }
@@ -45,41 +48,51 @@ gap: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #282828;
-  border: 1px solid #727272;
+  color: var(--dark-gray);
+  border: 1px solid var(--gray);
+  cursor:pointer;
+  transition: all 0.2s ease;
 }
 
 .treatment-card-container{
   display: grid;
-  grid-template-columns: repeat(var(--treatmentCardPerPage, 3), minmax(0, 1fr));
-  gap:20px
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap:20px;
+  width: 100%;
 }
 .treatment-card-item{
   min-width:0;
 }
 
-@media (max-width:900px){
-  .treatment-heading{
-  font-size: 25px;
-  line-height: 100%;
-  max-width: 400px;
-}
-.treatment-card-container{
-  display: grid;
-  grid-template-columns: repeat(var(--treatmentCardPerPage, 2), minmax(0, 1fr));
-  gap:20px
-}
+@media (max-width:1100px)
+{
+  .treatment-heading
+  {
+    font-size: 28px;
+    line-height: 100%;
+  }
+.treatment-card-container
+  {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap:20px;
+   box-sizing: border-box;
+    
+  }
 
 }
 
-@media (max-width:600px){
-  .treatment-card-container{
-  display: grid;
-  grid-template-columns: repeat(var(--treatmentCardPerPage, 1), minmax(1fr));
-  gap:20px
-}
-.treatment-header{
- gap: 20px;
-flex-direction: column;
-}
+@media (max-width:600px)
+{
+  .treatment-card-container
+  {
+    display: grid;
+    grid-template-columns: repeat(var(--treatmentCardPerPage, 1), minmax(1fr));
+    gap:20px
+  }
+.treatment-header
+  {
+    gap: 20px;
+    flex-direction: column;
+  }
 }

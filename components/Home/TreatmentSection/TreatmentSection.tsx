@@ -9,7 +9,7 @@ import Button from "@/components/Button/Button";
 const getTreatmentCardsPerPage = () => {
   if (typeof window === "undefined") return 3;
   if (window.innerWidth <= 550) return 1;
-  if (window.innerWidth <= 700) return 2;
+  if (window.innerWidth <= 750) return 2;
   if (window.innerWidth <= 1000) return 3;
 
   return 3;
