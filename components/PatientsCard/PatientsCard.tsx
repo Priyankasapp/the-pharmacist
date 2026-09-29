@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 import { Patients } from "@/lib/types";
 
-const PatientsCard = ({ id, name, title, description,imgSrc,rating = 5   }:Patients) => {
+const PatientsCard = ({  name, title, description,imgSrc,rating = 5   }:Patients) => {
   return (
     <div className={styles["patient-card-module"]}>
       {/* top  */}

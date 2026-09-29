@@ -23,9 +23,9 @@ import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSectio
 
 const getExpertsPerPage = () => {
   if(typeof window === "undefined") return 4;
-  if(window.innerWidth  <= 665) return 1;
-  if(window.innerWidth <= 960) return 2;
-  if(window.innerWidth <= 1280) return 3;
+  if(window.innerWidth  <= 674) return 1;
+  if(window.innerWidth <= 1070) return 2;
+  if(window.innerWidth <= 1440) return 3;
   return 4
 
 }

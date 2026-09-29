@@ -20,8 +20,7 @@
             setCurrentIndex((prevIndex)=>
             prevIndex === patients.length - 1 ? 0 : prevIndex + 1);
         };
-    const CARD_WIDTH = 400;
-    const GAP = 20;
+   
     return (
         <section className={styles['patient-review-section']}>
             {/* background img  */}
