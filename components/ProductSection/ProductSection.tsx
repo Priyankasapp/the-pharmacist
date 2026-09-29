@@ -95,12 +95,11 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
                 originalPrice={product.originalPrice}
                 isPrescriptionOnly={product.isPrescriptionOnly}
                 savingsText={product.savingsText}
-                price={product.price} 
+                price={product.price}
                 // Conditional controls:
                 // showAppointmentButton={false} slug={""}
-                showTreatmentsButton= {false}
-                appointmentButtonText="Add to Bag"
-                />
+                showTreatmentsButton={false}
+                appointmentButtonText="Add to Bag" slug={""}                />
 
             </div>
           );
