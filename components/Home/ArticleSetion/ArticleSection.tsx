@@ -66,7 +66,7 @@ const ArticleSection = () => {
           <button
             type="button"
             onClick={handlePrevious}
-            disabled={currentIndex === 0}
+            // disabled={currentIndex === 0}
             className={styles["article-icon-wrapper"]}
             aria-label="Previous articles"
           >
@@ -112,7 +112,7 @@ const ArticleSection = () => {
           <button
             type="button"
             onClick={handleNext}
-            disabled={currentIndex + articlePerPage >= informationData.length}
+            // disabled={currentIndex + articlePerPage >= informationData.length}
             className={styles["article-icon-wrapper"]}
             aria-label="Next articles"
           >

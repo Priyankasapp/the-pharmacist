@@ -102,10 +102,10 @@ const AllCondition = () => {
                 </div>
 
                 <div className={styles["option-section"]}>
-                  {group.data.map((item) => (
+                  {group.data.map((item, index) => (
                     <div
                       className={styles["option-card-wrapper"]}
-                      key={item.id}
+                      key={`${item.id}-${item.name}-${index}`}
                       id={item.id}
                     >
                       <OptionSectionCard
