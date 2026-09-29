@@ -73,7 +73,7 @@
     stroke: var(--star);
 }
 .patient-card-bottom-desc h3{
-    color: var(--tp-green);
+    color: #204F81;
     font-size: 20px;
     font-weight: 400;
 }

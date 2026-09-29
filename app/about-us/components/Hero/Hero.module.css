@@ -39,6 +39,8 @@
     margin: 0;
     font-weight: 600;
     font-size: 40px;
+    max-width: 411px;
+    font-width: 411px;
     line-height: 1.2;
     color: var(--section-title);
     letter-spacing: 0%;

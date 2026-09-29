@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp, Plus } from "lucide-react";
 import { brands, categories } from "@/lib/data";
 import FilterCheckbox from "./FilterCheckbox";
 
-
+  
 const ProductSidebar = () => {
     
     type Sections = 'categories' | 'brands'|'rating' | 'promotion' | 'productType';
