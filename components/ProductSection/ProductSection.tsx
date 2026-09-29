@@ -97,7 +97,10 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
                 savingsText={product.savingsText}
                 price={product.price} 
                 // Conditional controls:
-                showAppointmentButton={false} slug={""}/>
+                // showAppointmentButton={false} slug={""}
+                showTreatmentsButton= {false}
+                appointmentButtonText="Add to Bag"
+                />
 
             </div>
           );

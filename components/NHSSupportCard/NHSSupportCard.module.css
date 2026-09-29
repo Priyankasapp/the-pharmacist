@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    height: 392px;
-    width: 351px;
+    height: 411px;
+    width: 372px;
     background-color: var(--white);
     border-radius: 30px;
     padding: 30px;
@@ -14,7 +14,9 @@
     font-weight: 600;
     font-size: 24px;
 }
-
+.nhs-support h2 span{
+    color: var(--tp-green);
+}
 .nhs-form-section{
     display: flex;
     flex-direction: column;

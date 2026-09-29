@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./StepSectionCard.module.css";
 import { StepInfo } from '@/lib/types';
 const StepSectionCard = ({id, name, desc}:StepInfo) => {

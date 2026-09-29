@@ -15,6 +15,7 @@
     color: var(--section-title);
     margin: 0;
 }
+
 .header-img-wrapper{
     height: 20px;
     width: 48px;
@@ -28,7 +29,7 @@
     background-position: center;
     display: flex;
     min-height: 599px;
-    align-items: center;    
+    /* align-items: center;     */
     justify-content:space-between;
     gap: 40px;
     padding: 40px 6%;
@@ -37,6 +38,8 @@
 .condition-hero-section h1{
     max-width: 453px;
     width: 100%;
+   position: relative;
+   top: 70px;
     color: var(--main-text);
     font-size: 40px;
     font-weight: 600;
