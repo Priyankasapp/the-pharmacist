@@ -5,12 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import {
-  ChevronDown,
+
   ChevronUp,
   MapPin,
   Menu,
   X,
 } from "lucide-react";
+import ChevronDown from "../Icon/chevronDown";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
@@ -103,7 +104,12 @@ const Navbar = () => {
                 aria-expanded={activeMenu === "services"}
               >
                 <span>Our Services</span>
-                {activeMenu === "services" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                {activeMenu === "services" ? <ChevronUp size={16} /> :
+                <div 
+                className={styles["chevron-icons-wrapper"]}>
+                  <ChevronDown className={styles['chevron-down-icon']}  />
+                </div>
+                }
               </button>
             </div>
 
@@ -148,7 +154,7 @@ const Navbar = () => {
               >
                 <MapPin size={16} className={styles["nav-location-icon"]} />
                 <span>Silver Lane</span>
-                <ChevronDown size={14} className={styles["nav-chevron-icon"]} />
+                <ChevronDown className={undefined} />
               </button>
               {activeMenu === "product" && <PharmacyCard />}
             </div>

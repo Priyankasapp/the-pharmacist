@@ -24,7 +24,7 @@ import {
 const Footer = () => {
   return (
     <footer className={styles["footer"]}>
-      <div className={`container ${styles["footer-container"]}`}>
+      <div className={`${styles["footer-container"]}`}>
         {/* Top Section */}
         <div className={styles["footer-top-section"]}>
           {/* Left Columns */}

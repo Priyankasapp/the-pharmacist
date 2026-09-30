@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={` ${plusJakartaSans.variable} ${skModernist.variable} antialiased`}
     >
       <body className="" suppressHydrationWarning>
-        <div className="container">
+        <div >
         <Navbar />
         <Breadcrumbs />
         

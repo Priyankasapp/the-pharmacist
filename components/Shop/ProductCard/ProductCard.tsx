@@ -16,7 +16,7 @@ const ProductCard = ({
   originalPrice,
   weightText,
   unitPriceText,
-  showTreatmentsButton = true, 
+  showTreatmentsButton = true,
   showAppointmentButton = true,
   treatmentsButtonText = "Add to Bag",
   appointmentButtonText = "Book an Appointment",
@@ -30,7 +30,7 @@ const ProductCard = ({
             src={image}
             alt={title}
             className={styles["product-card-image"]}
-            width={400} 
+            width={400}
             height={400}
           />
 
@@ -49,7 +49,7 @@ const ProductCard = ({
             </div>
           )}
         </div>
-        
+
         {/* description  */}
         <div className={styles["product-card-desc"]}>
           <div className={styles["product-card-info-group"]}>
@@ -64,27 +64,31 @@ const ProductCard = ({
 
             <div className={styles["product-card-price-section"]}>
               <p>
-                £{price}/pack {originalPrice && <span>was £{originalPrice}</span>}
+                £{price}/pack{" "}
+                {originalPrice && <span>was £{originalPrice}</span>}
               </p>
-              {(weightText || unitPriceText)&&(
-<span>
-                {weightText} | {unitPriceText}
-              </span>
+              {(weightText || unitPriceText) && (
+                <span>
+                  {weightText} | {unitPriceText}
+                </span>
               )}
-              
             </div>
           </div>
 
           {/* Button actions group */}
           <div className={styles["product-card-actions"]}>
             {showTreatmentsButton && (
-              <Button variant="Outline" showArrow className={styles['product-button']}>
+              <Button
+                variant="Outline"
+                showArrow
+                className={styles["product-button"]}
+              >
                 {treatmentsButtonText}
               </Button>
             )}
-            
+
             {showAppointmentButton && (
-              <Button className={styles['product-button']} showArrow>
+              <Button className={styles["product-button"]} showArrow>
                 {appointmentButtonText}
               </Button>
             )}

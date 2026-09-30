@@ -31,8 +31,7 @@
 
   /* container */
   --container: 1440px;
-  --container-inner: 1320px;
-  --container-padding: 60px;
+
 }
 
 *,
@@ -98,6 +97,7 @@ textarea {
   max-width: var(--container);
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
   /* padding-left: 1rem;
   padding-right: 1rem; */
 }

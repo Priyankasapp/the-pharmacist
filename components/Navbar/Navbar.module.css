@@ -121,7 +121,19 @@
 .nav-mobile-menu:hover {
   background-color: var(--tp-bg);
 }
+.chevron-icons-wrapper{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chevron-down-icon{
+  width: 5;
+  height: 10;
 
+
+}
 @media (max-width:1260px){
   .nav-mobile-menu{
     display: flex;
