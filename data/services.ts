@@ -17,7 +17,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
         ],
       },
     ],
-    viewAllHref: "/services/nhs",
+    viewAllHref: "/all-conditions",
   },
   {
     id: "private",
@@ -26,7 +26,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
     groups: [
       {
         title: "Skin & Scalp Conditions",
-        href: "/services/skin-scalp",
+        href: "/all-conditions",
         links: [
           { label: "Colic", href: "/all-conditions/Sore Throat" },
           { label: "Constipation", href: "/all-conditions/Sore Throat" },
@@ -35,7 +35,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
       },
       {
         title: "Vaccinations",
-        href: "/services/vaccinations",
+        href: "/all-conditions",
         links: [
           { label: "Colic", href: "/all-conditions/Sore Throat" },
           { label: "Constipation", href: "/all-conditions/Sore Throat" },
@@ -44,7 +44,7 @@ export const SERVICES_MENU: ServiceColumn[] = [
       },
       {
         title: "Bladder & Intimate Health",
-        href: "/services/bladder-intimate-health",
+        href: "/all-conditions",
         links: [
           { label: "Colic", href: "/all-conditions/Sore Throat" },
           { label: "Constipation", href: "/all-conditions/Sore Throat" },
@@ -61,32 +61,32 @@ export const SERVICES_MENU: ServiceColumn[] = [
     groups: [
       {
         title: "Acne",
-        href: "/services/acne",
+        href: "/all-conditions",
         links: [
-          { label: "Colic", href: "/services/colic" },
-          { label: "Constipation", href: "/services/constipation" },
-          { label: "Diarrhoea", href: "/services/diarrhoea" },
+          { label: "Colic", href: "/all-conditions/Sore Throat" },
+          { label: "Constipation", href: "/all-conditions/Sore Throat" },
+          { label: "Diarrhoea", href: "/all-conditions/Sore Throat" },
         ],
       },
       {
         title: "Eczema & Dermatitis",
-        href: "/services/eczema-dermatitis",
+        href: "/all-conditions",
         links: [
-          { label: "Colic", href: "/services/colic" },
-          { label: "Constipation", href: "/services/constipation" },
-          { label: "Diarrhoea", href: "/services/diarrhoea" },
+          { label: "Colic", href: "/all-conditions/Sore Throat" },
+          { label: "Constipation", href: "/all-conditions/Sore Throat" },
+          { label: "Diarrhoea", href: "/all-conditions/Sore Throat" },
         ],
       },
       {
         title: "Rosacea",
         href: "/services/rosacea",
         links: [
-          { label: "Colic", href: "/services/colic" },
-          { label: "Constipation", href: "/services/constipation" },
-          { label: "Diarrhoea", href: "/services/diarrhoea" },
+          { label: "Colic", href: "/all-conditions/Sore Throat" },
+          { label: "Constipation", href: "/all-conditions/Sore Throat" },
+          { label: "Diarrhoea", href: "/all-conditions/Sore Throat" },
         ],
       },
     ],
-    viewAllHref: "/services/online-doctor",
+    viewAllHref: "/all-conditions",
   },
 ];

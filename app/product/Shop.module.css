@@ -152,27 +152,25 @@ span.shop-pagination-number-wrapper:hover {
   pointer-events: none; 
 }
 
-@media (max-width:800px){
-.shop-container{
+@media (max-width: 1000px) {
+
+  .product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
   
-  flex-direction: column;
-}
-  .product-grid-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
-  gap: 10px;
-  box-sizing: border-box;
+  .shop-search-container {
+    flex-direction: column; 
+    gap: 12px;
+  }
 
-}
-}
-
-@media (max-width:770px){
-
-  .product-grid-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 10px;
-  box-sizing: border-box;
-
-}
+  
+  .filter-card {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
 }

@@ -19,10 +19,10 @@ const getSpecialistPerPage = () =>{
 const Specialist = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [specialisrPerPage, setSpecialistPerPage] = useState(4);
-  const [isMounted, setIsMouted] = useState(false);
+
 
   useEffect(()=>{
-    setIsMouted(true);
+
     setSpecialistPerPage(getSpecialistPerPage());
     const handleResize = () => setSpecialistPerPage(getSpecialistPerPage());
     window.addEventListener("resize", handleResize);
@@ -89,10 +89,9 @@ const Specialist = () => {
         <button 
         type='button'
         onClick={handleNext}
-        
         aria-label='Next Specialist'>
           <ChevronRight 
-          className={styles['specialist-icon']}/>
+            className={styles['specialist-icon']}/>
         </button>
         
       </div>
