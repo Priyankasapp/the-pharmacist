@@ -42,13 +42,18 @@
   position: relative;
 }
 
-
+.location-chrowndown-icon:hover{
+  color: var(--white);
+}
 .nav-link-btn{
   background-color: transparent;
   border: none;
   display: flex;
   align-items: center;
   gap: 2px;
+}
+.nav-link-btn span:hover{
+  color: var(--tp-green);
 }
 .nav-link,
 .nav-link-btn span{
@@ -64,6 +69,16 @@
 .nav-icon-btn{
   background-color:transparent;
   border: none;
+   height: 42px;
+  width: 42px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.nav-icon-btn:hover{
+  color: var(--tp-green);
+  background-color: var(--tp-bg);
+ 
 }
 .nav-icon{
   width: 24px;
@@ -128,12 +143,18 @@
   justify-content: center;
   align-items: center;
 }
-.chevron-down-icon{
+.chevron-icon{
   width: 5;
   height: 10;
 
 
 }
+.nav-logo-icon {
+  color: --tp-green;
+  }
+.nav-logo-icon:hover {
+    color: white;
+  }
 @media (max-width:1260px){
   .nav-mobile-menu{
     display: flex;

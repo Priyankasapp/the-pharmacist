@@ -4,19 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
-import {
-
-  ChevronUp,
-  MapPin,
-  Menu,
-  X,
-} from "lucide-react";
+import { Menu, X } from "lucide-react";
 import ChevronDown from "../Icon/chevronDown";
+import ChevronUp from "../Icon/chevronUp";
+import MapPin from "../Icon/MapPin";
+import BagIcon from "../Icon/bagIcon";
+import ActorIcon from "../Icon/actorIcon";
+import SearchIcon from "../Icon/searchIcon";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
 import SearchBar from "../Find-Pharmacy/SearchBar/SearchBar";
-import { ActorIcon, BagIcon, SearchIcon } from "@/data/assets";
 
 type ActiveMenuType = "services" | "search" | "product" | null;
 
@@ -60,7 +58,6 @@ const Navbar = () => {
   return (
     <header ref={navRef} className={styles["navbar"]}>
       <div className={styles["nav-container"]}>
-       
         <Link href="/" className={styles["nav-logo"]} onClick={closeMobileMenu}>
           <Image
             src="/LOGO.svg"
@@ -71,14 +68,18 @@ const Navbar = () => {
             className={styles["nav-logo-icon"]}
           />
         </Link>
-       
+
         <button
           className={styles["nav-mobile-menu"]}
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} className={styles["nav-menu"]} />}
+          {isMobileMenuOpen ? (
+            <X size={24} />
+          ) : (
+            <Menu size={24} className={styles["nav-menu"]} />
+          )}
         </button>
 
         <div
@@ -87,8 +88,7 @@ const Navbar = () => {
           }`}
         >
           <nav className={styles["nav-links"]}>
-           
-            {/* REMOVED onMouseLeave to prevent auto-closing */}
+          
             <div
               className={styles["nav-hover-wrapper"]}
               onMouseEnter={() => {
@@ -104,26 +104,41 @@ const Navbar = () => {
                 aria-expanded={activeMenu === "services"}
               >
                 <span>Our Services</span>
-                {activeMenu === "services" ? <ChevronUp size={16} /> :
-                <div 
-                className={styles["chevron-icons-wrapper"]}>
-                  <ChevronDown className={styles['chevron-down-icon']}  />
-                </div>
-                }
+                {activeMenu === "services" ? (
+                  <div className={styles["chevron-icons-wrapper"]}>
+                    <ChevronUp className={styles["chevron-icon"]} />
+                  </div>
+                ) : (
+                  <div className={styles["chevron-icons-wrapper"]}>
+                    <ChevronDown className={styles["chevron-down-icon"]} />
+                  </div>
+                )}
               </button>
             </div>
 
-            <Link href="/product" className={styles["nav-link"]} onClick={closeMobileMenu}>
+            <Link
+              href="/product"
+              className={styles["nav-link"]}
+              onClick={closeMobileMenu}
+            >
               Our Products
             </Link>
-            <Link href="/about-us" className={styles["nav-link"]} onClick={closeMobileMenu}>
+            <Link
+              href="/about-us"
+              className={styles["nav-link"]}
+              onClick={closeMobileMenu}
+            >
               About Us
             </Link>
-            <Link href="/contact" className={styles["nav-link"]} onClick={closeMobileMenu}>
+            <Link
+              href="/contact"
+              className={styles["nav-link"]}
+              onClick={closeMobileMenu}
+            >
               Contact
             </Link>
           </nav>
-         
+
           <div className={styles["nav-right-controls"]}>
             <div className={styles["nav-icon-group"]}>
               <button
@@ -132,18 +147,25 @@ const Navbar = () => {
                 onClick={() => toggleMenu("search")}
                 aria-expanded={activeMenu === "search"}
               >
-                <Image src={SearchIcon} alt="search-icon" className={styles['nav-icon']}/>
+               
+                <SearchIcon className={styles["nav-icon"]}/>
               </button>
 
-              <button className={styles["nav-icon-btn"]} aria-label="user profile">
-                <Image src={ActorIcon} alt="user-icon" className={styles['nav-icon']}/>
+              <button
+                className={styles["nav-icon-btn"]}
+                aria-label="user profile"
+              >
+                <ActorIcon className={styles["nav-icon"]} />
               </button>
 
-              <button className={styles["nav-icon-btn"]} aria-label="shopping bag">
-                <Image src={BagIcon} alt={'shopping-bag'} className={styles['nav-icon']}/>
+              <button
+                className={styles["nav-icon-btn"]}
+                aria-label="shopping bag"
+              >
+                <BagIcon className={styles["nav-icon"]} />
               </button>
             </div>
-           
+
             <div className={styles["nav-location-wrapper"]}>
               <button
                 type="button"
@@ -152,14 +174,18 @@ const Navbar = () => {
                 aria-expanded={activeMenu === "product"}
                 aria-label="Select pharmacy location"
               >
-                <MapPin size={16} className={styles["nav-location-icon"]} />
+                <MapPin className={styles["nav-location-icon"]} />
                 <span>Silver Lane</span>
-                <ChevronDown className={undefined} />
+                <ChevronDown className={styles["location-chrowndown-icon"]} />
               </button>
               {activeMenu === "product" && <PharmacyCard />}
             </div>
 
-            <Link href="/product" onClick={closeMobileMenu} className={styles["nav-cta-link"]}>
+            <Link
+              href="/product"
+              onClick={closeMobileMenu}
+              className={styles["nav-cta-link"]}
+            >
               <Button showArrow className={styles["nav-button"]}>
                 Order Prescription
               </Button>

@@ -66,7 +66,6 @@ const ArticleSection = () => {
           <button
             type="button"
             onClick={handlePrevious}
-            // disabled={currentIndex === 0}
             className={styles["article-icon-wrapper"]}
             aria-label="Previous articles"
           >
@@ -75,7 +74,9 @@ const ArticleSection = () => {
 
           <div
             className={styles["article-info-wrapper"]}
-            style={{ "--articlePerPage": articlePerPage } as React.CSSProperties}
+            style={
+              { "--articlePerPage": articlePerPage } as React.CSSProperties
+            }
           >
             {visibleArticles.map((info, index) => (
               <div
