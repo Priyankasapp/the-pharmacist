@@ -59,9 +59,11 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
-     
+    <div>
       <Hero />
+       <div className="container">
+     
+      
      
       <section className={styles["export-section"]}>
          
@@ -202,6 +204,8 @@ const Home = () => {
       <ArticleSection/> 
       <CTA/>
     </div>
+    </div>
+   
   );
 };
 export default Home;
