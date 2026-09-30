@@ -5,16 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import { Menu, X } from "lucide-react";
-import ChevronDown from "../Icon/chevronDown";
-import ChevronUp from "../Icon/chevronUp";
-import MapPin from "../Icon/MapPin";
-import BagIcon from "../Icon/bagIcon";
-import ActorIcon from "../Icon/actorIcon";
-import SearchIcon from "../Icon/searchIcon";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
 import SearchBar from "../Find-Pharmacy/SearchBar/SearchBar";
+import {ActorIcon, BagIcon, ChevronDown, ChevronUp, MapPin, SearchIcon} from "../Icon/Icon";
 
 type ActiveMenuType = "services" | "search" | "product" | null;
 

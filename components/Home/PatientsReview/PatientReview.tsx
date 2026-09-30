@@ -3,10 +3,10 @@
     import { VectorEight } from "@/data/assets";
     import styles from "./PatientReview.module.css";
     import Image from "next/image";
-    import { ChevronLeft, ChevronRight } from "lucide-react";
     import { patients } from "@/lib/data";
     import PatientsCard from "@/components/PatientsCard/PatientsCard";
     import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
 
     const PatientReview = () => {
         const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,8 +40,8 @@
                         Discover patient experiences that highlight our commitment to trusted care and professional guidance.
                     </p>
                     <div className={styles['patient-icon-wrapper']}>
-                    <button type="button" onClick={handlePrevious} aria-label="previous"> <ChevronLeft/></button>
-                    <button type="button" onClick={handleNext} aria-label="next"><ChevronRight/></button>
+                    <button type="button" onClick={handlePrevious} aria-label="previous"> <ChevronLeft className={styles['chevron-icon']}/></button>
+                    <button type="button" onClick={handleNext} aria-label="next"><ChevronRight className={styles['chevron-icon']}/></button>
                     </div>
                 </div>
                 {/* right section  */}

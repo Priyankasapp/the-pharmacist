@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import { ChevronLeft, ChevronRight, Folder } from "lucide-react";
 import styles from "./ArticleSection.module.css";
 import Image from "next/image";
 import { informationData } from "@/lib/data";
 import { useEffect, useState } from "react";
 import Button from "@/components/Button/Button";
+import { ChevronLeft, ChevronRight, Folder } from "@/components/Icon/Icon";
 
 const getArticleCardPerPage = () => {
   if (typeof window === "undefined") return 2;
@@ -69,7 +69,7 @@ const ArticleSection = () => {
             className={styles["article-icon-wrapper"]}
             aria-label="Previous articles"
           >
-            <ChevronLeft />
+            <ChevronLeft className={styles['chevron-icon']} />
           </button>
 
           <div
@@ -97,7 +97,7 @@ const ArticleSection = () => {
                 <div className={styles["article-desc-container"]}>
                   <div className={styles["article-desc-wrapper"]}>
                     <div className={styles["info-title-wrapper"]}>
-                      <Folder size={16} />
+                      <Folder />
                       <span>Lifestyle &amp; Wellness</span>
                     </div>
                     <h3>{info.desc}</h3>
@@ -117,7 +117,7 @@ const ArticleSection = () => {
             className={styles["article-icon-wrapper"]}
             aria-label="Next articles"
           >
-            <ChevronRight />
+            <ChevronRight className={styles['chevron-icon']}/>
           </button>
         </div>
       </div>

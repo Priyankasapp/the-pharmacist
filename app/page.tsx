@@ -6,11 +6,9 @@ import Hero from "@/components/Home/Hero/Hero";
 import { exportCardInfo } from "@/lib/data";
 import styles from "./Home.module.css";
 import {  useEffect, useState } from "react";
-import {  ChevronLeft, ChevronRight,  } from "lucide-react";
 import Image from "next/image";
 import {
   nhs_logo_icon,
-  right_icon,
   VectorSeven,
 } from "@/data/assets";;
 import CTA from "@/components/Home/CTA/CTA";
@@ -20,6 +18,7 @@ import PatientReview from "@/components/Home/PatientsReview/PatientReview";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
 import ProductSection from "@/components/ProductSection/ProductSection";
 import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSection";
+import { Check, ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
 
 const getExpertsPerPage = () => {
   if(typeof window === "undefined") return 4;
@@ -85,14 +84,14 @@ const Home = () => {
                 onClick={handlePrevious}
                 aria-label="Previouse exports"
               >
-                <ChevronLeft />
+                <ChevronLeft className={styles['chevron-icon']}/>
               </button>
               <button
                 type="button"
                 onClick={handleNext}
                 aria-label="Next export"
               >
-                <ChevronRight />
+                <ChevronRight className={styles['chevron-icon']}/>
               </button>
             </div>
           </div>
@@ -142,33 +141,22 @@ const Home = () => {
 
               <ul className={styles["prescription-unorder-list"]}>
                 <li>
-                  <Image
-                    src={right_icon}
-                    alt="point"
-                    className={styles["right-icon"]}
-                  />
+                
+                  <Check className={styles["right-icon"]}/>
                   <span>
                     Get your repeat medication sorted online in just a few
                     clicks
                   </span>
                 </li>
                 <li>
-                  <Image
-                    src={right_icon}
-                    alt="point"
-                    className={styles["right-icon"]}
-                  />
+                  <Check className={styles["right-icon"]}/>
                   <span>
                     Stay updated and track your prescription every step of the
                     way
                   </span>
                 </li>
                 <li>
-                  <Image
-                    src={right_icon}
-                    alt="point"
-                    className={styles["right-icon"]}
-                  />{" "}
+                  <Check className={styles["right-icon"]}/>
                   <span>
                     Your personal health information is always safe and secure
                   </span>

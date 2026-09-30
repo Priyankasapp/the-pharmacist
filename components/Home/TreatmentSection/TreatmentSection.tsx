@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 import styles from "./TreatmentSection.module.css";
 import { treatmentData } from "@/lib/data";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import TreatmentCard from "../TreatmentCard/TreatmentCard";
 import Button from "@/components/Button/Button";
+import { ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
 
 const getTreatmentCardsPerPage = () => {
   if (typeof window === "undefined") return 3;
@@ -59,7 +59,7 @@ const TreatmentSection = () => {
             disabled={currentIndex === 0}
             aria-label="Previous Treatment"
           >
-            <ChevronLeft />
+            <ChevronLeft className={styles['chevron-icon']}/>
           </button>
           <button
             type="button"
@@ -69,7 +69,7 @@ const TreatmentSection = () => {
             }
             aria-label="Next Treatment"
           >
-            <ChevronRight />
+            <ChevronRight className={styles['chevron-icon']}/>
           </button>
         </div>
       </div>

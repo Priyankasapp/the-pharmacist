@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react";
 import styles from "./FAQ.module.css";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { faqsData } from "@/lib/data";
+import { ChevronDown, ChevronUp } from "@/components/Icon/Icon";
 
 const FAQ = () => {
   const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -39,7 +39,7 @@ const FAQ = () => {
                 >
                   <span>{faq.question}</span>
                   <span className={styles['faq-icon']} aria-hidden="true">
-                    {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    {isOpen ? <ChevronUp className={styles['chevron-icon']} /> : <ChevronDown className={styles['chevron-icon']} />}
                   </span>
                 </button>
               </h3>

@@ -74,6 +74,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  border-radius: 8px;
 }
 .nav-icon-btn:hover{
   color: var(--tp-green);
@@ -142,6 +143,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
+ 
 }
 .chevron-icon{
   width: 5;

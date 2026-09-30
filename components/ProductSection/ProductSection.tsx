@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/set-state-in-effect */
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ProductSection.module.css";
 import { useEffect, useState } from "react";
 import { productCardData } from "@/lib/data";
 import ProductCard from "../Shop/ProductCard/ProductCard";
 import Button from "../Button/Button";
+import { ChevronLeft, ChevronRight } from "../Icon/Icon";
 
 interface productProps {
   headingText: string;
@@ -67,7 +67,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
             disabled={currentIndex === 0}
             aria-label="Previous products"
           >
-            <ChevronLeft />
+            <ChevronLeft className={styles['chevron-icon']} />
           </button>
           <button
             type="button"
@@ -75,7 +75,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
             disabled={currentIndex + productPerPage >= productCardData.length}
             aria-label="Next products"
           >
-            <ChevronRight />
+            <ChevronRight className={styles['chevron-icon']}/>
           </button>
         </div>
       </div>
