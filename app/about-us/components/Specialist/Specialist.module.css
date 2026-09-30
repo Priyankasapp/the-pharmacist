@@ -12,6 +12,9 @@
   line-height: 100%;
   text-align: center;
 }
+.specialist-heading span{
+  color: var(--tp-green);
+}
 .specialist-cards {
   display: grid;
  grid-template-columns: repeat(4, minmax(0, 1fr)); 
@@ -22,18 +25,12 @@
   
 }
 
-/* .specialist-icon {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  border: 1px solid black;
-} */
 /* card Section  */
 .specialist-card-container {
   width: 294px;
   height: 575px;
   border-radius: 16px;
-  border: 1px solid #e0e0e0;
+  /* border: 1px solid #e0e0e0; */
   overflow: hidden;
   position: relative;
 }
