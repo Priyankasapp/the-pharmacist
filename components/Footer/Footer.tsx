@@ -2,24 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ChevronRight,
-  ExternalLink,
-  MailIcon,
-  MapPin,
-  PhoneIcon,
-} from "lucide-react";
+
 import styles from "./Footer.module.css";
 import {
-  FaceBookIcon,
-  InstaIcon,
-  LinkedIcon,
+ 
   nhs_providing_service,
   registered_pharmacy,
   ryft,
   secure_ssl,
-  TwitterIcon,
+
 } from "@/data/assets";
+import { ChevronRight, ExternalLink, FaceBook, InstagramIcon, LinkedInIcon, MailIcon, MapPin, PhoneIcon , TwitterIcon} from "../Icon/Icon";
 
 const Footer = () => {
   return (
@@ -35,37 +28,37 @@ const Footer = () => {
               <ul className={styles["footer-desc"]}>
                 <li>
                   <Link href="/terms" className={styles["footer-links-wrapper"]}>
-                    <ChevronRight size={16} />
+                    <ChevronRight width="13" height="13" />
                     <span>Terms & Conditions</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/privacy" className={styles["footer-links-wrapper"]}>
-                    <ChevronRight size={16} />
+                    <ChevronRight width="13" height="13"/>
                     <span>Privacy Policy</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/cookies" className={styles["footer-links-wrapper"]}>
-                    <ChevronRight size={16} />
+                    <ChevronRight  width="13" height="13"/>
                     <span>Cookie Policy</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/complaints" className={styles["footer-links-wrapper"]}>
-                    <ChevronRight size={16} />
+                    <ChevronRight width="13" height="13" />
                     <span>Complaints Procedure</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/accessibility" className={styles["footer-links-wrapper"]}>
-                    <ChevronRight size={16} />
+                    <ChevronRight width="13" height="13"/>
                     <span>Accessibility Statement</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about-us" className={styles["footer-links-wrapper"]}>
-                    <ChevronRight size={16} />
+                    <ChevronRight width="13" height="13" />
                     <span>About Us</span>
                   </Link>
                 </li>
@@ -78,19 +71,19 @@ const Footer = () => {
               <ul className={styles["footer-desc"]}>
                 <li>
                   <div className={styles["footer-links-wrapper"]}>
-                    <MapPin size={16} />
+                    <MapPin  />
                     <span>10 High Street, London UK</span>
                   </div>
                 </li>
                 <li>
                   <a href="tel:+441234567890" className={styles["footer-links-wrapper"]}>
-                    <PhoneIcon size={16} />
+                    <PhoneIcon />
                     <span>+44 1234 567 890</span>
                   </a>
                 </li>
                 <li>
                   <a href="mailto:contact@yourpharmacy.co.uk" className={styles["footer-links-wrapper"]}>
-                    <MailIcon size={16} />
+                    <MailIcon />
                     <span>contact@yourpharmacy.co.uk</span>
                   </a>
                 </li>
@@ -98,7 +91,7 @@ const Footer = () => {
             </div>
 
             {/* Col 3: Regulatory */}
-            <div className={styles["footer-col"]}>
+            <div className={styles["footer-co l"]}>
               <h3 className={styles["footer-heading"]}>Regulatory Info</h3>
               <div className={styles["footer-text-con"]}>
                 <span>GPhC Registration:</span>
@@ -110,7 +103,7 @@ const Footer = () => {
                   className={styles["footer-external-link"]}
                 >
                   <span>Verify Registration</span>
-                  <ExternalLink size={14} />
+                  <ExternalLink  />
                 </a>
               </div>
 
@@ -157,7 +150,8 @@ const Footer = () => {
                 aria-label="Facebook"
                 className={styles["footer-icon-img-wrapper"]}
               >
-                <Image src={FaceBookIcon} alt="Facebook" width={16} height={16} className={styles["footer-icon-img"]} />
+                
+                <FaceBook/>
               </a>
               <a
                 href="https://x.com/"
@@ -166,7 +160,7 @@ const Footer = () => {
                 aria-label="Twitter"
                 className={styles["footer-icon-img-wrapper"]}
               >
-                <Image src={TwitterIcon} alt="Twitter" width={16} height={16} className={styles["footer-icon-img"]} />
+               <TwitterIcon/>
               </a>
               <a
                 href="https://www.instagram.com/"
@@ -175,7 +169,7 @@ const Footer = () => {
                 aria-label="Instagram"
                 className={styles["footer-icon-img-wrapper"]}
               >
-                <Image src={InstaIcon} alt="Instagram" width={16} height={16} className={styles["footer-icon-img"]} />
+               <InstagramIcon/>
               </a>
               <a
                 href="https://linkedin.com/"
@@ -184,7 +178,7 @@ const Footer = () => {
                 aria-label="LinkedIn"
                 className={styles["footer-icon-img-wrapper"]}
               >
-                <Image src={LinkedIcon} alt="LinkedIn" width={16} height={16} className={styles["footer-icon-img"]} />
+                <LinkedInIcon/>
               </a>
             </div>
 
@@ -219,7 +213,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className={styles["footer-external-link"]}
               >
-                GPhC Website <ExternalLink size={14} />
+                GPhC Website <ExternalLink  />
               </a>
               <a
                 href="https://www.nhs.uk/"
@@ -227,7 +221,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className={styles["footer-external-link"]}
               >
-                NHS Website <ExternalLink size={14} />
+                NHS Website <ExternalLink  />
               </a>
             </div>
           </div>
