@@ -6,9 +6,9 @@ import { optionA, optionB, optionC, optionD, processData } from "@/lib/data";
 import Image from "next/image";
 import { vectorOne, VectorTwo } from "@/data/assets";
 import FAQ from "@/components/Contact/FAQ/FAQ";
-import { ChevronDown } from "lucide-react";
 import Button from "@/components/Button/Button";
 import OptionSectionCard from "@/components/all-conditions/OptionSectionCard/OptionSectionCard";
+import { ChevronDown } from "@/components/Icon/Icon";
 
 const AllCondition = () => {
   const allAlphabetGroups = [
@@ -81,7 +81,7 @@ const AllCondition = () => {
                 }
               >
                 <span>Private Services</span>
-                <ChevronDown size={19} />
+                <ChevronDown  />
               </div>
             </div>
           </div>

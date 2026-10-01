@@ -1,7 +1,8 @@
 import FindPharmacyCard from '@/components/Find-Pharmacy/FindPharmacyCard/FindPharmacyCard';
 import FindPharmacyMap from '@/components/Find-Pharmacy/FindPharmacyMap/FindPharmacyMap';
 import styles from "./FindPharmacy.module.css";
-import { Search } from 'lucide-react';
+import { SearchIcon } from '@/components/Icon/Icon';
+
 
 const FindPharmacy = () => {
   return (
@@ -15,7 +16,7 @@ const FindPharmacy = () => {
         <span>Search</span>
         <div className={styles['find-pharmacy-searchbar-wrapper']}>
           <input placeholder='Dr Stone pharmacy, 123 High Street'/>
-          <Search className={styles['search-icon']} />
+          <SearchIcon className={styles['search-icon']} />
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 
+import { ChevronRight } from "@/components/Icon/Icon";
 import styles from "./Specialist.module.css";
 import Image, { StaticImageData } from "next/image";
-import {  ChevronRight } from "lucide-react";
 
 interface SpecialistCardProps {
     imgSrc: string | StaticImageData;

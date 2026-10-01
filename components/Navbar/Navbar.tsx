@@ -4,12 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
-import { Menu, X } from "lucide-react";
 import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
 import SearchBar from "../Find-Pharmacy/SearchBar/SearchBar";
-import {ActorIcon, BagIcon, ChevronDown, ChevronUp, MapPin, SearchIcon} from "../Icon/Icon";
+import {ActorIcon, BagIcon, ChevronDown, ChevronUp, CloseIcon, MapPin, MenuIcon, SearchIcon} from "../Icon/Icon";
 
 type ActiveMenuType = "services" | "search" | "product" | null;
 
@@ -71,9 +70,9 @@ const Navbar = () => {
           aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? (
-            <X size={24} />
+            <CloseIcon  />
           ) : (
-            <Menu size={24} className={styles["nav-menu"]} />
+            <MenuIcon  />
           )}
         </button>
 
@@ -101,11 +100,11 @@ const Navbar = () => {
                 <span>Our Services</span>
                 {activeMenu === "services" ? (
                   <div className={styles["chevron-icons-wrapper"]}>
-                    <ChevronUp className={styles["chevron-icon"]} />
+                    <ChevronUp className={undefined} />
                   </div>
                 ) : (
                   <div className={styles["chevron-icons-wrapper"]}>
-                    <ChevronDown className={styles["chevron-down-icon"]} />
+                    <ChevronDown  />
                   </div>
                 )}
               </button>

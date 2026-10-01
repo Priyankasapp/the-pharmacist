@@ -3,9 +3,9 @@
 'use client';
 import SpecialistCard from './SpecialistCard'
 import styles from "./Specialist.module.css";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { specalistDataSet } from '@/lib/data';
 import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from '@/components/Icon/Icon';
 
 
 const getSpecialistPerPage = () =>{

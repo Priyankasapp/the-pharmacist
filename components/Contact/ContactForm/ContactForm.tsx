@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '@/components/Button/Button';
 import styles from './ContactForm.module.css';
-import { MailOpenIcon,  PhoneCall } from '@/components/Icon/Icon';
-import { MapIcon } from 'lucide-react';
+import { MailOpenIcon,  MapIcon,  PhoneCall } from '@/components/Icon/Icon';
+
 
 const ContactForm = () => {
   return (

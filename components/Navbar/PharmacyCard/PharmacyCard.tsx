@@ -1,8 +1,8 @@
 "use client";
 import { pharmacy } from "@/lib/data";
 import styles from "./PharmacyCard.module.css";
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { ChevronRight } from "@/components/Icon/Icon";
 const PharmacyCard = () => {
   return (
     <div className={styles["pharmacy-wrapper"]}>

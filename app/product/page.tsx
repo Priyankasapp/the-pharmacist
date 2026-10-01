@@ -2,8 +2,8 @@ import styles from "./Shop.module.css";
 import ProductSidebar from "@/components/Shop/ProductSidebar/ProductSidebar";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import { productCardData } from "@/lib/data";
-import { ArrowLeft, ArrowRight, ChevronDown, Search } from "lucide-react";
 import Link from "next/link";
+import { ArrowLeft, ArrowRight, ChevronDown, SearchIcon } from "@/components/Icon/Icon";
 
 const Shop = () => {
   return (
@@ -18,7 +18,7 @@ const Shop = () => {
           
             <div className={styles["shop-search-container"]}>
               <div className={styles["shop-search-view"]}>
-                <span className={styles["shop-search-text"]}>View: 9 </span><ChevronDown size={15} />
+                <span className={styles["shop-search-text"]}>View: 9 </span><ChevronDown  />
               </div>
 
               <div className={styles["shop-search-right-section"]}>
@@ -28,7 +28,7 @@ const Shop = () => {
                   </span>
                   <div className={styles["shop-search-input-wrapper"]}>
                     <input type="text" placeholder="Search Products" />
-                    <Search size={15} className={styles["search-icon"]} />
+                    <SearchIcon className={styles["search-icon"]} />
                   </div>
                 </div>
 
@@ -37,7 +37,7 @@ const Shop = () => {
                     Sort By:
                   </span>
                   <span className={styles["shop-search-sortby-value"]}>
-                    Popularity <ChevronDown size={15} />
+                    Popularity <ChevronDown  />
                   </span>
                 </div>
               </div>
@@ -86,7 +86,7 @@ const Shop = () => {
                 className={styles["shop-pagination-nav1"]}
                 aria-label="Previous page"
               >
-                <ArrowLeft size={16} />
+                <ArrowLeft/>
                 <span>Previous</span>
               </a>
 
@@ -131,7 +131,7 @@ const Shop = () => {
                 aria-label="Next page"
               >
                 <span>Next</span>
-                <ArrowRight size={16} />
+                <ArrowRight  />
               </a>
             </nav>
           </div>

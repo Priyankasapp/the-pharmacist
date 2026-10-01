@@ -1,8 +1,8 @@
-/* eslint-disable react/jsx-key */
+
 import styles from "./TreatmentCard.module.css";
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
 import { TreatmentDataProps } from "@/types/type";
+import { ChevronRight } from "@/components/Icon/Icon";
 
 
 const TreatmentCard = ({ id, title, img, condition }: TreatmentDataProps) => {

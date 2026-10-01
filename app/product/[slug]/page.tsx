@@ -11,7 +11,8 @@ import { productCardData, tabs } from "@/lib/data";
 import { healthBroken, VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, HealthBrokenIcon } from "@/components/Icon/Icon";
+
 
 const getProductPerPage = () =>{
   if(typeof window === "undefined") return 4;
@@ -104,11 +105,7 @@ useEffect(()=>{
                   </h2>
                   <div className={styles["product-content-text-group"]}>
                     <div className={styles["product-content-bullet-paragraph"]}>
-                      <Image
-                        src={healthBroken}
-                        alt="point"
-                        className={styles["product-content-bullet"]}
-                      />
+                     <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         Panadol is a pain relief and fever-reducing medicine
                         that contains paracetamol (acetaminophen). It &apos;s
@@ -124,11 +121,7 @@ useEffect(()=>{
                     </ul>
 
                     <div className={styles["product-content-bullet-paragraph"]}>
-                      <Image
-                        src={healthBroken}
-                        alt="point"
-                        className={styles["product-content-bullet"]}
-                      />
+                      <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         All of these contain the same active ingredient,
                         paracetamol, which works to relive pain and reduce
@@ -136,11 +129,7 @@ useEffect(()=>{
                       </p>
                     </div>
                     <div className={styles["product-content-bullet-paragraph"]}>
-                      <Image
-                        src={healthBroken}
-                        className={styles["product-content-bullet"]}
-                        alt="point"
-                      />
+                      <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         Pandol is commonly used for headaches, toothaches,
                         musicle pain, back pain, back pain, period pain, and the
@@ -155,11 +144,7 @@ useEffect(()=>{
                   </h2>
                   <div className={styles["product-content-text-group"]}>
                     <div className={styles["product-content-bullet-paragraph"]}>
-                      <Image
-                        src={healthBroken}
-                        className={styles["product-content-bullet"]}
-                        alt="point"
-                      />
+                      <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         Paracetamol, the active ingredient in Pandol, works in
                         the body to relieve pain and reduce fever by:
@@ -191,11 +176,7 @@ useEffect(()=>{
                   </h2>
                   <div className={styles["product-content-text-group"]}>
                     <div className={styles["product-content-bullet-paragraph"]}>
-                      <Image
-                        src={healthBroken}
-                        alt="bullet icon"
-                        className={styles["product-content-bullet"]}
-                      />
+                      <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         The usual adult dose is 500mg–1000mg every 4–6 hours as
                         needed, with a maximum of 4000mg in 24 hours. For

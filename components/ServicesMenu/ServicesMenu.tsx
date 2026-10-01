@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./ServicesMenu.module.css";
 import { SERVICES_MENU } from "@/data/services";
-import {ChevronRight} from "lucide-react"
+import { ChevronRight } from "../Icon/Icon";
 type ServicesMenuProps = {
   isOpen: boolean;
 };
@@ -69,7 +69,7 @@ export function ServicesMenu({ isOpen }: ServicesMenuProps) {
             {/* View all */}
             <Link href={column.viewAllHref} className={styles.viewAll}>
               <span>View all conditions</span>
-              <ChevronRight size={30}/>
+              <ChevronRight />
             </Link>
           </div>
         ))}

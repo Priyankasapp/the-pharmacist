@@ -1,7 +1,7 @@
 import PatientsCard from '@/components/PatientsCard/PatientsCard';
 import styles from "./Patients.module.css"
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { patients } from '@/lib/data';
+import { ChevronLeft, ChevronRight } from '@/components/Icon/Icon';
 
 const Patients = () => {
   return (
@@ -29,10 +29,10 @@ const Patients = () => {
       </div>
       <div className={styles['patient-controls']}>
         <button className={styles['control-btn']}>
-          <ChevronLeft size={24}/>
+          <ChevronLeft />
         </button>
           <button className={styles['control-btn']}>
-          <ChevronRight size={24}/>
+          <ChevronRight />
           </button>
           
       </div>

@@ -3,10 +3,10 @@
 import { productData } from "@/lib/data";
 import { useState } from "react";
 import styles from "./ProductDetails.module.css";
-import { ChevronLeft, ChevronRight, CircleCheck, Share2 } from "lucide-react";
 import Image from "next/image";
 import { stars } from "@/data/assets";
 import Button from "@/components/Button/Button";
+import { ChevronLeft, ChevronRight, CircleCheck, ShareIcon } from "@/components/Icon/Icon";
 
 const ProductDetails = () => {
   const [activeImageWrap, setActiveImageWrap] = useState(0);
@@ -40,7 +40,7 @@ const ProductDetails = () => {
               className={styles["shareBtn"]}
               aria-label="share product"
             >
-              <Share2 size={18} />
+              <ShareIcon />
             </button>
           </div>
 
@@ -51,7 +51,7 @@ const ProductDetails = () => {
               onClick={prevImage} 
               aria-label="Previous image"
             >
-              <ChevronLeft size={22} />
+              <ChevronLeft/>
             </button>
 
             <div className={styles["main-image-wrap"]}>
@@ -71,7 +71,7 @@ const ProductDetails = () => {
               onClick={nextImage}
               aria-label="Next image"
             >
-              <ChevronRight size={22} />
+              <ChevronRight />
             </button>
           </div>
         </div>
@@ -104,7 +104,7 @@ const ProductDetails = () => {
           <div className={styles["product-right-first-wrapper"]}>
             {productData.inStock && (
               <div className={styles["product-in-stock"]}>
-                <CircleCheck size={16} strokeWidth={2.5} />
+                <CircleCheck  />
                 <span>In Stock</span>
               </div>
             )}
