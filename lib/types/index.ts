@@ -1,6 +1,7 @@
 // typescript interface 
 
 import { StaticImageData } from "next/image";
+import { ComponentType } from "react";
 
 // footer 
 export interface FooterLink{
@@ -211,5 +212,5 @@ export type TimelineDataProps = {
 export type PharmalistDataProps = {
     title:string;
     description:string;
-    imgSrc:string | StaticImageData;
+    imgSrc: string | StaticImageData | ComponentType;
 }

@@ -16,10 +16,7 @@ import {
   panadol4,
   patient1,
   patient2,
-  patient3,
-  PharmacistImage,
-  PharmacistImage2,
-  PharmacistImage3,
+  patient3,  
   productImg1,
   productImg10,
   productImg2,
@@ -68,7 +65,7 @@ import {
   WhatWeOfferedCardData,
 } from "../types";
 import { TreatmentDataProps } from "@/types/type";
-import { PharmacistImage } from "@/components/Icon/Icon";
+import { PharmacistImage, PharmacistImage2, PharmacistImage3 } from "@/components/Icon/Icon";
 
 // footer data
 export const FOOTER_LINKS: FooterLinksData = {

@@ -23,4 +23,4 @@ const OptionSectionCard = ({name,id,desc,isNHS}:HealthConditionData) => {
   );
 }
 
-export default OptionSectionCard
+export default OptionSectionCard;
