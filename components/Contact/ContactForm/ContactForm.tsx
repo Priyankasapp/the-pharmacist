@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '@/components/Button/Button';
 import styles from './ContactForm.module.css';
-import { PhoneCall, MailOpen, MapPin } from 'lucide-react';
+import { MailOpenIcon,  PhoneCall } from '@/components/Icon/Icon';
+import { MapIcon } from 'lucide-react';
 
 const ContactForm = () => {
   return (
@@ -21,7 +22,7 @@ const ContactForm = () => {
             </div>
             <div className={styles['contact-box']}>
               <div className={styles['contact-icon']}>
-                <MailOpen /></div>
+                <MailOpenIcon /></div>
               <div>
                 <h3>Email Us</h3>
                 <p><a href="#">contact@yourpharmacy.co.uk</a></p>
@@ -29,7 +30,7 @@ const ContactForm = () => {
             </div>
             <div className={styles['contact-box']}>
               <div className={styles['contact-icon']}>
-                <MapPin /></div>
+                <MapIcon /></div>
               <div>
                 <h3>Find Us</h3>
                 <p>10 High Street, London, UK</p>
