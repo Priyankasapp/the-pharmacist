@@ -75,19 +75,11 @@ import CovidIcon from "@/public/icons/covid_symptoms-virus-headache-2.png";
 import groupIcon from "@/public/icons/Group.png";
 import VectorFive from "@/public/icons/Ellipse 10.png";
 import VectoruSix from "@/public/icons/Ellipse 11.png";
-import VectorSeven from "@/public/icons/VectorIcon9.png";
+import VectorSeven from "@/public/icons/VectorIcon9.svg";
 import nhs_logo_icon from "@/public/icons/nhs-logo-icon.png";
-import right_icon from "@/public/icons/image copy.png";
 import pharmalistLogo from "@/public/icons/image copy 2.png";
 import VectorEight from "@/public/icons/image copy 3.png";
-import FaceBookIcon from "@/public/icons/FaceBook.png";
-import InstaIcon from "@/public/icons/Instagram.png";
-import LinkedIcon from "@/public/icons/linkedIn.png";
-import TwitterIcon from "@/public/icons/Twitter.png" ;
-import SearchIcon from "@/public/icons/searchIcon.png";
-import BagIcon from "@/public/icons/BagIcon.png";
-import ActorIcon from "@/public/icons/ActorIcon.png";
-import LeftArrow from "@/public/icons/leftArrow.png";
+
 
 export {
     manImg,
@@ -168,17 +160,10 @@ export {
     Hero2,
     VectorSeven,
     nhs_logo_icon,
-    right_icon,
     pharmalistLogo,
     VectorEight,
-    FaceBookIcon,
-    TwitterIcon,
-    InstaIcon,
-    LinkedIcon,
-    BagIcon,
-    ActorIcon,
-    SearchIcon,
-    LeftArrow,
+   
+  
 };
 
  

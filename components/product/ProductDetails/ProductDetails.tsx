@@ -111,7 +111,7 @@ const ProductDetails = () => {
             <h1 className={styles["product-title"]}>{productData.title}</h1>
 
             <div className={styles["product-review-row"]}>
-              <Image src={stars} alt="star" />
+              <Image src="./images/star.svg" alt="star" />
               <span>(9403 Reviews)</span>
             </div>
 

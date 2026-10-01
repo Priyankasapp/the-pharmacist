@@ -9,7 +9,7 @@ import {  useEffect, useState } from "react";
 import Image from "next/image";
 import {
   nhs_logo_icon,
-  VectorSeven,
+  
 } from "@/data/assets";;
 import CTA from "@/components/Home/CTA/CTA";
 import ArticleSection from "@/components/Home/ArticleSetion/ArticleSection";
@@ -122,10 +122,14 @@ const Home = () => {
       <section className={styles["prescription-section"]}>
         <div className={styles["prescription-bg-img-wrapper"]}>
           <Image
-            src={VectorSeven}
+            src="/icons/VectorIcon9.svg"
             alt="vectorIcon"
+            width={422}
+            height={422}
             className={styles["prescription-bg-img"]}
           />
+
+          
         </div>
         <div className={styles["prescription-info-con"]}>
           {/* left section  */}

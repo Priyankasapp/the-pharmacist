@@ -68,6 +68,7 @@ import {
   WhatWeOfferedCardData,
 } from "../types";
 import { TreatmentDataProps } from "@/types/type";
+import { PharmacistImage } from "@/components/Icon/Icon";
 
 // footer data
 export const FOOTER_LINKS: FooterLinksData = {
