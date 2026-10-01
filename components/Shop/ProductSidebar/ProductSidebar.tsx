@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import styles from "./ProductSidbar.module.css";
-import { ChevronDown, ChevronUp, Plus } from "lucide-react";
 import { brands, categories } from "@/lib/data";
 import FilterCheckbox from "./FilterCheckbox";
+import { ChevronDown, ChevronUp, PlusIcon } from "@/components/Icon/Icon";
 
   
 const ProductSidebar = () => {
@@ -100,7 +100,9 @@ const ProductSidebar = () => {
             onClick={()=>toggleSection('categories')}
              className={styles["product-sidebar-fiter-card-button"]}>
             {
-              isOpen.categories ? (<ChevronUp/>) : (<ChevronDown/>)
+              isOpen.categories ? (<ChevronUp className={undefined}/>) : (<ChevronDown
+               
+            />)
             }
              </button>
            </div>
@@ -125,7 +127,7 @@ const ProductSidebar = () => {
             onClick={()=>toggleSection('brands')}
              className={styles["product-sidebar-fiter-card-button"]}>
             {
-              isOpen.brands ? (<ChevronUp/>) : (<ChevronDown/>)
+              isOpen.brands ? (<ChevronUp className={undefined}/>) : (<ChevronDown/>)
             }
              </button>
            </div>
@@ -138,7 +140,7 @@ const ProductSidebar = () => {
                 option={brand}/>
             ))}
             <div className={styles["product-sidebar-checkbox-showmore"]}> 
-                <Plus className={styles["product-sidebar-checkbox-icon"]}/> 
+              <PlusIcon/>
                 <span>SHOW MORE</span>
             </div>
            </div>
@@ -154,7 +156,7 @@ const ProductSidebar = () => {
             onClick={()=>toggleSection('rating')}
              className={styles["product-sidebar-fiter-card-button"]}>
             {
-              isOpen.rating ? (<ChevronUp/>) : (<ChevronDown/>)
+              isOpen.rating ? (<ChevronUp className={undefined}/>) : (<ChevronDown/>)
             }
              </button>
            </div>  
@@ -169,7 +171,7 @@ const ProductSidebar = () => {
             onClick={()=>toggleSection('promotion')}
              className={styles["product-sidebar-fiter-card-button"]}>
             {
-              isOpen.promotion ? (<ChevronUp/>) : (<ChevronDown/>)
+              isOpen.promotion ? (<ChevronUp className={undefined}/>) : (<ChevronDown/>)
             }
              </button>
            </div>
@@ -184,7 +186,7 @@ const ProductSidebar = () => {
             onClick={()=>toggleSection('productType')}
              className={styles["product-sidebar-fiter-card-button"]}>
             {
-              isOpen.productType ? (<ChevronUp/>) : (<ChevronDown/>)
+              isOpen.productType ? (<ChevronUp className={undefined}/>) : (<ChevronDown/>)
             }
              </button>
            </div>
