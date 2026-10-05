@@ -4,6 +4,7 @@
     background-color: var(--white);
     display: flex;
     flex-direction: column;
+    width: 495px;
     justify-content: space-between;
     padding: 54px 60px 33px 60px;
     box-shadow: 0px 4.32px 19.82px 0px #00000007,

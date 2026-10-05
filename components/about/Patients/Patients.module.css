@@ -1,17 +1,15 @@
-.patients-container{
-    gap: 44px;
+ .patients-container{
     display: flex;
+    gap: 44px;
     align-items: center;
     flex-direction: column;
- 
-
 }
 .patients-container h2{
-    font-family: var(--font-plus-jakarta);
     font-weight: 600;
     font-size: 40px;
     line-height: 100%;
     text-align: center;
+
 }
 
  .patient-slider-viewport{
@@ -22,26 +20,7 @@
     width: 300px;
 
  }
-.patient-controls{
-    display: flex;
-    gap:16px;
 
-    margin-top: 30px;
-    margin-bottom: 60px;
-    
-}
-.control-btn{
-    background-color: var(--white);
-    border: 1px solid #727272;
-    color: var(--dark-gray);
-    border-radius: 50%;
-    height: 44px;
-    width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
 .patients-cards-wrapper{
     display: flex;
     gap: 20px;
@@ -51,4 +30,41 @@
 .patients-cards-wrapper{
     
     display: flex;
+}
+.patient-swiper{
+    width:100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+.patients-card-item{
+    width: 500px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.patients-card-item:not(:global(.swiper-slide-active)){
+    transform: scale(0.95);
+}
+.patient-controls{
+    display: flex;
+    gap:16px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    
+}
+
+.control-btn{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #727272;
+    background-color: transparent;
+    color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }

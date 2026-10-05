@@ -26,15 +26,13 @@ const getExpertsPerPage = () => {
   if(window.innerWidth <= 1070) return 2;
   if(window.innerWidth <= 1440) return 3;
   return 4
-
 }
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [exportPerPage, setExportPage] = useState(4);
 
   
-  useEffect(()=>{
-  
+  useEffect(()=>{  
     const handleResize = () => setExportPage(getExpertsPerPage());
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);  
@@ -60,10 +58,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-       <div className="container">
-     
-      
-     
+       <div className="container">     
       <section className={styles["export-section"]}>
          
         <div className={styles["export-header"]}>
