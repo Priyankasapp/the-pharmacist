@@ -131,7 +131,7 @@ const Shop = () => {
                 aria-label="Next page"
               >
                 <span>Next</span>
-                <ArrowRight  />
+                {/* <ArrowRight  /> */}
               </a>
             </nav>
           </div>

@@ -8,7 +8,7 @@ import Image from "next/image";
 import styles from "./Product.module.css";
 
 import { productCardData, tabs } from "@/lib/data";
-import { healthBroken, VectorFour, VectorThree } from "@/data/assets";
+import {  VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import { ChevronLeft, ChevronRight, HealthBrokenIcon } from "@/components/Icon/Icon";
