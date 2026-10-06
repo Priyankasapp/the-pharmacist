@@ -10,8 +10,8 @@ import { useRef } from "react";
 const TreatmentSection = () => {
 const slideRef = useRef<any>(null);
 
- const goPrev = () => slideRef.current?.slickPrev();
-  const goNext = () => slideRef.current?.slickNext();
+ const Prev = () => slideRef.current?.slickPrev();
+  const Next = () => slideRef.current?.slickNext();
 
   const settings = {
     dots: false,
@@ -60,7 +60,7 @@ const slideRef = useRef<any>(null);
           <button
             type="button"
             className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
-            onClick={goPrev}
+            onClick={Prev}
             aria-label="Previous treatments"
           >
             <ChevronLeft />
@@ -68,7 +68,7 @@ const slideRef = useRef<any>(null);
           <button
             type="button"
             className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
-            onClick={goNext}
+            onClick={Next}
             aria-label="Next treatments"
           >
             <ChevronRight />

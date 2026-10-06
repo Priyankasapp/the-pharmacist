@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useRef } from "react";
+import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useRef } from "react";
 import styles from "./ProductSection.module.css";
 import { productCardData } from "@/lib/data";
 import ProductCard from "../Shop/ProductCard/ProductCard";
@@ -27,6 +27,15 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: false,
+    appendDots: (dots: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined) => (
+    <div className={styles["product-dots"]}>
+      <ul>{dots}</ul>
+    </div>
+  ),
+
+  customPaging:()=>(
+    <button className={styles["product-dot"]}/>
+  ),
 
     responsive: [
        {
@@ -75,7 +84,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
             <ChevronRight />
           </button>
         </div>
-      </div>
+      </ div>
 
       <div className={styles["product-card-container"]}>
        <Slider ref={sliderRef} {...settings}>

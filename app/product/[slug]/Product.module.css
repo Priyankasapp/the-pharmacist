@@ -209,15 +209,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--dark-gray, #333);
+  color: var(--dark-gray, );
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .slider-button button:hover:not(:disabled) {
-  background-color: var(--tp-green, #023d3a);
-  color: var(--white, #fff);
-  border-color: var(--tp-green, #023d3a);
+  background-color: var(--tp-green);
+  color: var(--white);
+  border-color: var(--tp-green);
 }
 
 .slider-button button:disabled {
@@ -226,8 +226,6 @@
 }
 
 .product-cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 

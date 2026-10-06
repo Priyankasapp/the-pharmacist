@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/rules-of-hooks */
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 import styles from "./Product.module.css";
@@ -12,6 +13,7 @@ import {  VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import { ChevronLeft, ChevronRight, HealthBrokenIcon } from "@/components/Icon/Icon";
+import Slider from "react-slick";
 
 
 const getProductPerPage = () =>{
@@ -23,8 +25,21 @@ const getProductPerPage = () =>{
 };
 
 const page = () => {
+
+  const sliderRef = useRef<any>(null);
+
+  const goPrev = () => sliderRef.current?.slickPrev();
+  const goNext = () => sliderRef.current?.slickNext();
+
+  const settings = {
+    dots:false,
+    infinite: true,
+    speed:500,
+    slidesToShow:3,
+    slidesToScroll:3, 
+    
+  }
 const [activeTab, setActiveTab] = useState("Description");
-const [currentIndex, setCurrentIndex] = useState(0);
 const [productPerPage, setProductPerPage] = useState(4);
 
 useEffect(()=>{
@@ -34,21 +49,9 @@ useEffect(()=>{
   return () => window.removeEventListener("resize", handleResize);
 }, []);
 
-  const visibleProducts = productCardData.slice(
-    currentIndex,
-    currentIndex + productPerPage,
-  );
-  const handleNext = () => {
-    if (currentIndex + productPerPage < productCardData.length) {
-      setCurrentIndex((prev) => prev + productPerPage);
-    }
-  };
+  
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - productPerPage);
-    }
-  };
+
 
   return (
     <div className={styles["product-page"]}>
@@ -200,18 +203,14 @@ useEffect(()=>{
           <div className={styles["slider-button"]}>
             <button
               type="button"
-              onClick={handlePrevious}
-              disabled={currentIndex === 0}
+              onClick={goPrev}
               aria-label="Previous products"
             >
               <ChevronLeft />
             </button>
             <button
               type="button"
-              onClick={handleNext}
-              disabled={
-                currentIndex + productPerPage >= productCardData.length
-              }
+              onClick={goNext}
               aria-label="Next products"
             >
               <ChevronRight />
@@ -220,7 +219,9 @@ useEffect(()=>{
         </div>
 
         <div className={styles["product-cards-container"]}>
-          {visibleProducts.map((product) => {
+         <Slider ref={sliderRef}
+         {...settings}>
+           {productCardData.map((product) => {
             return (
               <div key={product.id} className={styles["product-card-item"]}>
                 <ProductCard
@@ -244,6 +245,7 @@ useEffect(()=>{
               </div>
             );
           })}
+         </Slider>
         </div>
       </div>
 

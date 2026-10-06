@@ -842,7 +842,7 @@ export const specalistDataSet: SpecialistDataProps[] = [
     description:
       "James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness.",
   },
-   {
+  {
     imgSrc: DrSharahChen,
     name: "Dr. Sarah Chen",
     role: "Lead Clinician & GP",
@@ -850,6 +850,31 @@ export const specalistDataSet: SpecialistDataProps[] = [
     description:
       "Dr. Sarah Chen is a practising NHS GP who brings extensive primary care expertise to our clinical team. ",
   },
+  {
+    imgSrc: DrAisaKhan,
+    name: "Dr. Aisha Khan",
+    role: "Mental Health Specialist ",
+    registration: "GPhC Registration: 7654321",
+    description:
+      "Dr. Aisha Khan provides specialist oversight for mental health services, including anxiety and ADHD treatment.",
+  },
+  {
+    imgSrc: DrEmily,
+    name: "Mrs. Emily Watson",
+    role: "Clinical Pharmacist & Advisor",
+    registration: "GMC Registration: 9876543",
+    description:
+      "Ms. Emily Watson specialises in women's health and contraception, focusing on patient education and support.",
+  },
+  {
+    imgSrc: DrJamesRobertson,
+    name: "Mr. James Robertson",
+    role: "Lead Clinician & GP",
+    registration: "GMC Registration: 9876543",
+    description:
+      "James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness.",
+  },
+  
 ];
 
 
