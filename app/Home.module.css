@@ -5,15 +5,12 @@
   flex-direction: column;
 
 }
-
-
 .export-cards {
   
   display: flex;
   justify-content:space-between;
  
 }
-
 .services-button {
   padding: 30px 20px;
   display: flex;
@@ -36,8 +33,6 @@
   transform: translateY(-50%);
   z-index: 10;
 }
-
-
 .export-slider-button {
   display: flex;
   gap: 10px;
@@ -58,7 +53,7 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
-/* prescription section  */
+
 .prescription-section {
   position: relative;
   min-height: 450px;

@@ -91,47 +91,7 @@ const Home = () => {
 <ExportSection/>
         {/* export section  */}
 
-      <section className={styles["export-section"]}>
-         
-        <div className={styles["export-header"]}>
-          <h2 className={styles["section-title"]}>
-            Your Health Supported by Our <span>Export Pharmacy</span> Team
-          </h2>
-
-          <div className={styles["export-header-bottom"]}>
-            <p>
-              {" "}
-              Whether it&apos;s a repeat prescription or an online consultation,
-              we have the right service for you.
-            </p>
-
-          
-          </div>
-        </div>
-
-       
-        <div className={styles['export-info']}>
-          <div className={styles["export-cards-wrapper"]}>
-            <Slider {...settings}>
-               {exportCardInfo.map((info) => (
-            <div key={info.id} className={styles["export-card-wrapper"]}>
-              <ExportCard
-                img={info.img}
-                id={info.id}
-                title={info.title}
-                desc={info.desc}
-                isnhs={info.isnhs}
-              />
-            </div>
-          ))}
-            </Slider>
-           </div> 
-          
-          <div className={styles['export-card-button-wrapper']}>
-            <Button showArrow className={styles['export-card-button']}>View All Services</Button>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Order Prescription section  */}
       <section className={styles["prescription-section"]}>

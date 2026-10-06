@@ -9,18 +9,33 @@ import Button from "@/components/Button/Button";
 
 type CustomArrowProps = {
   onClick?: () => void;
-  className?: string;
+  
 };
 
-function NextArrow({ onClick, className }: CustomArrowProps) {
+
+function NextArrow({ onClick }: CustomArrowProps) {
   return (
     <button
       type="button"
-      className={`${styles["slider-arrow"]} ${styles["next-arrow"]} ${className ?? ""}`}
+      className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
       onClick={onClick}
       aria-label="Next specialist"
     >
-      <ChevronRight />
+     <ChevronRight/>
+    </button>
+  );
+}
+
+function PrevArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+      onClick={onClick}
+      aria-label="Previous specialist"
+    >
+     
+        <ChevronLeft/> 
     </button>
   );
 }
@@ -33,17 +48,25 @@ const ExportSection = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
 
     responsive: [
+       {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
       {
-        breakpoint: 960,
+        breakpoint: 1070,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 670,
+        breakpoint: 740,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
