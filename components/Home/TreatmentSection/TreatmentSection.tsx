@@ -1,48 +1,82 @@
-/* eslint-disable react-hooks/set-state-in-effect */
-import { useEffect, useState } from "react";
+
 import styles from "./TreatmentSection.module.css";
 import { treatmentData } from "@/lib/data";
 import TreatmentCard from "../TreatmentCard/TreatmentCard";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
+import Slider from "react-slick";
 
-const getTreatmentCardsPerPage = () => {
-  if (typeof window === "undefined") return 3;
-  if (window.innerWidth <= 570) return 1;
-  if (window.innerWidth <= 780) return 2;
-  if (window.innerWidth <= 1000) return 3;
-
-  return 3;
+type CustomArrowProps = {
+  onClick?: () => void;
+  
 };
 
-const TreatmentSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [treatmentCardPerPage, setTreatmentCardPerPage] = useState(3);
 
-  useEffect(() => {
-    setTreatmentCardPerPage(getTreatmentCardsPerPage);
-
-    const handleResize = () =>
-      setTreatmentCardPerPage(getTreatmentCardsPerPage());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const visibleTreatmentCards = treatmentData.slice(
-    currentIndex,
-    currentIndex + treatmentCardPerPage,
+function NextArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
+      onClick={onClick}
+      aria-label="Next specialist"
+    >
+     <ChevronRight/>
+    </button>
   );
-  const handleNext = () => {
-    if (currentIndex + treatmentCardPerPage < treatmentData.length) {
-      setCurrentIndex((prev) => prev + treatmentCardPerPage);
-    }
+}
+
+function PrevArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+      onClick={onClick}
+      aria-label="Previous specialist"
+    >
+     
+        <ChevronLeft/> 
+    </button>
+  );
+}
+
+
+const TreatmentSection = () => {
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+
+    responsive: [
+       {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1070,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - treatmentCardPerPage);
-    }
-  };
+
 
   return (
     <section className={styles["treatment-section"]}>
@@ -52,30 +86,15 @@ const TreatmentSection = () => {
           <span>Lifestyle Treatments</span> That Improve Your <span>Daily</span>{" "}
           Wellness
         </h2>
-        <div className={styles["treatment-slider"]}>
-          <button
-            type="button"
-            onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            aria-label="Previous Treatment"
-          >
-            <ChevronLeft className={styles['chevron-icon']}/>
-          </button>
-          <button
-            type="button"
-            onClick={handleNext}
-            disabled={
-              currentIndex + treatmentCardPerPage >= treatmentData.length
-            }
-            aria-label="Next Treatment"
-          >
-            <ChevronRight className={styles['chevron-icon']}/>
-          </button>
-        </div>
+      
       </div>
       <div className={styles['treatment-cards']}>
          <div className={styles["treatment-card-container"]}>
-        {visibleTreatmentCards.map((treatment) => {
+        
+
+
+        <Slider {...settings}>
+              {treatmentData.map((treatment) => {
           return (
             <div
               key={treatment.id}
@@ -91,6 +110,7 @@ const TreatmentSection = () => {
             </div>
           );
         })}
+        </Slider>
       </div>
         <div className={styles['treatment-card-wrapper']}>
           <Button showArrow className={styles['treatment-card-button']}>View All Treatments</Button>

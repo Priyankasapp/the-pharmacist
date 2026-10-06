@@ -759,6 +759,12 @@ export const treatmentData: TreatmentDataProps[] = [
     img: WellImg,
     condition: ["view all conditions", "Migraine", "view all conditions"],
   },
+   {
+    id: 4,
+    title: "Women's Health",
+    img: womanImg,
+    condition: ["Morning After Pill", "view all conditions", "Cystits"],
+  },
 ];
 
 export const informationData: InformationDataProps[] = [
