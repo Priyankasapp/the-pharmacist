@@ -1,58 +1,88 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+
 import styles from "./ProductSection.module.css";
-import { useEffect, useState } from "react";
 import { productCardData } from "@/lib/data";
 import ProductCard from "../Shop/ProductCard/ProductCard";
 import Button from "../Button/Button";
 import { ChevronLeft, ChevronRight } from "../Icon/Icon";
+import Slider from "react-slick";
+
+type CustomArrowProps = {
+  onClick?: () => void;
+  
+};
+
+
+function NextArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
+      onClick={onClick}
+      aria-label="Next specialist"
+    >
+     <ChevronRight/>
+    </button>
+  );
+}
+
+function PrevArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+      onClick={onClick}
+      aria-label="Previous specialist"
+    >
+     
+        <ChevronLeft/> 
+    </button>
+  );
+}
 
 interface productProps {
   headingText: string;
   highlightText?: string;
 }
 
-const getProductPerPage = () => {
-  if (typeof window === "undefined") return 3;
-  if (window.innerWidth <= 600) return 1;
-  if (window.innerWidth <= 900) return 2;
-  return 3;
-};
 
 const ProductSection = ({ headingText, highlightText }: productProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  
-  const [productPerPage, setPrductPerPage] = useState(3);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
 
-  useEffect(() => {
-
-    setPrductPerPage(getProductPerPage());
-
-    const handleResize = () => setPrductPerPage(getProductPerPage());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const visibleProducts = productCardData.slice(
-    currentIndex,
-    currentIndex + productPerPage,
-  );
-
-  const handleNext = () => {
-    if (currentIndex + productPerPage < productCardData.length) {
-      setCurrentIndex((prev) => prev + productPerPage);
-    }
+    responsive: [
+       {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1070,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - productPerPage);
-    }
-  };
 
-  const totalPages = Math.ceil(productCardData.length / productPerPage);
-  const currentPage = Math.floor(currentIndex / productPerPage);
+
 
   return (
     <section className={styles["product-section"]}>
@@ -60,28 +90,12 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
         <h2>
           {highlightText ? <span>{highlightText}</span> : " "} {headingText}
         </h2>
-        <div className={styles["product-slider-button"]}>
-          <button
-            type="button"
-            onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            aria-label="Previous products"
-          >
-            <ChevronLeft className={styles['chevron-icon']} />
-          </button>
-          <button
-            type="button"
-            onClick={handleNext}
-            disabled={currentIndex + productPerPage >= productCardData.length}
-            aria-label="Next products"
-          >
-            <ChevronRight className={styles['chevron-icon']}/>
-          </button>
-        </div>
+        
       </div>
 
       <div className={styles["product-card-container"]}>
-        {visibleProducts.map((product) => {
+       <Slider {...settings}>
+           {productCardData.map((product) => {
           return (
             <div key={product.id} className={styles["product-card-item"]}>
              <ProductCard
@@ -104,20 +118,9 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
             </div>
           );
         })}
+       </Slider>
       </div>
 
-      <div className={styles["product-pagination"]}>
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button
-            key={index}
-            className={`${styles["pagination-dot"]} ${
-              index === currentPage ? styles["pagination-dot-active"] : ""
-            }`}
-            onClick={() => setCurrentIndex(index * productPerPage)}
-            aria-label={`Go to page ${index + 1}`}
-          />
-        ))}
-      </div>
 
       <div className={styles["product-button-wrapper"]}>
         <Button showArrow className={styles["product-button"]}>Shop Pharmacy Essentials</Button>
