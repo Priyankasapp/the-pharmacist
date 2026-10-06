@@ -5,11 +5,9 @@ import ExportCard from "@/components/ExportCard/ExportCard";
 import Hero from "@/components/Home/Hero/Hero";
 import { exportCardInfo } from "@/lib/data";
 import styles from "./Home.module.css";
-import {  useEffect, useState } from "react";
 import Image from "next/image";
 import {
   nhs_logo_icon,
-  
 } from "@/data/assets";;
 import CTA from "@/components/Home/CTA/CTA";
 import ArticleSection from "@/components/Home/ArticleSetion/ArticleSection";
@@ -19,46 +17,80 @@ import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmali
 import ProductSection from "@/components/ProductSection/ProductSection";
 import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSection";
 import { Check, ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
+import Slider from "react-slick";
+import ExportSection from "@/components/Home/ExportSection/ExportSection";
 
-const getExpertsPerPage = () => {
-  if(typeof window === "undefined") return 4;
-  if(window.innerWidth  <= 674) return 1;
-  if(window.innerWidth <= 1070) return 2;
-  if(window.innerWidth <= 1440) return 3;
-  return 4
+type CustomArrowProps = {
+  onClick?: () => void;
+};
+
+function NextArrow({onClick}:CustomArrowProps){
+  return(
+    <button
+    type="button"
+    className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+    onClick={onClick}
+    aria-label="Next">
+      <ChevronRight/>
+    </button>
+  );
 }
+
+function PrevArrow({ onClick }: CustomArrowProps){
+  return(
+    <button
+    type="button"
+    className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+    onClick={onClick}
+    aria-label="Previous">
+      <ChevronLeft/>
+    </button>
+  )
+}
+
+
 const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [exportPerPage, setExportPage] = useState(4);
+  const settings = {
+    dots:false,
+    infinite:true,
+    speed:500,
+    slidesToShow:3,
+    slidesToScroll: 1,
+    arrows:true,
+    NextArrow: <NextArrow/>,
+    PrevArrow: <PrevArrow/>,
+    
+    responsive:[
+        {
+      breakpoint: 1200,
+      settings: { slidesToShow: 3, slidesToScroll: 1 },
+    },
+    {
+      breakpoint: 960,
+      settings: { slidesToShow: 2, slidesToScroll: 1 },
+    },
+    {
+      breakpoint: 670,
+      settings: { slidesToShow: 1, slidesToScroll: 1 },
+    },
+    ]
+  }
+
 
   
-  useEffect(()=>{  
-    const handleResize = () => setExportPage(getExpertsPerPage());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);  
-  }, []);
 
-  const visibleExports = exportCardInfo.slice(
-    currentIndex,
-    currentIndex + exportPerPage,
-  );
 
-  const handleNext = () => {
-    if (currentIndex + exportPerPage < exportCardInfo.length) {
-      setCurrentIndex((prev) => prev + exportPerPage);
-    }
-  };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - exportPerPage);
-    }
-  };
+ 
 
   return (
     <div>
       <Hero />
+      
        <div className="container">     
+<ExportSection/>
+        {/* export section  */}
+
       <section className={styles["export-section"]}>
          
         <div className={styles["export-header"]}>
@@ -73,29 +105,15 @@ const Home = () => {
               we have the right service for you.
             </p>
 
-            <div className={styles["export-slider-button"]}>
-              <button
-                type="button"
-                onClick={handlePrevious}
-                aria-label="Previouse exports"
-              >
-                <ChevronLeft className={styles['chevron-icon']}/>
-              </button>
-              <button
-                type="button"
-                onClick={handleNext}
-                aria-label="Next export"
-              >
-                <ChevronRight className={styles['chevron-icon']}/>
-              </button>
-            </div>
+          
           </div>
         </div>
 
        
         <div className={styles['export-info']}>
           <div className={styles["export-cards-wrapper"]}>
-            {visibleExports.map((info) => (
+            <Slider {...settings}>
+               {exportCardInfo.map((info) => (
             <div key={info.id} className={styles["export-card-wrapper"]}>
               <ExportCard
                 img={info.img}
@@ -105,7 +123,9 @@ const Home = () => {
                 isnhs={info.isnhs}
               />
             </div>
-          ))}</div> 
+          ))}
+            </Slider>
+           </div> 
           
           <div className={styles['export-card-button-wrapper']}>
             <Button showArrow className={styles['export-card-button']}>View All Services</Button>

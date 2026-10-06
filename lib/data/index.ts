@@ -731,6 +731,13 @@ export const exportCardInfo: ExportCardInfo[] = [
     id: "Repeat Prescriptions",
     img: export4,
   },
+   {
+    isnhs: false,
+    title: "Private Pharmacy",
+    desc: "Access essential healthcare services and consultations provided by the National Health Service.",
+    id: "Private Pharmacy",
+    img: export3,
+  },
 ];
 
 export const treatmentData: TreatmentDataProps[] = [

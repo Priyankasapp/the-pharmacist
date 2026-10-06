@@ -19,7 +19,6 @@ const page = () => {
           <WhatWeOffer/>
           <Timeline/>
           <WhyChosePharmalist/>
-          {/* <div style={{maxWidth:"700px"}}><MultipleItems/></div> */}
           <Specialist/>
           <Patients/>
             
