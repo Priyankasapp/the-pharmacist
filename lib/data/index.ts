@@ -819,6 +819,14 @@ export const specalistDataSet: SpecialistDataProps[] = [
     description:
       "James provides final clinical review for all prescriptions, ensuring medication safety and appropriateness.",
   },
+   {
+    imgSrc: DrSharahChen,
+    name: "Dr. Sarah Chen",
+    role: "Lead Clinician & GP",
+    registration: "GMC Registration: 9876543",
+    description:
+      "Dr. Sarah Chen is a practising NHS GP who brings extensive primary care expertise to our clinical team. ",
+  },
 ];
 
 

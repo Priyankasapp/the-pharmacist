@@ -564,7 +564,7 @@ export const HealthBrokenIcon = () => {
       <path
         d="M11.4987 4.50167H10.1654M10.1654 4.50167H8.83203M10.1654 4.50167V3.16833M10.1654 4.50167V5.835"
         stroke="#023D3A"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
       />
       <path
@@ -609,7 +609,7 @@ export const CloseIcon = () => {
       <path
         d="M18 6L6 18M6 6L18 18"
         stroke="#023D3A"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
