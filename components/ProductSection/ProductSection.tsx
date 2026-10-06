@@ -1,42 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { useRef } from "react";
 import styles from "./ProductSection.module.css";
 import { productCardData } from "@/lib/data";
 import ProductCard from "../Shop/ProductCard/ProductCard";
 import Button from "../Button/Button";
 import { ChevronLeft, ChevronRight } from "../Icon/Icon";
 import Slider from "react-slick";
-
-type CustomArrowProps = {
-  onClick?: () => void;
-  
-};
-
-function NextArrow({ onClick }: CustomArrowProps) {
-  return (
-    <button
-      type="button"
-      className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
-      onClick={onClick}
-      aria-label="Next specialist"
-    >
-     <ChevronRight/>
-    </button>
-  );
-}
-
-function PrevArrow({ onClick }: CustomArrowProps) {
-  return (
-    <button
-      type="button"
-      className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
-      onClick={onClick}
-      aria-label="Previous specialist"
-    >
-     
-        <ChevronLeft/> 
-    </button>
-  );
-}
 
 interface productProps {
   headingText: string;
@@ -45,6 +15,10 @@ interface productProps {
 
 
 const ProductSection = ({ headingText, highlightText }: productProps) => {
+  const sliderRef = useRef<any>(null);
+
+  const goPrev = () => sliderRef.current?.slickPrev();
+  const goNext = () => sliderRef.current?.slickNext();
 
   const settings = {
     dots: true,
@@ -52,8 +26,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows: false,
 
     responsive: [
        {
@@ -83,11 +56,29 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
         <h2>
           {highlightText ? <span>{highlightText}</span> : " "} {headingText}
         </h2>
-        
+
+        <div className={styles["product-header-actions"]}>
+          <button
+            type="button"
+            className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+            onClick={goPrev}
+            aria-label="Previous products"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            type="button"
+            className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
+            onClick={goNext}
+            aria-label="Next products"
+          >
+            <ChevronRight />
+          </button>
+        </div>
       </div>
 
       <div className={styles["product-card-container"]}>
-       <Slider {...settings}>
+       <Slider ref={sliderRef} {...settings}>
            {productCardData.map((product) => {
           return (
             <div key={product.id} className={styles["product-card-item"]}>

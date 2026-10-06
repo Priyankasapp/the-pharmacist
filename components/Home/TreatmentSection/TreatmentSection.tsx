@@ -1,46 +1,17 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./TreatmentSection.module.css";
 import { treatmentData } from "@/lib/data";
 import TreatmentCard from "../TreatmentCard/TreatmentCard";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
 import Slider from "react-slick";
-
-type CustomArrowProps = {
-  onClick?: () => void;
-  
-};
-
-
-function NextArrow({ onClick }: CustomArrowProps) {
-  return (
-    <button
-      type="button"
-      className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
-      onClick={onClick}
-      aria-label="Next specialist"
-    >
-     <ChevronRight/>
-    </button>
-  );
-}
-
-function PrevArrow({ onClick }: CustomArrowProps) {
-  return (
-    <button
-      type="button"
-      className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
-      onClick={onClick}
-      aria-label="Previous specialist"
-    >
-     
-        <ChevronLeft/> 
-    </button>
-  );
-}
-
+import { useRef } from "react";
 
 const TreatmentSection = () => {
+const slideRef = useRef<any>(null);
+
+ const goPrev = () => slideRef.current?.slickPrev();
+  const goNext = () => slideRef.current?.slickNext();
 
   const settings = {
     dots: false,
@@ -48,9 +19,7 @@ const TreatmentSection = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-
+    arrows: false,
     responsive: [
        {
         breakpoint: 1400,
@@ -86,14 +55,32 @@ const TreatmentSection = () => {
           <span>Lifestyle Treatments</span> That Improve Your <span>Daily</span>{" "}
           Wellness
         </h2>
-      
+
+        <div className={styles["treatment-header-actions"]}>
+          <button
+            type="button"
+            className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+            onClick={goPrev}
+            aria-label="Previous treatments"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            type="button"
+            className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
+            onClick={goNext}
+            aria-label="Next treatments"
+          >
+            <ChevronRight />
+          </button>
+        </div>
       </div>
       <div className={styles['treatment-cards']}>
          <div className={styles["treatment-card-container"]}>
         
 
 
-        <Slider {...settings}>
+        <Slider ref={slideRef} {...settings}>
               {treatmentData.map((treatment) => {
           return (
             <div
