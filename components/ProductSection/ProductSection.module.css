@@ -1,6 +1,6 @@
 .product-section{
     padding: 0 4%;
-
+    
 }
 .product-header{
     display: flex;
@@ -34,31 +34,41 @@
     display: flex;
     gap: 10px;
 }
-
-.product-slider-button button{
-    background: transparent;
-    color: var(--dark-gray);
-    border-radius: 50%;
-    border: 1px solid var(--gray);
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.product-card-container{
+    margin-bottom:50px;
+}
+.product-card-container :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
 }
 
-/* .product-card-container{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-} */
+.product-card-container :global(.slick-slide) {
+  height: auto;
+  display: flex;
+}
+
+.product-card-container :global(.slick-slide > div) {
+  height: 100%;
+  display: flex;
+  width: 100%;
+}
+
+.product-card-container :global(.slick-slide > div) > * {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
 .product-button{
     padding: 16px 24px;
 }
 
-.prduct-card-item{
-    min-width: 0;
+
+.product-card-item > * {
+  width: 100%;
+  height: 100%;
 }
+
 .product-pagination{
     display: flex;
     justify-content: center;
@@ -87,7 +97,7 @@
 }
 .slider-arrow {
   background-color: transparent;
-  color: black;
+  color: var(--black);
   border: 1px solid var(--gray);
   height: 44px;
   width: 44px;
@@ -105,4 +115,35 @@
 
 .prev-arrow {
   left: auto;
+}
+
+.custom-dots-wrapper {
+  position: absolute;
+  bottom: -30px; 
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.custom-dots-wrapper :global(li) {
+  margin: 0 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-dots-wrapper :global(li) :global(.custom-dot) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-dots-wrapper :global(li.slick-active) :global(.custom-dot) {
+  width: 24px; 
+  border-radius: 9999px; 
+  background-color: var(--tp-green); 
 }

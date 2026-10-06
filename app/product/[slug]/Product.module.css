@@ -3,8 +3,6 @@
   margin: 0 auto;
   padding: 24px 32px 64px;
 }
-
-
 .product-gallary-container {
   display: flex;
   justify-content: space-between;
@@ -229,8 +227,38 @@
   gap: 16px;
 }
 
+.product-cards-container :global(.slick-list) {
+  margin: 0 -10px;
+}
+
+.product-cards-container :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+.product-cards-container :global(.slick-slide) {
+  height: auto;
+  display: flex;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.product-cards-container :global(.slick-slide > div) {
+  height: 100%;
+  display: flex;
+  width: 100%;
+}
+
+.product-cards-container :global(.slick-slide > div) > * {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
 .product-card-item {
   min-width: 0;
+  height: 100%;
+  display: flex;
 }
 
 
