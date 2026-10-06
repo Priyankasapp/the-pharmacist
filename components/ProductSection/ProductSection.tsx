@@ -11,7 +11,6 @@ type CustomArrowProps = {
   
 };
 
-
 function NextArrow({ onClick }: CustomArrowProps) {
   return (
     <button
@@ -58,21 +57,15 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
 
     responsive: [
        {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 1070,
+        breakpoint: 1415,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
         },
       },
+      
       {
-        breakpoint: 740,
+        breakpoint: 980,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

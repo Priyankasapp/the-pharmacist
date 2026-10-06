@@ -1,59 +1,71 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+
 "use client";
 import styles from "./ArticleSection.module.css";
 import Image from "next/image";
 import { informationData } from "@/lib/data";
-import { useEffect, useState } from "react";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight, Folder } from "@/components/Icon/Icon";
+import Slider from "react-slick";
 
-const getArticleCardPerPage = () => {
-  if (typeof window === "undefined") return 2;
-  if (window.innerWidth <= 800) return 1;
-  return 2;
+
+type CustomArrowProps = {
+  onClick?: () => void;
+  
 };
 
-const ArticleSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [articlePerPage, setArticlePerPage] = useState(2);
-  const [isMounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    setArticlePerPage(getArticleCardPerPage());
-
-    const handleResize = () => {
-      const next = getArticleCardPerPage();
-      setArticlePerPage(next);
-      // keep the current index in range when the page size changes
-      setCurrentIndex((prev) => {
-        const maxIndex = Math.max(0, informationData.length - next);
-        return Math.min(prev, maxIndex);
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const visibleArticles = informationData.slice(
-    currentIndex,
-    currentIndex + articlePerPage,
+function NextArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
+      onClick={onClick}
+      aria-label="Next specialist"
+    >
+     <ChevronRight/>
+    </button>
   );
+}
 
-  const handleNext = () => {
-    if (currentIndex + articlePerPage < informationData.length) {
-      setCurrentIndex((prev) => prev + 1);
-    }
+function PrevArrow({ onClick }: CustomArrowProps) {
+  return (
+    <button
+      type="button"
+      className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
+      onClick={onClick}
+      aria-label="Previous specialist"
+    >
+     
+        <ChevronLeft/> 
+    </button>
+  );
+}
+
+
+
+const ArticleSection = () => {
+
+   const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+
+    responsive: [
+    
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
-    }
-  };
-
-  if (!isMounted) return null;
 
   return (
     <section className={`container ${styles["article-section"]}`}>
@@ -63,22 +75,13 @@ const ArticleSection = () => {
         </h2>
 
         <div className={styles["article-info-con"]}>
-          <button
-            type="button"
-            onClick={handlePrevious}
-            className={styles["article-icon-wrapper"]}
-            aria-label="Previous articles"
-          >
-            <ChevronLeft className={styles['chevron-icon']} />
-          </button>
+         
 
           <div
             className={styles["article-info-wrapper"]}
-            style={
-              { "--articlePerPage": articlePerPage } as React.CSSProperties
-            }
           >
-            {visibleArticles.map((info, index) => (
+           <Slider {...settings}>
+             {informationData.map((info, index) => (
               <div
                 className={styles["article-info-card"]}
                 key={info.id || `art-${index}`}
@@ -108,17 +111,10 @@ const ArticleSection = () => {
                 </div>
               </div>
             ))}
+           </Slider>
           </div>
 
-          <button
-            type="button"
-            onClick={handleNext}
-            // disabled={currentIndex + articlePerPage >= informationData.length}
-            className={styles["article-icon-wrapper"]}
-            aria-label="Next articles"
-          >
-            <ChevronRight className={styles['chevron-icon']}/>
-          </button>
+          
         </div>
       </div>
 

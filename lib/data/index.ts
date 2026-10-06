@@ -778,6 +778,16 @@ export const informationData: InformationDataProps[] = [
     img: InforImageTwo,
     desc: "Managing Seasonal Allergies: Simple Steps for Relief",
   },
+   {
+    id: "03",
+    img: InfoImage,
+    desc: "When to See a Doctor About a Persistent Cough",
+  },
+  {
+    id: "04",
+    img: InforImageTwo,
+    desc: "Managing Seasonal Allergies: Simple Steps for Relief",
+  },
 ];
 
 // faq data
