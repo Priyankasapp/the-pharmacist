@@ -482,24 +482,12 @@ export const ArrowLeft = () => {
 };
 
 // Arrow Right
-export const ArrowRight = (className = "") => {
+export const ArrowRight = () => {
   return (
-    <svg
-      className={className}
-      width="11"
-      height="11"
-      viewBox="0 0 11 11"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0.799805 5.46672H10.1331M5.46647 10.1334L10.1331 5.46672L5.46647 0.800049"
-        stroke="#282828"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.3335 7.99992H12.6668M8.00016 12.6666L12.6668 7.99992L8.00016 3.33325" stroke="#282828" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
   );
 };
 
@@ -522,10 +510,10 @@ export const ShareIcon = () => {
         d="M14 6.5L9 10M14 17.5L9 14"
         stroke="#282828"
         strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+        />
       <path
         d="M19 18.5C19 19.163 18.7366 19.7989 18.2678 20.2678C17.7989 20.7366 17.163 21 16.5 21C15.837 21 15.2011 20.7366 14.7322 20.2678C14.2634 19.7989 14 19.163 14 18.5C14 17.837 14.2634 17.2011 14.7322 16.7322C15.2011 16.2634 15.837 16 16.5 16C17.163 16 17.7989 16.2634 18.2678 16.7322C18.7366 17.2011 19 17.837 19 18.5ZM19 5.5C19 6.16304 18.7366 6.79893 18.2678 7.26777C17.7989 7.73661 17.163 8 16.5 8C15.837 8 15.2011 7.73661 14.7322 7.26777C14.2634 6.79893 14 6.16304 14 5.5C14 4.83696 14.2634 4.20107 14.7322 3.73223C15.2011 3.26339 15.837 3 16.5 3C17.163 3 17.7989 3.26339 18.2678 3.73223C18.7366 4.20107 19 4.83696 19 5.5Z"
+        strokeLinecap="round"
         stroke="#282828"
         strokeWidth="1.5"
       />
