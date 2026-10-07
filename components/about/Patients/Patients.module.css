@@ -1,8 +1,10 @@
- .patients-container{
-    display: flex;
-    gap: 44px;
-    align-items: center;
-    flex-direction: column;
+.patients-container {
+  display: flex;
+  gap: 44px;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 0;
 }
 .patients-container h2{
     font-weight: 600;
@@ -12,19 +14,27 @@
 
 }
 
- .patient-slider-viewport{
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 32px;
-    display: flex;
-    width: 300px;
 
- }
+.patients-slider-viewport {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.patients-slider-viewport :global(.slick-track) {
+  display: flex !important;
+}
 
+.patients-slider-viewport :global(.slick-slide) {
+  height: auto;
+}
+
+.patients-slider-viewport :global(.slick-slide > div) {
+  height: 100%;
+}
 .patients-cards-wrapper{
     display: flex;
     gap: 20px;
-  transform: translateX(calc(-8.333% - 5px));
+    transform: translateX(calc(-8.333% - px));
 
 }
 .patients-cards-wrapper{
@@ -32,22 +42,31 @@
     display: flex;
 }
 
-.patients-card-item{
-    width: 500px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.patients-card-item {
+  height: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  outline: none;
+  transform: none;
+  opacity: 1;
+}
+.patients-slider-viewport :global(.slick-slide):not(:global(.slick-center)) .patients-card-item {
+  transform: scale(0.92);
+  opacity: 0.75;
+}
+
+.patients-slider-viewport :global(.slick-center) .patients-card-item {
+  transform: scale(1);
+
 }
 .patients-card-item:not(:global(.swiper-slide-active)){
     transform: scale(0.95);
 }
-.patient-controls{
-    display: flex;
-    gap:16px;
-    margin-top: 30px;
-    margin-bottom: 60px;
-    
+.patient-controls {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .control-btn{

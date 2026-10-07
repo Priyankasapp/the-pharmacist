@@ -73,17 +73,29 @@
      align-items: center;
      justify-content: center;
 }
-.patient-review-right-section{
-    display: flex;
-    flex-direction: row;
-    /* overflow: hidden; */
-   
+.patient-review-right-section {
+  /* flex: 1; */
+  /* min-width: 0;  */
+  width: 100%;
+  background-color: transparent;
 }
 
 .patient-review-cards{
     display: flex;
     flex-direction: row;
 
+}
+
+.patient-review-right-section :global(.slick-track) {
+  display: flex !important;
+}
+
+.patient-review-right-section :global(.slick-slide) {
+  height: auto;
+}
+
+.patient-review-right-section :global(.slick-slide > div) {
+  height: 100%;
 }
 
 @media (max-width: 960px) {

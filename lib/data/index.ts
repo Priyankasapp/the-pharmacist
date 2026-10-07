@@ -143,6 +143,34 @@ export const patients: Patients[] = [
     imgSrc: patient3,
     rating: 5,
   },
+  {
+    id: "Peter Parker",
+    name: "Peter Parker",
+    title: "HR,Tech Master Ltd.",
+    description:
+      "Lorem ipsum dolor sit amet&semi consectetur adipiscing elit&semi sed do eiusmod tempor incideidunt ut labore et",
+    imgSrc: patient1,
+    rating: 4,
+  },
+  
+  {
+    id: "Moris Jonson",
+    name: "Moris Jonson",
+    title: "CEO, Hasok Int. Ltd.",
+    description:
+      "Uniquely strategize 2.0 portals after fully researched vortals. Quickly repurpose frontend metrics through",
+    imgSrc: patient2,
+    rating: 5,
+  },
+  {
+    id: "",
+    name: "Olivia Catherine",
+    title: "CEO, VitaWell Inc.",
+    description:
+      "Uniquily strategize 2.0 portals after fully researched vortals. Quickly repurpose frontend metrics through",
+    imgSrc: patient3,
+    rating: 5,
+  },
 ];
 
 // treatment data

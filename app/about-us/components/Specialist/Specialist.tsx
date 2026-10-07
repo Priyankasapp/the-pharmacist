@@ -43,7 +43,8 @@ function PrevArrow({ onClick }: CustomArrowProps) {
 const Specialist = () => {
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
+    accessibility: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
