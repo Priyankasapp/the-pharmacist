@@ -3,7 +3,7 @@ import ProductSidebar from "@/components/Shop/ProductSidebar/ProductSidebar";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import { productCardData } from "@/lib/data";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ChevronDown, SearchIcon } from "@/components/Icon/Icon";
+import { ArrowLeft, ChevronDown, SearchIcon } from "@/components/Icon/Icon";
 
 const Shop = () => {
   return (

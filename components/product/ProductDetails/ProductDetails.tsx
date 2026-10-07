@@ -4,10 +4,9 @@ import { productData } from "@/lib/data";
 import { useState } from "react";
 import styles from "./ProductDetails.module.css";
 import Image from "next/image";
-import { stars } from "@/data/assets";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight, StarIcon,} from "@/components/Icon/Icon";
-import { ShareIcon, CircleCheck, Star } from "lucide-react";
+import { ShareIcon, CircleCheck} from "lucide-react";
 
 const ProductDetails = () => {
   const [activeImageWrap, setActiveImageWrap] = useState(0);

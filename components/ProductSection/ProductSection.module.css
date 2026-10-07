@@ -37,6 +37,11 @@
 .product-card-container{
     margin-bottom:50px;
 }
+
+.product-card-container :global(.slick-list) {
+  margin: 0 -12px;
+}
+
 .product-card-container :global(.slick-track) {
   display: flex;
   align-items: stretch;
@@ -45,6 +50,8 @@
 .product-card-container :global(.slick-slide) {
   height: auto;
   display: flex;
+  padding: 0 12px;
+  box-sizing: border-box;
 }
 
 .product-card-container :global(.slick-slide > div) {

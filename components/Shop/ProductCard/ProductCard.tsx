@@ -1,6 +1,5 @@
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
-import { stars } from "@/data/assets";
 import Button from "@/components/Button/Button";
 import { ProductCardData } from "@/lib/types";
 import { StarIcon } from "@/components/Icon/Icon";

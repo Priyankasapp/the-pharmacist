@@ -71,6 +71,7 @@
     width: 100%;
   padding: 4%;
   box-sizing: border-box;
+  
 }
 
 .faq-section-wrapper{
@@ -88,7 +89,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 60px 5% 140px; /* bottom padding makes room for the overlapping cards */
+    padding: 60px 5% 140px; 
     min-height: auto;
   }
   .condition-hero-section h1 {
