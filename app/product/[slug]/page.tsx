@@ -50,9 +50,6 @@ useEffect(()=>{
 }, []);
 
   
-
-
-
   return (
     <div className={styles["product-page"]}>
       <div className="container">

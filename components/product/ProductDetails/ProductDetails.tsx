@@ -6,7 +6,7 @@ import styles from "./ProductDetails.module.css";
 import Image from "next/image";
 import { stars } from "@/data/assets";
 import Button from "@/components/Button/Button";
-import { ChevronLeft, ChevronRight,} from "@/components/Icon/Icon";
+import { ChevronLeft, ChevronRight, StarIcon,} from "@/components/Icon/Icon";
 import { ShareIcon, CircleCheck, Star } from "lucide-react";
 
 const ProductDetails = () => {
@@ -113,7 +113,8 @@ const ProductDetails = () => {
 
             <div className={styles["product-review-row"]}>
               {/* <Image src="./images/star.svg" alt="star" /> */}
-              <Star/>
+             <StarIcon/>
+              
               <span>(9403 Reviews)</span>
             </div>
 

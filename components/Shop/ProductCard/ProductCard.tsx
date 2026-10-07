@@ -3,6 +3,7 @@ import Image from "next/image";
 import { stars } from "@/data/assets";
 import Button from "@/components/Button/Button";
 import { ProductCardData } from "@/lib/types";
+import { StarIcon } from "@/components/Icon/Icon";
 
 const ProductCard = ({
   id,
@@ -57,7 +58,8 @@ const ProductCard = ({
               <h3>{title}</h3>
               <p>{subtitle}</p>
               <div className={styles["product-card-star-wrapper"]}>
-                <Image src={stars} alt="stars" />
+              
+                <StarIcon/>
                 <span>({reviewCount})</span>
               </div>
             </div>
