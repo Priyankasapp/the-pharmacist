@@ -48,6 +48,8 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--black);
+  flex: 1;
+  min-width: 1;
 }
 .shop-search-input-container{
   display: flex;  
@@ -58,9 +60,18 @@
   border: none;
   outline: none;
   background: transparent;
-  max-width: 0;
   width: 100%;
+  /* max-width: 220px; */
   padding: 4px 0;
+  font-size: 14px;
+  font-family: var(--font-secondary);
+  color: var(--main-text);
+}
+.shop-search-input-wrapper input::placeholder {
+  color: var(--gray);
+  opacity: 1;
+  font-size: 12px;
+  font-family: var(--font-secondary);
 }
 .shop-search-sortby-wrapper{
   display: flex;
