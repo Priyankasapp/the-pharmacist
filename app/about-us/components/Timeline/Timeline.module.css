@@ -171,15 +171,16 @@
   }
 
   .timeline-row {
-    flex-direction: row !important;
+    flex-direction: row ;
+    
   }
 
   .timeline-card-wrapper {
     width: 100%;
-    padding-left: 45px !important;
-    padding-right: 0 !important;
+    padding-left: 45px ;
+    padding-right: 0 ;
     display: flex;
-    justify-content: flex-start !important;
+    justify-content: flex-start;
   }
 
   .timeline-row-spacer {

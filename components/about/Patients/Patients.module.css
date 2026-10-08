@@ -21,7 +21,7 @@
   margin: 0 auto;
 }
 .patients-slider-viewport :global(.slick-track) {
-  display: flex !important;
+  display: flex;
 }
 
 .patients-slider-viewport :global(.slick-slide) {

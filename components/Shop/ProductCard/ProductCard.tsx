@@ -1,3 +1,4 @@
+import { useId } from "react";
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
 import Button from "@/components/Button/Button";
@@ -21,8 +22,11 @@ const ProductCard = ({
   treatmentsButtonText = "Add to Bag",
   appointmentButtonText = "Book an Appointment",
 }: ProductCardData) => {
+  const uniqueId = useId();
+  const cardId = `product-card-${uniqueId}`;
+
   return (
-    <div className={styles["product-card"]} id={id}>
+    <div className={styles["product-card"]} id={cardId}>
       <div className={styles["product-card-container"]}>
         {/* image  */}
         <div className={styles["product-card-img-container"]}>

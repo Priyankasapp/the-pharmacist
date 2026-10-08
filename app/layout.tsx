@@ -5,8 +5,7 @@ import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 
 const plusJakartaSans = Plus_Jakarta_Sans({

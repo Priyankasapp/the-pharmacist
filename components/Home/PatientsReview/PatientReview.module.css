@@ -21,8 +21,8 @@
 }
 .patient-review-bg-img{
     object-fit: cover;
-    height: 100% !important;
-    width: auto !important;
+    height: 100%;
+    width: auto;
 }
 .patient-review-info-con{
     display: flex;
@@ -87,7 +87,7 @@
 }
 
 .patient-review-right-section :global(.slick-track) {
-  display: flex !important;
+  display: flex;
 }
 
 .patient-review-right-section :global(.slick-slide) {

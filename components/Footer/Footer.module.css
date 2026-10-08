@@ -121,8 +121,8 @@
 }
 
 .footer-icon-img {
-  height: 15px !important;
-  width: 15px !important;
+  height: 15px;
+  width: 15px;
   object-fit: contain;
 }
 
@@ -135,8 +135,8 @@
 }
 
 .footer-badge-img {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: auto;
   max-width: 90px;
   object-fit: contain;
 }

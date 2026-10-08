@@ -64,8 +64,8 @@
 
 .slider-arrow:disabled,
 .slider-arrow.slick-disabled {
-  opacity: 1 !important;
-  visibility: visible !important;
+  opacity: 1;
+  visibility: visible;
   cursor: pointer;
 }
 
