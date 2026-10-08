@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import { FilterOption } from '@/lib/types';
-import styles from './ProductSidbar.module.css'
+import styles from './ProductSidebar.module.css'
 
 interface FilterCheckboxProps {
     option: FilterOption;

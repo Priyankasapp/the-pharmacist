@@ -174,7 +174,7 @@ const Navbar = () => {
               >
                 <MapPin className={styles["nav-location-icon"]} />
                 <span>Silver Lane</span>
-                <ChevronDown className={styles["location-chrowndown-icon"]} />
+                <ChevronDown className={styles["location-chevron-icon"]} />
               </button>
               {activeMenu === "product" && <PharmacyCard />}
             </div>

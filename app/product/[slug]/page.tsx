@@ -69,7 +69,7 @@ useEffect(()=>{
   return (
     <div className={styles["product-page"]}>
       <div className="container">
-        <div className={styles["product-gallary-container"]}>
+        <div className={styles["product-gallery-container"]}>
       
         <ProductDetails product={selectedProduct} />
       </div>
@@ -93,7 +93,7 @@ useEffect(()=>{
 
         <div className={styles["product-details-container"]}>
        
-          <nav className={styles["prodcut-details-tab-container"]}>
+          <nav className={styles["product-details-tab-container"]}>
            
             <div className={styles["product-details-tab-wrapper"]}>
               {tabs.map((tab) => (

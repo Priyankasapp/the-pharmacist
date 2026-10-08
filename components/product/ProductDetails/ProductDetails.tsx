@@ -31,9 +31,9 @@ const ProductDetails = ({ product }: { product: ProductData }) => {
   return (
     <section className={styles["product-content"]}>
       {/* left section  */}
-      <div className={styles["gallary-col"]}>
-        <div className={styles["gallary-card"]}>
-          <div className={styles["gallary-top"]}>
+      <div className={styles["gallery-col"]}>
+        <div className={styles["gallery-card"]}>
+          <div className={styles["gallery-top"]}>
             <h2 className={styles["brand"]}>{product.name}</h2>
             <button
               type="button"

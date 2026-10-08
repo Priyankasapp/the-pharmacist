@@ -1,7 +1,7 @@
 'use client';
 
 import { ChangeEvent, useState } from "react";
-import styles from "./ProductSidbar.module.css";
+import styles from "./ProductSidebar.module.css";
 import { brands, categories } from "@/lib/data";
 import FilterCheckbox from "./FilterCheckbox";
 import { ChevronDown, ChevronUp, PlusIcon } from "@/components/Icon/Icon";
@@ -187,7 +187,7 @@ const ProductSidebar = ({
             <button
               type="button"
               onClick={() => toggleSection(key)}
-              className={styles["product-sidebar-fiter-card-button"]}
+              className={styles["product-sidebar-filter-card-button"]}
               aria-label={`Toggle ${title} filter section`}
             >
               {isOpen[key] ? <ChevronUp className="" /> : <ChevronDown className="" />}
