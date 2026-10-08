@@ -1,6 +1,3 @@
-
-'use client';
-
 import { ArrowRight } from "lucide-react";
 import styles from "./Button.module.css";
 

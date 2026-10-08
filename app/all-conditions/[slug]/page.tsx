@@ -14,7 +14,7 @@ const ConditionSlug = () => {
     <div className={styles["condition-page"]}>
       <div className="container">
         <div className={styles["condition-header"]}>
-          <h2>Sore Throat </h2>
+          <h1 className={styles["condition-heading"]}>Sore Throat </h1>
           <div className={styles["header-img-wrapper"]}>
             <Image src={NHS} alt="NHS" fill priority />
           </div>
@@ -22,10 +22,10 @@ const ConditionSlug = () => {
 
         {/* hero section  */}
         <div className={styles["condition-hero-section"]}>
-          <h1>
+          <h2 className={styles["condition-hero-header"]}>
             A sore throat is irritation or pain in the throat, often caused by
             infection or dryness.
-          </h1>
+          </h2>
           <div className={styles["nhs-card-wrapper"]}>
             <NHSSupportCard />
           </div>

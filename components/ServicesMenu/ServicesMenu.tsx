@@ -27,7 +27,7 @@ export function ServicesMenu({ isOpen }: ServicesMenuProps) {
               {column.logo && (
                 <Image
                   src={column.logo}
-                  alt=""
+                  alt="logo"
                   width={28}
                   height={18}
                   className={styles.columnLogo}

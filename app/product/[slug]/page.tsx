@@ -111,7 +111,7 @@ useEffect(()=>{
           </nav>
 
         
-          <main className={styles["product-content"]}>
+          <div className={styles["product-content"]}>
             {activeTab === "Description" && (
               <>
               
@@ -205,7 +205,7 @@ useEffect(()=>{
                 </section>
               </>
             )}
-          </main>
+          </div>
         </div>
       </div>
 
