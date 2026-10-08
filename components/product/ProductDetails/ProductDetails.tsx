@@ -1,32 +1,32 @@
 "use client";
 
-import { productData } from "@/lib/data";
 import { useState } from "react";
 import styles from "./ProductDetails.module.css";
 import Image from "next/image";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight, StarIcon,} from "@/components/Icon/Icon";
 import { ShareIcon, CircleCheck} from "lucide-react";
+import type { ProductData } from "@/lib/types";
 
-const ProductDetails = () => {
+const ProductDetails = ({ product }: { product: ProductData }) => {
   const [activeImageWrap, setActiveImageWrap] = useState(0);
   
 
-  const [activeStrength, setActiveStrength] = useState(productData.strengths?.[0] || "");
-  const [activePack, setActivePack] = useState(productData.packSizes?.[0]?.id || "");
+  const [activeStrength, setActiveStrength] = useState(product.strengths?.[0] || "");
+  const [activePack, setActivePack] = useState(product.packSizes?.[0]?.id || "");
 
   const nextImage = () => {
-    setActiveImageWrap((prev) => (prev + 1) % productData.images.length);
+    setActiveImageWrap((prev) => (prev + 1) % product.images.length);
   };
 
   const prevImage = () => {
     setActiveImageWrap(
-      (prev) => (prev - 1 + productData.images.length) % productData.images.length
+      (prev) => (prev - 1 + product.images.length) % product.images.length
     );
   };
 
 
-  const selectedPackDetails = productData.packSizes.find(p => p.id === activePack);
+  const selectedPackDetails = product.packSizes.find(p => p.id === activePack);
 
   return (
     <section className={styles["product-content"]}>
@@ -34,7 +34,7 @@ const ProductDetails = () => {
       <div className={styles["gallary-col"]}>
         <div className={styles["gallary-card"]}>
           <div className={styles["gallary-top"]}>
-            <h2 className={styles["brand"]}>{productData.name}</h2>
+            <h2 className={styles["brand"]}>{product.name}</h2>
             <button
               type="button"
               className={styles["shareBtn"]}
@@ -56,8 +56,8 @@ const ProductDetails = () => {
 
             <div className={styles["main-image-wrap"]}>
               <Image
-                src={productData.images[activeImageWrap]}
-                alt={`${productData.name} view ${activeImageWrap + 1}`}
+                src={product.images[activeImageWrap]}
+                alt={`${product.name} view ${activeImageWrap + 1}`}
                 fill
                 sizes="(max-width:768px) 100vw, 600px"
                 priority
@@ -77,7 +77,7 @@ const ProductDetails = () => {
         </div>
 
         <div className={styles["product-images-thumbs"]}>
-          {productData.images.map((img, index) => (
+          {product.images.map((img, index) => (
             <button
               key={index}
               type="button"
@@ -102,13 +102,13 @@ const ProductDetails = () => {
       <div className={styles["product-buy-col"]}>
         <div className={styles["product-right-first"]}>
           <div className={styles["product-right-first-wrapper"]}>
-            {productData.inStock && (
+            {product.inStock && (
               <div className={styles["product-in-stock"]}>
                 <CircleCheck  />
                 <span>In Stock</span>
               </div>
             )}
-            <h1 className={styles["product-title"]}>{productData.title}</h1>
+            <h1 className={styles["product-title"]}>{product.title}</h1>
 
             <div className={styles["product-review-row"]}>
               {/* <Image src="./images/star.svg" alt="star" /> */}
@@ -117,13 +117,13 @@ const ProductDetails = () => {
               <span>(9403 Reviews)</span>
             </div>
 
-            <p>{productData.tabletCount}</p>
+            <p>{product.tabletCount}</p>
           </div>
 
           <div className={styles['product-price-block']}>
 
-             <h3>{selectedPackDetails ? selectedPackDetails.price : productData.price}</h3>
-             <span>{selectedPackDetails ? selectedPackDetails.pricePerTablet : productData.pricePerTablet}</span>
+             <h3>{selectedPackDetails ? selectedPackDetails.price : product.price}</h3>
+             <span>{selectedPackDetails ? selectedPackDetails.pricePerTablet : product.pricePerTablet}</span>
           </div>
         </div>
 
@@ -132,7 +132,7 @@ const ProductDetails = () => {
           <div className={styles['product-right-field']}>
             <p className={styles['product-right-label']}>Strength</p>
             <div className={styles['product-right-pill-row']}>
-              {productData.strengths.map((strength) => (
+              {product.strengths.map((strength) => (
                 <button
                   key={strength}
                   type="button"
@@ -149,7 +149,7 @@ const ProductDetails = () => {
           <div className={styles['product-right-field']}>
             <p className={styles['product-right-label']}>Pack Size</p>
             <div className={styles['product-right-pill-row']}>
-              {productData.packSizes.map((pack) => (
+              {product.packSizes.map((pack) => (
                 <button
                   key={pack.id}
                   type="button"
@@ -175,8 +175,8 @@ const ProductDetails = () => {
 
         {/* Delivery Details table */}
         <div className={styles['product-right-delivery']}>
-          <h3 className={styles['product-right-delivery-title']}>{productData.delivery.title}</h3>
-          <p className={styles['product-delivery-desc']}>{productData.delivery.description}</p>
+          <h3 className={styles['product-right-delivery-title']}>{product.delivery.title}</h3>
+          <p className={styles['product-delivery-desc']}>{product.delivery.description}</p>
 
           <table className={styles['product-delivery-table']}>
             <thead>
@@ -187,7 +187,7 @@ const ProductDetails = () => {
               </tr>
             </thead>
             <tbody>
-              {productData.delivery.options.map((option) => (
+              {product.delivery.options.map((option) => (
                 <tr key={option.type}>
                   <td>{option.type}</td>
                   <td>{option.duration}</td>

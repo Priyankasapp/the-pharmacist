@@ -1,20 +1,24 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/rules-of-hooks */
 
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { use, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 import styles from "./Product.module.css";
 
-import { productCardData, tabs } from "@/lib/data";
+import { productCardData, productData, tabs } from "@/lib/data";
 import {  VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import { ChevronLeft, ChevronRight, HealthBrokenIcon } from "@/components/Icon/Icon";
 import Slider from "react-slick";
+import { notFound } from "next/navigation";
 
+const normalizeSlug = (value: string) =>
+  decodeURIComponent(value).trim().toLowerCase().replace(/\s+/g, " ");
 
 const getProductPerPage = () =>{
   if(typeof window === "undefined") return 4;
@@ -24,7 +28,21 @@ const getProductPerPage = () =>{
   return 4
 };
 
-const page = () => {
+const ProductPage = ({ params }: { params: Promise<{ slug: string }> }) => {
+  const resolvedParams = use(params);
+  const slug = resolvedParams?.slug ?? "";
+  const normalizedSlug = normalizeSlug(slug);
+
+  const selectedProduct =
+    normalizeSlug(productData.name) === normalizedSlug ||
+    normalizeSlug(productData.title) === normalizedSlug ||
+    normalizeSlug(productData.slug || "") === normalizedSlug
+      ? productData
+      : null;
+
+  if (!selectedProduct) {
+    notFound();
+  }
 
   const sliderRef = useRef<any>(null);
 
@@ -55,7 +73,7 @@ useEffect(()=>{
       <div className="container">
         <div className={styles["product-gallary-container"]}>
       
-        <ProductDetails />
+        <ProductDetails product={selectedProduct} />
       </div>
 
     
@@ -101,7 +119,7 @@ useEffect(()=>{
               
                 <section className={styles["product-content-section"]}>
                   <h2 className={styles["product-content-heading"]}>
-                    What is Pandol?
+                    What is Panadol?
                   </h2>
                   <div className={styles["product-content-text-group"]}>
                     <div className={styles["product-content-bullet-paragraph"]}>
@@ -109,7 +127,7 @@ useEffect(()=>{
                       <p className={styles["product-content-paragraph"]}>
                         Panadol is a pain relief and fever-reducing medicine
                         that contains paracetamol (acetaminophen). It &apos;s
-                        avalable in several forms:
+                        available in several forms:
                       </p>
                     </div>
                     <ul className={styles["product-content-list"]}>
@@ -124,7 +142,7 @@ useEffect(()=>{
                       <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         All of these contain the same active ingredient,
-                        paracetamol, which works to relive pain and reduce
+                        paracetamol, which works to relieve pain and reduce
                         fever.
                       </p>
                     </div>
@@ -132,7 +150,7 @@ useEffect(()=>{
                       <HealthBrokenIcon/>
                       <p className={styles["product-content-paragraph"]}>
                         Pandol is commonly used for headaches, toothaches,
-                        musicle pain, back pain, back pain, period pain, and the
+                        muscle pain, back pain, back pain, period pain, and the
                         aches and fever associated with colds or flu.
                       </p>
                     </div>
@@ -140,7 +158,7 @@ useEffect(()=>{
                 </section>
                 <section className={styles["product-content-section"]}>
                   <h2 className={styles["product-content-heading"]}>
-                    How does Panadol work?
+                    How dose Panadol work?
                   </h2>
                   <div className={styles["product-content-text-group"]}>
                     <div className={styles["product-content-bullet-paragraph"]}>
@@ -152,13 +170,13 @@ useEffect(()=>{
                     </div>
                     <ol className={styles["product-content-order-list"]}>
                       <li>
-                        Reducting pain signals - its blocks certain chemicals in
+                        Reducing pain signals - its blocks certain chemicals in
                         the brain that send pain messages, helping to reduce
                         discomfort.
                       </li>
                       <li>
                         Lowering fever - It acts on the part of the brain that
-                        regulates body temperature, helping bring a hign
+                        regulates body temperature, helping bring a high
                         temperature down.
                       </li>
                       <li>
@@ -251,4 +269,4 @@ useEffect(()=>{
   );
 };
 
-export default page;
+export default ProductPage;

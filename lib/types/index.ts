@@ -143,6 +143,7 @@ export interface DeliveryInfo {
 }
 
 export interface ProductData{
+    slug?: string;
     name:string;
     title:string;
     price:string;

@@ -32,7 +32,7 @@ export const SearchMenu = ({isOpen}:SearchMenuProps) =>{
                 <a href="#">search-item</a>
             </li>
             <li className={styles['search-item']}>
-                <a href="#">Athlete &apos;s Floot</a>
+                <a href="#">Athlete &apos;s Foot</a>
             </li>
             <li className={styles['search-item']}>
                 <a href="#">Azelaic Acid</a>

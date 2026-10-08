@@ -511,10 +511,10 @@ export const optionA: HealthConditionData[] = [
   },
   {
     slug: "Athlete's Foot",
-    name: "Athlete's Floot",
+    name: "Athlete's Foot",
     desc: "A fungal infaction that causes itching, redness, and peeling on the feet, commonly between the toes.",
     isNHS: false,
-    id: "Athlete's Floot",
+    id: "Athlete's Foot",
   },
 ];
 
@@ -657,8 +657,9 @@ export const tabs = [
 ];
 
 export const productData: ProductData = {
+  slug: "panadol",
   name: "Panadol",
-  title: "Pandol 50g",
+  title: "Panadol 50g",
   price: "£5.55",
   pricePerTablet: "£0.23 / per tablet",
   reviews: 9403,

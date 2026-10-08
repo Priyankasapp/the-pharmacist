@@ -91,7 +91,7 @@ const Footer = () => {
             </div>
 
             {/* Col 3: Regulatory */}
-            <div className={styles["footer-co l"]}>
+            <div className={styles["footer-col"]}>
               <h3 className={styles["footer-heading"]}>Regulatory Info</h3>
               <div className={styles["footer-text-con"]}>
                 <span>GPhC Registration:</span>

@@ -2,9 +2,12 @@ import { FilterOption } from '@/lib/types';
 import styles from './ProductSidbar.module.css'
 
 interface FilterCheckboxProps {
-    option: FilterOption
+    option: FilterOption;
+    checked?: boolean;
+    onChange?: () => void;
 }
-const FilterCheckbox = ({ option }: FilterCheckboxProps) => {
+
+const FilterCheckbox = ({ option, checked = false, onChange }: FilterCheckboxProps) => {
   return (
     <div className={styles["filter-checkbox-container"]}>
         <input
@@ -12,6 +15,8 @@ const FilterCheckbox = ({ option }: FilterCheckboxProps) => {
         id={option.id}
         name={option.id}
         value={option.id}
+        checked={checked}
+        onChange={onChange}
         className={styles["filter-checkbox-input"]}
         />
         
