@@ -6,8 +6,6 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 
-
-
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-plus-jakarta',
@@ -20,7 +18,7 @@ const skModernist = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "The Pharmacist - Online Madicine & Online Healthcare Store",
+  title: "The Pharmacist - Online Medicine & Online Healthcare Store",
   description: "Shop prescription medicines, healthcare essentials, and consult verified pharmacists online with fast delivery.",
   keywords:["pharmacy", "online medicine", "healthcare", "prescriptions", "health essentials"],
   icons: {
