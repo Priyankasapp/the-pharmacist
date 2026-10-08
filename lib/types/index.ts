@@ -215,3 +215,16 @@ export type PharmalistDataProps = {
     description:string;
     imgSrc: string | StaticImageData | ComponentType;
 }
+
+
+// Product Sidebar 
+
+export interface FilterState {
+    minPrice: number;
+    maxPrice: number;
+    categories: string[];
+    brands: string[];
+    ratings: number[];
+    promotions: string[];
+    productTypes: string[];
+}

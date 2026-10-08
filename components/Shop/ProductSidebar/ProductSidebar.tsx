@@ -5,16 +5,8 @@ import styles from "./ProductSidbar.module.css";
 import { brands, categories } from "@/lib/data";
 import FilterCheckbox from "./FilterCheckbox";
 import { ChevronDown, ChevronUp, PlusIcon } from "@/components/Icon/Icon";
+import {FilterState} from "@/lib/types"
 
-export interface FilterState {
-  minPrice: number;
-  maxPrice: number;
-  categories: string[];
-  brands: string[];
-  ratings: number[];
-  promotions: string[];
-  productTypes: string[];
-}
 
 const defaultFilters: FilterState = {
   minPrice: 0,
@@ -53,6 +45,24 @@ const ProductSidebar = ({
     categories: true,
     brands: true,
   });
+
+  const filterSections = [
+    {
+      key: "categories" as const,
+      title: "Categories",
+      options: categories,
+      checked: (optionId: string) => mergedFilters.categories.includes(optionId),
+      onChange: (optionId: string) => handleToggleCollectionItem("categories", optionId),
+    },
+    {
+      key: "brands" as const,
+      title: "Brands",
+      options: brands,
+      checked: (optionId: string) => mergedFilters.brands.includes(optionId),
+      onChange: (optionId: string) => handleToggleCollectionItem("brands", optionId),
+      showMore: true,
+    },
+  ];
 
   const toggleSection = (section: Sections) => {
     setIsOpen((prev) => ({
@@ -168,65 +178,43 @@ const ProductSidebar = ({
         </div>
       </div>
 
-      <div className={styles["product-sidebar-filter-card"]}>
-        <div className={styles["product-sidebar-filter-card-header"]}>
-          <span className={styles["product-sidebar-filter-card-heading"]}>
-            Categories
-          </span>
-          <button
-            type="button"
-            onClick={() => toggleSection("categories")}
-            className={styles["product-sidebar-fiter-card-button"]}
-          >
-            {isOpen.categories ? <ChevronUp className="" /> : <ChevronDown className="" />}
-          </button>
-        </div>
-
-        {isOpen.categories && (
-          <div className={styles["product-sidebar-checkbox-list"]}>
-            {categories.map((category) => (
-              <FilterCheckbox
-                key={category.id}
-                option={category}
-                checked={mergedFilters.categories.includes(category.id)}
-                onChange={() => handleToggleCollectionItem("categories", category.id)}
-              />
-            ))}
+      {filterSections.map(({ key, title, options, checked, onChange, showMore }) => (
+        <div key={key} className={styles["product-sidebar-filter-card"]}>
+          <div className={styles["product-sidebar-filter-card-header"]}>
+            <span className={styles["product-sidebar-filter-card-heading"]}>
+              {title}
+            </span>
+            <button
+              type="button"
+              onClick={() => toggleSection(key)}
+              className={styles["product-sidebar-fiter-card-button"]}
+              aria-label={`Toggle ${title} filter section`}
+            >
+              {isOpen[key] ? <ChevronUp className="" /> : <ChevronDown className="" />}
+            </button>
           </div>
-        )}
-      </div>
 
-      <div className={styles["product-sidebar-filter-card"]}>
-        <div className={styles["product-sidebar-filter-card-header"]}>
-          <span className={styles["product-sidebar-filter-card-heading"]}>
-            Brands
-          </span>
-          <button
-            type="button"
-            onClick={() => toggleSection("brands")}
-            className={styles["product-sidebar-fiter-card-button"]}
-          >
-            {isOpen.brands ? <ChevronUp className="" /> : <ChevronDown className="" />}
-          </button>
-        </div>
+          {isOpen[key] && (
+            <div className={styles["product-sidebar-checkbox-list"]}>
+              {options.map((option) => (
+                <FilterCheckbox
+                  key={option.id}
+                  option={option}
+                  checked={checked(option.id)}
+                  onChange={() => onChange(option.id)}
+                />
+              ))}
 
-        {isOpen.brands && (
-          <div className={styles["product-sidebar-checkbox-list"]}>
-            {brands.map((brand) => (
-              <FilterCheckbox
-                key={brand.id}
-                option={brand}
-                checked={mergedFilters.brands.includes(brand.id)}
-                onChange={() => handleToggleCollectionItem("brands", brand.id)}
-              />
-            ))}
-            <div className={styles["product-sidebar-checkbox-showmore"]}>
-              <PlusIcon />
-              <span>SHOW MORE</span>
+              {showMore && (
+                <div className={styles["product-sidebar-checkbox-showmore"]}>
+                  <PlusIcon />
+                  <span>SHOW MORE</span>
+                </div>
+              )}
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      ))}
     </aside>
   );
 };
