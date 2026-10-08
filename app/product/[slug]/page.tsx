@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/rules-of-hooks */
+
 
 "use client";
 
 import { use, useEffect, useState, useRef } from "react";
 import Image from "next/image";
-
 import styles from "./Product.module.css";
-
 import { productCardData, productData, tabs } from "@/lib/data";
 import {  VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";

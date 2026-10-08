@@ -13,9 +13,14 @@ const FindPharmacy = () => {
        <h1 className={styles['find-pharmacy-title']}>Find your Nearest Pharmacy</h1>
 
       <div className={styles['find-pharmacy-searchbar-container']}>
-        <span>Search</span>
+        <label htmlFor="pharmacy-search">Search</label>
         <div className={styles['find-pharmacy-searchbar-wrapper']}>
-          <input placeholder='Dr Stone pharmacy, 123 High Street'/>
+          <input
+            id="pharmacy-search"
+            type="search"
+            placeholder='Dr Stone pharmacy, 123 High Street'
+            aria-label="Search for a pharmacy"
+          />
           <SearchIcon className={styles['search-icon']} />
         </div>
       </div>

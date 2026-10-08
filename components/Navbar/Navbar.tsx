@@ -8,7 +8,16 @@ import { ServicesMenu } from "../ServicesMenu/ServicesMenu";
 import Button from "../Button/Button";
 import PharmacyCard from "./PharmacyCard/PharmacyCard";
 import SearchBar from "../Find-Pharmacy/SearchBar/SearchBar";
-import {ActorIcon, BagIcon, ChevronDown, ChevronUp, CloseIcon, MapPin, MenuIcon, SearchIcon} from "../Icon/Icon";
+import {
+  ActorIcon,
+  BagIcon,
+  ChevronDown,
+  ChevronUp,
+  CloseIcon,
+  MapPin,
+  MenuIcon,
+  SearchIcon,
+} from "../Icon/Icon";
 
 type ActiveMenuType = "services" | "search" | "product" | null;
 
@@ -69,11 +78,7 @@ const Navbar = () => {
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? (
-            <CloseIcon  />
-          ) : (
-            <MenuIcon  />
-          )}
+          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
 
         <div
@@ -82,7 +87,6 @@ const Navbar = () => {
           }`}
         >
           <nav className={styles["nav-links"]}>
-          
             <div
               className={styles["nav-hover-wrapper"]}
               onMouseEnter={() => {
@@ -91,6 +95,7 @@ const Navbar = () => {
                 }
               }}
             >
+
               <button
                 type="button"
                 className={styles["nav-link-btn"]}
@@ -99,13 +104,13 @@ const Navbar = () => {
               >
                 <span>Our Services</span>
                 {activeMenu === "services" ? (
-                  <div className={styles["chevron-icons-wrapper"]}>
+                  <span className={styles["chevron-icons-wrapper"]}>
                     <ChevronUp className={undefined} />
-                  </div>
+                  </span>
                 ) : (
-                  <div className={styles["chevron-icons-wrapper"]}>
-                    <ChevronDown  />
-                  </div>
+                  <span className={styles["chevron-icons-wrapper"]}>
+                    <ChevronDown />
+                  </span>
                 )}
               </button>
             </div>
@@ -141,8 +146,7 @@ const Navbar = () => {
                 onClick={() => toggleMenu("search")}
                 aria-expanded={activeMenu === "search"}
               >
-               
-                <SearchIcon className={styles["nav-icon"]}/>
+                <SearchIcon className={styles["nav-icon"]} />
               </button>
 
               <button
@@ -178,7 +182,7 @@ const Navbar = () => {
             <Link
               href="/product"
               onClick={closeMobileMenu}
-              className={styles["nav-cta-link"]}
+              className={`${styles["nav-cta-link"]} ${styles['nav-button']}`}
             >
               <Button showArrow className={styles["nav-button"]}>
                 Order Prescription

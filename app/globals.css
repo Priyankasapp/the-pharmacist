@@ -105,3 +105,18 @@ textarea {
   padding-right: 1rem; */
 }
 
+@supports (selector(:focus-visible)){
+  *:focus{
+    outline: none;
+  }
+}
+*:focus-visible {
+  outline: 3px solid #0056b3;
+  outline-offset: 3px;
+}
+input:focus-visible, 
+textarea:focus-visible, 
+select:focus-visible {
+  outline: 2px solid #0056b3;
+  outline-offset: 1px;
+}

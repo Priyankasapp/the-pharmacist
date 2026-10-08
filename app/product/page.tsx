@@ -23,11 +23,11 @@ const Shop = () => {
 
               <div className={styles["shop-search-right-section"]}>
                 <div className={styles["shop-search-input-container"]}>
-                  <span className={styles["shop-search-text"]}>
+                  <label htmlFor="product-search" className={styles["shop-search-text"]}>
                     Search:
-                  </span>
+                  </label>
                   <div className={styles["shop-search-input-wrapper"]}>
-                    <input type="text" placeholder="Search Products" />
+                    <input id="product-search" type="search" placeholder="Search Products" aria-label="Search products" />
                     <SearchIcon className={styles["search-icon"]} />
                   </div>
                 </div>

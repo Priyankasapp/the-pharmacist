@@ -14,10 +14,26 @@ const LifestyleTreatments = () => {
       <div className={styles['lifestyle-header']}>
         <h1>Lifestyle Treatments</h1>
         <div className={styles['lifestyle-searchbar-wrapper']}>
-            <input 
-            type="text"
-            placeholder="Search for health conditions (e.g., Hair Loss)"
-            
+            <label
+              htmlFor="lifestyle-search"
+              style={{
+                position: 'absolute',
+                width: '1px',
+                height: '1px',
+                padding: 0,
+                margin: '-1px',
+                overflow: 'hidden',
+                clip: 'rect(0, 0, 0, 0)',
+                whiteSpace: 'nowrap',
+                border: 0,
+              }}
+            >
+              Search lifestyle treatments
+            </label>
+            <input
+              id="lifestyle-search"
+              type="text"
+              placeholder="Search for health conditions (e.g., Hair Loss)"
             />
             <Button showArrow className={styles['lifestyle-button']}>Search</Button>
         </div>

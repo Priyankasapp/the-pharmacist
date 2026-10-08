@@ -15,6 +15,22 @@ export const SearchMenu = ({isOpen}:SearchMenuProps) =>{
         <div className={styles['menu-container']}>
             {/* Search Section  */}
         <div className={styles['search-form']}>
+            <label
+                htmlFor="searchInput"
+                style={{
+                    position: 'absolute',
+                    width: '1px',
+                    height: '1px',
+                    padding: 0,
+                    margin: '-1px',
+                    overflow: 'hidden',
+                    clip: 'rect(0, 0, 0, 0)',
+                    whiteSpace: 'nowrap',
+                    border: 0,
+                }}
+            >
+                Search condition
+            </label>
             <input 
             type="text" 
             placeholder="What condition are you looking for?" name="search" 
