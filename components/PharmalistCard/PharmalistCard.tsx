@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import  { ComponentType } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import styles from "./PharmalistCard.module.css";
 

@@ -3,7 +3,6 @@ import styles from "./AboutUs.module.css";
 import Hero from '@/app/about-us/components/Hero/Hero';
 import Timeline from "./components/Timeline/Timeline";
 import WhyChosePharmalist from "@/components/WhyChosePharmalist/WhyChosePharmalist";
-import MultipleItems from "@/app/about-us/components/Specialist/Specialist";
 import Patients from "@/components/about/Patients/Patients";
 import Specialist from "@/app/about-us/components/Specialist/Specialist";
 

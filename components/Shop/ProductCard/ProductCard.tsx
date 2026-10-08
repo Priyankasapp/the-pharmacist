@@ -80,7 +80,7 @@ const ProductCard = ({
           <div className={styles["product-card-actions"]}>
             {showTreatmentsButton && (
               <Button
-                variant="Outline"
+                variant="outline"
                 showArrow
                 className={styles["product-button"]}
               >

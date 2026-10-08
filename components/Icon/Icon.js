@@ -1,4 +1,4 @@
-import React from "react";
+
 
 // Bag Icon
 export const BagIcon = ({ className = "" }) => {

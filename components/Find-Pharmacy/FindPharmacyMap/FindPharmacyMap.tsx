@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from "./FindPharmacyMap.module.css";
 import Image from 'next/image';
 import { locationIcon, mapImg } from '@/data/assets';
