@@ -61,10 +61,10 @@ import {
   SpecialistDataProps,
   StepInfo,
   TimelineDataProps,
+  TreatmentDataProps,
   Treatments,
   WhatWeOfferedCardData,
 } from "../types";
-import { TreatmentDataProps } from "@/types/type";
 import { PharmacistImage, PharmacistImage2, PharmacistImage3 } from "@/components/Icon/Icon";
 
 // footer data

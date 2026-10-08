@@ -1,4 +1,5 @@
-import { ServiceColumn } from "@/types/type";
+
+import { ServiceColumn } from "@/lib/types";
 import { nhs, onlineDoctor, privatePharmacy } from "./assets";
 
 export const SERVICES_MENU: ServiceColumn[] = [

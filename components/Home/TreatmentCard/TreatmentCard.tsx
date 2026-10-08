@@ -1,8 +1,8 @@
 
 import styles from "./TreatmentCard.module.css";
 import Image from "next/image";
-import { TreatmentDataProps } from "@/types/type";
 import { ChevronRight } from "@/components/Icon/Icon";
+import { TreatmentDataProps } from "@/lib/types";
 
 
 const TreatmentCard = ({ id, title, img, condition }: TreatmentDataProps) => {

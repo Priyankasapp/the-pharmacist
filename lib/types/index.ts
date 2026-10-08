@@ -1,27 +1,27 @@
-// typescript interface 
+// typescript interface
 
 import { StaticImageData } from "next/image";
 import { ComponentType } from "react";
 
-// footer 
-export interface FooterLink{
-    label:string;
-    href:string;
+// footer
+export interface FooterLink {
+  label: string;
+  href: string;
 }
 
-export interface FooterInformation{
-    address:string;
-    number:string;
-    email:string;   
+export interface FooterInformation {
+  address: string;
+  number: string;
+  email: string;
 }
-export interface FooterRegulatory{
-    gphc: string;
-    superintendent:string;
-    pharmacyOwner:string;
+export interface FooterRegulatory {
+  gphc: string;
+  superintendent: string;
+  pharmacyOwner: string;
 }
-export interface FooterOpeningHour{
-    day: string;
-    time:string;
+export interface FooterOpeningHour {
+  day: string;
+  time: string;
 }
 export interface FooterLinksData {
   legal: FooterLink[];
@@ -30,10 +30,10 @@ export interface FooterLinksData {
   openingHours: FooterOpeningHour[];
 }
 
-export interface DropDownItem{
-    label: string;
-    href: string;
-    description?: string;
+export interface DropDownItem {
+  label: string;
+  href: string;
+  description?: string;
 }
 
 export interface NavLink {
@@ -43,188 +43,210 @@ export interface NavLink {
   dropdown?: DropDownItem[];
 }
 
-
-export interface Pharmacy{
-    id: string;
-    name: string;
-    address: string;
-    phone: string;
-    email: string;
-    openingHouers:string;
+export interface Pharmacy {
+  id: string;
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
+  openingHouers: string;
 }
 
-export interface Patients{
-    id: string;
-    name:string;
-    title:string;
-    description:string;
-    imgSrc:string|StaticImageData;
-    rating:number;
+export interface Patients {
+  id: string;
+  name: string;
+  title: string;
+  description: string;
+  imgSrc: string | StaticImageData;
+  rating: number;
 }
-export interface Treatments{
-    name:string;
-    desc:string;
-    imgSrc:string|StaticImageData;
-
+export interface Treatments {
+  name: string;
+  desc: string;
+  imgSrc: string | StaticImageData;
 }
-export interface WhatWeOfferedCardData{
-   title:string;
-   description:string;
-}
-
-export interface FilterOption{
-    id:string;
-    label:string;
+export interface WhatWeOfferedCardData {
+  title: string;
+  description: string;
 }
 
-export interface ProductCardData{
-    slug: string;
-    id:string;
-    title:string;
-    subtitle:string;
-    image:string | StaticImageData;
-    isPrescriptionOnly?:boolean;
-    savingsText?:string;
-    reviewCount:number;
-    price:number;
-    originalPrice?:number;
-    weightText?:string;
-    unitPriceText?:string;
-    buttonText?:string;
-    showTreatmentsButton?: boolean;
+export interface FilterOption {
+  id: string;
+  label: string;
+}
+
+export interface ProductCardData {
+  slug: string;
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string | StaticImageData;
+  isPrescriptionOnly?: boolean;
+  savingsText?: string;
+  reviewCount: number;
+  price: number;
+  originalPrice?: number;
+  weightText?: string;
+  unitPriceText?: string;
+  buttonText?: string;
+  showTreatmentsButton?: boolean;
   showAppointmentButton?: boolean;
   treatmentsButtonText?: string;
   appointmentButtonText?: string;
-    
 }
 
-export interface ProcessData{
-    id:string;
-    heading:string;
-    desc:string;
+export interface ProcessData {
+  id: string;
+  heading: string;
+  desc: string;
 }
 
-export interface HealthConditionData{
-    slug: string;
-    name:string;
-    desc:string;
-    id:string;
-    isNHS?:boolean;
+export interface HealthConditionData {
+  slug: string;
+  name: string;
+  desc: string;
+  id: string;
+  isNHS?: boolean;
 }
 
-export interface AllAlphacetGroups{
-    latter:string,
-    data:string
+export interface AllAlphacetGroups {
+  latter: string;
+  data: string;
 }
 
 export interface ProductImage {
-    src: StaticImageData;
-    alt?: string;
+  src: StaticImageData;
+  alt?: string;
 }
 
 export interface PackSize {
-    id: string;
-    label:string;
-    price:string;
-    saving:string;
-    pricePerTablet:string;
+  id: string;
+  label: string;
+  price: string;
+  saving: string;
+  pricePerTablet: string;
 }
 
 export interface DeliveryOption {
-    type: string;
-    duration:string;
-    price:string;
+  type: string;
+  duration: string;
+  price: string;
 }
 
 export interface DeliveryInfo {
-    title:string;
-    description: string;
-    options:DeliveryOption[];
+  title: string;
+  description: string;
+  options: DeliveryOption[];
 }
 
-export interface ProductData{
-    slug?: string;
-    name:string;
-    title:string;
-    price:string;
-    pricePerTablet:string;
-    reviews:number;
-    tabletCount:string;
-    inStock:boolean;
-    images:StaticImageData[];
-    strengths:string[];
-    packSizes:PackSize[];
-    delivery:DeliveryInfo
+export interface ProductData {
+  slug?: string;
+  name: string;
+  title: string;
+  price: string;
+  pricePerTablet: string;
+  reviews: number;
+  tabletCount: string;
+  inStock: boolean;
+  images: StaticImageData[];
+  strengths: string[];
+  packSizes: PackSize[];
+  delivery: DeliveryInfo;
 }
 
+// condition section
 
-// condition section 
-
-export interface StepInfo{
-    id: string;
-    name: string;
-    desc: string
-
+export interface StepInfo {
+  id: string;
+  name: string;
+  desc: string;
 }
 
-// main Home Page 
-export interface ExportCardInfo{
-    isnhs?:boolean;
-    title:string;
-    desc:string;
-    id:string;
-    img:string|StaticImageData
+// main Home Page
+export interface ExportCardInfo {
+  isnhs?: boolean;
+  title: string;
+  desc: string;
+  id: string;
+  img: string | StaticImageData;
 }
 export type InformationDataProps = {
-  img:string | StaticImageData;
-  desc:string;
-  id:string;
-}
+  img: string | StaticImageData;
+  desc: string;
+  id: string;
+};
 
-
-// faq section 
+// faq section
 export type FaqsDataProps = {
-    id:string;
-    question:string;
-    answer?:string;
-}
+  id: string;
+  question: string;
+  answer?: string;
+};
 
-//  specialist data 
+//  specialist data
 export type SpecialistDataProps = {
-    imgSrc: string | StaticImageData;
-    name: string;
-    role: string;
-    registration:string;
-    description:string;
-}
-
+  imgSrc: string | StaticImageData;
+  name: string;
+  role: string;
+  registration: string;
+  description: string;
+};
 
 //about us
-//time line section data 
+//time line section data
 export type TimelineDataProps = {
-    year:string;
-    title:string;
-    description:string;
-    imgSrc:string | StaticImageData;
-    id:string
-}
+  year: string;
+  title: string;
+  description: string;
+  imgSrc: string | StaticImageData;
+  id: string;
+};
 
-// pharmalist data 
+// pharmalist data
 export type PharmalistDataProps = {
-    title:string;
-    description:string;
-    imgSrc: string | StaticImageData | ComponentType;
-}
+  title: string;
+  description: string;
+  imgSrc: string | StaticImageData | ComponentType;
+};
 
-
-// Product Sidebar 
+// Product Sidebar
 
 export interface FilterState {
-    minPrice: number;
-    maxPrice: number;
-    categories: string[];
-    brands: string[];
-    ratings: number[];
-    promotions: string[];
-    productTypes: string[];
+  minPrice: number;
+  maxPrice: number;
+  categories: string[];
+  brands: string[];
+  ratings: number[];
+  promotions: string[];
+  productTypes: string[];
+}
+
+export interface ServiceLink {
+  label: string;
+  href: string;
+}
+
+export interface ServiceGroup {
+  title: string;
+  href?: string;
+  links: ServiceLink[];
+}
+
+export interface ServiceColumn {
+  id: string;
+  label: string;
+  logo?: string;
+  groups: ServiceGroup[];
+  viewAllHref: string;
+}
+
+export interface ServicesMenuProps {
+  isOpen: boolean;
+}
+
+export interface TreatmentDataProps {
+  id: number;
+  title: string;
+  img: string | StaticImageData;
+  condition: string[];
 }

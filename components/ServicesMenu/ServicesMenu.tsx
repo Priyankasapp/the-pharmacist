@@ -5,9 +5,7 @@ import Image from "next/image";
 import styles from "./ServicesMenu.module.css";
 import { SERVICES_MENU } from "@/data/services";
 import { ChevronRight } from "../Icon/Icon";
-type ServicesMenuProps = {
-  isOpen: boolean;
-};
+import { ServicesMenuProps } from "@/lib/types";
 
 export function ServicesMenu({ isOpen }: ServicesMenuProps) {
   if (!isOpen) return null;
