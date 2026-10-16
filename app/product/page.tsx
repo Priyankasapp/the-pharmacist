@@ -1,48 +1,151 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
+
+import { useEffect, useMemo, useState } from "react";
 import styles from "./Shop.module.css";
 import ProductSidebar from "@/components/Shop/ProductSidebar/ProductSidebar";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronDown, SearchIcon } from "@/components/Icon/Icon";
-import { categoriesQuery, brandsQuery, shopProductsQuery } from '@/sanity/lib/queries';
+import { categoriesQuery, brandsQuery, shopProductsQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
-import type { ProductCardData } from "@/lib/types";
+import type { FilterOption, FilterState, ProductCardData } from "@/lib/types";
 
-const Shop = async() => {
-  const [categories, brands, products] = await Promise.all([
-    client.fetch(categoriesQuery),
-    client.fetch(brandsQuery),
-    client.fetch(shopProductsQuery),
-  ]);
+const getDefaultFilters = (maxPrice = 100): FilterState => ({
+  minPrice: 0,
+  maxPrice,
+  categories: [],
+  brands: [],
+  ratings: [],
+  promotions: [],
+  productTypes: [],
+});
 
-  const productCards: ProductCardData[] = products.map((product: any) => {
-    const price = Number(product.price ?? 0);
-    const originalPrice = product.originalPrice != null ? Number(product.originalPrice) : undefined;
-    const savings = originalPrice && originalPrice > price
-      ? (originalPrice - price).toFixed(2)
-      : undefined;
+type SanityProduct = {
+  _id?: string;
+  slug?: string;
+  name?: string;
+  description?: string;
+  price?: number | string;
+  originalPrice?: number | string;
+  unitInfo?: string;
+  prescriptionOnly?: boolean;
+  reviewCount?: number | string;
+  image?: string;
+  categoryId?: string;
+  categoryName?: string;
+  brandId?: string;
+  brandName?: string;
+};
 
-    const unitInfo = product.unitInfo ?? "";
-    const [weightText = "", unitPriceText = ""] = unitInfo.split("|").map((part: string) => part.trim());
+type SanityOption = {
+  _id?: string;
+  id?: string;
+  name?: string;
+  title?: string;
+  label?: string;
+  slug?: string;
+};
 
-    return {
-      id: String(product._id ?? product.slug ?? product.name ?? "product"),
-      slug: String(product.slug ?? product.name ?? product._id ?? "product"),
-      title: String(product.name ?? "Untitled product"),
-      subtitle: String(product.description ?? product.brand ?? product.category ?? ""),
-      image: product.image ?? "/images/placeholder-product.png",
-      reviewCount: Number(product.reviewCount ?? 0),
-      price,
-      originalPrice,
-      weightText: weightText || undefined,
-      unitPriceText: unitPriceText || undefined,
-      isPrescriptionOnly: Boolean(product.prescriptionOnly),
-      savingsText: savings,
-      showAppointmentButton: true,
-      showTreatmentsButton: false,
-      appointmentButtonText: "Add to Bag",
+const mapSanityProduct = (product: SanityProduct): ProductCardData => {
+  const price = Number(product.price ?? 0);
+  const originalPrice = product.originalPrice != null ? Number(product.originalPrice) : undefined;
+  const savings = originalPrice && originalPrice > price ? (originalPrice - price).toFixed(2) : undefined;
+
+  const unitInfo = product.unitInfo ?? "";
+  const [weightText = "", unitPriceText = ""] = unitInfo
+    .split("|")
+    .map((part: string) => part.trim());
+
+  return {
+    id: String(product._id ?? product.slug ?? product.name ?? "product"),
+    slug: String(product.slug ?? product.name ?? product._id ?? "product"),
+    title: String(product.name ?? "Untitled product"),
+    subtitle: String(product.description ?? product.brandName ?? product.categoryName ?? ""),
+    image: product.image ?? "",
+    reviewCount: Number(product.reviewCount ?? 0),
+    price,
+    originalPrice,
+    weightText: weightText || undefined,
+    unitPriceText: unitPriceText || undefined,
+    isPrescriptionOnly: Boolean(product.prescriptionOnly),
+    savingsText: savings,
+    showAppointmentButton: true,
+    showTreatmentsButton: false,
+    appointmentButtonText: "Add to Bag",
+  };
+};
+
+export default function Shop() {
+  const [categories, setCategories] = useState<FilterOption[]>([]);
+  const [brands, setBrands] = useState<FilterOption[]>([]);
+  const [products, setProducts] = useState<SanityProduct[]>([]);
+  const [filters, setFilters] = useState<FilterState>(getDefaultFilters());
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadShopData = async () => {
+      try {
+        const [categoryData, brandData, productData] = await Promise.all([
+          client.fetch(categoriesQuery),
+          client.fetch(brandsQuery),
+          client.fetch(shopProductsQuery),
+        ]);
+
+        const normalizedCategories = (categoryData ?? []).map((item: SanityOption) => ({
+          id: String(item.id ?? item._id ?? item.label ?? item.name ?? ""),
+          label: String(item.label ?? item.name ?? "Unnamed"),
+        }));
+
+        const normalizedBrands = (brandData ?? []).map((item: SanityOption) => ({
+          id: String(item.id ?? item._id ?? item.label ?? item.name ?? item.title ?? ""),
+          label: String(item.label ?? item.name ?? item.title ?? "Unnamed"),
+        }));
+
+        const resolvedProducts = productData ?? [];
+        const maxProductPrice = Math.max(
+          100,
+          ...resolvedProducts.map((product: SanityProduct) => Number(product.price ?? 0))
+        );
+
+        setCategories(normalizedCategories);
+        setBrands(normalizedBrands);
+        setProducts(resolvedProducts);
+        setFilters((prev) => ({ ...prev, maxPrice: maxProductPrice }));
+      } finally {
+        setIsLoading(false);
+      }
     };
-  });
+
+    loadShopData();
+  }, []);
+
+  const handleFilterChange = (updater: (prev: FilterState) => FilterState) => {
+    setFilters((prev) => {
+      const base = getDefaultFilters(prev.maxPrice || 100);
+      return updater({ ...base, ...prev });
+    });
+  };
+
+  const handleClearFilters = () => {
+    setFilters((prev) => getDefaultFilters(prev.maxPrice));
+  };
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const price = Number(product.price ?? 0);
+      const matchesCategory =
+        filters.categories.length === 0 ||
+        filters.categories.includes(String(product.categoryId ?? product.categoryName ?? ""));
+      const matchesBrand =
+        filters.brands.length === 0 ||
+        filters.brands.includes(String(product.brandId ?? product.brandName ?? ""));
+      const matchesPrice = price >= filters.minPrice && price <= filters.maxPrice;
+
+      return matchesCategory && matchesBrand && matchesPrice;
+    });
+  }, [products, filters]);
+
+  const productCards = filteredProducts.map(mapSanityProduct);
 
   return (
     <div className={styles["shop"]}>
@@ -50,13 +153,19 @@ const Shop = async() => {
         <h1>Shop</h1>
 
         <div className={styles["shop-container"]}>
-          <ProductSidebar categories={categories} brands={brands} />
+          <ProductSidebar
+            categories={categories}
+            brands={brands}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+            onClearAll={handleClearFilters}
+          />
 
           <div className={styles["shop-content-container"]}>
-          
             <div className={styles["shop-search-container"]}>
               <div className={styles["shop-search-view"]}>
-                <span className={styles["shop-search-text"]}>View: 9 </span><ChevronDown  />
+                <span className={styles["shop-search-text"]}>View: {productCards.length} </span>
+                <ChevronDown />
               </div>
 
               <div className={styles["shop-search-right-section"]}>
@@ -71,105 +180,78 @@ const Shop = async() => {
                 </div>
 
                 <div className={styles["shop-search-sortby-wrapper"]}>
-                  <span className={styles["shop-search-text"]}>
-                    Sort By:
-                  </span>
+                  <span className={styles["shop-search-text"]}>Sort By:</span>
                   <span className={styles["shop-search-sortby-value"]}>
-                    Popularity <ChevronDown  />
+                    Popularity <ChevronDown />
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* product grid */}
-            <div className={styles["product-grid-container"]}>
-              {productCards.map((product) => {
-                const productSlug = product.slug || product.title;
-                return (
-                  <div key={product.id} className={styles["grid-item"]}>
-                    <Link
-                      href={`/product/${productSlug}`}
-                      className={styles["grid-item-link"]}
-                    >
-                      <ProductCard
-                        image={product.image}
-                        title={product.title}
-                        subtitle={product.subtitle}
-                        reviewCount={product.reviewCount}
-                        weightText={product.weightText}
-                        unitPriceText={product.unitPriceText}
-                        originalPrice={product.originalPrice}
-                        isPrescriptionOnly={product.isPrescriptionOnly}
-                        savingsText={product.savingsText}
-                        price={product.price}
-                        id={product.id}
-                        slug={product.slug}
-                        showAppointmentButton={product.showAppointmentButton}
-                        showTreatmentsButton={product.showTreatmentsButton}
-                        appointmentButtonText={product.appointmentButtonText}
-                      />
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
+            {isLoading ? (
+              <p>Loading products...</p>
+            ) : productCards.length === 0 ? (
+              <p>No products match your selected filters.</p>
+            ) : (
+              <div className={styles["product-grid-container"]}>
+                {productCards.map((product) => {
+                  const productSlug = product.slug || product.title;
+                  return (
+                    <div key={product.id} className={styles["grid-item"]}>
+                      <Link href={`/product/${productSlug}`} className={styles["grid-item-link"]}>
+                        <ProductCard
+                          image={product.image}
+                          title={product.title}
+                          subtitle={product.subtitle}
+                          reviewCount={product.reviewCount}
+                          weightText={product.weightText}
+                          unitPriceText={product.unitPriceText}
+                          originalPrice={product.originalPrice}
+                          isPrescriptionOnly={product.isPrescriptionOnly}
+                          savingsText={product.savingsText}
+                          price={product.price}
+                          id={product.id}
+                          slug={product.slug}
+                          showAppointmentButton={product.showAppointmentButton}
+                          showTreatmentsButton={product.showTreatmentsButton}
+                          appointmentButtonText={product.appointmentButtonText}
+                        />
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
-            {/* pagination */}
-            <nav
-              className={styles["shop-pagination-section"]}
-              aria-label="Pagination"
-            >
-              <a
-                href="#"
-                className={styles["shop-pagination-nav1"]}
-                aria-label="Previous page"
-              >
-                <ArrowLeft/>
+            <nav className={styles["shop-pagination-section"]} aria-label="Pagination">
+              <a href="#" className={styles["shop-pagination-nav1"]} aria-label="Previous page">
+                <ArrowLeft />
                 <span>Previous</span>
               </a>
 
-              <a
-                href="#"
-                className={styles["shop-pagination-number-wrapper-active"]}
-                aria-current="page"
-              >
+              <a href="#" className={styles["shop-pagination-number-wrapper-active"]} aria-current="page">
                 1
               </a>
 
               {[2, 3].map((n) => (
-                <a
-                  key={n}
-                  href="#"
-                  className={`${styles["shop-pagination-number-wrapper"]} ${styles["pagination-number"]}`}
-                >
+                <a key={n} href="#" className={`${styles["shop-pagination-number-wrapper"]} ${styles["pagination-number"]}`}>
                   {n}
                 </a>
               ))}
 
-              <span
-                className={`${styles["shop-pagination-number-wrapper"]} ${styles["pagination-number"]}`}
-                aria-hidden="true"
-              >
+              <span className={`${styles["shop-pagination-number-wrapper"]} ${styles["pagination-number"]}`} aria-hidden="true">
                 …
               </span>
 
               {[10, 16].map((n) => (
-                <a
-                  key={n}
-                  href="#"
-                  className={`${styles["shop-pagination-number-wrapper"]} ${styles["pagination-number"]}`}
-                >
+                <a key={n} href="#" className={`${styles["shop-pagination-number-wrapper"]} ${styles["pagination-number"]}`}>
                   {n}
                 </a>
               ))}
 
-              <a
-                href="#"
-                className={styles["shop-pagination-nav"]}
-                aria-label="Next page"
-              >
+              <a href="#" className={styles["shop-pagination-nav"]} aria-label="Next page">
                 <span>Next</span>
-               <ArrowRight/>
+                <ArrowRight />
               </a>
             </nav>
           </div>
@@ -177,6 +259,4 @@ const Shop = async() => {
       </div>
     </div>
   );
-};
-
-export default Shop;
+}

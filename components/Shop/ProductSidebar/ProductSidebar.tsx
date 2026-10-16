@@ -95,8 +95,24 @@ const ProductSidebar = ({
     e: ChangeEvent<HTMLInputElement>,
     field: "minPrice" | "maxPrice"
   ) => {
-    const value = Math.max(0, Number.parseInt(e.target.value) || 0);
-    updateFilterState((prev) => ({ ...prev, [field]: value }));
+    const nextValue = Math.max(0, Number.parseInt(e.target.value) || 0);
+    const currentMax = Math.max(100, Number(mergedFilters.maxPrice || 100));
+
+    updateFilterState((prev) => {
+      if (field === "minPrice") {
+        return {
+          ...prev,
+          minPrice: Math.min(nextValue, prev.maxPrice || currentMax),
+          maxPrice: Math.max(prev.maxPrice || currentMax, Math.min(nextValue, prev.maxPrice || currentMax)),
+        };
+      }
+
+      return {
+        ...prev,
+        maxPrice: Math.min(Math.max(nextValue, prev.minPrice || 0), currentMax),
+        minPrice: Math.min(prev.minPrice || 0, Math.min(Math.max(nextValue, prev.minPrice || 0), currentMax)),
+      };
+    });
   };
 
   const handleToggleCollectionItem = (
@@ -183,8 +199,8 @@ const ProductSidebar = ({
             <input
               type="range"
               min="0"
-              max="100"
-              value={mergedFilters.maxPrice}
+              max={Math.max(100, Number(mergedFilters.maxPrice || 100))}
+              value={Math.min(Number(mergedFilters.maxPrice || 0), Math.max(100, Number(mergedFilters.maxPrice || 100)))}
               onChange={(e) => handlePriceChange(e, "maxPrice")}
               className={styles["product-sidebar-price-range-slider"]}
             />

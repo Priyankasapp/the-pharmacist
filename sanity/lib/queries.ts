@@ -57,7 +57,9 @@ export const shopProductsQuery = groq`
     rating,
     reviewCount,
     "image": image.asset->url,
-    "brand": brand->title,
-    "category": category->name
+    "brandName": brand->title,
+    "brandId": brand->_id,
+    "categoryName": category->name,
+    "categoryId": category->_id
   }
 `;

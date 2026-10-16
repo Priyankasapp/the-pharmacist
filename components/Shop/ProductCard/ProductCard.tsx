@@ -7,7 +7,7 @@ import { ProductCardData } from "@/lib/types";
 import { StarIcon } from "@/components/Icon/Icon";
 
 const ProductCard = ({
-  id,
+  
   title,
   subtitle,
   image,
