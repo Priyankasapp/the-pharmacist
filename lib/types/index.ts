@@ -70,10 +70,7 @@ export interface WhatWeOfferedCardData {
   description: string;
 }
 
-export interface FilterOption {
-  id: string;
-  label: string;
-}
+
 
 export interface ProductCardData {
   slug: string;
@@ -211,6 +208,7 @@ export type PharmalistDataProps = {
 
 // Product Sidebar
 
+
 export interface FilterState {
   minPrice: number;
   maxPrice: number;
@@ -221,6 +219,10 @@ export interface FilterState {
   productTypes: string[];
 }
 
+export interface FilterOption {
+  id: string;
+  label: string;
+}
 export interface ServiceLink {
   label: string;
   href: string;

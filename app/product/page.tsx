@@ -1,18 +1,56 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./Shop.module.css";
 import ProductSidebar from "@/components/Shop/ProductSidebar/ProductSidebar";
 import ProductCard from "@/components/Shop/ProductCard/ProductCard";
-import { productCardData } from "@/lib/data";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronDown, SearchIcon } from "@/components/Icon/Icon";
+import { categoriesQuery, brandsQuery, shopProductsQuery } from '@/sanity/lib/queries';
+import { client } from "@/sanity/lib/client";
+import type { ProductCardData } from "@/lib/types";
 
-const Shop = () => {
+const Shop = async() => {
+  const [categories, brands, products] = await Promise.all([
+    client.fetch(categoriesQuery),
+    client.fetch(brandsQuery),
+    client.fetch(shopProductsQuery),
+  ]);
+
+  const productCards: ProductCardData[] = products.map((product: any) => {
+    const price = Number(product.price ?? 0);
+    const originalPrice = product.originalPrice != null ? Number(product.originalPrice) : undefined;
+    const savings = originalPrice && originalPrice > price
+      ? (originalPrice - price).toFixed(2)
+      : undefined;
+
+    const unitInfo = product.unitInfo ?? "";
+    const [weightText = "", unitPriceText = ""] = unitInfo.split("|").map((part: string) => part.trim());
+
+    return {
+      id: String(product._id ?? product.slug ?? product.name ?? "product"),
+      slug: String(product.slug ?? product.name ?? product._id ?? "product"),
+      title: String(product.name ?? "Untitled product"),
+      subtitle: String(product.description ?? product.brand ?? product.category ?? ""),
+      image: product.image ?? "/images/placeholder-product.png",
+      reviewCount: Number(product.reviewCount ?? 0),
+      price,
+      originalPrice,
+      weightText: weightText || undefined,
+      unitPriceText: unitPriceText || undefined,
+      isPrescriptionOnly: Boolean(product.prescriptionOnly),
+      savingsText: savings,
+      showAppointmentButton: true,
+      showTreatmentsButton: false,
+      appointmentButtonText: "Add to Bag",
+    };
+  });
+
   return (
     <div className={styles["shop"]}>
       <div className="container">
         <h1>Shop</h1>
 
         <div className={styles["shop-container"]}>
-          <ProductSidebar />
+          <ProductSidebar categories={categories} brands={brands} />
 
           <div className={styles["shop-content-container"]}>
           
@@ -45,7 +83,7 @@ const Shop = () => {
 
             {/* product grid */}
             <div className={styles["product-grid-container"]}>
-              {productCardData.map((product) => {
+              {productCards.map((product) => {
                 const productSlug = product.slug || product.title;
                 return (
                   <div key={product.id} className={styles["grid-item"]}>
@@ -65,10 +103,10 @@ const Shop = () => {
                         savingsText={product.savingsText}
                         price={product.price}
                         id={product.id}
-                        slug={""}
-                        showAppointmentButton={true}
-                        showTreatmentsButton={false}
-                        appointmentButtonText="Add to Bag"
+                        slug={product.slug}
+                        showAppointmentButton={product.showAppointmentButton}
+                        showTreatmentsButton={product.showTreatmentsButton}
+                        appointmentButtonText={product.appointmentButtonText}
                       />
                     </Link>
                   </div>

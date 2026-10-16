@@ -2,10 +2,9 @@
 
 import { ChangeEvent, useState } from "react";
 import styles from "./ProductSidebar.module.css";
-import { brands, categories } from "@/lib/data";
 import FilterCheckbox from "./FilterCheckbox";
 import { ChevronDown, ChevronUp, PlusIcon } from "@/components/Icon/Icon";
-import {FilterState} from "@/lib/types"
+import {FilterOption, FilterState} from "@/lib/types"
 
 
 const defaultFilters: FilterState = {
@@ -19,6 +18,8 @@ const defaultFilters: FilterState = {
 };
 
 interface ProductSidebarProps {
+  categories:FilterOption[];
+  brands:FilterOption[];
   filters?: Partial<FilterState>;
   onFilterChange?: (updater: (prev: FilterState) => FilterState) => void;
   onClearAll?: () => void;
@@ -27,10 +28,20 @@ interface ProductSidebarProps {
 type Sections = "categories" | "brands";
 
 const ProductSidebar = ({
+  categories,
+  brands,
   filters = {},
   onFilterChange,
   onClearAll,
-}: ProductSidebarProps = {}) => {
+}: ProductSidebarProps) => {
+  const normalizeFilterOptions = (
+    items: Array<Partial<FilterOption> & { _id?: string; name?: string; title?: string }> = []
+  ) =>
+    items.map((item) => ({
+      id: item.id ?? item._id ?? item.label ?? "",
+      label: item.label ?? item.name ?? item.title ?? "Unnamed",
+    }));
+
   const [localFilters, setLocalFilters] = useState<FilterState>({
     ...defaultFilters,
     ...filters,
@@ -41,6 +52,9 @@ const ProductSidebar = ({
       ? { ...defaultFilters, ...filters }
       : localFilters;
 
+  const normalizedCategories = normalizeFilterOptions(categories);
+  const normalizedBrands = normalizeFilterOptions(brands);
+
   const [isOpen, setIsOpen] = useState<Record<Sections, boolean>>({
     categories: true,
     brands: true,
@@ -50,14 +64,14 @@ const ProductSidebar = ({
     {
       key: "categories" as const,
       title: "Categories",
-      options: categories,
+      options: normalizedCategories,
       checked: (optionId: string) => mergedFilters.categories.includes(optionId),
       onChange: (optionId: string) => handleToggleCollectionItem("categories", optionId),
     },
     {
       key: "brands" as const,
       title: "Brands",
-      options: brands,
+      options: normalizedBrands,
       checked: (optionId: string) => mergedFilters.brands.includes(optionId),
       onChange: (optionId: string) => handleToggleCollectionItem("brands", optionId),
       showMore: true,

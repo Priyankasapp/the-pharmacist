@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import SlickCarouselStyles from "@/components/SlickCarouselStyles";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${skModernist.variable} antialiased`}
     >
       <body className="font-sans" suppressHydrationWarning>
+        <SlickCarouselStyles />
         <Navbar />
         <main>{children}</main>
         <Footer />
