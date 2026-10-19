@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+'use client'
 import styles from "./TreatmentSection.module.css";
 import { treatmentData } from "@/lib/data";
 import TreatmentCard from "../TreatmentCard/TreatmentCard";
@@ -78,8 +79,6 @@ const slideRef = useRef<any>(null);
       <div className={styles['treatment-cards']}>
          <div className={styles["treatment-card-container"]}>
         
-
-
         <Slider ref={slideRef} {...settings}>
               {treatmentData.map((treatment) => {
           return (

@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/Button/Button";
 import Hero from "@/components/Home/Hero/Hero";
 import styles from "./Home.module.css";
@@ -14,10 +12,13 @@ import ProductSection from "@/components/ProductSection/ProductSection";
 import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSection";
 import { Check } from "@/components/Icon/Icon";
 import ExportSection from "@/components/Home/ExportSection/ExportSection";
+import { featuredProductsQuery } from "@/sanity/lib/queries";
+import { client } from "@/sanity/lib/client";
 
+const Home = async () => {
 
-
-const Home = () => {
+  const products = await client.fetch(featuredProductsQuery);
+  
   return (
     <div>
       <Hero />
@@ -47,10 +48,10 @@ const Home = () => {
                   Managing your repeat medication has never been easier. Our
                   secure online service lets you request, track and manage your
                   prescriptions from any device, without the need to visit your
-                  GP or pharmacy.
                 </p>
 
                 <ul className={styles["prescription-unorder-list"]}>
+                  GP or pharmacy.
                   <li>
                     <Check className={styles["right-icon"]} />
                     <span>
@@ -70,8 +71,9 @@ const Home = () => {
                     <span>
                       Your personal health information is always safe and secure
                     </span>
+              
                   </li>
-                </ul>
+                </ul> 
               </div>
               <div className={styles["prescription-wrapper"]}>
                 <Button showArrow className={styles["prescription-button"]}>
@@ -93,7 +95,10 @@ const Home = () => {
         <TreatmentSection />
 
         {/* populer treatments  */}
-        <ProductSection headingText="Treatments" highlightText="Popular" />
+        <ProductSection 
+        headingText="Treatments" 
+        highlightText="Popular"
+        products = {products} />
         <WhyChosePharmalist />
         <PatientReview />
         <FAQ />

@@ -63,3 +63,25 @@ export const shopProductsQuery = groq`
     "categoryId": category->_id
   }
 `;
+
+
+// feature Product Query 
+
+export const featuredProductsQuery = groq`
+  *[_type == "product"] | order(_createdAt desc)[0...8]{
+    _id,
+    title,
+    subtitle,
+    "slug":slug.current,
+    price,
+    originalPrice,
+    savingsText,
+    weightText,
+    unitPriceText,
+    reviewCount,
+    isPrescriptionOnly,
+    "image":image.asset->url,
+    "categories":categories[]->{_id, name, "slug":slug.current}
+  }
+`
+;

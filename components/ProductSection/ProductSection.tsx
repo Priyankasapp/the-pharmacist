@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 
 import {  useRef } from "react";
 import styles from "./ProductSection.module.css";
@@ -8,13 +9,30 @@ import Button from "../Button/Button";
 import { ChevronLeft, ChevronRight } from "../Icon/Icon";
 import Slider from "react-slick";
 
-interface productProps {
+export interface ProductSectionItem{
+  _id: string;
+  title:string;
+  subtitle?:string;
+  slug:string;
+  price:number;
+  originalPrice?:number;
+  savingsText?:string;
+  reviewCount?:number;
+  isPrescriptionOnly?: boolean;
+  image:string;
+  categories?: {_id:string; name:string, slug:string}[];
+}
+interface ProductSectionProps {
   headingText: string;
   highlightText?: string;
+  products: ProductSectionItem[];
 }
 
-
-const ProductSection = ({ headingText, highlightText }: productProps) => {
+const ProductSection = ({ 
+  headingText, 
+  highlightText,
+  products,
+}: ProductSectionProps) => {
   const sliderRef = useRef<any>(null);
 
   const goPrev = () => sliderRef.current?.slickPrev();
@@ -22,9 +40,9 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: products.length > 3,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: Math.min(3, products.length),
     slidesToScroll: 2,
     dotsClass: `slick-dots ${styles["custom-dots-wrapper"]}`,
     customPaging: () => (
@@ -35,7 +53,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
        {
         breakpoint: 1415,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: Math.min(2, products.length),
           slidesToScroll: 2,
         },
       },
@@ -50,6 +68,7 @@ const ProductSection = ({ headingText, highlightText }: productProps) => {
     ],
   };
 
+  if(!products?.length) return null;
 
 
 
