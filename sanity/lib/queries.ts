@@ -85,3 +85,15 @@ export const featuredProductsQuery = groq`
   }
 `
 ;
+
+
+export const treatmentsQuery = groq`
+  *[_type == "treatment"]| order(order asc, _createdAt desc){
+  _id,
+  name,
+  "slug":slug.current,
+  desc,
+  "imgSrc":imgSrc.asset->url,
+  order
+  }
+`;

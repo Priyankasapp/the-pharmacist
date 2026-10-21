@@ -61,9 +61,12 @@ export interface Patients {
   rating: number;
 }
 export interface Treatments {
+  _id: string;
   name: string;
+  slug:string;
   desc: string;
-  imgSrc: string | StaticImageData;
+  imgSrc: string;
+  order?:number;
 }
 export interface WhatWeOfferedCardData {
   title: string;

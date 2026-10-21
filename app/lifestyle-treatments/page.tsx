@@ -1,12 +1,17 @@
+/* eslint-disable @next/next/no-async-client-component */
 "use client";
 
 import FAQ from "@/components/Contact/FAQ/FAQ";
 import TreatmentCard from "@/components/Lifestyle-treatmemts/TreatmentsCard/TreatmentCard";
-import { treatments } from "@/lib/data";
 import styles from "./LifestyleTreatments.module.css";
 import Button from "@/components/Button/Button";
+import { client } from "@/sanity/lib/client";
+import { Treatments } from "@/lib/types";
+import { treatmentsQuery } from "@/sanity/lib/queries";
 
-const LifestyleTreatments = () => {
+const LifestyleTreatments = async () => {
+
+  const treatments = await client.fetch<Treatments[]>(treatmentsQuery);
   return (
     <div className="container">
       <div className={styles['lifestyle-treatment']}>
@@ -40,13 +45,12 @@ const LifestyleTreatments = () => {
       </div>
 
       <div className={styles['lifestyle-cards-container']}>
-        {treatments.map((treatment, index) => (
-          <div key={`${treatment.name || "treatment"}-${index}`}
+        {treatments.map((treatment) => (
+          <div key={`${treatment._id || "treatment"}`}
           className={styles['lifestyle-card-wrapper']}>
             <TreatmentCard
-              name={treatment.name}
-              desc={treatment.desc}
-              imgSrc={treatment.imgSrc}
+              key={treatment._id}
+              {...treatment}
             />
           </div>
         ))}
