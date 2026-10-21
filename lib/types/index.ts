@@ -102,11 +102,12 @@ export interface ProcessData {
 }
 
 export interface HealthConditionData {
-  slug: string;
+  
+  _id?: string;
   name: string;
   desc: string;
   id: string;
-  isNHS?: boolean;
+  isNHS: boolean;
 }
 
 export interface AllAlphacetGroups {

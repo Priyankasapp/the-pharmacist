@@ -11,7 +11,7 @@ const OptionSectionCard = ({name,id,desc,isNHS}:HealthConditionData) => {
                  <div className={styles['option-section-image-wrapper']}>
                 <Image src={NHS} alt="NHS" className={styles['option-section-image']}/>
             </div>
-            )}
+            )}  
            
             {/* contect  */}
             <div className={styles['option-section-card-container']}>

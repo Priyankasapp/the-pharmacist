@@ -3,8 +3,8 @@ import { categoryType } from './categoryType'
 import { productType } from './productType'
 import { brandType } from './brandType'
 import { exportSectionType } from './exportSection'
-import { treatmentType } from './treatment'
+import { healthCondition } from './healthCondition'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [categoryType, productType, brandType, exportSectionType, treatmentType],
+  types: [categoryType, productType, brandType, exportSectionType, healthCondition],
 }

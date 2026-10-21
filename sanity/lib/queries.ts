@@ -86,14 +86,13 @@ export const featuredProductsQuery = groq`
 `
 ;
 
-
-export const treatmentsQuery = groq`
-  *[_type == "treatment"]| order(order asc, _createdAt desc){
-  _id,
-  name,
-  "slug":slug.current,
-  desc,
-  "imgSrc":imgSrc.asset->url,
-  order
+export const healthConditionsQuery = groq`
+  *[_type == "healthCondition"]
+  | order(_createdAt asc) {
+    _id,
+    name,
+    "id": id.current,
+    desc,
+    isNHS
   }
 `;
