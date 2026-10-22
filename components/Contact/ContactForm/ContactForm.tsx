@@ -1,47 +1,15 @@
-'use client'
+'use client';
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useActionState } from "react";
 import Button from "@/components/Button/Button";
 import styles from "./ContactForm.module.css";
 import { MailOpenIcon, MapIcon, PhoneCall } from "@/components/Icon/Icon";
+import { submitContact, type ContactFormState } from "@/app/contact/actions";
+
+const initialState: ContactFormState = { status: "idle", message: "" };
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-    privacy: false,
-  });
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, type } = e.target;
-    
-    if (type === "checkbox") {
-      const checked = (e.target as HTMLInputElement).checked;
-      setFormData((prevData) => ({ ...prevData, [name]: checked }));
-    } else {
-      const value = e.target.value;
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
-    }
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-  
-    console.log("Form data submitted :", formData);
-
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-      privacy: false,
-    });
-  };
+  const [state, formAction, pending] = useActionState(submitContact, initialState);
 
   return (
     <div className={styles["contact"]}>
@@ -92,15 +60,18 @@ const ContactForm = () => {
         <div className={styles["contact-right"]}>
           <h2>Send us a message</h2>
           <div className={styles["contact-form-container"]}>
-            <form onSubmit={handleSubmit}>
+            <form action={formAction} aria-busy={pending}>
+              <div className={styles["contact-honeypot"]} aria-hidden="true">
+                <label htmlFor="website">Leave this field empty</label>
+                <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className={styles["contact-input-box"]}>
                 <label htmlFor="fullName">Full Name</label>
                 <input
                   type="text"
                   id="fullName"
                   name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
+                  maxLength={120}
                   placeholder="Enter your full name"
                   autoComplete="name"
                   required
@@ -113,8 +84,7 @@ const ContactForm = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  maxLength={254}
                   placeholder="Enter your email"
                   autoComplete="email"
                   required
@@ -127,8 +97,7 @@ const ContactForm = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
+                  maxLength={40}
                   placeholder="Enter your phone number"
                   autoComplete="tel"
                   required
@@ -141,8 +110,7 @@ const ContactForm = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
+                  maxLength={160}
                   placeholder="Enter subject"
                   required
                 />
@@ -153,8 +121,7 @@ const ContactForm = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
+                  maxLength={5000}
                   placeholder="Your message"
                   rows={4}
                   required
@@ -166,8 +133,6 @@ const ContactForm = () => {
                   type="checkbox" 
                   id="privacy" 
                   name="privacy" 
-                  checked={formData.privacy}
-                  onChange={handleChange}
                   required
                 />
                 <label htmlFor="privacy">
@@ -175,8 +140,13 @@ const ContactForm = () => {
                 </label>
               </div>
               
-              <Button showArrow className={styles["contact-button"]} type="submit">
-                Send Message
+              {state.message && (
+                <p className={`${styles["contact-form-message"]} ${styles[state.status]}`} role="status">
+                  {state.message}
+                </p>
+              )}
+              <Button showArrow className={styles["contact-button"]} type="submit" disabled={pending}>
+                {pending ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>

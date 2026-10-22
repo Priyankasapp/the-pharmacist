@@ -10,12 +10,13 @@ interface ButtonProps {
   className?: string;
   variant?: ButtonVariant;
   type?: ButtonType;
+  disabled?: boolean;
 }
 
-const Button = ({ children, className = "", showArrow = false, variant = "primary", type = "submit" }: ButtonProps) => {
+const Button = ({ children, className = "", showArrow = false, variant = "primary", type = "submit", disabled = false }: ButtonProps) => {
   return (
     
-    <button  className={`${styles.button} ${styles[variant]} ${className}`} type={type}>
+    <button className={`${styles.button} ${styles[variant]} ${className}`} type={type} disabled={disabled}>
       {children}
 
       {showArrow && (
