@@ -63,17 +63,15 @@ export interface Patients {
 export interface Treatments {
   _id: string;
   name: string;
-  slug:string;
+  slug: string;
   desc: string;
   imgSrc: string;
-  order?:number;
+  order?: number;
 }
 export interface WhatWeOfferedCardData {
   title: string;
   description: string;
 }
-
-
 
 export interface ProductCardData {
   slug: string;
@@ -102,7 +100,6 @@ export interface ProcessData {
 }
 
 export interface HealthConditionData {
-  
   _id?: string;
   name: string;
   desc: string;
@@ -211,7 +208,6 @@ export type PharmalistDataProps = {
 };
 
 // Product Sidebar
-
 
 export interface FilterState {
   minPrice: number;

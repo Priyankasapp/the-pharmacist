@@ -50,11 +50,10 @@ export default function RootLayout({
     >
       <body className="font-sans" suppressHydrationWarning>
         <SlickCarouselStyles />
-      
-        <main><LayoutShell>
-  {children}
-</LayoutShell></main>
 
+        <main>
+          <LayoutShell>{children}</LayoutShell>
+        </main>
       </body>
     </html>
   );

@@ -15,28 +15,20 @@ const AllCondition = async () => {
   const conditions = await client.fetch(healthConditionsQuery);
 
   // Group Sanity conditions alphabetically from A to Z
-  const allAlphabetGroups = Array.from(
-    { length: 26 },
-    (_, index) => {
-      const letter = String.fromCharCode(65 + index);
+  const allAlphabetGroups = Array.from({ length: 26 }, (_, index) => {
+    const letter = String.fromCharCode(65 + index);
 
-      return {
-        letter,
-        data: conditions.filter(
-          (item: {
-            name: string;
-            id: string;
-          }) =>
-            item.name?.trim().toUpperCase().startsWith(letter),
-        ),
-      };
-    },
-  );
+    return {
+      letter,
+      data: conditions.filter((item: { name: string; id: string }) =>
+        item.name?.trim().toUpperCase().startsWith(letter),
+      ),
+    };
+  });
 
   // Generate alphabet navigation
-  const alphabetList = Array.from(
-    { length: 26 },
-    (_, index) => String.fromCharCode(65 + index),
+  const alphabetList = Array.from({ length: 26 }, (_, index) =>
+    String.fromCharCode(65 + index),
   );
 
   return (
@@ -73,9 +65,7 @@ const AllCondition = async () => {
         {/* Option section */}
         <div className={styles["all-condition-option-section"]}>
           <div className={styles["all-condition-option-header"]}>
-            <h2>
-              Choose an option or search what you are looking for below.
-            </h2>
+            <h2>Choose an option or search what you are looking for below.</h2>
 
             <div
               className={styles["all-condition-option-header-searchbar-sec"]}
@@ -88,15 +78,10 @@ const AllCondition = async () => {
                 <input
                   type="text"
                   placeholder="Search for health conditions (e.g., stomach ache)"
-                  className={
-                    styles["all-condition-option-header-search-input"]
-                  }
+                  className={styles["all-condition-option-header-search-input"]}
                 />
 
-                <Button
-                  showArrow
-                  className={styles["all-condition-button"]}
-                >
+                <Button showArrow className={styles["all-condition-button"]}>
                   Search
                 </Button>
               </div>
@@ -136,26 +121,28 @@ const AllCondition = async () => {
                   </div>
 
                   <div className={styles["option-section"]}>
-                    {group.data.map((item: {
-                      _id: string;
-                      name: string;
-                      id: string;
-                      desc: string;
-                      isNHS: boolean;
-                    }) => (
-                      <div
-                        className={styles["option-card-wrapper"]}
-                        key={item._id}
-                        id={item.id}
-                      >
-                        <OptionSectionCard
-                          name={item.name}
-                          desc={item.desc}
-                          isNHS={item.isNHS}
+                    {group.data.map(
+                      (item: {
+                        _id: string;
+                        name: string;
+                        id: string;
+                        desc: string;
+                        isNHS: boolean;
+                      }) => (
+                        <div
+                          className={styles["option-card-wrapper"]}
+                          key={item._id}
                           id={item.id}
-                        />
-                      </div>
-                    ))}
+                        >
+                          <OptionSectionCard
+                            name={item.name}
+                            desc={item.desc}
+                            isNHS={item.isNHS}
+                            id={item.id}
+                          />
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
               ))}

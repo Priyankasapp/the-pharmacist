@@ -1,6 +1,5 @@
 import { groq } from "next-sanity";
 
-
 export const categoriesQuery = groq`
   *[_type == "category"] | order(name asc) {
     _id,
@@ -9,7 +8,6 @@ export const categoriesQuery = groq`
   }
 `;
 
-
 export const brandsQuery = groq`
   *[_type == "brand"] | order(title asc) {
     _id,
@@ -17,7 +15,6 @@ export const brandsQuery = groq`
     "slug": slug.current
   }
 `;
-
 
 export const productsQuery = groq`
   *[_type == "product"
@@ -64,8 +61,7 @@ export const shopProductsQuery = groq`
   }
 `;
 
-
-// feature Product Query 
+// feature Product Query
 
 export const featuredProductsQuery = groq`
   *[_type == "product"] | order(_createdAt desc)[0...8]{
@@ -83,8 +79,7 @@ export const featuredProductsQuery = groq`
     "image":image.asset->url,
     "categories":categories[]->{_id, name, "slug":slug.current}
   }
-`
-;
+`;
 
 export const healthConditionsQuery = groq`
   *[_type == "healthCondition"]
