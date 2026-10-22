@@ -61,6 +61,22 @@ export const shopProductsQuery = groq`
   }
 `;
 
+export const RELATED_PRODUCTS_QUERY = defineQuery(`
+  *[_type == "product" && slug.current != $slug && defined(image.asset)] | order(_createdAt desc)[0...8] {
+    "id": _id,
+    "slug": slug.current,
+    "title": coalesce(title, name),
+    "subtitle": coalesce(subtitle, description, ""),
+    "image": image.asset->url,
+    "isPrescriptionOnly": prescriptionOnly,
+    "reviewCount": coalesce(reviewCount, 0),
+    price,
+    originalPrice,
+    "weightText": unitInfo,
+    "unitPriceText": ""
+  }
+`);
+
 // feature Product Query
 
 export const featuredProductsQuery = groq`
@@ -134,5 +150,16 @@ export const ARTICLES_QUERY = defineQuery(`
     category,
     desc,
     "img": img.asset->url
+  }
+`);
+
+export const PATIENT_REVIEWS_QUERY = defineQuery(`
+  *[_type == "patientReview"] | order(order asc, _createdAt desc) {
+    "id": _id,
+    name,
+    title,
+    description,
+    rating,
+    "imgSrc": imgSrc.asset->url
   }
 `);

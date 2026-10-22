@@ -12,8 +12,9 @@ import ProductSection from "@/components/ProductSection/ProductSection";
 import TreatmentSection from "@/components/Home/TreatmentSection/TreatmentSection";
 import { Check } from "@/components/Icon/Icon";
 import ExportSection from "@/components/Home/ExportSection/ExportSection";
-import { featuredProductsQuery } from "@/sanity/lib/queries";
+import { featuredProductsQuery, PATIENT_REVIEWS_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
+import type { Patients } from "@/lib/types";
 
 const Home = async () => {
   let products = [];
@@ -24,6 +25,13 @@ const Home = async () => {
     // Sanity is an external dependency; keep the rest of the homepage available
     // if its API cannot be reached.
     console.error("Failed to fetch featured products from Sanity:", error);
+  }
+
+  let patientReviews: Patients[] = [];
+  try {
+    patientReviews = await client.fetch<Patients[]>(PATIENT_REVIEWS_QUERY);
+  } catch (error) {
+    console.error("Failed to fetch patient reviews from Sanity:", error);
   }
   
   return (
@@ -107,7 +115,7 @@ const Home = async () => {
         highlightText="Popular"
         products = {products} />
         <WhyChosePharmalist />
-        <PatientReview />
+        <PatientReview patients={patientReviews} />
         <FAQ />
         <ArticleSection />
         <CTA />

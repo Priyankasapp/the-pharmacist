@@ -55,7 +55,7 @@ export interface Pharmacy {
 export interface Patients {
   id: string;
   name: string;
-  title: string;
+  title?: string;
   description: string;
   imgSrc: string | StaticImageData;
   rating: number;

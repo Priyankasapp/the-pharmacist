@@ -4,10 +4,10 @@ import { useRef } from 'react';
 import Slider from 'react-slick';
 import PatientsCard from '@/components/PatientsCard/PatientsCard';
 import styles from './Patients.module.css';
-import { patients } from '@/lib/data';
 import { ChevronLeft, ChevronRight } from '@/components/Icon/Icon';
+import type { Patients as PatientReviewData } from '@/lib/types';
 
-const Patients = () => {
+const Patients = ({ patients }: { patients: PatientReviewData[] }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sliderRef = useRef<any>(null);
 
@@ -16,7 +16,7 @@ const Patients = () => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: patients.length > 3,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -37,6 +37,8 @@ const Patients = () => {
       },
     ],
   };
+
+  if (!patients.length) return null;
 
   return (
     <div className={styles['patients-container']}>

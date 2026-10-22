@@ -5,11 +5,11 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import { VectorEight } from '@/data/assets';
 import styles from './PatientReview.module.css';
-import { patients } from '@/lib/data';
 import PatientsCard from '@/components/PatientsCard/PatientsCard';
 import { ChevronLeft, ChevronRight } from '@/components/Icon/Icon';
+import type { Patients } from '@/lib/types';
 
-const PatientReview = () => {
+const PatientReview = ({ patients }: { patients: Patients[] }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sliderRef = useRef<any>(null);
 
@@ -22,7 +22,7 @@ const PatientReview = () => {
   };
 
   const settings = {
-    infinite: true,
+    infinite: patients.length > 2,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
@@ -38,6 +38,8 @@ const PatientReview = () => {
       },
     ],
   };
+
+  if (!patients.length) return null;
 
   return (
     <section className={styles['patient-review-section']}>

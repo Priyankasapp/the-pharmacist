@@ -23,6 +23,8 @@ const PatientsCard = ({  name, title, description,imgSrc,rating = 5   }:Patients
             <Image
               src={imgSrc}
               alt={name}
+              width={45}
+              height={45}
               className={styles["patients-card-image"]}
             />
           </div>

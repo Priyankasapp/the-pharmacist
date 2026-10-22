@@ -20,6 +20,10 @@ const ExportSection = () => {
     let cancelled = false;
     client.fetch<ExportCardInfo[]>(EXPORT_CARS_QUERY).then((data) => {
       if (!cancelled) setCards(data);
+    }).catch((error: unknown) => {
+      if (cancelled) return;
+      console.error("Failed to fetch export cards from Sanity:", error);
+      setCards([]);
     });
     return () => {
       cancelled = true;

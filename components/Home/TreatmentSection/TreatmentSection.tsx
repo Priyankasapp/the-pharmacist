@@ -21,6 +21,10 @@ const TreatmentSection = () => {
     let cancelled = false;
     client.fetch<TreatmentDataProps[]>(TREATMENTS_QUERY).then((data) => {
       if (!cancelled) setTreatmentCard(data);
+    }).catch((error: unknown) => {
+      if (cancelled) return;
+      console.error("Failed to fetch treatments from Sanity:", error);
+      setTreatmentCard([]);
     });
     return () => {
       cancelled = true;

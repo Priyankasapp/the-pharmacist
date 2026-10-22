@@ -4,16 +4,15 @@
 
 "use client";
 
-import { use, useEffect, useState, useRef } from "react";
+import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./Product.module.css";
-import { productCardData, productData, tabs } from "@/lib/data";
+import { productData, tabs } from "@/lib/data";
 import {  VectorFour, VectorThree } from "@/data/assets";
 import ProductDetails from "@/components/product/ProductDetails/ProductDetails";
-import ProductCard from "@/components/Shop/ProductCard/ProductCard";
-import { ChevronLeft, ChevronRight, HealthBrokenIcon } from "@/components/Icon/Icon";
-import Slider from "react-slick";
+import { HealthBrokenIcon } from "@/components/Icon/Icon";
 import { notFound } from "next/navigation";
+import SimilarProducts from "@/components/product/SimilarProducts/SimilarProducts";
 
 const normalizeSlug = (value: string) =>  
   decodeURIComponent(value).trim().toLowerCase().replace(/\s+/g, " ");
@@ -42,19 +41,6 @@ const ProductPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound();
   }
 
-  const sliderRef = useRef<any>(null);
-
-  const goPrev = () => sliderRef.current?.slickPrev();
-  const goNext = () => sliderRef.current?.slickNext();
-
-  const settings = {
-    dots:false,
-    infinite: true,
-    speed:500,
-    slidesToShow:3,
-    slidesToScroll:3, 
-    
-  }
 const [activeTab, setActiveTab] = useState("Description");
 const [productPerPage, setProductPerPage] = useState(4);
 
@@ -210,57 +196,7 @@ useEffect(()=>{
       </div>
 
     
-      <div className={styles["similar-product-card"]}>
-        <div className={styles["similar-product-header"]}>
-          <h2>Similar Products</h2>
-          <div className={styles["slider-button"]}>
-            <button
-              type="button"
-              onClick={goPrev}
-              aria-label="Previous products"
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              type="button"
-              onClick={goNext}
-              aria-label="Next products"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-        </div>
-
-        <div className={styles["product-cards-container"]}>
-         <Slider ref={sliderRef}
-         {...settings}>
-           {productCardData.map((product) => {
-            return (
-              <div key={product.id} className={styles["product-card-item"]}>
-                <ProductCard
-                  key={product.id}
-                  image={product.image}
-                  title={product.title}
-                  subtitle={product.subtitle}
-                  reviewCount={product.reviewCount}
-                  weightText={product.weightText}
-                  unitPriceText={product.unitPriceText}
-                  originalPrice={product.originalPrice}
-                  isPrescriptionOnly={product.isPrescriptionOnly}
-                  savingsText={product.savingsText}
-                  price={product.price}
-                  id={product.id}
-                  slug={""}
-                    showAppointmentButton={true}
-                        showTreatmentsButton={false}
-                        appointmentButtonText="Get Treatment"
-                />
-              </div>
-            );
-          })}
-         </Slider>
-        </div>
-      </div>
+      <SimilarProducts excludeSlug={selectedProduct.slug || ""} />
 
       </div>
           </div>

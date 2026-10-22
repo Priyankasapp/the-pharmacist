@@ -46,6 +46,10 @@ const ArticleSection = () => {
     let cancelled = false;
     client.fetch<ArticleDataProps[]>(ARTICLES_QUERY).then((data) => {
       if (!cancelled) setArticles(data);
+    }).catch((error: unknown) => {
+      if (cancelled) return;
+      console.error("Failed to fetch articles from Sanity:", error);
+      setArticles([]);
     });
     return () => {
       cancelled = true;
