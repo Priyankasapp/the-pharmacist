@@ -16,8 +16,15 @@ import { featuredProductsQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 
 const Home = async () => {
+  let products = [];
 
-  const products = await client.fetch(featuredProductsQuery);
+  try {
+    products = await client.fetch(featuredProductsQuery);
+  } catch (error) {
+    // Sanity is an external dependency; keep the rest of the homepage available
+    // if its API cannot be reached.
+    console.error("Failed to fetch featured products from Sanity:", error);
+  }
   
   return (
     <div>

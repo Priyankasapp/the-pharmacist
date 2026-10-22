@@ -114,8 +114,7 @@ const ArticleSection = () => {
                           </div>
                           {/* Dynamic Title */}
                           <h3>{info.title}</h3>
-                          {/* Optional: If you want the description to show too, uncomment below */}
-                          {/* <p>{info.desc}</p> */}
+                         
                         </div>
                         <div className={styles["article-link"]}>
                           <a href="#">Read More</a>
