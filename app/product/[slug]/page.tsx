@@ -15,7 +15,7 @@ import { ChevronLeft, ChevronRight, HealthBrokenIcon } from "@/components/Icon/I
 import Slider from "react-slick";
 import { notFound } from "next/navigation";
 
-const normalizeSlug = (value: string) =>
+const normalizeSlug = (value: string) =>  
   decodeURIComponent(value).trim().toLowerCase().replace(/\s+/g, " ");
 
 const getProductPerPage = () =>{

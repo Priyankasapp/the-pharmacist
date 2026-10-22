@@ -12,6 +12,7 @@ const ExportCard = ({isnhs, title, desc, id, img}:ExportCardInfo) => {
             <Image
             src={img}
             alt={title}
+            fill
             className={styles['export-card-img']}/>
         </div>
 

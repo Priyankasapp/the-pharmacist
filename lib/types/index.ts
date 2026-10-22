@@ -162,11 +162,12 @@ export interface StepInfo {
 
 // main Home Page
 export interface ExportCardInfo {
-  isnhs?: boolean;
+  _id?: string;
+  id: string;
   title: string;
   desc: string;
-  id: string;
   img: string | StaticImageData;
+  isnhs?: boolean;
 }
 export type InformationDataProps = {
   img: string | StaticImageData;

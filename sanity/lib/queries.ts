@@ -104,3 +104,13 @@ export const SPECIALISTS_QUERY = defineQuery(
   }
   `
 )
+
+export const EXPORT_CARS_QUERY =  defineQuery(`
+  *[_type== "exportCard"] | order(_createdAt asc){
+    _id,
+    title,
+    desc,
+    "img":img.asset->url,
+    isnhs
+  }
+  `)
