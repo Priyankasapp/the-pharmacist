@@ -114,3 +114,14 @@ export const EXPORT_CARS_QUERY =  defineQuery(`
     isnhs
   }
   `)
+
+
+
+export const TREATMENTS_QUERY = defineQuery(`
+  *[_type == "treatment"] | order(_createdAt asc) {
+    _id,
+    title,
+    "img": img.asset->url,
+    condition
+  }
+`);

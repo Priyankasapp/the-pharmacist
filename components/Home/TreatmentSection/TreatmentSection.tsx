@@ -1,17 +1,33 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client'
+"use client";
+
 import styles from "./TreatmentSection.module.css";
-import { treatmentData } from "@/lib/data";
 import TreatmentCard from "../TreatmentCard/TreatmentCard";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight } from "@/components/Icon/Icon";
 import Slider from "react-slick";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { TreatmentDataProps } from "@/lib/types";
+import { client } from "@/sanity/lib/client";
+import { TREATMENTS_QUERY } from "@/sanity/lib/queries";
 
 const TreatmentSection = () => {
-const slideRef = useRef<any>(null);
+  const slideRef = useRef<any>(null);
+  const [treatmentCard, setTreatmentCard] = useState<
+    TreatmentDataProps[] | null
+  >(null);
 
- const Prev = () => slideRef.current?.slickPrev();
+  useEffect(() => {
+    let cancelled = false;
+    client.fetch<TreatmentDataProps[]>(TREATMENTS_QUERY).then((data) => {
+      if (!cancelled) setTreatmentCard(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const Prev = () => slideRef.current?.slickPrev();
   const Next = () => slideRef.current?.slickNext();
 
   const settings = {
@@ -22,7 +38,7 @@ const slideRef = useRef<any>(null);
     slidesToScroll: 3,
     arrows: false,
     responsive: [
-       {
+      {
         breakpoint: 1400,
         settings: {
           slidesToShow: 3,
@@ -45,8 +61,6 @@ const slideRef = useRef<any>(null);
       },
     ],
   };
-
-
 
   return (
     <section className={styles["treatment-section"]}>
@@ -76,35 +90,47 @@ const slideRef = useRef<any>(null);
           </button>
         </div>
       </div>
-      <div className={styles['treatment-cards']}>
-         <div className={styles["treatment-card-container"]}>
+      
+      <div className={styles["treatment-cards"]}>
+        <div className={styles["treatment-card-container"]}>
+          {/* Guard clause to prevent React-Slick from breaking on empty data */}
+          {treatmentCard === null ? (
+            <p>Loading treatments...</p>
+          ) : treatmentCard.length === 0 ? (
+            <p>No treatments available.</p>
+          ) : (
+            <Slider ref={slideRef} {...settings}>
+              {treatmentCard.map((treatment, index) => {
+                const cardId = treatment._id ?? treatment.id;
+                return (
+                  <div
+                    key={cardId}
+                    className={styles["treatment-card-item"]}
+                    id={String(cardId)}
+                  >
+                    <TreatmentCard
+                      _id={treatment._id}
+                      id={treatment.id}
+                      img={treatment.img}
+                      title={treatment.title}
+                      condition={treatment.condition}
+                      index={index}
+                    />
+                  </div>
+                );
+              })}
+            </Slider>
+          )}
+        </div>
         
-        <Slider ref={slideRef} {...settings}>
-              {treatmentData.map((treatment) => {
-          return (
-            <div
-              key={treatment.id}
-              className={styles["treatment-card-item"]}
-              id={String(treatment.id)}
-            >
-              <TreatmentCard
-                id={treatment.id}
-                img={treatment.img}
-                title={treatment.title}
-                condition={treatment.condition}
-              />
-            </div>
-          );
-        })}
-        </Slider>
-      </div>
-        <div className={styles['treatment-card-wrapper']}>
-          <Button showArrow className={styles['treatment-card-button']}>View All Treatments</Button>
+        <div className={styles["treatment-card-wrapper"]}>
+          <Button showArrow className={styles["treatment-card-button"]}>
+            View All Treatments
+          </Button>
         </div>
       </div>
-     
     </section>
   );
 };
 
-export default TreatmentSection;  
+export default TreatmentSection;

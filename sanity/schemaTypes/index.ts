@@ -6,6 +6,7 @@ import { exportSectionType } from "./exportSection";
 import { healthCondition } from "./healthCondition";
 import { specialistType } from "./specialist";
 import { exportCardType } from "./exportCard";
+import { treatmentType } from "./treatment";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -15,6 +16,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     exportSectionType,
     healthCondition,
     specialistType,
-    exportCardType
+    exportCardType,
+    treatmentType,
+    
   ],
 };

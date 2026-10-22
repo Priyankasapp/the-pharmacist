@@ -248,6 +248,7 @@ export interface ServicesMenuProps {
 }
 
 export interface TreatmentDataProps {
+  _id?: string;
   id: number;
   title: string;
   img: string | StaticImageData;
