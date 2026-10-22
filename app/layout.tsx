@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import SlickCarouselStyles from "@/components/SlickCarouselStyles";
 import LayoutShell from "@/components/LayoutShell";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const plusJakartaSans = localFont({
+  src: "../public/fonts/plus-jakarta-sans-latin.woff2",
   variable: "--font-plus-jakarta",
   display: "swap",
+  weight: "200 800",
 });
 
 const skModernist = localFont({

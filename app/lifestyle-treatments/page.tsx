@@ -1,17 +1,19 @@
-/* eslint-disable @next/next/no-async-client-component */
-"use client";
-
 import FAQ from "@/components/Contact/FAQ/FAQ";
 import TreatmentCard from "@/components/Lifestyle-treatmemts/TreatmentsCard/TreatmentCard";
 import styles from "./LifestyleTreatments.module.css";
 import Button from "@/components/Button/Button";
 import { client } from "@/sanity/lib/client";
-import { Treatments } from "@/lib/types";
-import { treatmentsQuery } from "@/sanity/lib/queries";
+import { TREATMENTS_QUERY } from "@/sanity/lib/queries";
+
+type SanityTreatment = {
+  _id: string;
+  title: string;
+  img: string;
+  condition: string[];
+};
 
 const LifestyleTreatments = async () => {
-
-  const treatments = await client.fetch<Treatments[]>(treatmentsQuery);
+  const treatments = await client.fetch<SanityTreatment[]>(TREATMENTS_QUERY);
   return (
     <div className="container">
       <div className={styles['lifestyle-treatment']}>
@@ -46,11 +48,14 @@ const LifestyleTreatments = async () => {
 
       <div className={styles['lifestyle-cards-container']}>
         {treatments.map((treatment) => (
-          <div key={`${treatment._id || "treatment"}`}
+          <div key={treatment._id}
           className={styles['lifestyle-card-wrapper']}>
             <TreatmentCard
-              key={treatment._id}
-              {...treatment}
+              _id={treatment._id}
+              slug={treatment.title}
+              name={treatment.title}
+              desc={treatment.condition.join(", ")}
+              imgSrc={treatment.img}
             />
           </div>
         ))}

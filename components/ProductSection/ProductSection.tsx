@@ -25,13 +25,13 @@ export interface ProductSectionItem{
 interface ProductSectionProps {
   headingText: string;
   highlightText?: string;
-  products: ProductSectionItem[];
+  products?: ProductSectionItem[];
 }
 
 const ProductSection = ({ 
   headingText, 
   highlightText,
-  products,
+  products = [],
 }: ProductSectionProps) => {
   const sliderRef = useRef<any>(null);
 

@@ -61,11 +61,11 @@ export interface Patients {
   rating: number;
 }
 export interface Treatments {
-  _id: string;
+  _id?: string;
   name: string;
-  slug: string;
+  slug?: string;
   desc: string;
-  imgSrc: string;
+  imgSrc: string | StaticImageData;
   order?: number;
 }
 export interface WhatWeOfferedCardData {
@@ -101,6 +101,7 @@ export interface ProcessData {
 
 export interface HealthConditionData {
   _id?: string;
+  slug?: string;
   name: string;
   desc: string;
   id: string;

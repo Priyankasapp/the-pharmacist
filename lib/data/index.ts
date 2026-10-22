@@ -575,6 +575,7 @@ export const optionC: HealthConditionData[] = [
     slug: "Cystits (UTI)",
     name: "Cystits (UTI)",
     desc: "Urinary infection causing pain or burning during urination.",
+    isNHS: false,
     id: "",
   },
 ];
