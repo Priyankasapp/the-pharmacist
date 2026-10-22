@@ -254,3 +254,13 @@ export interface TreatmentDataProps {
   img: string | StaticImageData;
   condition: string[];
 }
+
+
+export interface ArticleDataProps {
+  _id?: string;
+  id?: string | number;
+  title: string;
+  category: string;
+  desc: string;
+  img: string | StaticImageData;
+}

@@ -1,18 +1,17 @@
-
 "use client";
 import styles from "./ArticleSection.module.css";
 import Image from "next/image";
-import { informationData } from "@/lib/data";
 import Button from "@/components/Button/Button";
 import { ChevronLeft, ChevronRight, Folder } from "@/components/Icon/Icon";
 import Slider from "react-slick";
-
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import { ARTICLES_QUERY } from "@/sanity/lib/queries";
+import { ArticleDataProps } from "@/lib/types";
 
 type CustomArrowProps = {
   onClick?: () => void;
-  
 };
-
 
 function NextArrow({ onClick }: CustomArrowProps) {
   return (
@@ -20,9 +19,9 @@ function NextArrow({ onClick }: CustomArrowProps) {
       type="button"
       className={`${styles["slider-arrow"]} ${styles["next-arrow"]}`}
       onClick={onClick}
-      aria-label="Next specialist"
+      aria-label="Next article"
     >
-     <ChevronRight/>
+      <ChevronRight />
     </button>
   );
 }
@@ -33,19 +32,27 @@ function PrevArrow({ onClick }: CustomArrowProps) {
       type="button"
       className={`${styles["slider-arrow"]} ${styles["prev-arrow"]}`}
       onClick={onClick}
-      aria-label="Previous specialist"
+      aria-label="Previous article"
     >
-     
-        <ChevronLeft/> 
+      <ChevronLeft />
     </button>
   );
 }
 
-
-
 const ArticleSection = () => {
+  const [articles, setArticles] = useState<ArticleDataProps[] | null>(null);
 
-   const settings = {
+  useEffect(() => {
+    let cancelled = false;
+    client.fetch<ArticleDataProps[]>(ARTICLES_QUERY).then((data) => {
+      if (!cancelled) setArticles(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -53,9 +60,7 @@ const ArticleSection = () => {
     slidesToScroll: 2,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-
     responsive: [
-    
       {
         breakpoint: 740,
         settings: {
@@ -66,7 +71,6 @@ const ArticleSection = () => {
     ],
   };
 
-
   return (
     <section className={`container ${styles["article-section"]}`}>
       <div className={styles["article-container"]}>
@@ -75,46 +79,54 @@ const ArticleSection = () => {
         </h2>
 
         <div className={styles["article-info-con"]}>
-         
+          <div className={styles["article-info-wrapper"]}>
+            {/* Guard clause for loading/empty states */}
+            {articles === null ? (
+              <p>Loading articles...</p>
+            ) : articles.length === 0 ? (
+              <p>No articles available.</p>
+            ) : (
+              <Slider {...settings}>
+                {articles.map((info, index) => {
+                  const cardId = info._id ?? info.id ?? `art-${index}`;
+                  return (
+                    <div
+                      className={styles["article-info-card"]}
+                      key={cardId}
+                      id={String(cardId)}
+                    >
+                      <div className={styles["article-img-wrapper"]}>
+                        <Image
+                          src={info.img}
+                          alt={info.title || "Article entry image"}
+                          fill
+                          sizes="(max-width: 800px) 100vw, 500px"
+                          className={styles["article-img"]}
+                        />
+                      </div>
 
-          <div
-            className={styles["article-info-wrapper"]}
-          >
-           <Slider {...settings}>
-             {informationData.map((info, index) => (
-              <div
-                className={styles["article-info-card"]}
-                key={info.id || `art-${index}`}
-                id={String(info.id)}
-              >
-                <div className={styles["article-img-wrapper"]}>
-                  <Image
-                    src={info.img}
-                    alt={info.desc || "Article entry image"}
-                    fill
-                    sizes="(max-width: 800px) 100vw, 500px"
-                    className={styles["article-img"]}
-                  />
-                </div>
-
-                <div className={styles["article-desc-container"]}>
-                  <div className={styles["article-desc-wrapper"]}>
-                    <div className={styles["info-title-wrapper"]}>
-                      <Folder />
-                      <span>Lifestyle &amp; Wellness</span>
+                      <div className={styles["article-desc-container"]}>
+                        <div className={styles["article-desc-wrapper"]}>
+                          <div className={styles["info-title-wrapper"]}>
+                            <Folder />
+                            {/* Dynamic Category */}
+                            <span>{info.category || "Lifestyle & Wellness"}</span>
+                          </div>
+                          {/* Dynamic Title */}
+                          <h3>{info.title}</h3>
+                          {/* Optional: If you want the description to show too, uncomment below */}
+                          {/* <p>{info.desc}</p> */}
+                        </div>
+                        <div className={styles["article-link"]}>
+                          <a href="#">Read More</a>
+                        </div>
+                      </div>
                     </div>
-                    <h3>{info.desc}</h3>
-                  </div>
-                  <div className={styles["article-link"]}>
-                    <a href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-            ))}
-           </Slider>
+                  );
+                })}
+              </Slider>
+            )}
           </div>
-
-          
         </div>
       </div>
 

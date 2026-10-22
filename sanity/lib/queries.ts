@@ -125,3 +125,14 @@ export const TREATMENTS_QUERY = defineQuery(`
     condition
   }
 `);
+
+
+export const ARTICLES_QUERY = defineQuery(`
+  *[_type == "article"] | order(_createdAt desc) {
+    _id,
+    title,
+    category,
+    desc,
+    "img": img.asset->url
+  }
+`);
