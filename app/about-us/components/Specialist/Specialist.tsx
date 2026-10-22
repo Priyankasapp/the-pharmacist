@@ -1,17 +1,13 @@
-
+// Specialist.tsx
 'use client';
-
 
 import styles from "./Specialist.module.css";
 import Slider from "react-slick";
 import SpecialistCard from "./SpecialistCard";
-import { specalistDataSet } from "@/lib/data";
 import { ChevronLeft } from "lucide-react";
 import { ChevronRight } from "@/components/Icon/Icon";
 
-type CustomArrowProps = {
-  onClick?: () => void;
-};
+type CustomArrowProps = { onClick?: () => void };
 
 function NextArrow({ onClick }: CustomArrowProps) {
   return (
@@ -21,7 +17,7 @@ function NextArrow({ onClick }: CustomArrowProps) {
       onClick={onClick}
       aria-label="Next specialist"
     >
-     <ChevronRight/>
+      <ChevronRight />
     </button>
   );
 }
@@ -34,13 +30,26 @@ function PrevArrow({ onClick }: CustomArrowProps) {
       onClick={onClick}
       aria-label="Previous specialist"
     >
-     
-        <ChevronLeft/> 
+      <ChevronLeft />
     </button>
   );
 }
 
-const Specialist = () => {
+// ✅ renamed from `Specialist` → `SpecialistDoc`
+export type SpecialistDoc = {
+  _id: string;
+  name: string;
+  imgSrc: string;
+  role: string;
+  registration: string;
+  description: string;
+};
+
+type SpecialistProps = {
+  specialists: SpecialistDoc[];
+};
+
+const Specialist = ({ specialists }: SpecialistProps) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -48,25 +57,11 @@ const Specialist = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-
     responsive: [
-      {
-        breakpoint: 960,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 670,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
+      { breakpoint: 960, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 670, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
 
@@ -78,8 +73,8 @@ const Specialist = () => {
 
       <div className={styles["specialist-viewport"]}>
         <Slider {...settings}>
-          {specalistDataSet.map((specialist) => (
-            <div key={specialist.name} className={styles["slide-item"]}>
+          {specialists.map((specialist) => (
+            <div key={specialist._id} className={styles["slide-item"]}>
               <SpecialistCard
                 name={specialist.name}
                 imgSrc={specialist.imgSrc}

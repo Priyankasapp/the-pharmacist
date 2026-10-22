@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import { defineQuery, groq } from "next-sanity";
 
 export const categoriesQuery = groq`
   *[_type == "category"] | order(name asc) {
@@ -91,3 +91,16 @@ export const healthConditionsQuery = groq`
     isNHS
   }
 `;
+
+export const SPECIALISTS_QUERY = defineQuery(
+  `
+  *[_type == "specialist"] | order(name asc){
+  _id,
+  name,
+  "imgSrc": image.asset->url,
+  role,
+  registration,
+  description
+  }
+  `
+)

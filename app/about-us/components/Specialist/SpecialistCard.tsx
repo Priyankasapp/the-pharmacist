@@ -21,6 +21,8 @@ const SpecialistCard = ({name, imgSrc,role,registration,description}:SpecialistC
             <Image 
             src={imgSrc}
             alt={name}
+            fill
+            sizes="(max-width: 0px) , (max-width: 0px) "
             className={styles['specialist-card-image']}
             priority
             />
