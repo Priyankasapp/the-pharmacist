@@ -30,6 +30,7 @@ type SanityProduct = {
   unitInfo?: string;
   prescriptionOnly?: boolean;
   reviewCount?: number | string;
+  rating?: number | string;
   image?: string;
   categoryId?: string;
   categoryName?: string;
@@ -81,6 +82,8 @@ export default function Shop() {
   const [products, setProducts] = useState<SanityProduct[]>([]);
   const [filters, setFilters] = useState<FilterState>(getDefaultFilters());
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("popularity");
 
   useEffect(() => {
     const loadShopData = async () => {
@@ -130,8 +133,9 @@ export default function Shop() {
     setFilters((prev) => getDefaultFilters(prev.maxPrice));
   };
 
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
+  const productCards = useMemo(() => {
+    const query = searchTerm.trim().toLocaleLowerCase();
+    const matchingProducts = products.filter((product) => {
       const price = Number(product.price ?? 0);
       const matchesCategory =
         filters.categories.length === 0 ||
@@ -140,12 +144,36 @@ export default function Shop() {
         filters.brands.length === 0 ||
         filters.brands.includes(String(product.brandId ?? product.brandName ?? ""));
       const matchesPrice = price >= filters.minPrice && price <= filters.maxPrice;
+      const searchableText = [
+        product.name,
+        product.description,
+        product.brandName,
+        product.categoryName,
+        product.unitInfo,
+      ].join(" ").toLocaleLowerCase();
+      const matchesSearch = !query || searchableText.includes(query);
 
-      return matchesCategory && matchesBrand && matchesPrice;
+      return matchesCategory && matchesBrand && matchesPrice && matchesSearch;
     });
-  }, [products, filters]);
 
-  const productCards = filteredProducts.map(mapSanityProduct);
+    return [...matchingProducts].sort((a, b) => {
+      switch (sortBy) {
+        case "price-low-high":
+          return Number(a.price ?? 0) - Number(b.price ?? 0);
+        case "price-high-low":
+          return Number(b.price ?? 0) - Number(a.price ?? 0);
+        case "name-a-z":
+          return String(a.name ?? "").localeCompare(String(b.name ?? ""));
+        case "name-z-a":
+          return String(b.name ?? "").localeCompare(String(a.name ?? ""));
+        case "rating":
+          return Number(b.rating ?? 0) - Number(a.rating ?? 0);
+        case "popularity":
+        default:
+          return Number(b.reviewCount ?? 0) - Number(a.reviewCount ?? 0);
+      }
+    }).map(mapSanityProduct);
+  }, [products, filters, searchTerm, sortBy]);
 
   return (
     <div className={styles["shop"]}>
@@ -174,16 +202,36 @@ export default function Shop() {
                     Search:
                   </label>
                   <div className={styles["shop-search-input-wrapper"]}>
-                    <input id="product-search" type="search" placeholder="Search Products" aria-label="Search products" />
+                    <input
+                      id="product-search"
+                      type="search"
+                      placeholder="Search Products"
+                      aria-label="Search products"
+                      value={searchTerm}
+                      onChange={(event) => setSearchTerm(event.target.value)}
+                    />
                     <SearchIcon className={styles["search-icon"]} />
                   </div>
                 </div>
 
                 <div className={styles["shop-search-sortby-wrapper"]}>
                   <span className={styles["shop-search-text"]}>Sort By:</span>
-                  <span className={styles["shop-search-sortby-value"]}>
-                    Popularity <ChevronDown />
-                  </span>
+                  <label className={styles["shop-search-sortby-value"]} htmlFor="product-sort">
+                    <select
+                      id="product-sort"
+                      value={sortBy}
+                      onChange={(event) => setSortBy(event.target.value)}
+                      aria-label="Sort products"
+                    >
+                      <option value="popularity">Popularity</option>
+                      <option value="price-low-high">Price: Low to High</option>
+                      <option value="price-high-low">Price: High to Low</option>
+                      <option value="name-a-z">Name: A to Z</option>
+                      <option value="name-z-a">Name: Z to A</option>
+                      <option value="rating">Highest Rated</option>
+                    </select>
+                    <ChevronDown />
+                  </label>
                 </div>
               </div>
             </div>
@@ -191,7 +239,7 @@ export default function Shop() {
             {isLoading ? (
               <p>Loading products...</p>
             ) : productCards.length === 0 ? (
-              <p>No products match your selected filters.</p>
+              <p>No products match your search or filters.</p>
             ) : (
               <div className={styles["product-grid-container"]}>
                 {productCards.map((product) => {

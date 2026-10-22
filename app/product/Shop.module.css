@@ -89,6 +89,15 @@
   cursor: pointer;
 
 }
+.shop-search-sortby-value select{
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
 .shop-search-text{
   color: var(--main-text);
   border-width: 400;
