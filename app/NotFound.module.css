@@ -1,0 +1,104 @@
+.page {
+  position: relative;
+  display: grid;
+  min-height: 62vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 5rem 1.5rem;
+  background: var(--tp-bg);
+  isolation: isolate;
+}
+
+.content {
+  z-index: 1;
+  width: min(100%, 640px);
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--tp-green);
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.1;
+}
+
+.description {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--gray);
+  font-size: 1.125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.875rem;
+  margin-top: 2rem;
+}
+
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--tp-green);
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.primaryLink {
+  background: var(--tp-green);
+  color: var(--white);
+}
+
+.primaryLink:hover {
+  background: #03514d;
+}
+
+.secondaryLink {
+  color: var(--tp-green);
+}
+
+.secondaryLink:hover {
+  background: var(--tp-green);
+  color: var(--white);
+}
+
+.number {
+  position: absolute;
+  z-index: -1;
+  right: 2vw;
+  bottom: -0.25em;
+  color: rgb(2 61 58 / 5%);
+  font-family: var(--font-primary);
+  font-size: clamp(12rem, 35vw, 32rem);
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 560px) {
+  .page {
+    min-height: 55vh;
+    padding: 4rem 1.25rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
