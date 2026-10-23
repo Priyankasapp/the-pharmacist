@@ -50,5 +50,14 @@ export const productType = defineType({
       validation: (r) => r.min(0).max(5),
     }),
     defineField({ name: "reviewCount", type: "number", initialValue: 0 }),
+    defineField({
+      name:'inStock',
+      title:'In Stock',
+      type:'boolean',
+      initialValue:true,
+      description:"Control the green 'In stock' badge at the top",
+
+    }),
+   
   ],
 });

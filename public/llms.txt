@@ -1,0 +1,17 @@
+# The Pharmacist
+
+> The Pharmacist is an online pharmacy and healthcare information website.
+
+## Public pages
+
+- [Home](https://the-pharmacist.vercel.app/): Pharmacy and healthcare services.
+- [About us](https://the-pharmacist.vercel.app/about-us): Information about the organization.
+- [All conditions](https://the-pharmacist.vercel.app/all-conditions): Health condition information and care options.
+- [Lifestyle treatments](https://the-pharmacist.vercel.app/lifestyle-treatments): Lifestyle treatment information.
+- [Product shop](https://the-pharmacist.vercel.app/product): Healthcare products.
+- [Find a pharmacy](https://the-pharmacist.vercel.app/find-pharmacy): Pharmacy search.
+- [Contact](https://the-pharmacist.vercel.app/contact): Contact and support information.
+
+## Sitemap
+
+- [XML sitemap](https://the-pharmacist.vercel.app/sitemap.xml)

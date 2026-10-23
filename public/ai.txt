@@ -1,0 +1,11 @@
+# ai.txt for The Pharmacist
+# https://the-pharmacist.vercel.app
+
+User-agent: *
+Allow: /
+Disallow: /studio
+Disallow: /api
+
+# Training and content use
+Content-Usage: allow
+Training-Usage: allow
