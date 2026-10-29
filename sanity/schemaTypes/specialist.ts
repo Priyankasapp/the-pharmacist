@@ -35,6 +35,6 @@ export const specialistType = defineType({
             name:'description',
             title:'Description',
             type:'text',
-        }),
+        })
     ],
 })

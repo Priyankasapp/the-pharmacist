@@ -32,6 +32,6 @@ export const exportCardType = defineType({
             type: 'boolean',
             initialValue: false,
             description: 'Toggle this on if this card should display the NHS logo.'
-        }),
+        })
     ],
 })

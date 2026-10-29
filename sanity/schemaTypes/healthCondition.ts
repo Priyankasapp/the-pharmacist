@@ -38,6 +38,10 @@ export const healthCondition = defineType({
       type: "boolean",
       initialValue: false,
     }),
+    defineField({
+      name:"seo",
+      type:"seo"
+    })
   ],
 
   preview: {

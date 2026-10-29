@@ -80,11 +80,11 @@ export const FOOTER_LINKS: FooterLinksData = {
   information: {
     address: "10 High Street, London, UK",
     number: "+44 1234 567 890",
-    email: "contact@yourpharmacy.co.uk", // fixed typo: "phoarmacy" -> "pharmacy"
+    email: "contact@yourpharmacy.co.uk", 
   },
   regulatory: {
     gphc: "Pharmacy: 1234567",
-    superintendent: "Dr. Sarah Johnson, GPhC Reg: 2345678", // use ", " not "\n" for JSX text
+    superintendent: "Dr. Sarah Johnson, GPhC Reg: 2345678", 
     pharmacyOwner: "Digital Health Pharmacy Ltd, Company No: 12345678",
   },
   openingHours: [

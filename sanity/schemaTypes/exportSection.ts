@@ -72,7 +72,7 @@ export const exportSectionType = defineType({
                 type:"number",
                 description:"Sort order (lower = first)",
                 initialValue:0,
-            }),
+            })
 
           ],
           preview:{

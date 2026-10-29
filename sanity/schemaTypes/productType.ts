@@ -58,6 +58,10 @@ export const productType = defineType({
       description:"Control the green 'In stock' badge at the top",
 
     }),
+    defineField({
+      name:"seo",
+      type:"seo",
+    })
    
   ],
 });

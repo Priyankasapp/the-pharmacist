@@ -42,7 +42,7 @@ export const patientReviewType = defineType({
       title: "Display Order",
       type: "number",
       initialValue: 0,
-    }),
+    })
   ],
   preview: {
     select: { title: "name", subtitle: "title", media: "imgSrc" },

@@ -26,7 +26,7 @@ export const treatmentType = defineType({
       of: [{ type: "string" }],
       description: "Add one or more conditions (e.g. 'Erectile Dysfunction').",
       validation: (Rule) => Rule.required().min(1),
-    }),
+    })
   ],
   preview: {
     select: { title: "title", media: "img" },

@@ -108,6 +108,33 @@ export const healthConditionsQuery = groq`
   }
 `;
 
+export const productSeoQuery = groq`
+  *[_type == "product" && slug.current == $slug][0] {
+    name,
+    description,
+    "imageUrl": image.asset->url,
+    seo {
+      metaTitle,
+      metaDescription,
+      noIndex,
+      "ogImageUrl": ogImage.asset->url
+    }
+  }
+`;
+
+export const healthConditionSeoQuery = groq`
+  *[_type == "healthCondition" && id.current == $slug][0] {
+    name,
+    desc,
+    seo {
+      metaTitle,
+      metaDescription,
+      noIndex,
+      "ogImageUrl": ogImage.asset->url
+    }
+  }
+`;
+
 export const SPECIALISTS_QUERY = defineQuery(
   `
   *[_type == "specialist"] | order(name asc){
