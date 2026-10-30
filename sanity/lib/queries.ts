@@ -78,7 +78,6 @@ export const RELATED_PRODUCTS_QUERY = defineQuery(`
 `);
 
 // feature Product Query
-
 export const featuredProductsQuery = groq`
   *[_type == "product"] | order(_createdAt desc)[0...8]{
     _id,
@@ -109,7 +108,7 @@ export const healthConditionsQuery = groq`
 `;
 
 export const productSeoQuery = groq`
-  *[_type == "product" && slug.current == $slug][0] {
+  *[_type == "product" && lower(slug.current) in $slugCandidates][0] {
     name,
     description,
     "imageUrl": image.asset->url,
@@ -118,6 +117,68 @@ export const productSeoQuery = groq`
       metaDescription,
       noIndex,
       "ogImageUrl": ogImage.asset->url
+    }
+  }
+`;
+
+export const productBySlugQuery = groq`
+  *[_type == "product" && lower(slug.current) in $slugCandidates][0] {
+    _id,
+    name,
+    subtitle,
+    "slug": slug.current,
+    description,
+
+    "imageUrl": image.asset->url,
+     gallery[] {
+      "imageUrl": image.asset->url,
+      label
+    },
+
+    price,
+    originalPrice,
+    unitInfo,
+  
+    prescriptionOnly,
+    inStock,
+
+    rating,
+    reviewCount,
+
+    "brandName": brand->title,
+    "categoryName":category->name,
+
+    strengths[]{
+    _key,
+    label,
+    price
+    },
+
+    packSizes[]{
+    _key,
+    label,
+    quantity,
+    price,
+    originalPrice
+    },
+
+     deliveryOptions[]{
+      _key,
+      type,
+      time,
+      cost
+    },
+
+    productInformation[]{
+      _key,
+      title,
+      content
+    },
+    seo{
+      metaTitle,
+      metaDescription,
+      noIndex,
+      "ogImageUrl":ogImage.asset->url
     }
   }
 `;
@@ -146,9 +207,9 @@ export const SPECIALISTS_QUERY = defineQuery(
   description
   }
   `
-)
+);
 
-export const EXPORT_CARS_QUERY =  defineQuery(`
+export const EXPORT_CARS_QUERY = defineQuery(`
   *[_type== "exportCard"] | order(_createdAt asc){
     _id,
     title,
@@ -156,9 +217,7 @@ export const EXPORT_CARS_QUERY =  defineQuery(`
     "img":img.asset->url,
     isnhs
   }
-  `)
-
-
+`);
 
 export const TREATMENTS_QUERY = defineQuery(`
   *[_type == "treatment"] | order(_createdAt asc) {
@@ -168,7 +227,6 @@ export const TREATMENTS_QUERY = defineQuery(`
     condition
   }
 `);
-
 
 export const ARTICLES_QUERY = defineQuery(`
   *[_type == "article"] | order(_createdAt desc) {

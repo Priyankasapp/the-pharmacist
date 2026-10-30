@@ -1,11 +1,10 @@
 .product-content {
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
-  padding: 0% 4%;
+  margin: 0;
   color: var(--off-black);
   box-sizing: border-box;
-   gap: 40px; 
+  gap: 40px;
   font-family: var(--font-secondary), sans-serif;
 }
 .gallery-col {
@@ -13,14 +12,13 @@
   flex-direction: column;
   gap: 14px;
   min-width: 0;
-
 }
 .gallery-card {
   background: var(--white);
   border: 1px solid var(--gray-93);
   border-radius: 18px;
   padding: 18px 18px 24px;
-  box-shadow: 0px 0px 4px 4px #0000001F;
+  box-shadow: 0px 0px 4px 4px #0000001f;
   height: 635px;
   width: 635px;
   box-sizing: border-box;
@@ -33,7 +31,7 @@
   justify-content: space-between;
   margin-bottom: 8px;
 }
-.product-right-button{
+.product-right-button {
   padding: 16px 24px;
 }
 .brand {
@@ -63,7 +61,7 @@
   grid-template-columns: 44px 1fr 44px;
   align-items: center;
   gap: 4px;
- flex: 1 1 auto; 
+  flex: 1 1 auto;
 }
 .arrow-btn {
   width: 40px;
@@ -89,9 +87,7 @@
 }
 .main-img {
   object-fit: contain;
-  
 }
-
 .product-images-thumbs {
   display: flex;
   gap: 12px;
@@ -130,6 +126,7 @@
 .product-buy-col {
   display: flex;
   flex-direction: column;
+  width: 533px;
   gap: 10px;
 }
 .product-right-first {
@@ -225,6 +222,14 @@
   padding: 8px 16px;
   border-radius: 5px;
   border: 1px solid var(--dark-gray);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 140px;
+}
+.active-pack-card {
+  border: 2px solid var(--main-text);
 }
 .product-right-pack-unit {
   color: var(--dark-gray);
@@ -235,13 +240,13 @@
 .product-right-delivery {
   margin: 0 0 6px;
   padding-top: 18px;
-  
 }
 
 .product-right-delivery-title {
   font-weight: 700;
   font-size: 16px;
-    margin: 0 0 4px;
+  color: var(--main-text);
+  margin: 0 0 4px;
 }
 .product-delivery-desc {
   font-weight: 400;
@@ -280,18 +285,15 @@
   padding-right: 0;
 }
 
-@media (max-width:1230px){
-  .product-content{
+@media (max-width: 1230px) {
+  .product-content {
     flex-direction: column;
   }
-  
 }
 @media (max-width: 670px) {
-  
   .product-content {
     grid-template-columns: 1fr;
     gap: 24px;
-  
   }
   .brand {
     font-size: 22px;
@@ -303,7 +305,7 @@
     width: 70px;
     height: 70px;
   }
-  .gallery-card{
+  .gallery-card {
     height: 450px;
     width: 450px;
   }
