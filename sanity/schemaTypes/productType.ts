@@ -92,11 +92,6 @@ export const productType = defineType({
       type: "number",
     }),
 
-    defineField({
-      name: "unitInfo",
-      type: "string",
-      description: "Fallback text if not using dynamic calculation. e.g. £18 per 100g",
-    }),
 
     // Product availability
     defineField({
