@@ -15,7 +15,7 @@ export const healthCondition = defineType({
 
     defineField({
       name: "id",
-      title: "ID",
+      title: "ID (Slug)",
       type: "slug",
       options: {
         source: "name",
@@ -26,12 +26,41 @@ export const healthCondition = defineType({
 
     defineField({
       name: "desc",
-      title: "Description",
+      title: "Short Description",
       type: "text",
-      rows: 3,
+      rows: 2,
       validation: (Rule) => Rule.required(),
+      description:"Used on the main conditions list page."
     }),
 
+    defineField({
+      name:"heroDescription",
+      title:"Hero Description",
+      type:"text",
+      rows:3,
+      description:"The large heading text on the condition page "
+    }),
+    defineField({
+      name:"headerImage",
+      title:"Header Image",
+      type:"image",
+      options:{ hotspot:true},
+    }),
+    defineField({
+      name:"steps",
+      title:"Steps / Process" ,
+      type:"array",
+      of:[
+        {
+          type:"object",
+          fields:[
+            defineField({ name:"stepNumber", title:"Step Number", type:"string"}),
+            defineField({ name:"title", title:"Step Title", type:"string"}),
+            defineField({ name:"description", title:"Step Description", type:"text"}),
+          ],
+        },
+      ],
+    }),
     defineField({
       name: "isNHS",
       title: "Show NHS Logo",

@@ -1,10 +1,16 @@
+"use client";
+
+import Link from "next/link";
 import { NHS } from "@/data/assets";
 import styles from "./OptionSectionCard.module.css";
 import Image from "next/image";
 import { HealthConditionData } from "@/lib/types";
+
+
 const OptionSectionCard = ({ name, id, desc, isNHS }: HealthConditionData) => {
   return (
-    <div className={styles["option-section-card"]} id={id}>
+    <Link href={`/all-conditions/${id}`} className={styles["option-section-card-link"]}>
+      <div className={styles["option-section-card"]} id={id}>
       <div className={styles["option-section-card-wrapper"]}>
         {/* image  */}
         {isNHS && (
@@ -24,7 +30,9 @@ const OptionSectionCard = ({ name, id, desc, isNHS }: HealthConditionData) => {
         </div>
       </div>
     </div>
-  );
+
+    </Link>
+      );
 };
 
 export default OptionSectionCard;

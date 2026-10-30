@@ -183,6 +183,29 @@ export const productBySlugQuery = groq`
   }
 `;
 
+export const conditionBySlugQuery = groq`
+  *[_type == "healthCondition" && id.current == $slug][0] {
+    _id,
+    name,
+    "slug": id.current,
+    desc,
+    heroDescription,
+    "headerImageUrl": headerImage.asset->url,
+    steps[] {
+      stepNumber,
+      title,
+      description
+    },
+    isNHS,
+    seo {
+      metaTitle,
+      metaDescription,
+      noIndex,
+      "ogImageUrl": ogImage.asset->url
+    }
+  }
+`;
+
 export const healthConditionSeoQuery = groq`
   *[_type == "healthCondition" && id.current == $slug][0] {
     name,

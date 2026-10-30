@@ -470,6 +470,27 @@ export interface ProductData {
 }
 
 // condition section
+export interface ConditionStep {
+  stepNumber: string;
+  title: string;
+  description: string;
+} 
+export interface ConditionData {
+  _id: string;
+  name: string;
+  slug: string;
+  desc: string;
+  heroDescription?: string;
+  headerImageUrl?: string;
+  steps?: ConditionStep[];
+  isNHS?: boolean;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    noIndex?: boolean;
+    ogImageUrl?: string;
+  };
+}
 
 export interface StepInfo {
   id: string;
