@@ -30,6 +30,7 @@ const ConditionSlug = () => {
         setError(null);
 
         const data = await client.fetch(conditionBySlugQuery, { slug });
+        console.log("SEO Data from Sanity:", data?.seo); 
 
         if(!data){
           setError("condition not found.");

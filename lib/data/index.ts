@@ -657,60 +657,6 @@ export const tabs = [
   "FAQ'S",
 ];
 
-export const productData: ProductData = {
-  slug: "panadol",
-  name: "Panadol",
-  title: "Panadol 50g",
-  price: "£5.55",
-  pricePerTablet: "£0.23 / per tablet",
-  reviews: 9403,
-  tabletCount: "24 Tablets",
-  inStock: true,
-  images: [productImg2, panadol1, panadol2, panadol3, panadol4],
-  strengths: ["25 mg", "50 mg", "100 mg"],
-
-  packSizes: [
-    {
-      id: "4-tablets",
-      label: "4 tablets",
-      price: "£15",
-      saving: "£27 (Save £6)",
-      pricePerTablet: "£2.79 / tablet",
-    },
-    {
-      id: "8-tablets",
-      label: "8 tablets",
-      price: "£21",
-      saving: "£27 (Save £6)",
-      pricePerTablet: "£2.79 / tablet",
-    },
-    {
-      id: "16-tablets",
-      label: "16 tablets",
-      price: "£26",
-      saving: "£27 (Save £6)",
-      pricePerTablet: "£2.79 / tablet",
-    },
-  ],
-  delivery: {
-    title: "Delivery",
-    description:
-      "Free standard shipping on orders over $35 before tax, plus free returns.",
-    options: [
-      {
-        type: "Standard delivery",
-        duration: "1-4 business days",
-        price: "$4.50",
-      },
-      { type: "Express delivery", duration: "1 business day", price: "$10.00" },
-      {
-        type: "Pick up in store",
-        duration: "1-3 business days",
-        price: "Free",
-      },
-    ],
-  },
-};
 
 // condition
 
