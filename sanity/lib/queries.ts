@@ -107,6 +107,20 @@ export const healthConditionsQuery = groq`
   }
 `;
 
+export const sitemapProductsQuery = groq`
+  *[_type == "product" && defined(slug.current) && seo.noIndex != true] {
+    "slug": slug.current,
+    "_updatedAt": _updatedAt
+  }
+`;
+
+export const sitemapHealthConditionsQuery = groq`
+  *[_type == "healthCondition" && defined(id.current) && seo.noIndex != true] {
+    "slug": id.current,
+    "_updatedAt": _updatedAt
+  }
+`;
+
 export const productSeoQuery = groq`
   *[_type == "product" && lower(slug.current) in $slugCandidates][0] {
     name,
