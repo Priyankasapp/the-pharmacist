@@ -2,18 +2,14 @@ import type { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { productSeoQuery } from "@/sanity/lib/queries";
 import { createSeoMetadata } from "@/sanity/lib/seo";
+import type { SanitySeo } from "@/sanity/lib/seo";
 import { getSlugCandidates } from "@/sanity/lib/slugCandidates";
 
 type ProductSeoData = {
   name?: string | null;
   description?: string | null;
   imageUrl?: string | null;
-  seo?: {
-    metaTitle?: string | null;
-    metaDescription?: string | null;
-    noIndex?: boolean | null;
-    ogImageUrl?: string | null;
-  } | null;
+  seo?: SanitySeo | null;
 };
 
 type ProductLayoutProps = {

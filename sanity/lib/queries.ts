@@ -131,6 +131,10 @@ const seoProjection = `
     site,
     creator,
     "imageUrl": image.asset->url
+  },
+  robots {
+    index,
+    follow
   }
 `;
 
@@ -139,7 +143,10 @@ export const sitemapProductsQuery = groq`
   *[
     _type == "product" &&
     defined(slug.current) &&
-    seo.noIndex != true
+    (
+      seo.robots.index == true ||
+      (!defined(seo.robots.index) && seo.noIndex != true)
+    )
   ] {
     "slug": slug.current,
     "_updatedAt": _updatedAt
@@ -150,7 +157,10 @@ export const sitemapHealthConditionsQuery = groq`
   *[
     _type == "healthCondition" &&
     defined(id.current) &&
-    seo.noIndex != true
+    (
+      seo.robots.index == true ||
+      (!defined(seo.robots.index) && seo.noIndex != true)
+    )
   ] {
     "slug": id.current,
     "_updatedAt": _updatedAt

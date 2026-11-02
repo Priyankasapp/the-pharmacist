@@ -2,16 +2,12 @@ import type { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { healthConditionSeoQuery } from "@/sanity/lib/queries";
 import { createSeoMetadata } from "@/sanity/lib/seo";
+import type { SanitySeo } from "@/sanity/lib/seo";
 
 type HealthConditionSeoData = {
   name?: string | null;
   desc?: string | null;
-  seo?: {
-    metaTitle?: string | null;
-    metaDescription?: string | null;
-    noIndex?: boolean | null;
-    ogImageUrl?: string | null;
-  } | null;
+  seo?: SanitySeo | null;
 };
 
 type HealthConditionLayoutProps = {
