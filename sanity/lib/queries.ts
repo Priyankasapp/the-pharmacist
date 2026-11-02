@@ -62,7 +62,8 @@ export const shopProductsQuery = groq`
 `;
 
 export const RELATED_PRODUCTS_QUERY = defineQuery(`
-  *[_type == "product" && slug.current != $slug && defined(image.asset)] | order(_createdAt desc)[0...8] {
+  *[_type == "product" && slug.current != $slug && defined(image.asset)]
+    | order(_createdAt desc)[0...8] {
     "id": _id,
     "slug": slug.current,
     "title": coalesce(title, name),
@@ -77,13 +78,13 @@ export const RELATED_PRODUCTS_QUERY = defineQuery(`
   }
 `);
 
-// feature Product Query
+// Featured products
 export const featuredProductsQuery = groq`
-  *[_type == "product"] | order(_createdAt desc)[0...8]{
+  *[_type == "product"] | order(_createdAt desc)[0...8] {
     _id,
     title,
     subtitle,
-    "slug":slug.current,
+    "slug": slug.current,
     price,
     originalPrice,
     savingsText,
@@ -91,14 +92,13 @@ export const featuredProductsQuery = groq`
     unitPriceText,
     reviewCount,
     isPrescriptionOnly,
-    "image":image.asset->url,
-    "categories":categories[]->{_id, name, "slug":slug.current}
+    "image": image.asset->url,
+    "categories": categories[]->{ _id, name, "slug": slug.current }
   }
 `;
 
 export const healthConditionsQuery = groq`
-  *[_type == "healthCondition"]
-  | order(_createdAt asc) {
+  *[_type == "healthCondition"] | order(_createdAt asc) {
     _id,
     name,
     "id": id.current,
@@ -107,36 +107,78 @@ export const healthConditionsQuery = groq`
   }
 `;
 
+// Reusable SEO projection for the EXISTING SEO schema.
+// Keep these field names until your Sanity schema is migrated.
+const seoProjection = `
+  metaTitle,
+  metaDescription,
+  keywords,
+  noIndex,
+  canonicalUrl,
+  "ogImageUrl": ogImage.asset->url,
+  openGraph {
+    title,
+    description,
+    url,
+    siteName,
+    type,
+    "imageUrl": image.asset->url
+  },
+  twitter {
+    card,
+    title,
+    description,
+    site,
+    creator,
+    "imageUrl": image.asset->url
+  }
+`;
+
+// Sitemap queries
 export const sitemapProductsQuery = groq`
-  *[_type == "product" && defined(slug.current) && seo.noIndex != true] {
+  *[
+    _type == "product" &&
+    defined(slug.current) &&
+    seo.noIndex != true
+  ] {
     "slug": slug.current,
     "_updatedAt": _updatedAt
   }
 `;
 
 export const sitemapHealthConditionsQuery = groq`
-  *[_type == "healthCondition" && defined(id.current) && seo.noIndex != true] {
+  *[
+    _type == "healthCondition" &&
+    defined(id.current) &&
+    seo.noIndex != true
+  ] {
     "slug": id.current,
     "_updatedAt": _updatedAt
   }
 `;
 
+// Product SEO
 export const productSeoQuery = groq`
-  *[_type == "product" && lower(slug.current) in $slugCandidates][0] {
+  *[
+    _type == "product" &&
+    lower(slug.current) in $slugCandidates
+  ][0] {
     name,
     description,
+    "slug": slug.current,
     "imageUrl": image.asset->url,
     seo {
-      metaTitle,
-      metaDescription,
-      noIndex,
-      "ogImageUrl": ogImage.asset->url
+      ${seoProjection}
     }
   }
 `;
 
+// Complete product details
 export const productBySlugQuery = groq`
-  *[_type == "product" && lower(slug.current) in $slugCandidates][0] {
+  *[
+    _type == "product" &&
+    lower(slug.current) in $slugCandidates
+  ][0] {
     _id,
     name,
     subtitle,
@@ -144,7 +186,8 @@ export const productBySlugQuery = groq`
     description,
 
     "imageUrl": image.asset->url,
-     gallery[] {
+
+    gallery[] {
       "imageUrl": image.asset->url,
       label
     },
@@ -152,7 +195,7 @@ export const productBySlugQuery = groq`
     price,
     originalPrice,
     unitInfo,
-  
+
     prescriptionOnly,
     inStock,
 
@@ -160,98 +203,101 @@ export const productBySlugQuery = groq`
     reviewCount,
 
     "brandName": brand->title,
-    "categoryName":category->name,
+    "categoryName": category->name,
 
-    strengths[]{
-    _key,
-    label,
-    price
+    strengths[] {
+      _key,
+      label,
+      price
     },
 
-    packSizes[]{
-    _key,
-    label,
-    quantity,
-    price,
-    originalPrice
+    packSizes[] {
+      _key,
+      label,
+      quantity,
+      price,
+      originalPrice
     },
 
-     deliveryOptions[]{
+    deliveryOptions[] {
       _key,
       type,
       time,
       cost
     },
 
-    productInformation[]{
+    productInformation[] {
       _key,
       title,
       content
     },
-    seo{
-      metaTitle,
-      metaDescription,
-      noIndex,
-      "ogImageUrl":ogImage.asset->url
+
+    seo {
+      ${seoProjection}
     }
   }
 `;
 
+// Health condition details
 export const conditionBySlugQuery = groq`
-  *[_type == "healthCondition" && id.current == $slug][0] {
+  *[
+    _type == "healthCondition" &&
+    id.current == $slug
+  ][0] {
     _id,
     name,
     "slug": id.current,
     desc,
     heroDescription,
     "headerImageUrl": headerImage.asset->url,
+
     steps[] {
       stepNumber,
       title,
       description
     },
+
     isNHS,
+
     seo {
-      metaTitle,
-      metaDescription,
-      noIndex,
-      "ogImageUrl": ogImage.asset->url
+      ${seoProjection}
     }
   }
 `;
 
+// Health condition SEO
 export const healthConditionSeoQuery = groq`
-  *[_type == "healthCondition" && id.current == $slug][0] {
+  *[
+    _type == "healthCondition" &&
+    id.current == $slug
+  ][0] {
     name,
     desc,
+    "slug": id.current,
+
     seo {
-      metaTitle,
-      metaDescription,
-      noIndex,
-      "ogImageUrl": ogImage.asset->url
+      ${seoProjection}
     }
   }
 `;
 
-export const SPECIALISTS_QUERY = defineQuery(
-  `
-  *[_type == "specialist"] | order(name asc){
-  _id,
-  name,
-  "imgSrc": image.asset->url,
-  role,
-  registration,
-  description
+export const SPECIALISTS_QUERY = defineQuery(`
+  *[_type == "specialist"] | order(name asc) {
+    _id,
+    name,
+    "imgSrc": image.asset->url,
+    role,
+    registration,
+    description
   }
-  `
-);
+`);
 
 export const EXPORT_CARS_QUERY = defineQuery(`
-  *[_type== "exportCard"] | order(_createdAt asc){
+  *[_type == "exportCard"] | order(_createdAt asc) {
     _id,
     title,
     desc,
-    "img":img.asset->url,
+    "img": img.asset->url,
     isnhs
   }
 `);

@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 type SanitySeo = {
   metaTitle?: string | null;
   metaDescription?: string | null;
-  noIndex?: boolean | null;
+  keywords?: string[] | null;
+  robots?: "index, follow" | "noindex, nofollow" | null;
   ogImageUrl?: string | null;
 };
 
@@ -21,25 +22,81 @@ export function createSeoMetadata({
   seo,
 }: SeoMetadataInput): Metadata {
   const resolvedTitle = seo?.metaTitle?.trim() || title?.trim();
+
   const resolvedDescription =
     seo?.metaDescription?.trim() || description?.trim();
+
   const resolvedImage = seo?.ogImageUrl || imageUrl;
 
+  const resolvedKeywords =
+    seo?.keywords && seo.keywords.length > 0
+      ? seo.keywords
+      : undefined;
+
+  const shouldIndex = seo?.robots
+    ? seo.robots.includes("index")
+    : true;
+
+  const shouldFollow = seo?.robots
+    ? seo.robots.includes("follow")
+    : true;
+
   return {
-    ...(resolvedTitle ? { title: resolvedTitle } : {}),
-    ...(resolvedDescription ? { description: resolvedDescription } : {}),
+    ...(resolvedTitle
+      ? {
+          title: resolvedTitle,
+        }
+      : {}),
+
+    ...(resolvedDescription
+      ? {
+          description: resolvedDescription,
+        }
+      : {}),
+
+    ...(resolvedKeywords
+      ? {
+          keywords: resolvedKeywords,
+        }
+      : {}),
+
+    robots: {
+      index: shouldIndex,
+      follow: shouldFollow,
+    },
+
     ...(resolvedImage
       ? {
           openGraph: {
-            images: [{ url: resolvedImage }],
+            ...(resolvedTitle
+              ? {
+                  title: resolvedTitle,
+                }
+              : {}),
+            ...(resolvedDescription
+              ? {
+                  description: resolvedDescription,
+                }
+              : {}),
+            images: [
+              {
+                url: resolvedImage,
+              },
+            ],
           },
-        }
-      : {}),
-    ...(seo?.noIndex !== undefined && seo.noIndex !== null
-      ? {
-          robots: {
-            index: !seo.noIndex,
-            follow: true,
+          twitter: {
+            card: "summary_large_image",
+            ...(resolvedTitle
+              ? {
+                  title: resolvedTitle,
+                }
+              : {}),
+            ...(resolvedDescription
+              ? {
+                  description: resolvedDescription,
+                }
+              : {}),
+            images: [resolvedImage],
           },
         }
       : {}),

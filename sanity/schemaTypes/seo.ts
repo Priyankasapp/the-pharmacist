@@ -1,13 +1,34 @@
 import { defineField, defineType } from "sanity";
 
 export const seo = defineType({
-    name:"seo",
-    title:"SEO",
-    type:"object",
-    fields:[
-        defineField({name:"metaTitle", type:"string", validation:(r) => r.max(60).warning("max 60 characters")}),
-        defineField({name:"metaDescription", type:"text", rows:3, validation: (r) => r.max(110).warning("Max 160 characters")}),
-        defineField({name:"ogImage", title:"Share image", type:"image"}),
-        defineField({name:"noIndex", type:"boolean", initialValue:false}),
-    ]
-})
+  name: "seo",
+  title: "SEO & Social Settings",
+  type: "object",
+  fields: [
+    defineField({
+      name: "metaTitle",
+      title: "Meta Title",
+      type: "string",
+      validation: (rule) => rule.max(60).warning("Max 60 characters"),
+    }),
+    defineField({
+      name: "metaDescription",
+      title: "Meta Description",
+      type: "text",
+      rows: 3,
+      validation: (rule) => rule.max(160).warning("Max 160 characters"),
+    }),
+    defineField({
+      name: "ogImage",
+      title: "Share Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "noIndex",
+      title: "No Index",
+      type: "boolean",
+      initialValue: false,
+    }),
+  ],
+});
