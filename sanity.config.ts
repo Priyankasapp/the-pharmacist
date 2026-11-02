@@ -16,6 +16,32 @@ export default defineConfig({
   plugins: [
     seofields({
       healthDashboard: false,
+      geo: false,
+      fieldGroups: [
+        {
+          name: "meta",
+          title: "Meta",
+          default: true,
+          fields: [
+            "title",
+            "description",
+            "metaImage",
+            "keywords",
+            "canonicalUrl",
+            "robots",
+          ],
+        },
+        {
+          name: "openGraph",
+          title: "Open Graph",
+          fields: ["openGraph"],
+        },
+        {
+          name: "twitter",
+          title: "Twitter / X",
+          fields: ["twitter"],
+        },
+      ],
     }),
     structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),

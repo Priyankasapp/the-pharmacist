@@ -29,6 +29,7 @@ export async function generateMetadata({
     return createSeoMetadata({
       title: condition?.name ?? decodeURIComponent(slug).replace(/-/g, " "),
       description: condition?.desc,
+      path: `/all-conditions/${encodeURIComponent(slug)}`,
       seo: condition?.seo,
     });
   } catch (error) {
@@ -38,6 +39,7 @@ export async function generateMetadata({
     );
     return createSeoMetadata({
       title: decodeURIComponent(slug).replace(/-/g, " "),
+      path: `/all-conditions/${encodeURIComponent(slug)}`,
     });
   }
 }

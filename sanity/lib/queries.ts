@@ -107,34 +107,46 @@ export const healthConditionsQuery = groq`
   }
 `;
 
-// Reusable SEO projection for the EXISTING SEO schema.
-// Keep these field names until your Sanity schema is migrated.
+// Normalize plugin fields and legacy SEO values into the plugin's expected shape.
 const seoProjection = `
-  metaTitle,
-  metaDescription,
-  keywords,
-  noIndex,
-  canonicalUrl,
-  "ogImageUrl": ogImage.asset->url,
-  openGraph {
+  "title": coalesce(seo.title, seo.metaTitle, metaTitle),
+  "description": coalesce(seo.description, seo.metaDescription, metaDescription),
+  "metaImage": coalesce(seo.metaImage, seo.ogImage, ogImage),
+  "keywords": seo.keywords,
+  "canonicalUrl": seo.canonicalUrl,
+  "robots": {
+    "noIndex": coalesce(
+      seo.robots.noIndex,
+      seo.noIndex,
+      noIndex,
+      select(defined(seo.robots.index) => !seo.robots.index)
+    ),
+    "noFollow": coalesce(
+      seo.robots.noFollow,
+      select(defined(seo.robots.follow) => !seo.robots.follow)
+    ),
+    "noTranslate": seo.robots.noTranslate,
+    "noImageIndex": seo.robots.noImageIndex
+  },
+  "openGraph": seo.openGraph {
     title,
     description,
     url,
     siteName,
     type,
-    "imageUrl": image.asset->url
+    imageType,
+    image,
+    imageUrl
   },
-  twitter {
+  "twitter": seo.twitter {
     card,
     title,
     description,
     site,
     creator,
-    "imageUrl": image.asset->url
-  },
-  robots {
-    index,
-    follow
+    imageType,
+    image,
+    imageUrl
   }
 `;
 
@@ -143,10 +155,10 @@ export const sitemapProductsQuery = groq`
   *[
     _type == "product" &&
     defined(slug.current) &&
-    (
-      seo.robots.index == true ||
-      (!defined(seo.robots.index) && seo.noIndex != true)
-    )
+    seo.robots.noIndex != true &&
+    seo.robots.index != false &&
+    seo.noIndex != true &&
+    noIndex != true
   ] {
     "slug": slug.current,
     "_updatedAt": _updatedAt
@@ -157,10 +169,9 @@ export const sitemapHealthConditionsQuery = groq`
   *[
     _type == "healthCondition" &&
     defined(id.current) &&
-    (
-      seo.robots.index == true ||
-      (!defined(seo.robots.index) && seo.noIndex != true)
-    )
+    seo.robots.noIndex != true &&
+    seo.robots.index != false &&
+    seo.noIndex != true
   ] {
     "slug": id.current,
     "_updatedAt": _updatedAt
@@ -177,7 +188,7 @@ export const productSeoQuery = groq`
     description,
     "slug": slug.current,
     "imageUrl": image.asset->url,
-    seo {
+    "seo": {
       ${seoProjection}
     }
   }
@@ -242,7 +253,7 @@ export const productBySlugQuery = groq`
       content
     },
 
-    seo {
+    "seo": {
       ${seoProjection}
     }
   }
@@ -269,7 +280,7 @@ export const conditionBySlugQuery = groq`
 
     isNHS,
 
-    seo {
+    "seo": {
       ${seoProjection}
     }
   }
@@ -285,7 +296,7 @@ export const healthConditionSeoQuery = groq`
     desc,
     "slug": id.current,
 
-    seo {
+    "seo": {
       ${seoProjection}
     }
   }

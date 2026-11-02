@@ -69,7 +69,8 @@ export const healthCondition = defineType({
     }),
     defineField({
       name:"seo",
-      type:"seo"
+      title: "SEO",
+      type:"seoFields"
     })
   ],
 

@@ -314,28 +314,6 @@ export const productType = defineType({
     }),
 
     defineField({
-      name:"metaTitle",
-      title:"Old SEO Meta Title",
-      type:"string",
-      hidden:true,
-    }),
-    defineField({
-      name:"metaDescription",
-      title:"Old SEO Meta Description",
-      type:"text",
-      hidden:true,
-    }),
-    defineField({
-      name:"ogImage",
-      title:"Old SEO  Image",
-      type:"image",
-
-      options:{
-        hotspot:true
-      },
-      hidden:true,
-    }),
-    defineField({
       name:"unitInfo",
       title:"Unit Information",
       type:"string",
@@ -344,7 +322,8 @@ export const productType = defineType({
     // SEO
     defineField({
       name: "seo",
-      type: "seo",
+      title: "SEO",
+      type: "seoFields",
     }),
   ],
 });

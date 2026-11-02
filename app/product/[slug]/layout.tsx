@@ -33,12 +33,14 @@ export async function generateMetadata({
       title: product?.name ?? decoded.replace(/-/g, " "),
       description: product?.description,
       imageUrl: product?.imageUrl,
+      path: `/product/${encodeURIComponent(slug)}`,
       seo: product?.seo,
     });
   } catch (error) {
     console.error(`Failed to fetch SEO metadata for product "${slug}":`, error);
     return createSeoMetadata({
       title: decoded.replace(/-/g, " "),
+      path: `/product/${encodeURIComponent(slug)}`,
     });
   }
 }

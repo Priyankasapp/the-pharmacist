@@ -10,7 +10,6 @@ import { treatmentType } from "./treatment";
 import { articleType } from "./article";
 import { patientReviewType } from "./patientReview";
 import { contactSubmissionType } from "./contactSubmission";
-import { seo } from "./seo";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -25,6 +24,5 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     articleType,
     patientReviewType,
     contactSubmissionType,
-    seo,
   ],
 };
