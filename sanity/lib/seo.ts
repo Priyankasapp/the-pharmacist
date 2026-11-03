@@ -24,8 +24,19 @@ export function createSeoMetadata({
   path,
   seo,
 }: SeoMetadataInput): Metadata {
+  const openGraphType = seo?.openGraph?.type;
+  const normalizedSeo =
+    openGraphType === "product" ||
+    openGraphType === "music" ||
+    openGraphType === "video"
+      ? {
+          ...(seo ?? {}),
+          openGraph: { ...(seo?.openGraph ?? {}), type: "website" },
+        }
+      : seo;
+
   return buildSeoMeta({
-    seo,
+    seo: normalizedSeo,
     baseUrl: siteUrl,
     path,
     defaults: {
