@@ -11,8 +11,19 @@ import { client } from "@/sanity/lib/client";
 import { healthConditionsQuery } from "@/sanity/lib/queries";
 
 const AllCondition = async () => {
-  // Fetch health conditions from Sanity
-  const conditions = await client.fetch(healthConditionsQuery);
+  let conditions: {
+    _id: string;
+    name: string;
+    id: string;
+    desc: string;
+    isNHS: boolean;
+  }[] = [];
+
+  try {
+    conditions = await client.fetch(healthConditionsQuery);
+  } catch (error) {
+    console.error("Error fetching health conditions:", error);
+  }
 
   // Group Sanity conditions alphabetically from A to Z
   const allAlphabetGroups = Array.from({ length: 26 }, (_, index) => {
@@ -20,7 +31,7 @@ const AllCondition = async () => {
 
     return {
       letter,
-      data: conditions.filter((item: { name: string; id: string }) =>
+      data: conditions.filter((item) =>
         item.name?.trim().toUpperCase().startsWith(letter),
       ),
     };
@@ -121,28 +132,20 @@ const AllCondition = async () => {
                   </div>
 
                   <div className={styles["option-section"]}>
-                    {group.data.map(
-                      (item: {
-                        _id: string;
-                        name: string;
-                        id: string;
-                        desc: string;
-                        isNHS: boolean;
-                      }) => (
-                        <div
-                          className={styles["option-card-wrapper"]}
-                          key={item._id}
+                    {group.data.map((item) => (
+                      <div
+                        className={styles["option-card-wrapper"]}
+                        key={item._id}
+                        id={item.id}
+                      >
+                        <OptionSectionCard
+                          name={item.name}
+                          desc={item.desc}
+                          isNHS={item.isNHS}
                           id={item.id}
-                        >
-                          <OptionSectionCard
-                            name={item.name}
-                            desc={item.desc}
-                            isNHS={item.isNHS}
-                            id={item.id}
-                          />
-                        </div>
-                      ),
-                    )}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}

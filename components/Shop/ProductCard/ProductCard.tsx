@@ -5,9 +5,10 @@ import Image from "next/image";
 import Button from "@/components/Button/Button";
 import { ProductCardData } from "@/lib/types";
 import { StarIcon } from "@/components/Icon/Icon";
+import Link from "next/link";
 
 const ProductCard = ({
-  
+  slug,
   title,
   subtitle,
   image,

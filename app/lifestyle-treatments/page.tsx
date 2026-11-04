@@ -13,7 +13,14 @@ type SanityTreatment = {
 };
 
 const LifestyleTreatments = async () => {
-  const treatments = await client.fetch<SanityTreatment[]>(TREATMENTS_QUERY);
+  let treatments: SanityTreatment[] = [];
+  
+  try{
+    treatments = await client.fetch<SanityTreatment[]>(TREATMENTS_QUERY);
+  }catch(error){
+    console.error("Failed to fetch treatments from Sanity:", error);
+  }
+
   return (
     <div className="container">
       <div className={styles['lifestyle-treatment']}>
@@ -37,18 +44,21 @@ const LifestyleTreatments = async () => {
             >
               Search lifestyle treatments
             </label>
+
             <input
               id="lifestyle-search"
               type="text"
               placeholder="Search for health conditions (e.g., Hair Loss)"
             />
+
             <Button showArrow className={styles['lifestyle-button']}>Search</Button>
         </div>
       </div>
 
       <div className={styles['lifestyle-cards-container']}>
         {treatments.map((treatment) => (
-          <div key={treatment._id}
+          <div 
+          key={treatment._id}
           className={styles['lifestyle-card-wrapper']}>
             <TreatmentCard
               _id={treatment._id}

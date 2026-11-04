@@ -15,10 +15,22 @@ type SanitySitemapEntry = {
 export const revalidate = 300;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [products, conditions] = await Promise.all([
+  const [productResult, conditionResult] = await Promise.allSettled([
     client.fetch<SanitySitemapEntry[]>(sitemapProductsQuery),
     client.fetch<SanitySitemapEntry[]>(sitemapHealthConditionsQuery),
   ]);
+
+  const products = productResult.status === "fulfilled" ? productResult.value: [];
+  const conditions = conditionResult.status === "fulfilled" ? conditionResult.value: [];
+
+  if (productResult.status === "rejected") {
+    console.error("Failed to fetch products for sitemap:", productResult.reason);
+
+  }
+
+  if(conditionResult.status === "rejected"){
+    console.error("Failed to fetch conditions for sitemap:", conditionResult.reason);
+  }
 
   return [
     {
